@@ -1,0 +1,1723 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    
+  <url>
+    <loc>https://cal.com/docs/agents</loc>
+    <lastmod>2026-04-14T11:31:34.810Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/access-control</loc>
+    <lastmod>2026-07-04T10:05:26.525Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/api-keys/refresh-api-key</loc>
+    <lastmod>2026-07-22T13:08:16.353Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings--email-verification/check-if-email-verification-is-required</loc>
+    <lastmod>2026-07-22T13:08:13.799Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings--email-verification/send-email-verification-code</loc>
+    <lastmod>2026-07-22T13:08:13.808Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings--email-verification/verify-email-with-code</loc>
+    <lastmod>2026-07-22T13:08:13.817Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings-attendees/add-an-attendee-to-a-booking</loc>
+    <lastmod>2026-07-22T13:08:13.757Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings-attendees/get-a-specific-attendee-for-a-booking</loc>
+    <lastmod>2026-07-22T13:08:13.782Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings-attendees/get-all-attendees-for-a-booking</loc>
+    <lastmod>2026-07-22T13:08:13.748Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings-guests/add-guests-to-an-existing-booking</loc>
+    <lastmod>2026-07-22T13:08:13.790Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings-routing-trace/get-the-routing-trace-for-a-booking</loc>
+    <lastmod>2026-07-22T13:08:13.729Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/cancel-a-booking</loc>
+    <lastmod>2026-07-22T13:08:13.650Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/confirm-a-booking</loc>
+    <lastmod>2026-07-22T13:08:13.685Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/create-a-booking</loc>
+    <lastmod>2026-07-22T13:08:13.578Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/decline-a-booking</loc>
+    <lastmod>2026-07-22T13:08:13.693Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/get-a-booking</loc>
+    <lastmod>2026-07-22T13:08:13.604Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/get-a-booking-by-seat-uid</loc>
+    <lastmod>2026-07-22T13:08:13.595Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/get-add-to-calendar-links-for-a-booking</loc>
+    <lastmod>2026-07-22T13:08:13.702Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/get-all-bookings</loc>
+    <lastmod>2026-07-22T13:08:13.587Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/get-all-the-recordings-for-the-booking</loc>
+    <lastmod>2026-07-22T13:08:13.613Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/get-booking-references</loc>
+    <lastmod>2026-07-22T13:08:13.711Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/get-cal-video-real-time-transcript-download-links-for-the-booking</loc>
+    <lastmod>2026-07-22T13:08:13.623Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/get-video-meeting-sessions-only-supported-for-cal-video</loc>
+    <lastmod>2026-07-22T13:08:13.721Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/mark-a-booking-absence</loc>
+    <lastmod>2026-07-22T13:08:13.659Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/reassign-a-booking-to-a-specific-host</loc>
+    <lastmod>2026-07-22T13:08:13.676Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/reassign-a-booking-to-auto-selected-host</loc>
+    <lastmod>2026-07-22T13:08:13.667Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/request-to-reschedule-a-booking</loc>
+    <lastmod>2026-07-22T13:08:13.641Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/reschedule-a-booking</loc>
+    <lastmod>2026-07-22T13:08:13.632Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/bookings/update-booking-location-for-an-existing-booking</loc>
+    <lastmod>2026-07-22T13:08:13.738Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/cal-unified-calendars/get-meeting-details-from-calendar</loc>
+    <lastmod>2026-07-22T13:08:14.197Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/cal-unified-calendars/update-meeting-details-in-calendar</loc>
+    <lastmod>2026-07-22T13:08:14.207Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/calendars/check-a-calendar-connection</loc>
+    <lastmod>2026-07-22T13:08:14.172Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/calendars/check-an-ics-feed</loc>
+    <lastmod>2026-07-22T13:08:14.113Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/calendars/disconnect-a-calendar</loc>
+    <lastmod>2026-07-22T13:08:14.188Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/calendars/get-all-calendars</loc>
+    <lastmod>2026-07-22T13:08:14.131Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/calendars/get-busy-times</loc>
+    <lastmod>2026-07-22T13:08:14.122Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/calendars/get-oauth-connect-url</loc>
+    <lastmod>2026-07-22T13:08:14.140Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/calendars/save-an-ics-feed</loc>
+    <lastmod>2026-07-22T13:08:14.105Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/calendars/save-apple-calendar-credentials</loc>
+    <lastmod>2026-07-22T13:08:14.163Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/calendars/save-google-or-outlook-calendar-credentials</loc>
+    <lastmod>2026-07-22T13:08:14.154Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/conferencing/conferencing-app-oauth-callback</loc>
+    <lastmod>2026-07-22T13:08:14.274Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/conferencing/connect-your-conferencing-application</loc>
+    <lastmod>2026-07-22T13:08:14.251Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/conferencing/disconnect-your-conferencing-application</loc>
+    <lastmod>2026-07-22T13:08:14.311Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/conferencing/get-oauth-conferencing-app-auth-url</loc>
+    <lastmod>2026-07-22T13:08:14.261Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/conferencing/get-your-default-conferencing-application</loc>
+    <lastmod>2026-07-22T13:08:14.302Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/conferencing/list-your-conferencing-applications</loc>
+    <lastmod>2026-07-22T13:08:14.283Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/conferencing/set-your-default-conferencing-application</loc>
+    <lastmod>2026-07-22T13:08:14.293Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/credits/charge-credits</loc>
+    <lastmod>2026-07-22T13:08:13.991Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/credits/check-available-credits</loc>
+    <lastmod>2026-07-22T13:08:13.982Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/create-a-managed-user</loc>
+    <lastmod>2026-07-22T13:08:16.806Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/delete-a-managed-user</loc>
+    <lastmod>2026-07-22T13:08:16.832Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/force-refresh-tokens</loc>
+    <lastmod>2026-07-22T13:08:16.841Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/get-a-managed-user</loc>
+    <lastmod>2026-07-22T13:08:16.815Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/get-all-managed-users</loc>
+    <lastmod>2026-07-22T13:08:16.797Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/refresh-managed-user-tokens</loc>
+    <lastmod>2026-07-22T13:08:16.849Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/update-a-managed-user</loc>
+    <lastmod>2026-07-22T13:08:16.823Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-oauth-clients/create-an-oauth-client</loc>
+    <lastmod>2026-07-22T13:08:16.734Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-oauth-clients/delete-an-oauth-client</loc>
+    <lastmod>2026-07-22T13:08:16.788Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-oauth-clients/get-all-oauth-clients</loc>
+    <lastmod>2026-07-22T13:08:16.743Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-oauth-clients/get-an-oauth-client</loc>
+    <lastmod>2026-07-22T13:08:16.751Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-oauth-clients/update-an-oauth-client</loc>
+    <lastmod>2026-07-22T13:08:16.760Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-webhooks/create-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:16.858Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-webhooks/delete-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:16.901Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-webhooks/delete-all-webhooks</loc>
+    <lastmod>2026-07-22T13:08:16.875Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-webhooks/get-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:16.892Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-webhooks/get-all-webhooks</loc>
+    <lastmod>2026-07-22T13:08:16.866Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/deprecated:-platform-webhooks/update-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:16.883Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/destination-calendars/update-destination-calendars</loc>
+    <lastmod>2026-07-22T13:08:14.240Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types-private-links/create-a-private-link-for-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.446Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types-private-links/delete-a-private-link-for-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.473Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types-private-links/get-all-private-links-for-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.455Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types-private-links/update-a-private-link-for-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.464Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types-webhooks/create-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:14.394Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types-webhooks/delete-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:14.437Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types-webhooks/delete-all-webhooks</loc>
+    <lastmod>2026-07-22T13:08:14.411Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types-webhooks/get-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:14.428Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types-webhooks/get-all-webhooks</loc>
+    <lastmod>2026-07-22T13:08:14.402Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types-webhooks/update-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:14.419Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types/create-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.321Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types/delete-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.358Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types/get-all-event-types</loc>
+    <lastmod>2026-07-22T13:08:14.330Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types/get-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.340Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types/get-event-type-history</loc>
+    <lastmod>2026-07-22T13:08:14.367Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types/get-scheduling-configuration</loc>
+    <lastmod>2026-07-22T13:08:14.376Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types/list-crm-sync-errors-for-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.385Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/event-types/update-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.349Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/insights/get-average-booking-duration</loc>
+    <lastmod>2026-07-22T13:08:13.999Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/insights/get-booking-event-trends</loc>
+    <lastmod>2026-07-22T13:08:14.009Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/insights/get-booking-kpi-stats</loc>
+    <lastmod>2026-07-22T13:08:14.018Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/insights/get-booking-member-stats</loc>
+    <lastmod>2026-07-22T13:08:14.026Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/insights/get-failed-bookings-by-routing-field</loc>
+    <lastmod>2026-07-22T13:08:14.052Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/insights/get-routed-to-users-per-period</loc>
+    <lastmod>2026-07-22T13:08:14.096Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/insights/get-routing-form-field-options</loc>
+    <lastmod>2026-07-22T13:08:14.061Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/insights/get-routing-form-response-headers</loc>
+    <lastmod>2026-07-22T13:08:14.070Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/insights/get-routing-form-responses</loc>
+    <lastmod>2026-07-22T13:08:14.079Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/insights/get-routing-forms-by-status</loc>
+    <lastmod>2026-07-22T13:08:14.088Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/introduction</loc>
+    <lastmod>2026-02-17T11:40:32.325Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/managed-orgs/create-an-organization-within-an-organization</loc>
+    <lastmod>2026-07-22T13:08:16.689Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/managed-orgs/delete-an-organization-within-an-organization</loc>
+    <lastmod>2026-07-22T13:08:16.724Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/managed-orgs/get-all-organizations-within-an-organization</loc>
+    <lastmod>2026-07-22T13:08:16.697Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/managed-orgs/get-an-organization-within-an-organization</loc>
+    <lastmod>2026-07-22T13:08:16.705Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/managed-orgs/update-an-organization-within-an-organization</loc>
+    <lastmod>2026-07-22T13:08:16.715Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/me/clear-my-booking-limits</loc>
+    <lastmod>2026-07-22T13:08:13.569Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/me/get-my-booking-limits</loc>
+    <lastmod>2026-07-22T13:08:13.551Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/me/get-my-profile</loc>
+    <lastmod>2026-07-22T13:08:13.533Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/me/update-my-booking-limits</loc>
+    <lastmod>2026-07-22T13:08:13.560Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/me/update-my-profile</loc>
+    <lastmod>2026-07-22T13:08:13.543Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/notifications/register-an-app-push-subscription</loc>
+    <lastmod>2026-07-22T13:08:13.961Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/notifications/remove-an-app-push-subscription</loc>
+    <lastmod>2026-07-22T13:08:13.974Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/oauth</loc>
+    <lastmod>2026-07-09T22:22:08.248Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/oauth2/exchange-authorization-code-or-refresh-token-for-tokens</loc>
+    <lastmod>2026-07-22T13:08:16.378Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/oauth2/get-oauth2-client</loc>
+    <lastmod>2026-07-22T13:08:16.362Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/organization-team-verified-resources/get-list-of-verified-emails-of-an-org-team</loc>
+    <lastmod>2026-07-22T13:08:16.308Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/organization-team-verified-resources/get-list-of-verified-phone-numbers-of-an-org-team</loc>
+    <lastmod>2026-07-22T13:08:16.316Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/organization-team-verified-resources/get-verified-email-of-an-org-team-by-id</loc>
+    <lastmod>2026-07-22T13:08:16.325Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/organization-team-verified-resources/get-verified-phone-number-of-an-org-team-by-id</loc>
+    <lastmod>2026-07-22T13:08:16.333Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/organization-team-verified-resources/request-email-verification-code</loc>
+    <lastmod>2026-07-22T13:08:16.268Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/organization-team-verified-resources/request-phone-number-verification-code</loc>
+    <lastmod>2026-07-22T13:08:16.276Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/organization-team-verified-resources/verify-a-phone-number-for-an-org-team</loc>
+    <lastmod>2026-07-22T13:08:16.296Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/organization-team-verified-resources/verify-an-email-for-an-org-team</loc>
+    <lastmod>2026-07-22T13:08:16.285Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes-options/assign-an-attribute-to-a-user</loc>
+    <lastmod>2026-07-22T13:08:15.060Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes-options/create-an-attribute-option</loc>
+    <lastmod>2026-07-22T13:08:14.989Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes-options/delete-an-attribute-option</loc>
+    <lastmod>2026-07-22T13:08:15.007Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes-options/get-all-assigned-attribute-options-by-attribute-id</loc>
+    <lastmod>2026-07-22T13:08:15.025Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes-options/get-all-assigned-attribute-options-by-attribute-slug</loc>
+    <lastmod>2026-07-22T13:08:15.051Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes-options/get-all-attribute-options</loc>
+    <lastmod>2026-07-22T13:08:14.998Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes-options/get-all-attribute-options-for-a-user</loc>
+    <lastmod>2026-07-22T13:08:15.069Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes-options/get-attribute-assignment-history-for-a-user</loc>
+    <lastmod>2026-07-22T13:08:15.099Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes-options/unassign-an-attribute-from-a-user</loc>
+    <lastmod>2026-07-22T13:08:15.077Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes-options/update-an-attribute-assignment-for-a-user</loc>
+    <lastmod>2026-07-22T13:08:15.086Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes-options/update-an-attribute-option</loc>
+    <lastmod>2026-07-22T13:08:15.016Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes-sync-history/get-attribute-sync-history</loc>
+    <lastmod>2026-07-22T13:08:14.971Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes-sync-history/get-sync-history-for-a-specific-user</loc>
+    <lastmod>2026-07-22T13:08:14.981Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes/create-an-attribute</loc>
+    <lastmod>2026-07-22T13:08:14.935Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes/delete-an-attribute</loc>
+    <lastmod>2026-07-22T13:08:14.962Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes/get-all-attributes</loc>
+    <lastmod>2026-07-22T13:08:14.926Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes/get-an-attribute</loc>
+    <lastmod>2026-07-22T13:08:14.943Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-attributes/update-an-attribute</loc>
+    <lastmod>2026-07-22T13:08:14.952Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-bookings/block-an-organization-booking-attendee</loc>
+    <lastmod>2026-07-22T13:08:15.125Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-bookings/get-organization-bookings-cursor-pagination</loc>
+    <lastmod>2026-07-22T13:08:15.113Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-bookings/report-an-organization-booking</loc>
+    <lastmod>2026-07-22T13:08:15.137Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-delegation-credentials/delete-delegation-credentials-of-your-organization</loc>
+    <lastmod>2026-07-22T13:08:15.192Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-delegation-credentials/get-a-delegation-credential-of-your-organization</loc>
+    <lastmod>2026-07-22T13:08:15.157Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-delegation-credentials/get-all-delegation-credentials-of-your-organization</loc>
+    <lastmod>2026-07-22T13:08:15.148Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-delegation-credentials/reset-a-blocked-delegation-credentials-secret-rotation-state</loc>
+    <lastmod>2026-07-22T13:08:15.203Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-delegation-credentials/save-delegation-credentials-for-your-organization</loc>
+    <lastmod>2026-07-22T13:08:15.168Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-delegation-credentials/update-delegation-credentials-of-your-organization</loc>
+    <lastmod>2026-07-22T13:08:15.180Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-memberships/create-a-membership</loc>
+    <lastmod>2026-07-22T13:08:15.224Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-memberships/delete-a-membership</loc>
+    <lastmod>2026-07-22T13:08:15.243Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-memberships/get-a-membership</loc>
+    <lastmod>2026-07-22T13:08:15.232Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-memberships/get-all-memberships</loc>
+    <lastmod>2026-07-22T13:08:15.215Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-memberships/update-a-membership</loc>
+    <lastmod>2026-07-22T13:08:15.254Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-roles-permissions/add-permissions-to-an-organization-role-single-or-batch</loc>
+    <lastmod>2026-07-22T13:08:15.321Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-roles-permissions/list-permissions-for-an-organization-role</loc>
+    <lastmod>2026-07-22T13:08:15.333Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-roles-permissions/remove-a-permission-from-an-organization-role</loc>
+    <lastmod>2026-07-22T13:08:15.364Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-roles-permissions/remove-multiple-permissions-from-an-organization-role</loc>
+    <lastmod>2026-07-22T13:08:15.355Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-roles-permissions/replace-all-permissions-for-an-organization-role</loc>
+    <lastmod>2026-07-22T13:08:15.344Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-roles/create-a-new-organization-role</loc>
+    <lastmod>2026-07-22T13:08:15.265Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-roles/delete-an-organization-role</loc>
+    <lastmod>2026-07-22T13:08:15.309Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-roles/get-a-specific-organization-role</loc>
+    <lastmod>2026-07-22T13:08:15.289Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-roles/get-all-organization-roles</loc>
+    <lastmod>2026-07-22T13:08:15.277Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-roles/update-an-organization-role</loc>
+    <lastmod>2026-07-22T13:08:15.297Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-routing-forms/create-routing-form-response-and-get-available-slots</loc>
+    <lastmod>2026-07-22T13:08:15.389Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-routing-forms/get-organization-routing-forms</loc>
+    <lastmod>2026-07-22T13:08:15.372Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-routing-forms/get-routing-form-responses</loc>
+    <lastmod>2026-07-22T13:08:15.381Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-routing-forms/update-routing-form-response</loc>
+    <lastmod>2026-07-22T13:08:15.398Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-schedules/get-all-schedules</loc>
+    <lastmod>2026-07-22T13:08:15.407Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-bookings/get-booking-references</loc>
+    <lastmod>2026-07-22T13:08:15.641Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-bookings/get-organization-team-bookings</loc>
+    <lastmod>2026-07-22T13:08:15.632Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/connect-your-conferencing-application-to-a-team</loc>
+    <lastmod>2026-07-22T13:08:15.650Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/disconnect-team-conferencing-application</loc>
+    <lastmod>2026-07-22T13:08:15.693Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/get-oauth-conferencing-apps-auth-url-for-a-team</loc>
+    <lastmod>2026-07-22T13:08:15.659Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/get-team-default-conferencing-application</loc>
+    <lastmod>2026-07-22T13:08:15.685Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/list-team-conferencing-applications</loc>
+    <lastmod>2026-07-22T13:08:15.667Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/save-conferencing-app-oauth-credentials</loc>
+    <lastmod>2026-07-22T13:08:15.702Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/set-team-default-conferencing-application</loc>
+    <lastmod>2026-07-22T13:08:15.676Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-event-types-private-links/create-a-private-link-for-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:15.793Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-event-types-private-links/delete-a-private-link-for-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:15.822Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-event-types-private-links/get-all-private-links-for-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:15.802Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-event-types-private-links/update-a-private-link-for-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:15.813Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-event-types/create-a-phone-call</loc>
+    <lastmod>2026-07-22T13:08:15.756Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-event-types/create-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:15.711Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-event-types/delete-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:15.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-event-types/get-all-team-event-types</loc>
+    <lastmod>2026-07-22T13:08:15.783Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-event-types/get-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:15.729Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-event-types/get-team-event-types</loc>
+    <lastmod>2026-07-22T13:08:15.720Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-event-types/update-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:15.738Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-invite/create-team-invite-link</loc>
+    <lastmod>2026-07-22T13:08:15.833Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-memberships/create-a-membership</loc>
+    <lastmod>2026-07-22T13:08:15.851Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-memberships/delete-a-membership</loc>
+    <lastmod>2026-07-22T13:08:15.868Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-memberships/get-a-membership</loc>
+    <lastmod>2026-07-22T13:08:15.859Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-memberships/get-all-memberships</loc>
+    <lastmod>2026-07-22T13:08:15.842Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-memberships/update-a-membership</loc>
+    <lastmod>2026-07-22T13:08:15.876Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-roles-permissions/add-permissions-to-an-organization-team-role-single-or-batch</loc>
+    <lastmod>2026-07-22T13:08:15.953Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-roles-permissions/list-permissions-for-an-organization-team-role</loc>
+    <lastmod>2026-07-22T13:08:15.966Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-roles-permissions/remove-a-permission-from-an-organization-team-role</loc>
+    <lastmod>2026-07-22T13:08:16.004Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-roles-permissions/remove-multiple-permissions-from-an-organization-team-role</loc>
+    <lastmod>2026-07-22T13:08:15.991Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-roles-permissions/replace-all-permissions-for-an-organization-team-role</loc>
+    <lastmod>2026-07-22T13:08:15.979Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-roles/create-a-new-organization-team-role</loc>
+    <lastmod>2026-07-22T13:08:15.889Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-roles/delete-an-organization-team-role</loc>
+    <lastmod>2026-07-22T13:08:15.940Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-roles/get-a-specific-organization-team-role</loc>
+    <lastmod>2026-07-22T13:08:15.915Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-roles/get-all-organization-team-roles</loc>
+    <lastmod>2026-07-22T13:08:15.902Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-roles/update-an-organization-team-role</loc>
+    <lastmod>2026-07-22T13:08:15.927Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-routing-forms-responses/create-routing-form-response-and-get-available-slots</loc>
+    <lastmod>2026-07-22T13:08:16.048Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-routing-forms-responses/get-organization-team-routing-form-responses</loc>
+    <lastmod>2026-07-22T13:08:16.023Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-routing-forms-responses/update-routing-form-response</loc>
+    <lastmod>2026-07-22T13:08:16.057Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-routing-forms/get-team-routing-forms</loc>
+    <lastmod>2026-07-22T13:08:16.015Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-schedules/get-all-team-member-schedules</loc>
+    <lastmod>2026-07-22T13:08:16.066Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-stripe/check-team-stripe-connection</loc>
+    <lastmod>2026-07-22T13:08:16.085Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-stripe/get-stripe-connect-url-for-a-team</loc>
+    <lastmod>2026-07-22T13:08:16.074Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-stripe/save-stripe-credentials</loc>
+    <lastmod>2026-07-22T13:08:16.095Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-users-schedules/get-schedules-of-a-team-member</loc>
+    <lastmod>2026-07-22T13:08:16.103Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-workflows/create-organization-team-workflow-for-event-types</loc>
+    <lastmod>2026-07-22T13:08:16.121Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-workflows/create-organization-team-workflow-for-routing-forms</loc>
+    <lastmod>2026-07-22T13:08:16.142Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-workflows/delete-organization-team-routing-form-workflow</loc>
+    <lastmod>2026-07-22T13:08:16.203Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-workflows/delete-organization-team-workflow</loc>
+    <lastmod>2026-07-22T13:08:16.174Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-workflows/get-organization-team-routing-form-workflow</loc>
+    <lastmod>2026-07-22T13:08:16.185Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-workflows/get-organization-team-routing-form-workflows</loc>
+    <lastmod>2026-07-22T13:08:16.130Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-workflows/get-organization-team-workflow</loc>
+    <lastmod>2026-07-22T13:08:16.153Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-workflows/get-organization-team-workflows</loc>
+    <lastmod>2026-07-22T13:08:16.112Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-workflows/update-organization-routing-form-team-workflow</loc>
+    <lastmod>2026-07-22T13:08:16.195Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams-workflows/update-organization-team-workflow</loc>
+    <lastmod>2026-07-22T13:08:16.164Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams/create-a-team</loc>
+    <lastmod>2026-07-22T13:08:15.588Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams/delete-a-team</loc>
+    <lastmod>2026-07-22T13:08:15.615Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams/get-a-team</loc>
+    <lastmod>2026-07-22T13:08:15.606Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams/get-all-teams</loc>
+    <lastmod>2026-07-22T13:08:15.579Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams/get-teams-membership-for-user</loc>
+    <lastmod>2026-07-22T13:08:15.596Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-teams/update-a-team</loc>
+    <lastmod>2026-07-22T13:08:15.623Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users-bookings/get-all-bookings-for-an-organization-user</loc>
+    <lastmod>2026-07-22T13:08:15.454Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users-conferencing/list-conferencing-apps-of-an-organization-user</loc>
+    <lastmod>2026-07-22T13:08:15.553Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users-conferencing/set-the-default-conferencing-app-for-an-organization-user</loc>
+    <lastmod>2026-07-22T13:08:15.562Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users-ooo/create-an-out-of-office-entry-for-a-user</loc>
+    <lastmod>2026-07-22T13:08:15.472Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users-ooo/delete-an-out-of-office-entry-for-a-user</loc>
+    <lastmod>2026-07-22T13:08:15.489Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users-ooo/get-all-out-of-office-entries-for-a-user</loc>
+    <lastmod>2026-07-22T13:08:15.463Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users-ooo/get-all-out-of-office-entries-for-organization-users</loc>
+    <lastmod>2026-07-22T13:08:15.498Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users-ooo/update-an-out-of-office-entry-for-a-user</loc>
+    <lastmod>2026-07-22T13:08:15.480Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users-schedules/create-a-schedule</loc>
+    <lastmod>2026-07-22T13:08:15.508Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users-schedules/delete-a-schedule</loc>
+    <lastmod>2026-07-22T13:08:15.544Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users-schedules/get-a-schedule</loc>
+    <lastmod>2026-07-22T13:08:15.526Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users-schedules/get-all-schedules</loc>
+    <lastmod>2026-07-22T13:08:15.517Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users-schedules/update-a-schedule</loc>
+    <lastmod>2026-07-22T13:08:15.535Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users/create-a-user</loc>
+    <lastmod>2026-07-22T13:08:15.424Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users/delete-a-user</loc>
+    <lastmod>2026-07-22T13:08:15.444Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users/get-all-users</loc>
+    <lastmod>2026-07-22T13:08:15.416Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-users/update-a-user</loc>
+    <lastmod>2026-07-22T13:08:15.434Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-webhooks/create-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:16.225Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-webhooks/delete-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:16.247Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-webhooks/get-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:16.236Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-webhooks/get-all-webhooks</loc>
+    <lastmod>2026-07-22T13:08:16.214Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/orgs-webhooks/update-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:16.259Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/out-of-office/create-an-out-of-office-entry-for-the-authenticated-user</loc>
+    <lastmod>2026-07-22T13:08:13.931Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/out-of-office/delete-an-out-of-office-entry-for-the-authenticated-user</loc>
+    <lastmod>2026-07-22T13:08:13.948Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/out-of-office/get-all-out-of-office-entries-for-the-authenticated-user</loc>
+    <lastmod>2026-07-22T13:08:13.922Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/out-of-office/update-an-out-of-office-entry-for-the-authenticated-user</loc>
+    <lastmod>2026-07-22T13:08:13.940Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/routing-forms/calculate-slots-based-on-routing-form-response</loc>
+    <lastmod>2026-07-22T13:08:14.482Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/schedules/create-a-schedule</loc>
+    <lastmod>2026-07-22T13:08:13.826Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/schedules/delete-a-schedule</loc>
+    <lastmod>2026-07-22T13:08:13.868Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/schedules/get-a-schedule</loc>
+    <lastmod>2026-07-22T13:08:13.851Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/schedules/get-all-schedules</loc>
+    <lastmod>2026-07-22T13:08:13.834Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/schedules/get-default-schedule</loc>
+    <lastmod>2026-07-22T13:08:13.843Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/schedules/update-a-schedule</loc>
+    <lastmod>2026-07-22T13:08:13.860Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/selected-calendars/add-a-selected-calendar</loc>
+    <lastmod>2026-07-22T13:08:14.216Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/selected-calendars/delete-a-selected-calendar</loc>
+    <lastmod>2026-07-22T13:08:14.228Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/slots/delete-a-reserved-slot</loc>
+    <lastmod>2026-07-22T13:08:13.912Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/slots/get-available-time-slots-for-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:13.877Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/slots/get-reserved-slot</loc>
+    <lastmod>2026-07-22T13:08:13.895Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/slots/reserve-a-slot</loc>
+    <lastmod>2026-07-22T13:08:13.886Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/slots/update-a-reserved-slot</loc>
+    <lastmod>2026-07-22T13:08:13.904Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/stripe/check-stripe-connection</loc>
+    <lastmod>2026-07-22T13:08:14.568Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/stripe/get-stripe-connect-url</loc>
+    <lastmod>2026-07-22T13:08:14.540Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/stripe/save-stripe-credentials</loc>
+    <lastmod>2026-07-22T13:08:14.554Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-bookings/get-team-bookings</loc>
+    <lastmod>2026-07-22T13:08:14.621Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-event-types-webhooks/create-a-webhook-for-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.685Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-event-types-webhooks/delete-a-webhook-for-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.728Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-event-types-webhooks/delete-all-webhooks-for-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.702Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-event-types-webhooks/get-a-webhook-for-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.720Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-event-types-webhooks/get-all-webhooks-for-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.693Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-event-types-webhooks/update-a-webhook-for-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.711Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-event-types/create-a-phone-call</loc>
+    <lastmod>2026-07-22T13:08:14.676Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-event-types/create-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.631Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-event-types/delete-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.667Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-event-types/get-an-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.650Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-event-types/get-team-event-types</loc>
+    <lastmod>2026-07-22T13:08:14.640Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-event-types/update-a-team-event-type</loc>
+    <lastmod>2026-07-22T13:08:14.659Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-invite/create-team-invite-link</loc>
+    <lastmod>2026-07-22T13:08:14.737Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-memberships/create-a-membership</loc>
+    <lastmod>2026-07-22T13:08:14.747Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-memberships/delete-a-membership</loc>
+    <lastmod>2026-07-22T13:08:14.799Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-memberships/get-a-membership</loc>
+    <lastmod>2026-07-22T13:08:14.780Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-memberships/get-all-memberships</loc>
+    <lastmod>2026-07-22T13:08:14.756Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-memberships/update-membership</loc>
+    <lastmod>2026-07-22T13:08:14.789Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-schedules/get-all-team-member-schedules</loc>
+    <lastmod>2026-07-22T13:08:14.810Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-users-ooo/create-an-out-of-office-entry-for-a-team-member</loc>
+    <lastmod>2026-07-22T13:08:14.829Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-users-ooo/delete-an-out-of-office-entry-for-a-team-member</loc>
+    <lastmod>2026-07-22T13:08:14.846Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-users-ooo/get-all-out-of-office-entries-for-a-team-member</loc>
+    <lastmod>2026-07-22T13:08:14.820Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-users-ooo/update-an-out-of-office-entry-for-a-team-member</loc>
+    <lastmod>2026-07-22T13:08:14.837Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-verified-resources/get-list-of-verified-emails-of-a-team</loc>
+    <lastmod>2026-07-22T13:08:14.891Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-verified-resources/get-list-of-verified-phone-numbers-of-a-team</loc>
+    <lastmod>2026-07-22T13:08:14.900Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-verified-resources/get-verified-email-of-a-team-by-id</loc>
+    <lastmod>2026-07-22T13:08:14.909Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-verified-resources/get-verified-phone-number-of-a-team-by-id</loc>
+    <lastmod>2026-07-22T13:08:14.917Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-verified-resources/request-email-verification-code</loc>
+    <lastmod>2026-07-22T13:08:14.856Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-verified-resources/request-phone-number-verification-code</loc>
+    <lastmod>2026-07-22T13:08:14.865Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-verified-resources/verify-a-phone-number-for-an-org-team</loc>
+    <lastmod>2026-07-22T13:08:14.882Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams-verified-resources/verify-an-email-for-a-team</loc>
+    <lastmod>2026-07-22T13:08:14.874Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams/create-a-team</loc>
+    <lastmod>2026-07-22T13:08:14.576Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams/delete-a-team</loc>
+    <lastmod>2026-07-22T13:08:14.613Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams/get-a-team</loc>
+    <lastmod>2026-07-22T13:08:14.595Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams/get-teams</loc>
+    <lastmod>2026-07-22T13:08:14.586Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/teams/update-a-team</loc>
+    <lastmod>2026-07-22T13:08:14.604Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/user-booking-limits</loc>
+    <lastmod>2026-04-24T04:33:15.535Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/v1-v2-differences</loc>
+    <lastmod>2026-04-28T23:27:14.911Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/verified-resources/get-list-of-verified-emails</loc>
+    <lastmod>2026-07-22T13:08:16.654Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/verified-resources/get-list-of-verified-phone-numbers</loc>
+    <lastmod>2026-07-22T13:08:16.663Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/verified-resources/get-verified-email-by-id</loc>
+    <lastmod>2026-07-22T13:08:16.671Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/verified-resources/get-verified-phone-number-by-id</loc>
+    <lastmod>2026-07-22T13:08:16.680Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/verified-resources/request-email-verification-code</loc>
+    <lastmod>2026-07-22T13:08:16.401Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/verified-resources/request-phone-number-verification-code</loc>
+    <lastmod>2026-07-22T13:08:16.627Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/verified-resources/verify-a-phone-number</loc>
+    <lastmod>2026-07-22T13:08:16.645Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/verified-resources/verify-an-email</loc>
+    <lastmod>2026-07-22T13:08:16.637Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/webhooks/create-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:14.490Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/webhooks/delete-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:14.527Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/webhooks/get-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:14.517Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/webhooks/get-all-webhooks</loc>
+    <lastmod>2026-07-22T13:08:14.500Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/api-reference/v2/webhooks/update-a-webhook</loc>
+    <lastmod>2026-07-22T13:08:14.509Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/api/how-to-setup-api-in-a-local-instance</loc>
+    <lastmod>2026-07-22T13:08:28.858Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/appstore-and-integration/build-a-greeter-app</loc>
+    <lastmod>2026-07-22T13:08:28.850Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/appstore-and-integration/build-an-app</loc>
+    <lastmod>2026-07-22T13:08:28.853Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/appstore-and-integration/how-to-show-assigned-people-from-a-crm</loc>
+    <lastmod>2026-07-22T13:08:28.854Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/appstore-and-integration/salesforce</loc>
+    <lastmod>2026-07-15T17:54:20.993Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/atoms/add-changesets</loc>
+    <lastmod>2026-07-22T13:08:28.858Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/audit-logs</loc>
+    <lastmod>2026-05-01T00:24:57.398Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/auth-and-provision/how-to-setup-oidc-with-okta</loc>
+    <lastmod>2026-07-22T13:08:28.852Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/auth-and-provision/how-to-setup-scim-with-okta</loc>
+    <lastmod>2026-07-22T13:08:28.849Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/auth-and-provision/sso-setup</loc>
+    <lastmod>2026-07-22T13:08:28.859Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/automation/webhooks</loc>
+    <lastmod>2026-07-22T13:08:28.848Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/email/setup-mailtrap-for-email-testing</loc>
+    <lastmod>2026-07-22T13:08:28.851Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/embeds/customize-embed-css-variables</loc>
+    <lastmod>2026-07-22T13:08:28.857Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/embeds/embed-events</loc>
+    <lastmod>2026-07-22T13:08:28.851Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/guides/insights/add-new-booking-charts</loc>
+    <lastmod>2026-07-22T13:08:28.852Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/local-development</loc>
+    <lastmod>2026-07-22T13:08:28.853Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/open-source-contribution/code-styling</loc>
+    <lastmod>2026-07-22T13:08:28.849Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/open-source-contribution/contributors-guide</loc>
+    <lastmod>2026-07-22T13:08:28.856Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/open-source-contribution/introduction</loc>
+    <lastmod>2026-07-22T13:08:28.855Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/developing/open-source-contribution/pull-requests</loc>
+    <lastmod>2026-07-22T13:08:28.857Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://cal.com/docs/mcp-server</loc>
+    <lastmod>2026-04-28T22:22:58.678Z</lastmod>
+  </url>
+</urlset>
