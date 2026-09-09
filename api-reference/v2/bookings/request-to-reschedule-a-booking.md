@@ -48,6 +48,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2026-02-25'
             default: '2026-02-25'
         - name: bookingUid
           required: true
@@ -88,11 +89,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
       required:
         - status
 

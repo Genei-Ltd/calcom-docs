@@ -4,7 +4,7 @@
 
 # List team conferencing applications
 
-> Required membership role: `team admin`. PBAC permission: `team.read`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_APPS_READ` scope is required.
+> Required membership role: `team admin`. PBAC permission: `team.readConferencing`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_APPS_READ` scope is required.
 
 
 
@@ -27,8 +27,8 @@ paths:
         - Orgs / Teams / Conferencing
       summary: List team conferencing applications
       description: >-
-        Required membership role: `team admin`. PBAC permission: `team.read`.
-        Learn more about API access control at
+        Required membership role: `team admin`. PBAC permission:
+        `team.readConferencing`. Learn more about API access control at
         https://cal.com/docs/api-reference/v2/access-control. If accessed using
         an OAuth access token, the `TEAM_APPS_READ` scope is required.
       operationId: OrganizationsConferencingController_listTeamConferencingApps
@@ -56,10 +56,10 @@ components:
       type: object
       properties:
         status:
-          type: string
           enum:
             - success
             - error
+          type: string
         data:
           type: array
           items:

@@ -6,7 +6,11 @@
 
 > Fetches all the recordings for the booking `:bookingUid`. Requires authentication and proper authorization. Access is granted if you are the booking organizer, team admin or org admin/owner.
 
-    <Note>cal-api-version: `2026-02-25` is required in the request header.</Note>
+    <Note>
+    Recording download links are valid for 1 hour only. Make a new request to generate fresh links after expiration.
+
+    cal-api-version: `2026-02-25` is required in the request header.
+    </Note>
 
 If accessed using an OAuth access token, the `BOOKING_READ` scope is required.
     
@@ -36,7 +40,11 @@ paths:
         authentication and proper authorization. Access is granted if you are
         the booking organizer, team admin or org admin/owner.
 
-            <Note>cal-api-version: `2026-02-25` is required in the request header.</Note>
+            <Note>
+            Recording download links are valid for 1 hour only. Make a new request to generate fresh links after expiration.
+
+            cal-api-version: `2026-02-25` is required in the request header.
+            </Note>
 
         If accessed using an OAuth access token, the `BOOKING_READ` scope is
         required.
@@ -49,6 +57,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2026-02-25'
             default: '2026-02-25'
         - name: bookingUid
           required: true
@@ -70,17 +79,21 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetBookingRecordingsOutput'
+        '429':
+          description: >-
+            Rate limit exceeded. Please try again. The `Retry-After` response
+            header carries the number of seconds to wait before retrying.
 components:
   schemas:
     GetBookingRecordingsOutput:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:
@@ -115,6 +128,10 @@ components:
         downloadLink:
           type: string
           nullable: true
+          format: uri
+          description: >-
+            Temporary recording download URL. Valid for 1 hour; request fresh
+            recordings after expiration.
           example: https://cal-video-recordings.s3.us-east-2.amazonaws.com/meetco/123s
         error:
           type: string

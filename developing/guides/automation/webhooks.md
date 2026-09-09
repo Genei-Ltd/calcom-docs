@@ -48,6 +48,8 @@ To create a new webhook subscription, visit `/settings/developer/webhooks` and p
     * `Instant Meeting Created`
     * `Instant Meeting Accepted`
     * `Booking No-show Updated`
+    * `Booking Location Updated`
+    * `Booking Reassigned`
     * `After Hosts Didn't Join Cal Video`
     * `After Guests Didn't Join Cal Video`
     * `Wrong Assignment Report`
@@ -858,6 +860,168 @@ Select a version and trigger event to view the example payload:
             ],
             "bookingUid": "unique-booking-identifier",
             "bookingId": 100
+          }
+        }
+        ```
+      </Accordion>
+
+      <Accordion title="BOOKING_LOCATION_UPDATED">
+        Fires when the location of an existing booking is changed. The payload mirrors the standard booking payload, with one addition: `previousLocation` holds the location before the change and existing `location` holds the new location.
+
+        ```json theme={null}
+        {
+          "triggerEvent": "BOOKING_LOCATION_UPDATED",
+          "createdAt": "2024-01-01T10:00:00.000Z",
+          "payload": {
+            "bookerUrl": "https://app.example.com",
+            "title": "Strategy Session between Organizer and Guest",
+            "startTime": "2024-01-01T10:00:00Z",
+            "endTime": "2024-01-01T10:15:00Z",
+            "additionalNotes": "",
+            "type": "standard-event-type",
+            "description": "",
+            "eventTypeId": 123,
+            "hideCalendarNotes": false,
+            "hideCalendarEventDetails": false,
+            "hideOrganizerEmail": false,
+            "schedulingType": null,
+            "seatsPerTimeSlot": null,
+            "seatsShowAttendees": true,
+            "seatsShowAvailabilityCount": true,
+            "customReplyToEmail": null,
+            "organizer": {
+              "id": 1,
+              "name": "Organizer Name",
+              "email": "organizer@example.com",
+              "username": "organizer-handle",
+              "usernameInOrg": "organizer",
+              "timeZone": "UTC",
+              "language": {
+                "locale": "en"
+              },
+              "timeFormat": "h:mma",
+              "utcOffset": 0
+            },
+            "attendees": [
+              {
+                "email": "guest@example.com",
+                "name": "Guest User",
+                "firstName": "Guest",
+                "lastName": "User",
+                "timeZone": "UTC",
+                "language": {
+                  "locale": "en"
+                },
+                "utcOffset": 0
+              }
+            ],
+            "customInputs": {},
+            "responses": {
+              "name": {
+                "label": "your_name",
+                "value": "Guest User",
+                "isHidden": false
+              },
+              "email": {
+                "label": "email_address",
+                "value": "guest@example.com",
+                "isHidden": false
+              },
+              "location": {
+                "label": "location",
+                "value": {
+                  "optionValue": "",
+                  "value": "https://app.example.com/video/unique-booking-id"
+                },
+                "isHidden": false
+              }
+            },
+            "userFieldsResponses": {},
+            "location": "https://app.example.com/video/unique-booking-id",
+            "previousLocation": "https://meet.google.com/abc-defg-hij",
+            "destinationCalendar": null,
+            "iCalUID": "unique-identifier-string@example.com",
+            "iCalSequence": 1,
+            "requiresConfirmation": false,
+            "organizationId": 1,
+            "uid": "unique-booking-id",
+            "eventTitle": "Strategy Session",
+            "eventDescription": "",
+            "price": 0,
+            "currency": "usd",
+            "length": 15,
+            "bookingId": 100,
+            "metadata": {
+              "videoCallUrl": "https://app.example.com/video/unique-booking-id"
+            },
+            "status": "ACCEPTED"
+          }
+        }
+        ```
+      </Accordion>
+
+      <Accordion title="BOOKING_REASSIGNED">
+        Fires when a round-robin booking's host is reassigned (automatic or manual). The payload mirrors the standard booking payload, with two additions: `addedHostUserIds` lists the user IDs of the host(s) newly assigned to the booking and `removedHostUserIds` lists the user IDs of the host(s) removed. `organizer` reflects the new host. Both are IDs only — resolve them via the Cal.com API if you need host names or emails.
+
+        ```json theme={null}
+        {
+          "triggerEvent": "BOOKING_REASSIGNED",
+          "createdAt": "2024-01-01T10:00:00.000Z",
+          "payload": {
+            "bookerUrl": "https://app.example.com",
+            "title": "Strategy Session between Organizer and Guest",
+            "startTime": "2024-01-01T10:00:00Z",
+            "endTime": "2024-01-01T10:15:00Z",
+            "type": "standard-event-type",
+            "description": "",
+            "eventTypeId": 123,
+            "organizer": {
+              "id": 2,
+              "name": "New Host",
+              "email": "new-host@example.com",
+              "username": "new-host",
+              "timeZone": "UTC",
+              "language": {
+                "locale": "en"
+              },
+              "timeFormat": "h:mma",
+              "utcOffset": 0
+            },
+            "attendees": [
+              {
+                "email": "guest@example.com",
+                "name": "Guest User",
+                "firstName": "Guest",
+                "lastName": "User",
+                "timeZone": "UTC",
+                "language": {
+                  "locale": "en"
+                },
+                "utcOffset": 0
+              }
+            ],
+            "responses": {
+              "name": {
+                "label": "your_name",
+                "value": "Guest User",
+                "isHidden": false
+              },
+              "email": {
+                "label": "email_address",
+                "value": "guest@example.com",
+                "isHidden": false
+              }
+            },
+            "location": "https://app.example.com/video/unique-booking-id",
+            "destinationCalendar": null,
+            "iCalUID": "unique-identifier-string@example.com",
+            "iCalSequence": 1,
+            "uid": "unique-booking-id",
+            "eventTitle": "Strategy Session",
+            "bookingId": 100,
+            "status": "ACCEPTED",
+            "addedHostUserIds": [2],
+            "removedHostUserIds": [1]
           }
         }
         ```
@@ -1675,6 +1839,196 @@ Select a version and trigger event to view the example payload:
           }
         }
         ```
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+
+  <Tab title="2026-07-27" id="2026-07-27">
+    <Note>
+      Version `2026-07-27` extends `2021-10-20` — every payload shape and field above is
+      unchanged. The only difference: `BOOKING_CREATED`, `BOOKING_RESCHEDULED`,
+      `BOOKING_REASSIGNED`, `BOOKING_CANCELLED`, and `BOOKING_PAID` (when the payment accepted the booking) payloads
+      additionally carry `attendeeIcsContent` and `organizerIcsContent` — pre-generated `.ics`
+      calendar invite strings for a subscriber that sends its own confirmation/cancellation
+      emails in place of Cal.com's. Use `attendeeIcsContent` for emails addressed to the attendees
+      and `organizerIcsContent` for emails addressed to the organizer. Either field may be absent
+      from a payload depending on the booking's calendar and privacy settings — treat both as
+      optional.
+    </Note>
+
+    <AccordionGroup>
+      <Accordion title="BOOKING_CREATED">
+        ```json theme={null}
+        {
+          "triggerEvent": "BOOKING_CREATED",
+          "createdAt": "2024-01-01T00:00:00.000Z",
+          "payload": {
+            "bookerUrl": "https://app.example.com",
+            "title": "Strategy Session between Organizer and Guest",
+            "startTime": "2024-01-01T10:00:00Z",
+            "endTime": "2024-01-01T10:15:00Z",
+            "organizer": {
+              "id": 1,
+              "name": "Organizer Name",
+              "email": "organizer@example.com",
+              "timeZone": "UTC"
+            },
+            "attendees": [
+              {
+                "email": "guest@example.com",
+                "name": "Guest User",
+                "timeZone": "UTC"
+              }
+            ],
+            "uid": "unique-booking-id",
+            "iCalUID": "unique-identifier-string@example.com",
+            "iCalSequence": 0,
+            "status": "ACCEPTED",
+            "attendeeIcsContent": "BEGIN:VCALENDAR\nVERSION:2.0\nMETHOD:REQUEST\nBEGIN:VEVENT\nUID:unique-identifier-string@example.com\nSEQUENCE:0\nORGANIZER;CN=Organizer Name:mailto:organizer@example.com\nATTENDEE;CN=Guest User;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mailto:guest@example.com\nEND:VEVENT\nEND:VCALENDAR",
+            "organizerIcsContent": "BEGIN:VCALENDAR\nVERSION:2.0\nMETHOD:REQUEST\nBEGIN:VEVENT\nUID:unique-identifier-string@example.com\nSEQUENCE:0\nORGANIZER;CN=Organizer Name:mailto:organizer@example.com\nATTENDEE;CN=Organizer Name;ROLE=CHAIR;PARTSTAT=ACCEPTED;RSVP=FALSE:mailto:organizer@example.com\nEND:VEVENT\nEND:VCALENDAR"
+          }
+        }
+        ```
+
+        <Note>
+          Payload fields other than `attendeeIcsContent`/`organizerIcsContent` are truncated
+          above for brevity — see the `BOOKING_CREATED` example under the `2021-10-20` tab for
+          the full field list, all of which are unchanged here.
+        </Note>
+      </Accordion>
+
+      <Accordion title="BOOKING_RESCHEDULED">
+        ```json theme={null}
+        {
+          "triggerEvent": "BOOKING_RESCHEDULED",
+          "createdAt": "2024-01-01T10:00:00.000Z",
+          "payload": {
+            "title": "Strategy Session: Organizer & Guest",
+            "startTime": "2024-01-10T14:30:00Z",
+            "endTime": "2024-01-10T14:45:00Z",
+            "organizer": {
+              "id": 1,
+              "name": "Organizer Name",
+              "email": "organizer@example.com",
+              "timeZone": "UTC"
+            },
+            "attendees": [
+              {
+                "email": "guest@example.com",
+                "name": "Guest User",
+                "timeZone": "UTC"
+              }
+            ],
+            "uid": "new-booking-unique-id",
+            "iCalUID": "unique-identifier-string@example.com",
+            "iCalSequence": 1,
+            "rescheduleUid": "previous-booking-unique-id",
+            "rescheduleStartTime": "2024-01-05T14:30:00Z",
+            "rescheduleEndTime": "2024-01-05T14:45:00Z",
+            "status": "ACCEPTED",
+            "attendeeIcsContent": "BEGIN:VCALENDAR\nVERSION:2.0\nMETHOD:REQUEST\nBEGIN:VEVENT\nUID:unique-identifier-string@example.com\nSEQUENCE:1\nORGANIZER;CN=Organizer Name:mailto:organizer@example.com\nATTENDEE;CN=Guest User;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mailto:guest@example.com\nEND:VEVENT\nEND:VCALENDAR",
+            "organizerIcsContent": "BEGIN:VCALENDAR\nVERSION:2.0\nMETHOD:REQUEST\nBEGIN:VEVENT\nUID:unique-identifier-string@example.com\nSEQUENCE:1\nORGANIZER;CN=Organizer Name:mailto:organizer@example.com\nATTENDEE;CN=Organizer Name;ROLE=CHAIR;PARTSTAT=ACCEPTED;RSVP=FALSE:mailto:organizer@example.com\nEND:VEVENT\nEND:VCALENDAR"
+          }
+        }
+        ```
+
+        <Note>
+          Payload fields other than `attendeeIcsContent`/`organizerIcsContent` are truncated
+          above for brevity — see the `BOOKING_RESCHEDULED` example under the `2021-10-20` tab for
+          the full field list, all of which are unchanged here.
+        </Note>
+      </Accordion>
+
+      <Accordion title="BOOKING_CANCELLED">
+        ```json theme={null}
+        {
+          "triggerEvent": "BOOKING_CANCELLED",
+          "createdAt": "2024-01-01T15:00:00.000Z",
+          "payload": {
+            "title": "Strategy Session: Organizer & Guest",
+            "startTime": "2024-01-04T10:00:00+00:00",
+            "endTime": "2024-01-04T10:15:00+00:00",
+            "organizer": {
+              "id": 1,
+              "name": "Organizer Name",
+              "email": "organizer@example.com",
+              "timeZone": "UTC"
+            },
+            "attendees": [
+              {
+                "email": "guest@example.com",
+                "name": "Guest User",
+                "timeZone": "UTC"
+              }
+            ],
+            "uid": "unique-booking-identifier",
+            "bookingId": 200,
+            "cancellationReason": "I am no longer able to attend this session.",
+            "iCalUID": "unique-identifier@example.com",
+            "iCalSequence": 2,
+            "status": "CANCELLED",
+            "attendeeIcsContent": "BEGIN:VCALENDAR\nVERSION:2.0\nMETHOD:CANCEL\nBEGIN:VEVENT\nUID:unique-identifier@example.com\nSEQUENCE:2\nSTATUS:CANCELLED\nORGANIZER;CN=Organizer Name:mailto:organizer@example.com\nATTENDEE;CN=Guest User;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mailto:guest@example.com\nEND:VEVENT\nEND:VCALENDAR",
+            "organizerIcsContent": "BEGIN:VCALENDAR\nVERSION:2.0\nMETHOD:CANCEL\nBEGIN:VEVENT\nUID:unique-identifier@example.com\nSEQUENCE:2\nSTATUS:CANCELLED\nORGANIZER;CN=Organizer Name:mailto:organizer@example.com\nATTENDEE;CN=Organizer Name;ROLE=CHAIR;PARTSTAT=ACCEPTED;RSVP=FALSE:mailto:organizer@example.com\nEND:VEVENT\nEND:VCALENDAR"
+          }
+        }
+        ```
+
+        <Note>
+          Payload fields other than `attendeeIcsContent`/`organizerIcsContent` are truncated
+          above for brevity — see the `BOOKING_CANCELLED` example under the `2021-10-20` tab for
+          the full field list, all of which are unchanged here.
+        </Note>
+      </Accordion>
+
+      <Accordion title="BOOKING_PAID">
+        ```json theme={null}
+        {
+          "triggerEvent": "BOOKING_PAID",
+          "createdAt": "2024-01-01T12:00:00.000Z",
+          "payload": {
+            "type": "Consultation Session",
+            "title": "Consultation Session: Organizer & Guest",
+            "startTime": "2024-01-02T10:00:00.000Z",
+            "endTime": "2024-01-02T10:30:00.000Z",
+            "organizer": {
+              "id": 1,
+              "name": "Organizer Name",
+              "email": "organizer@example.com",
+              "timeZone": "UTC"
+            },
+            "attendees": [
+              {
+                "name": "Guest User",
+                "email": "guest@example.com",
+                "timeZone": "UTC"
+              }
+            ],
+            "iCalUID": "unique-ical-uid@example.com",
+            "iCalSequence": 0,
+            "uid": "unique-booking-uid",
+            "bookingId": 100,
+            "paymentId": 500,
+            "metadata": {
+              "identifier": "platform.name",
+              "bookingId": 100,
+              "eventTypeId": 50,
+              "bookerEmail": "guest@example.com",
+              "eventTitle": "Consultation Session",
+              "externalId": "pi_0000000000000000"
+            },
+            "status": "ACCEPTED",
+            "attendeeIcsContent": "BEGIN:VCALENDAR\nVERSION:2.0\nMETHOD:REQUEST\nBEGIN:VEVENT\nUID:unique-ical-uid@example.com\nSEQUENCE:0\nORGANIZER;CN=Organizer Name:mailto:organizer@example.com\nATTENDEE;CN=Guest User;ROLE=REQ-PARTICIPANT;PARTSTAT=ACCEPTED;RSVP=TRUE:mailto:guest@example.com\nEND:VEVENT\nEND:VCALENDAR",
+            "organizerIcsContent": "BEGIN:VCALENDAR\nVERSION:2.0\nMETHOD:REQUEST\nBEGIN:VEVENT\nUID:unique-ical-uid@example.com\nSEQUENCE:0\nORGANIZER;CN=Organizer Name:mailto:organizer@example.com\nATTENDEE;CN=Organizer Name;ROLE=CHAIR;PARTSTAT=ACCEPTED;RSVP=FALSE:mailto:organizer@example.com\nEND:VEVENT\nEND:VCALENDAR"
+          }
+        }
+        ```
+
+        <Note>
+          Payload fields other than `attendeeIcsContent`/`organizerIcsContent` are truncated
+          above for brevity — see the `BOOKING_PAID` example under the `2021-10-20` tab for the
+          full field list, all of which are unchanged here. These fields are present only when
+          the payment resulted in an `ACCEPTED` booking; rejected or failed payments carry no ICS.
+        </Note>
       </Accordion>
     </AccordionGroup>
   </Tab>

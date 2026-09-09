@@ -4,7 +4,7 @@
 
 # Get organization team routing form responses
 
-> Required membership role: `team admin`. PBAC permission: `routingForm.read`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_ROUTING_FORM_READ` scope is required.
+> Required membership role: `team admin`. PBAC permission: `routingForm.readResponsePii`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_ROUTING_FORM_READ` scope is required.
 
 
 
@@ -28,7 +28,7 @@ paths:
       summary: Get organization team routing form responses
       description: >-
         Required membership role: `team admin`. PBAC permission:
-        `routingForm.read`. Learn more about API access control at
+        `routingForm.readResponsePii`. Learn more about API access control at
         https://cal.com/docs/api-reference/v2/access-control. If accessed using
         an OAuth access token, the `TEAM_ROUTING_FORM_READ` scope is required.
       operationId: >-
@@ -74,19 +74,19 @@ paths:
           in: query
           description: Sort by creation time
           schema:
+            type: string
             enum:
               - asc
               - desc
-            type: string
         - name: sortUpdatedAt
           required: false
           in: query
           description: Sort by update time
           schema:
+            type: string
             enum:
               - asc
               - desc
-            type: string
         - name: afterCreatedAt
           required: false
           in: query
@@ -134,11 +134,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:
@@ -159,6 +159,7 @@ components:
           type: string
         response:
           type: object
+          additionalProperties: true
           example:
             f00b26df-f54b-4985-8d98-17c5482c6a24:
               label: participant

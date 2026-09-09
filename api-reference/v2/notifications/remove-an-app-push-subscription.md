@@ -54,7 +54,6 @@ components:
       properties:
         token:
           type: string
-          pattern: EXPO_PUSH_TOKEN_REGEX
           description: Expo Push Token to remove
           example: ExponentPushToken[xxxxxxxxxxxxxxxxxxxxxx]
       required:
@@ -63,11 +62,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         message:
           type: string
           example: App push subscription removed successfully

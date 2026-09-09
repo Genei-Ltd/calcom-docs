@@ -4,7 +4,7 @@
 
 # Connect your conferencing application to a team
 
-> Required membership role: `team admin`. PBAC permission: `team.update`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_APPS_WRITE` scope is required.
+> Only `google-meet` can be connected this way, and only for a team that already has a valid Google Calendar connection. Zoom and Microsoft Teams require an OAuth handshake - start it with `GET /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/oauth/auth-url` instead. Walkthrough: https://cal.com/docs/api-reference/v2/conferencing-apps. Required membership role: `team admin`. PBAC permission: `team.update`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_APPS_WRITE` scope is required.
 
 
 
@@ -27,8 +27,14 @@ paths:
         - Orgs / Teams / Conferencing
       summary: Connect your conferencing application to a team
       description: >-
-        Required membership role: `team admin`. PBAC permission: `team.update`.
-        Learn more about API access control at
+        Only `google-meet` can be connected this way, and only for a team that
+        already has a valid Google Calendar connection. Zoom and Microsoft Teams
+        require an OAuth handshake - start it with `GET
+        /v2/organizations/{orgId}/teams/{teamId}/conferencing/{app}/oauth/auth-url`
+        instead. Walkthrough:
+        https://cal.com/docs/api-reference/v2/conferencing-apps. Required
+        membership role: `team admin`. PBAC permission: `team.update`. Learn
+        more about API access control at
         https://cal.com/docs/api-reference/v2/access-control. If accessed using
         an OAuth access token, the `TEAM_APPS_WRITE` scope is required.
       operationId: OrganizationsConferencingController_connectTeamApp
@@ -64,10 +70,10 @@ components:
       type: object
       properties:
         status:
-          type: string
           enum:
             - success
             - error
+          type: string
         data:
           $ref: '#/components/schemas/ConferencingAppsOutputDto'
       required:

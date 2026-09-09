@@ -70,6 +70,7 @@ paths:
             Filter by assigned attribute option ids. ids must be separated by a
             comma.
           schema:
+            minItems: 1
             example: >-
               ?assignedOptionIds=aaaaaaaa-bbbb-cccc-dddd-eeeeee1eee,aaaaaaaa-bbbb-cccc-dddd-eeeeee2eee
             type: array
@@ -80,6 +81,7 @@ paths:
           in: query
           description: Filter by teamIds. Team ids must be separated by a comma.
           schema:
+            minItems: 1
             example: '?teamIds=100,200'
             type: array
             items:
@@ -97,11 +99,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:

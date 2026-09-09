@@ -75,13 +75,19 @@ paths:
               enum:
                 - role.create
                 - role.read
+                - role.readTeamRoles
                 - role.update
                 - role.delete
                 - eventType.create
                 - eventType.read
+                - eventType.readTeamEventTypes
                 - eventType.update
                 - eventType.delete
                 - team.read
+                - team.readTeamSettings
+                - team.readConferencing
+                - team.readVerifiedResources
+                - team.readMemberships
                 - team.update
                 - team.delete
                 - team.invite
@@ -95,14 +101,17 @@ paths:
                 - booking.readRecordings
                 - booking.update
                 - booking.updateTeamBookings
+                - booking.reassignTeamPastBookings
                 - booking.readTeamAuditLogs
                 - insights.read
                 - workflow.create
                 - workflow.read
+                - workflow.readTeamWorkflows
                 - workflow.update
                 - workflow.delete
                 - routingForm.create
                 - routingForm.read
+                - routingForm.readTeamRoutingForms
                 - routingForm.update
                 - routingForm.delete
                 - routingForm.readTeamAuditLogs
@@ -111,8 +120,12 @@ paths:
                 - webhook.read
                 - webhook.update
                 - webhook.delete
+                - availability.readTeamAvailability
                 - featureOptIn.read
                 - featureOptIn.update
+                - tag.create
+                - tag.update
+                - tag.delete
       responses:
         '204':
           description: ''

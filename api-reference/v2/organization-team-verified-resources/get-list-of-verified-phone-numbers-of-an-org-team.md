@@ -4,7 +4,7 @@
 
 # Get list of verified phone numbers of an org team
 
-> Required membership role: `team admin`. PBAC permission: `team.read`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_VERIFIED_RESOURCES_READ` scope is required.
+> Required membership role: `team admin`. PBAC permission: `team.readVerifiedResources`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_VERIFIED_RESOURCES_READ` scope is required.
 
 
 
@@ -27,8 +27,8 @@ paths:
         - Organization Team Verified Resources
       summary: Get list of verified phone numbers of an org team
       description: >-
-        Required membership role: `team admin`. PBAC permission: `team.read`.
-        Learn more about API access control at
+        Required membership role: `team admin`. PBAC permission:
+        `team.readVerifiedResources`. Learn more about API access control at
         https://cal.com/docs/api-reference/v2/access-control. If accessed using
         an OAuth access token, the `TEAM_VERIFIED_RESOURCES_READ` scope is
         required.
@@ -84,11 +84,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:

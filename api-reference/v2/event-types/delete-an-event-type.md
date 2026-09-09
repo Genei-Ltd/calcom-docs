@@ -36,17 +36,18 @@ paths:
 
         If accessed using an OAuth access token, the `EVENT_TYPE_WRITE` scope is
         required.
-      operationId: EventTypesController_2024_06_14_deleteEventType
+      operationId: EventTypesController_2026_06_12_deleteEventType
       parameters:
         - name: cal-api-version
           in: header
           description: >-
-            Must be set to 2024-06-14. If not set to this value, the endpoint
+            Must be set to 2026-06-12. If not set to this value, the endpoint
             will default to an older version.
           required: true
           schema:
             type: string
-            default: '2024-06-14'
+            example: '2026-06-12'
+            default: '2026-06-12'
         - name: eventTypeId
           required: true
           in: path
@@ -73,11 +74,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/DeleteData_2024_06_14'
       required:

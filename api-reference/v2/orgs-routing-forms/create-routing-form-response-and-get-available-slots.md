@@ -108,10 +108,10 @@ paths:
             times.
           schema:
             example: range
+            type: string
             enum:
               - range
               - time
-            type: string
         - name: bookingUidToReschedule
           required: false
           in: query
@@ -122,6 +122,16 @@ paths:
           schema:
             type: string
             example: abc123def456
+        - name: rescheduleWithSameHost
+          required: false
+          in: query
+          description: >-
+            Only for round robin event types that allow the person rescheduling
+            to choose the host. True returns slots of the original host, false
+            returns slots of any available host. Ignored for other event types.
+          schema:
+            type: boolean
+            example: true
         - name: queueResponse
           required: false
           in: query
@@ -142,11 +152,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/CreateRoutingFormResponseOutputData'
       required:
@@ -171,6 +181,10 @@ components:
                 - 102
               teamMemberEmail: john.doe@example.com
               skipContactOwner: true
+              crmRecordOwnerFallbackTeamMemberIds:
+                - 103
+                - 104
+              crmRecordOwnerFallbackMode: attributeRules
           allOf:
             - $ref: '#/components/schemas/Routing'
         routingCustomMessage:
@@ -186,9 +200,12 @@ components:
             cal.com event type URL.
           example: https://example.com/
         slots:
+          additionalProperties: true
           oneOf:
             - $ref: '#/components/schemas/SlotsOutput_2024_09_04'
+              title: Time Slots
             - $ref: '#/components/schemas/RangeSlotsOutput_2024_09_04'
+              title: Slot Ranges
     Routing:
       type: object
       properties:
@@ -228,6 +245,23 @@ components:
           type: string
           description: The CRM owner record type for contact assignment.
           example: Account
+        crmRecordOwnerFallbackTeamMemberIds:
+          description: >-
+            Eligible CRM owner fallback team member IDs to pass to the booking
+            API.
+          example:
+            - 103
+            - 104
+          type: array
+          items:
+            type: number
+        crmRecordOwnerFallbackMode:
+          enum:
+            - relationship
+            - attributeRules
+          type: string
+          description: The CRM owner fallback strategy used for this routing result.
+          example: relationship
       required:
         - teamMemberIds
     SlotsOutput_2024_09_04:

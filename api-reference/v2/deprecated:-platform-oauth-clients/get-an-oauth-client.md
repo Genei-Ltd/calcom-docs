@@ -57,11 +57,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/PlatformOAuthClientDto'
       required:
@@ -81,7 +81,6 @@ components:
           example: secretValue
         permissions:
           type: array
-          description: Array of permission keys like ["BOOKING_READ", "BOOKING_WRITE"]
           items:
             type: string
             enum:
@@ -95,6 +94,7 @@ components:
               - APPS_WRITE
               - PROFILE_READ
               - PROFILE_WRITE
+          description: Array of permission keys like ["BOOKING_READ", "BOOKING_WRITE"]
           example:
             - BOOKING_READ
             - BOOKING_WRITE
@@ -135,12 +135,15 @@ components:
             Default to true.
         bookingRedirectUri:
           type: string
+          format: uri
           example: https://example.com/booking-redirect
         bookingCancelRedirectUri:
           type: string
+          format: uri
           example: https://example.com/booking-cancel
         bookingRescheduleRedirectUri:
           type: string
+          format: uri
           example: https://example.com/booking-reschedule
       required:
         - id

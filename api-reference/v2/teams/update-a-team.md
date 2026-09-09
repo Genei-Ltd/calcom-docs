@@ -95,6 +95,7 @@ components:
           type: boolean
         metadata:
           type: object
+          additionalProperties: true
           description: |-
             You can store any additional data you want here.
             Metadata must have at most 50 keys, each key up to 40 characters.
@@ -132,11 +133,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/TeamOutputDto'
       required:
@@ -156,12 +157,16 @@ components:
           type: string
         logoUrl:
           type: string
+          format: uri
         calVideoLogo:
           type: string
+          format: uri
         appLogo:
           type: string
+          format: uri
         appIconLogo:
           type: string
+          format: uri
         bio:
           type: string
         hideBranding:
@@ -175,6 +180,7 @@ components:
           default: false
         metadata:
           type: object
+          additionalProperties: true
           example:
             key: value
         theme:
@@ -185,6 +191,7 @@ components:
           type: string
         bannerUrl:
           type: string
+          format: uri
         timeFormat:
           type: number
         timeZone:

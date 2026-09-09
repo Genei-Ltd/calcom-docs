@@ -4,7 +4,7 @@
 
 # Get OAuth conferencing app's auth URL for a team
 
-> Required membership role: `team admin`. PBAC permission: `team.update`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_APPS_WRITE` scope is required.
+> Returns the URL to send a team admin to so they can authorize Zoom or Microsoft Teams for the team. Redirect their browser to it - the provider then returns them to a callback already registered by Cal.com, which stores the credential against the team rather than against the admin who authorized it. `returnTo` and `onErrorReturnTo` must each be a relative path or an absolute http(s) URL. The returned URL expires 10 minutes after this call, so redirect immediately rather than caching it. Walkthrough: https://cal.com/docs/api-reference/v2/conferencing-apps. Required membership role: `team admin`. PBAC permission: `team.update`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_APPS_WRITE` scope is required.
 
 
 
@@ -27,6 +27,14 @@ paths:
         - Orgs / Teams / Conferencing
       summary: Get OAuth conferencing app's auth URL for a team
       description: >-
+        Returns the URL to send a team admin to so they can authorize Zoom or
+        Microsoft Teams for the team. Redirect their browser to it - the
+        provider then returns them to a callback already registered by Cal.com,
+        which stores the credential against the team rather than against the
+        admin who authorized it. `returnTo` and `onErrorReturnTo` must each be a
+        relative path or an absolute http(s) URL. The returned URL expires 10
+        minutes after this call, so redirect immediately rather than caching it.
+        Walkthrough: https://cal.com/docs/api-reference/v2/conferencing-apps.
         Required membership role: `team admin`. PBAC permission: `team.update`.
         Learn more about API access control at
         https://cal.com/docs/api-reference/v2/access-control. If accessed using
@@ -80,11 +88,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
       required:
         - status
 

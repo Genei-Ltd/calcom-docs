@@ -6,7 +6,7 @@
 
 > Required membership role: `org admin`. PBAC permission: `organization.invite`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `ORG_MEMBERSHIP_WRITE` scope is required.
 
-This endpoint creates a brand-new Cal.com user account and attaches them to the organization. If the email already belongs to an existing Cal.com user, the request fails with `400 user_already_invited_or_member`. A common case is re-adding someone who was previously removed from the organization via the dashboard: the membership is gone, but the underlying Cal.com user account still exists.
+This endpoint creates a brand-new Cal.com user account and attaches them to the organization. If the email already belongs to an existing Cal.com user, the request fails with `409 Conflict`. When the user is already a member of this organization the message is `A user already exists with that email and is already a member of this organization`. When the user exists but is not a member, the message is `A user already exists with this email. Use POST /v2/organizations/{orgId}/memberships to add them to this organization.`. A common case is re-adding someone who was previously removed from the organization via the dashboard: the membership is gone, but the underlying Cal.com user account still exists.
 
 To attach an existing Cal.com user to the organization, use `POST /v2/organizations/{orgId}/memberships` with the `email` field instead.
 
@@ -39,10 +39,15 @@ paths:
 
         This endpoint creates a brand-new Cal.com user account and attaches them
         to the organization. If the email already belongs to an existing Cal.com
-        user, the request fails with `400 user_already_invited_or_member`. A
-        common case is re-adding someone who was previously removed from the
-        organization via the dashboard: the membership is gone, but the
-        underlying Cal.com user account still exists.
+        user, the request fails with `409 Conflict`. When the user is already a
+        member of this organization the message is `A user already exists with
+        that email and is already a member of this organization`. When the user
+        exists but is not a member, the message is `A user already exists with
+        this email. Use POST /v2/organizations/{orgId}/memberships to add them
+        to this organization.`. A common case is re-adding someone who was
+        previously removed from the organization via the dashboard: the
+        membership is gone, but the underlying Cal.com user account still
+        exists.
 
 
         To attach an existing Cal.com user to the organization, use `POST
@@ -94,6 +99,7 @@ components:
       properties:
         email:
           type: string
+          format: email
           description: User email address
           example: user@example.com
         username:
@@ -112,6 +118,7 @@ components:
           example: Monday
         brandColor:
           type: string
+          pattern: ^#?([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$
           description: Brand color in HEX format
           example: '#FFFFFF'
         bio:
@@ -120,6 +127,7 @@ components:
           example: I am a bio
         metadata:
           type: object
+          additionalProperties: true
           description: >-
             You can store any additional data you want here. Metadata must have
             at most 50 keys, each key up to 40 characters, and values up to 500
@@ -128,6 +136,7 @@ components:
             key: value
         darkBrandColor:
           type: string
+          pattern: ^#?([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$
           description: Dark brand color in HEX format
           example: '#000000'
         hideBranding:
@@ -168,12 +177,12 @@ components:
           description: Avatar URL
           example: https://example.com/avatar.jpg
         organizationRole:
-          type: string
           default: MEMBER
           enum:
             - MEMBER
             - ADMIN
             - OWNER
+          type: string
         autoAccept:
           type: boolean
           default: true
@@ -193,11 +202,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/GetOrgUsersWithProfileOutput'
       required:
@@ -309,6 +318,7 @@ components:
           example: 1
         metadata:
           type: object
+          additionalProperties: true
           example:
             key: value
         profile:

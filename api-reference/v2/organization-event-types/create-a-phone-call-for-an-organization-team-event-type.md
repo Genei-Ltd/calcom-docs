@@ -2,9 +2,11 @@
 > Fetch the complete documentation index at: https://cal.com/docs/llms.txt
 > Use this file to discover all available pages before exploring further.
 
-# Create a phone call
+# Create a phone call for an organization team event type
 
-> Required membership role: `team admin`. PBAC permission: `eventType.update`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_EVENT_TYPE_WRITE` scope is required.
+> <Note>Please make sure to pass in the cal-api-version header value as mentioned in the Headers section. Not passing the correct value will default to an older version of this endpoint.</Note>
+
+Required membership role: `team admin`. PBAC permission: `eventType.update`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_EVENT_TYPE_WRITE` scope is required.
 
 
 
@@ -24,23 +26,30 @@ paths:
   /v2/organizations/{orgId}/teams/{teamId}/event-types/{eventTypeId}/create-phone-call:
     post:
       tags:
-        - Orgs / Teams / Event Types
-      summary: Create a phone call
+        - Organization Event Types
+      summary: Create a phone call for an organization team event type
       description: >-
+        <Note>Please make sure to pass in the cal-api-version header value as
+        mentioned in the Headers section. Not passing the correct value will
+        default to an older version of this endpoint.</Note>
+
+
         Required membership role: `team admin`. PBAC permission:
         `eventType.update`. Learn more about API access control at
         https://cal.com/docs/api-reference/v2/access-control. If accessed using
         an OAuth access token, the `TEAM_EVENT_TYPE_WRITE` scope is required.
-      operationId: OrganizationsEventTypesController_createPhoneCall
+      operationId: OrganizationsEventTypesController_2026_06_12_createPhoneCall
       parameters:
-        - name: Authorization
+        - name: cal-api-version
           in: header
           description: >-
-            For non-platform customers - value must be `Bearer <token>` where
-            `<token>` is api key prefixed with cal_
-          required: false
+            Must be set to 2026-06-12. If not set to this value, the endpoint
+            will default to an older version.
+          required: true
           schema:
             type: string
+            example: '2026-06-12'
+            default: '2026-06-12'
         - name: x-cal-secret-key
           in: header
           description: For platform customers - OAuth client secret key
@@ -68,6 +77,14 @@ paths:
           in: path
           schema:
             type: number
+        - name: Authorization
+          in: header
+          description: >-
+            value must be `Bearer <token>` where `<token>` is api key prefixed
+            with cal_, managed user access token, or OAuth access token
+          required: true
+          schema:
+            type: string
       requestBody:
         required: true
         content:
@@ -88,11 +105,11 @@ components:
       properties:
         yourPhoneNumber:
           type: string
-          pattern: /^\+[1-9]\d{1,14}$/
+          pattern: ^\+[1-9]\d{1,14}$
           description: Your phone number
         numberToCall:
           type: string
-          pattern: /^\+[1-9]\d{1,14}$/
+          pattern: ^\+[1-9]\d{1,14}$
           description: Number to call
         calApiKey:
           type: string
@@ -136,11 +153,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/Data'
       required:

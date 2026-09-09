@@ -65,17 +65,15 @@ components:
         name:
           type: string
         timeFormat:
-          type: number
-          example: 12
           enum:
             - 12
             - 24
+          type: number
+          example: 12
           description: Must be 12 or 24
         defaultScheduleId:
           type: number
         weekStart:
-          type: string
-          example: Monday
           enum:
             - Monday
             - Tuesday
@@ -84,6 +82,8 @@ components:
             - Friday
             - Saturday
             - Sunday
+          type: string
+          example: Monday
         timeZone:
           type: string
         locale:
@@ -135,6 +135,7 @@ components:
           example: en
         avatarUrl:
           type: string
+          format: uri
           example: https://cal.com/api/avatar/2b735186-b01b-46d3-87da-019b8f61776b.png
           description: URL of the user's avatar image
         bio:
@@ -143,6 +144,7 @@ components:
           example: I am a bio
         metadata:
           type: object
+          additionalProperties: true
           description: >-
             You can store any additional data you want here. Metadata must have
             at most 50 keys, each key up to 40 characters, and values up to 500
@@ -153,11 +155,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/MeOutput'
       required:
@@ -172,6 +174,7 @@ components:
           type: string
         email:
           type: string
+          format: email
         name:
           type: string
           nullable: true

@@ -4,7 +4,7 @@
 
 # Get organization team routing form workflows
 
-> Required membership role: `team admin`. PBAC permission: `workflow.read`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_WORKFLOW_READ` scope is required.
+> Required membership role: `team admin`. PBAC permission: `workflow.readTeamWorkflows`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_WORKFLOW_READ` scope is required.
 
 
 
@@ -28,7 +28,7 @@ paths:
       summary: Get organization team routing form workflows
       description: >-
         Required membership role: `team admin`. PBAC permission:
-        `workflow.read`. Learn more about API access control at
+        `workflow.readTeamWorkflows`. Learn more about API access control at
         https://cal.com/docs/api-reference/v2/access-control. If accessed using
         an OAuth access token, the `TEAM_WORKFLOW_READ` scope is required.
       operationId: OrganizationTeamWorkflowsController_getRoutingFormWorkflows
@@ -95,12 +95,12 @@ components:
       type: object
       properties:
         status:
-          type: string
-          description: Indicates the status of the response
-          example: success
           enum:
             - success
             - error
+          type: string
+          description: Indicates the status of the response
+          example: success
         data:
           description: List of workflows
           type: array
@@ -154,10 +154,17 @@ components:
           allOf:
             - $ref: '#/components/schemas/RoutingFormWorkflowTriggerOutputDto'
         steps:
-          description: Steps comprising the workflow
           type: array
+          description: >-
+            Steps comprising the workflow. A workflow with conditional paths
+            contains one paths step listing its branches; steps carrying a
+            pathId only run when that path's conditions match.
           items:
-            $ref: '#/components/schemas/RoutingFormWorkflowStepOutputDto'
+            oneOf:
+              - $ref: '#/components/schemas/RoutingFormWorkflowStepOutputDto'
+                title: Step
+              - $ref: '#/components/schemas/PathsWorkflowStepOutputDto'
+                title: Paths step
       required:
         - id
         - name
@@ -188,12 +195,12 @@ components:
       type: object
       properties:
         type:
-          type: string
-          description: Trigger type for the workflow
-          example: formSubmitted
           enum:
             - formSubmitted
             - formSubmittedNoEvent
+          type: string
+          description: Trigger type for the workflow
+          example: formSubmitted
         offset:
           description: >-
             Offset details (present for
@@ -237,9 +244,6 @@ components:
           example: true
           default: false
         template:
-          type: string
-          description: Template type used
-          example: reminder
           enum:
             - reminder
             - custom
@@ -247,11 +251,21 @@ components:
             - completed
             - rating
             - cancelled
+          type: string
+          description: Template type used
+          example: reminder
         includeCalendarEvent:
           type: boolean
           default: false
           description: Whether a calendar event (.ics) was included (for email actions)
           example: true
+        skipNoShowAttendees:
+          type: boolean
+          default: false
+          description: >-
+            Whether an after-event attendee rating email skips attendees
+            currently marked as no-show.
+          example: false
         sender:
           type: string
           description: Displayed sender name used for this step
@@ -269,11 +283,6 @@ components:
           default: false
         sourceLocale:
           nullable: true
-          type: string
-          description: >-
-            The source locale of the workflow step content used for
-            auto-translation (e.g. 'en').
-          example: en
           enum:
             - ar
             - ca
@@ -318,15 +327,28 @@ components:
             - uk
             - zh-TW
             - bn
-        action:
           type: string
-          description: Action to perform
-          example: email_host
+          description: >-
+            The source locale of the workflow step content used for
+            auto-translation (e.g. 'en').
+          example: en
+        pathId:
+          type: string
+          description: >-
+            Id of the conditional path this step belongs to; the step only runs
+            when that path's conditions match. Absent for unconditional steps.
+            Read-only — paths and step-to-path membership can only be changed in
+            the Cal.com app.
+          example: 3f4c11a2-9b7e-4d15-8f0a-2f7de41b6c01
+        action:
           enum:
             - email_attendee
             - email_address
             - sms_attendee
             - sms_number
+          type: string
+          description: Action to perform
+          example: email_host
       required:
         - id
         - stepNumber
@@ -335,6 +357,37 @@ components:
         - sender
         - message
         - action
+    PathsWorkflowStepOutputDto:
+      type: object
+      properties:
+        id:
+          type: number
+          description: Unique identifier of the step
+          example: 67244
+        stepNumber:
+          type: number
+          description: Step number in the workflow sequence
+          example: 1
+        action:
+          type: string
+          enum:
+            - paths
+          description: >-
+            The step that splits the workflow into conditional paths. Its paths
+            and their conditions are read-only through the API and can only be
+            edited in the Cal.com app; include this step by id when updating the
+            workflow's steps.
+          example: paths
+        paths:
+          description: The conditional paths this step splits into
+          type: array
+          items:
+            $ref: '#/components/schemas/WorkflowStepPathOutputDto'
+      required:
+        - id
+        - stepNumber
+        - action
+        - paths
     WorkflowTriggerOffsetOutputDto:
       type: object
       properties:
@@ -343,13 +396,13 @@ components:
           description: Time value for offset
           example: 24
         unit:
-          type: string
-          description: Unit for the offset time
-          example: hour
           enum:
             - hour
             - minute
             - day
+          type: string
+          description: Unit for the offset time
+          example: hour
       required:
         - value
         - unit
@@ -372,5 +425,19 @@ components:
           example: Reminder for {EVENT_NAME}.
       required:
         - subject
+    WorkflowStepPathOutputDto:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier of the path
+          example: 3f4c11a2-9b7e-4d15-8f0a-2f7de41b6c01
+        name:
+          type: string
+          description: Name of the path
+          example: Enterprise leads
+      required:
+        - id
+        - name
 
 ````

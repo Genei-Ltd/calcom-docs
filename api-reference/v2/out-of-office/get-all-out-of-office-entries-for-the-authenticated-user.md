@@ -64,20 +64,20 @@ paths:
           description: Sort results by their start time in ascending or descending order.
           schema:
             example: '?sortStart=asc OR ?sortStart=desc'
+            type: string
             enum:
               - asc
               - desc
-            type: string
         - name: sortEnd
           required: false
           in: query
           description: Sort results by their end time in ascending or descending order.
           schema:
             example: '?sortEnd=asc OR ?sortEnd=desc'
+            type: string
             enum:
               - asc
               - desc
-            type: string
       responses:
         '200':
           description: ''
@@ -91,11 +91,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:

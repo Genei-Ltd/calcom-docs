@@ -86,15 +86,6 @@ components:
           type: string
         triggers:
           type: array
-          example:
-            - BOOKING_CREATED
-            - BOOKING_RESCHEDULED
-            - BOOKING_CANCELLED
-            - BOOKING_CONFIRMED
-            - BOOKING_REJECTED
-            - BOOKING_COMPLETED
-            - BOOKING_NO_SHOW
-            - BOOKING_REOPENED
           items:
             type: string
             enum:
@@ -106,6 +97,8 @@ components:
               - BOOKING_CANCELLED
               - BOOKING_REJECTED
               - BOOKING_NO_SHOW_UPDATED
+              - BOOKING_LOCATION_UPDATED
+              - BOOKING_REASSIGNED
               - FORM_SUBMITTED
               - MEETING_ENDED
               - MEETING_STARTED
@@ -124,23 +117,54 @@ components:
               - DELEGATION_CREDENTIAL_ROTATION_REQUIRED
               - DELEGATION_CREDENTIAL_SECRET_ROTATED
               - CALENDAR_ENTRY_REJECTED
+          example:
+            - BOOKING_CREATED
+            - BOOKING_RESCHEDULED
+            - BOOKING_CANCELLED
+            - BOOKING_CONFIRMED
+            - BOOKING_REJECTED
+            - BOOKING_COMPLETED
+            - BOOKING_NO_SHOW
+            - BOOKING_REOPENED
         secret:
           type: string
         version:
-          type: string
           enum:
             - '2021-10-20'
-          description: The version of the webhook
+            - '2026-07-27'
+          type: string
+          description: >-
+            The payload format version of the webhook. Version 2026-07-27 adds
+            generated ICS calendar content (`attendeeIcsContent`,
+            `organizerIcsContent`) to BOOKING_CREATED, BOOKING_RESCHEDULED,
+            BOOKING_CANCELLED, and BOOKING_PAID (when the payment accepted the
+            booking) payloads.
           example: '2021-10-20'
+        time:
+          type: number
+          minimum: 1
+          description: >-
+            How long after the booking start time the no-show triggers are
+            evaluated. Required, together with timeUnit, when subscribing to
+            AFTER_HOSTS_CAL_VIDEO_NO_SHOW or AFTER_GUESTS_CAL_VIDEO_NO_SHOW
+          example: 5
+        timeUnit:
+          enum:
+            - DAY
+            - HOUR
+            - MINUTE
+          type: string
+          description: The unit of the no-show time value
+          example: MINUTE
     EventTypeWebhookOutputResponseDto:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/EventTypeWebhookOutputDto'
       required:
@@ -170,6 +194,8 @@ components:
               - BOOKING_CANCELLED
               - BOOKING_REJECTED
               - BOOKING_NO_SHOW_UPDATED
+              - BOOKING_LOCATION_UPDATED
+              - BOOKING_REASSIGNED
               - FORM_SUBMITTED
               - MEETING_ENDED
               - MEETING_STARTED
@@ -188,6 +214,32 @@ components:
               - DELEGATION_CREDENTIAL_ROTATION_REQUIRED
               - DELEGATION_CREDENTIAL_SECRET_ROTATED
               - CALENDAR_ENTRY_REJECTED
+        time:
+          type: number
+          description: >-
+            How long after the booking start time the no-show triggers are
+            evaluated
+          example: 5
+        timeUnit:
+          enum:
+            - DAY
+            - HOUR
+            - MINUTE
+          type: string
+          description: The unit of the no-show time value
+          example: MINUTE
+        version:
+          enum:
+            - '2021-10-20'
+            - '2026-07-27'
+          type: string
+          description: >-
+            The payload format version of the webhook. Version 2026-07-27 adds
+            generated ICS calendar content (`attendeeIcsContent`,
+            `organizerIcsContent`) to BOOKING_CREATED, BOOKING_RESCHEDULED,
+            BOOKING_CANCELLED, and BOOKING_PAID (when the payment accepted the
+            booking) payloads.
+          example: '2021-10-20'
         eventTypeId:
           type: number
         id:
@@ -201,6 +253,7 @@ components:
       required:
         - payloadTemplate
         - triggers
+        - version
         - eventTypeId
         - id
         - subscriberUrl

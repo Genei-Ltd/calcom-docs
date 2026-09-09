@@ -72,6 +72,7 @@ components:
       properties:
         email:
           type: string
+          format: email
           description: Email to verify.
           example: acme@example.com
       required:
@@ -80,11 +81,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
       required:
         - status
 

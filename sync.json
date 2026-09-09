@@ -1,0 +1,14 @@
+{
+  "base_url": "https://cal.com/docs/",
+  "extra_files": {
+    "robots.txt": "https://cal.com/robots.txt",
+    "skill.md": "https://cal.com/docs/skill.md",
+    "api-reference/v2/openapi.json": "https://cal.com/docs/api-reference/v2/openapi.json"
+  },
+  "asset_hosts": [
+    "app.cal.com",
+    "cal.com",
+    "i.cal.com",
+    "mintcdn.com"
+  ]
+}

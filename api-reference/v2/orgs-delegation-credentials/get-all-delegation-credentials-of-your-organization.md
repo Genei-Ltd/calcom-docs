@@ -4,7 +4,7 @@
 
 # Get all delegation credentials of your organization
 
-> Required membership role: `org admin`. PBAC permission: `organization.read`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control
+> Optionally filter by `domain` to look up the delegation credential configured for a specific domain. Required membership role: `org admin`. PBAC permission: `organization.readDelegationCredentials`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control
 
 
 
@@ -27,8 +27,10 @@ paths:
         - Orgs / Delegation Credentials
       summary: Get all delegation credentials of your organization
       description: >-
-        Required membership role: `org admin`. PBAC permission:
-        `organization.read`. Learn more about API access control at
+        Optionally filter by `domain` to look up the delegation credential
+        configured for a specific domain. Required membership role: `org admin`.
+        PBAC permission: `organization.readDelegationCredentials`. Learn more
+        about API access control at
         https://cal.com/docs/api-reference/v2/access-control
       operationId: OrganizationsDelegationCredentialController_getDelegationCredentials
       parameters:
@@ -80,6 +82,13 @@ paths:
             default: 0
             example: 0
             type: number
+        - name: domain
+          required: false
+          in: query
+          description: Filter by the domain the delegation credential is configured for
+          schema:
+            example: example.com
+            type: string
       responses:
         '200':
           description: ''
@@ -144,11 +153,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
           description: The status of the request, either `success` or `error`
         data:
           type: array
@@ -156,9 +165,12 @@ components:
             oneOf:
               - $ref: >-
                   #/components/schemas/GoogleDelegationCredentialWithClientIdOutput
+                title: Google Service Account
               - $ref: >-
                   #/components/schemas/MicrosoftDelegationCredentialWithClientIdOutput
+                title: Microsoft Service Account
               - $ref: '#/components/schemas/DelegationCredentialWithClientIdOutput'
+                title: Delegation Credential
           description: The list of delegation credentials belonging to the organization
       required:
         - status
@@ -255,6 +267,37 @@ components:
           description: >-
             Whether managed secret rotation is blocked after repeated failures
             and requires the reset-rotation endpoint before it will resume.
+        secret:
+          description: >-
+            State of the current active managed secret. `expiresAt` is null if
+            not yet known.
+          allOf:
+            - $ref: '#/components/schemas/SecretDto'
+        pendingSecret:
+          description: >-
+            State of a replacement secret minted and pending
+            validation/promotion. `createdAt` and `expiresAt` are null when
+            there is no pending secret in flight.
+          allOf:
+            - $ref: '#/components/schemas/PendingSecretDto'
+        secretRotationErrorCode:
+          nullable: true
+          enum:
+            - missing_permission
+            - tenant_lifetime_policy
+            - transient
+            - unknown
+            - pending_secret_mint_failed
+            - pending_secret_promotion_failed
+          type: string
+          description: >-
+            Why the most recent secret rotation attempt failed, or which stage
+            terminally failed, or null if rotation has not failed. This enum is
+            open — new values may be added over time, so treat any value you
+            don't recognize as `unknown`. See the Cal.com docs' 'Microsoft 365
+            (Azure) Secret Auto-Rotation' section for per-code remediation
+            guidance.
+          example: missing_permission
         serviceAccountClientId:
           type: string
           nullable: true
@@ -272,6 +315,9 @@ components:
         - updatedAt
         - optOutAutoSecretRotation
         - secretRotationBlocked
+        - secret
+        - pendingSecret
+        - secretRotationErrorCode
         - serviceAccountClientId
     DelegationCredentialWithClientIdOutput:
       type: object
@@ -340,5 +386,41 @@ components:
       required:
         - name
         - slug
+    SecretDto:
+      type: object
+      properties:
+        expiresAt:
+          format: date-time
+          type: string
+          nullable: true
+          description: >-
+            The date and time the current active managed secret expires. Null if
+            not yet known.
+          example: '2024-10-01T00:00:00.000Z'
+      required:
+        - expiresAt
+    PendingSecretDto:
+      type: object
+      properties:
+        createdAt:
+          format: date-time
+          type: string
+          nullable: true
+          description: >-
+            The date and time a replacement secret was minted and is pending
+            validation/promotion. Null when there is no pending secret in
+            flight.
+          example: '2024-10-01T00:00:00.000Z'
+        expiresAt:
+          format: date-time
+          type: string
+          nullable: true
+          description: >-
+            The date and time the pending (not-yet-active) managed secret
+            expires. Null when there is no pending secret in flight.
+          example: '2024-10-01T00:00:00.000Z'
+      required:
+        - createdAt
+        - expiresAt
 
 ````

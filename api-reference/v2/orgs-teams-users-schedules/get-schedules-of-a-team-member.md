@@ -4,7 +4,7 @@
 
 # Get schedules of a team member
 
-> Required membership role: `team admin`. PBAC permission: `availability.read`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_SCHEDULE_READ` scope is required.
+> Required membership role: `team admin`. PBAC permission: `availability.readTeamAvailability`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_SCHEDULE_READ` scope is required.
 
 
 
@@ -28,9 +28,9 @@ paths:
       summary: Get schedules of a team member
       description: >-
         Required membership role: `team admin`. PBAC permission:
-        `availability.read`. Learn more about API access control at
-        https://cal.com/docs/api-reference/v2/access-control. If accessed using
-        an OAuth access token, the `TEAM_SCHEDULE_READ` scope is required.
+        `availability.readTeamAvailability`. Learn more about API access control
+        at https://cal.com/docs/api-reference/v2/access-control. If accessed
+        using an OAuth access token, the `TEAM_SCHEDULE_READ` scope is required.
       operationId: OrganizationsTeamsSchedulesController_getUserSchedules
       parameters:
         - name: Authorization
@@ -88,11 +88,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:
@@ -154,10 +154,6 @@ components:
       properties:
         days:
           type: array
-          example:
-            - Monday
-            - Tuesday
-          description: Array of days when schedule is active.
           items:
             type: string
             enum:
@@ -168,14 +164,16 @@ components:
               - Friday
               - Saturday
               - Sunday
+          example:
+            - Monday
+            - Tuesday
+          description: Array of days when schedule is active.
         startTime:
           type: string
-          pattern: TIME_FORMAT_HH_MM
           example: '08:00'
           description: startTime must be a valid time in format HH:MM e.g. 08:00
         endTime:
           type: string
-          pattern: TIME_FORMAT_HH_MM
           example: '15:00'
           description: endTime must be a valid time in format HH:MM e.g. 15:00
       required:
@@ -190,12 +188,10 @@ components:
           example: '2024-05-20'
         startTime:
           type: string
-          pattern: TIME_FORMAT_HH_MM
           example: '12:00'
           description: startTime must be a valid time in format HH:MM e.g. 12:00
         endTime:
           type: string
-          pattern: TIME_FORMAT_HH_MM
           example: '13:00'
           description: endTime must be a valid time in format HH:MM e.g. 13:00
       required:

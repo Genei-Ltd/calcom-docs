@@ -63,6 +63,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2024-08-13'
         - name: bookingUid
           required: true
           in: path
@@ -89,11 +90,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/RoutingTraceDataOutput_2024_08_13'
       required:
@@ -112,6 +113,7 @@ components:
             $ref: '#/components/schemas/RoutingTraceGroupOutput_2024_08_13'
         formSubmission:
           nullable: true
+          type: object
           allOf:
             - $ref: '#/components/schemas/RoutingTraceFormSubmissionOutput_2024_08_13'
       required:
@@ -137,6 +139,7 @@ components:
           example: 1717000000000
         data:
           type: object
+          additionalProperties: true
           description: Step-specific data payload
       required:
         - message

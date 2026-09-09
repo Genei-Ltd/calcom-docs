@@ -47,11 +47,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/OAuth2ClientDto'
       required:
@@ -84,12 +84,12 @@ components:
           description: Whether the OAuth client is trusted
           example: false
         client_type:
-          type: string
-          description: The type of OAuth client (CONFIDENTIAL or PUBLIC)
-          example: CONFIDENTIAL
           enum:
             - CONFIDENTIAL
             - PUBLIC
+          type: string
+          description: The type of OAuth client (CONFIDENTIAL or PUBLIC)
+          example: CONFIDENTIAL
       required:
         - client_id
         - redirect_uris

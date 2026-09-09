@@ -48,9 +48,13 @@ paths:
             schema:
               oneOf:
                 - $ref: '#/components/schemas/OAuth2ExchangeConfidentialInput'
+                  title: Exchange - Confidential Client
                 - $ref: '#/components/schemas/OAuth2ExchangePublicInput'
+                  title: Exchange - Public Client
                 - $ref: '#/components/schemas/OAuth2RefreshConfidentialInput'
+                  title: Refresh - Confidential Client
                 - $ref: '#/components/schemas/OAuth2RefreshPublicInput'
+                  title: Refresh - Public Client
       responses:
         '200':
           description: ''

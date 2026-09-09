@@ -60,6 +60,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2026-02-25'
             default: '2026-02-25'
         - name: bookingUid
           required: true
@@ -89,11 +90,11 @@ paths:
       requestBody:
         required: true
         description: >-
-          Accepts different types of reschedule booking input: Reschedule
-          Booking (Option 1) or Reschedule Seated Booking (Option 2). If you're
-          rescheduling a seated booking as org admin of booking host, pass
-          booking input for Reschedule Booking (Option 1) along with your access
-          token in the request header.
+          Accepts different types of reschedule booking input: Standard or
+          Recurring Booking, or Seated Booking. If you're rescheduling a seated
+          booking as org admin of booking host, pass booking input for Standard
+          or Recurring Booking along with your access token in the request
+          header.
 
                 If you are rescheduling a seated booking for an event type with 'show attendees' disabled, then to retrieve attendees in the response either set 'show attendees' to true on event type level or
                 you have to provide an authentication method of event type owner, host, team admin or owner or org admin or owner.
@@ -102,7 +103,9 @@ paths:
             schema:
               oneOf:
                 - $ref: '#/components/schemas/RescheduleBookingInput_2024_08_13'
+                  title: Standard or Recurring Booking
                 - $ref: '#/components/schemas/RescheduleSeatedBookingInput_2024_08_13'
+                  title: Seated Booking
       responses:
         '201':
           description: ''
@@ -141,6 +144,13 @@ components:
             Email verification code required when event type has email
             verification enabled.
           example: '123456'
+        rescheduleWithSameHost:
+          type: boolean
+          description: >-
+            Only for round robin event types that let the person rescheduling
+            choose the host. True keeps the original host, false lets round
+            robin pick from the whole team. Ignored for every other event type.
+          example: true
         allowConflicts:
           type: boolean
           description: >-
@@ -233,18 +243,22 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           oneOf:
             - $ref: '#/components/schemas/BookingOutput_2024_08_13'
+              title: Booking
             - $ref: '#/components/schemas/RecurringBookingOutput_2024_08_13'
+              title: Recurring Booking
             - $ref: '#/components/schemas/CreateSeatedBookingOutput_2024_08_13'
+              title: Seated Booking
             - $ref: >-
                 #/components/schemas/CreateRecurringSeatedBookingOutput_2024_08_13
+              title: Recurring Seated Booking
           description: >-
             Booking data, which can be either a BookingOutput object or a
             RecurringBookingOutput object
@@ -271,24 +285,26 @@ components:
           items:
             $ref: '#/components/schemas/BookingHost'
         status:
-          type: string
           enum:
             - cancelled
             - accepted
             - rejected
             - pending
+          type: string
           example: accepted
         cancellationReason:
           type: string
           example: User requested cancellation
         cancelledByEmail:
           type: string
+          format: email
           example: canceller@example.com
         reschedulingReason:
           type: string
           example: User rescheduled the event
         rescheduledByEmail:
           type: string
+          format: email
           example: rescheduler@example.com
         rescheduledFromUid:
           type: string
@@ -318,6 +334,7 @@ components:
           $ref: '#/components/schemas/EventType'
         meetingUrl:
           type: string
+          format: uri
           description: Deprecated - rely on 'location' field instead.
           example: https://example.com/recurring-meeting
           deprecated: true
@@ -338,6 +355,8 @@ components:
           format: date-time
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
         rating:
@@ -360,6 +379,7 @@ components:
             type: string
         bookingFieldsResponses:
           type: object
+          additionalProperties: true
           description: >-
             Booking field responses consisting of an object with booking field
             slug as keys and user response as values.
@@ -403,24 +423,26 @@ components:
           items:
             $ref: '#/components/schemas/BookingHost'
         status:
-          type: string
           enum:
             - cancelled
             - accepted
             - rejected
             - pending
+          type: string
           example: accepted
         cancellationReason:
           type: string
           example: User requested cancellation
         cancelledByEmail:
           type: string
+          format: email
           example: canceller@example.com
         reschedulingReason:
           type: string
           example: User rescheduled the event
         rescheduledByEmail:
           type: string
+          format: email
           example: rescheduler@example.com
         rescheduledFromUid:
           type: string
@@ -450,6 +472,7 @@ components:
           $ref: '#/components/schemas/EventType'
         meetingUrl:
           type: string
+          format: uri
           description: Deprecated - rely on 'location' field instead.
           example: https://example.com/recurring-meeting
           deprecated: true
@@ -470,6 +493,8 @@ components:
           format: date-time
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
         rating:
@@ -492,6 +517,7 @@ components:
             type: string
         bookingFieldsResponses:
           type: object
+          additionalProperties: true
           description: >-
             Booking field responses consisting of an object with booking field
             slug as keys and user response as values.
@@ -539,24 +565,26 @@ components:
           items:
             $ref: '#/components/schemas/BookingHost'
         status:
-          type: string
           enum:
             - cancelled
             - accepted
             - rejected
             - pending
+          type: string
           example: accepted
         cancellationReason:
           type: string
           example: User requested cancellation
         cancelledByEmail:
           type: string
+          format: email
           example: canceller@example.com
         reschedulingReason:
           type: string
           example: User rescheduled the event
         rescheduledByEmail:
           type: string
+          format: email
           example: rescheduler@example.com
         rescheduledFromUid:
           type: string
@@ -586,6 +614,7 @@ components:
           $ref: '#/components/schemas/EventType'
         meetingUrl:
           type: string
+          format: uri
           description: Deprecated - rely on 'location' field instead.
           example: https://example.com/recurring-meeting
           deprecated: true
@@ -606,6 +635,8 @@ components:
           format: date-time
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
         rating:
@@ -660,24 +691,26 @@ components:
           items:
             $ref: '#/components/schemas/BookingHost'
         status:
-          type: string
           enum:
             - cancelled
             - accepted
             - rejected
             - pending
+          type: string
           example: accepted
         cancellationReason:
           type: string
           example: User requested cancellation
         cancelledByEmail:
           type: string
+          format: email
           example: canceller@example.com
         reschedulingReason:
           type: string
           example: User rescheduled the event
         rescheduledByEmail:
           type: string
+          format: email
           example: rescheduler@example.com
         rescheduledFromUid:
           type: string
@@ -707,6 +740,7 @@ components:
           $ref: '#/components/schemas/EventType'
         meetingUrl:
           type: string
+          format: uri
           description: Deprecated - rely on 'location' field instead.
           example: https://example.com/recurring-meeting
           deprecated: true
@@ -727,6 +761,8 @@ components:
           format: date-time
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
         rating:
@@ -959,6 +995,7 @@ components:
           description: The date and time when the attendee joined the seated booking.
         bookingFieldsResponses:
           type: object
+          additionalProperties: true
           description: >-
             Booking field responses consisting of an object with booking field
             slug as keys and user response as values.
@@ -966,6 +1003,8 @@ components:
             customField: customValue
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
       required:

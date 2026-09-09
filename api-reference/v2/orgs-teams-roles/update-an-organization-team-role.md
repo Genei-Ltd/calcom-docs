@@ -87,26 +87,24 @@ components:
           description: Description of the role
         permissions:
           type: array
-          description: >-
-            Permissions for this role (format: resource.action). On update, this
-            field replaces the entire permission set for the role (full
-            replace). Use granular permission endpoints for one-by-one changes.
-          example:
-            - eventType.read
-            - eventType.create
-            - booking.read
           items:
             type: string
             enum:
               - role.create
               - role.read
+              - role.readTeamRoles
               - role.update
               - role.delete
               - eventType.create
               - eventType.read
+              - eventType.readTeamEventTypes
               - eventType.update
               - eventType.delete
               - team.read
+              - team.readTeamSettings
+              - team.readConferencing
+              - team.readVerifiedResources
+              - team.readMemberships
               - team.update
               - team.delete
               - team.invite
@@ -120,14 +118,17 @@ components:
               - booking.readRecordings
               - booking.update
               - booking.updateTeamBookings
+              - booking.reassignTeamPastBookings
               - booking.readTeamAuditLogs
               - insights.read
               - workflow.create
               - workflow.read
+              - workflow.readTeamWorkflows
               - workflow.update
               - workflow.delete
               - routingForm.create
               - routingForm.read
+              - routingForm.readTeamRoutingForms
               - routingForm.update
               - routingForm.delete
               - routingForm.readTeamAuditLogs
@@ -136,8 +137,20 @@ components:
               - webhook.read
               - webhook.update
               - webhook.delete
+              - availability.readTeamAvailability
               - featureOptIn.read
               - featureOptIn.update
+              - tag.create
+              - tag.update
+              - tag.delete
+          description: >-
+            Permissions for this role (format: resource.action). On update, this
+            field replaces the entire permission set for the role (full
+            replace). Use granular permission endpoints for one-by-one changes.
+          example:
+            - eventType.read
+            - eventType.create
+            - booking.read
         name:
           type: string
           minLength: 1
@@ -146,11 +159,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/TeamRoleOutput'
       required:
@@ -178,11 +191,11 @@ components:
           nullable: true
           description: Team ID this role belongs to
         type:
-          type: string
-          description: Type of role
           enum:
             - SYSTEM
             - CUSTOM
+          type: string
+          description: Type of role
         permissions:
           type: array
           description: Permissions assigned to this role in 'resource.action' format.
@@ -194,13 +207,19 @@ components:
             enum:
               - role.create
               - role.read
+              - role.readTeamRoles
               - role.update
               - role.delete
               - eventType.create
               - eventType.read
+              - eventType.readTeamEventTypes
               - eventType.update
               - eventType.delete
               - team.read
+              - team.readTeamSettings
+              - team.readConferencing
+              - team.readVerifiedResources
+              - team.readMemberships
               - team.update
               - team.delete
               - team.invite
@@ -214,14 +233,17 @@ components:
               - booking.readRecordings
               - booking.update
               - booking.updateTeamBookings
+              - booking.reassignTeamPastBookings
               - booking.readTeamAuditLogs
               - insights.read
               - workflow.create
               - workflow.read
+              - workflow.readTeamWorkflows
               - workflow.update
               - workflow.delete
               - routingForm.create
               - routingForm.read
+              - routingForm.readTeamRoutingForms
               - routingForm.update
               - routingForm.delete
               - routingForm.readTeamAuditLogs
@@ -230,8 +252,12 @@ components:
               - webhook.read
               - webhook.update
               - webhook.delete
+              - availability.readTeamAvailability
               - featureOptIn.read
               - featureOptIn.update
+              - tag.create
+              - tag.update
+              - tag.delete
         createdAt:
           type: string
           description: When the role was created

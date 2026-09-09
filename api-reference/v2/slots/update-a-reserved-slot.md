@@ -4,7 +4,9 @@
 
 # Update a reserved slot
 
-> <Note>Please make sure to pass in the cal-api-version header value as mentioned in the Headers section. Not passing the correct value will default to an older version of this endpoint.</Note>
+> If you specify a custom reservation duration, you must authenticate using oAuth credentials, api key or access token.
+
+    <Note>Please make sure to pass in the cal-api-version header value as mentioned in the Headers section. Not passing the correct value will default to an older version of this endpoint.</Note>
 
 
 
@@ -27,9 +29,10 @@ paths:
         - Slots
       summary: Update a reserved slot
       description: >-
-        <Note>Please make sure to pass in the cal-api-version header value as
-        mentioned in the Headers section. Not passing the correct value will
-        default to an older version of this endpoint.</Note>
+        If you specify a custom reservation duration, you must authenticate
+        using oAuth credentials, api key or access token.
+
+            <Note>Please make sure to pass in the cal-api-version header value as mentioned in the Headers section. Not passing the correct value will default to an older version of this endpoint.</Note>
       operationId: SlotsController_2024_09_04_updateReservedSlot
       parameters:
         - name: cal-api-version
@@ -40,10 +43,25 @@ paths:
           required: true
           schema:
             type: string
+            example: '2024-09-04'
             default: '2024-09-04'
         - name: uid
           required: true
           in: path
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: >-
+            value must be `Bearer <token>` where `<token>` is api key prefixed
+            with cal_, managed user access token, or OAuth access token
+          required: false
+          schema:
+            type: string
+        - name: x-cal-client-id
+          in: header
+          description: For platform customers - OAuth client ID
+          required: false
           schema:
             type: string
       requestBody:
@@ -97,11 +115,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/ReserveSlotOutput_2024_09_04'
       required:

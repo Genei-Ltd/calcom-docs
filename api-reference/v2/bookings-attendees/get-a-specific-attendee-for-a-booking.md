@@ -50,6 +50,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2024-08-13'
         - name: bookingUid
           required: true
           in: path
@@ -81,11 +82,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/BookingAttendeeWithId_2024_08_13'
       required:

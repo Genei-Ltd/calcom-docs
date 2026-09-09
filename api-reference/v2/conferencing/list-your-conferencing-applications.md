@@ -52,10 +52,10 @@ components:
       type: object
       properties:
         status:
-          type: string
           enum:
             - success
             - error
+          type: string
         data:
           type: array
           items:

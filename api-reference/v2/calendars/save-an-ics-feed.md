@@ -59,6 +59,7 @@ components:
       properties:
         urls:
           type: array
+          minItems: 1
           example:
             - https://cal.com/ics/feed.ics
           description: An array of ICS URLs
@@ -76,11 +77,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/CreateIcsFeedOutput'
       required:

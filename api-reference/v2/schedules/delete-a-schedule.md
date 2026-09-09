@@ -54,6 +54,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2024-06-11'
             default: '2024-06-11'
         - name: scheduleId
           required: true
@@ -73,11 +74,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
       required:
         - status
 

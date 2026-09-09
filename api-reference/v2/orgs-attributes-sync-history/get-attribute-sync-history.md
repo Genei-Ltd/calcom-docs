@@ -62,6 +62,7 @@ paths:
             Cursor for keyset pagination (UUID of the last item from previous
             page)
           schema:
+            format: uuid
             type: string
       responses:
         '200':
@@ -76,11 +77,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:

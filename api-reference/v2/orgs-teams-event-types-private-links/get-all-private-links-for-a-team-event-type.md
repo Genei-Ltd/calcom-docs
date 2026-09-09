@@ -39,6 +39,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2024-09-04'
             default: '2024-09-04'
         - name: Authorization
           in: header
@@ -99,7 +100,9 @@ components:
           items:
             oneOf:
               - $ref: '#/components/schemas/TimeBasedPrivateLinkOutput'
+                title: Time-Based Link
               - $ref: '#/components/schemas/UsageBasedPrivateLinkOutput'
+                title: Usage-Based Link
       required:
         - status
         - data

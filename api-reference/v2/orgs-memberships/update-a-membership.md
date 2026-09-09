@@ -84,22 +84,22 @@ components:
         accepted:
           type: boolean
         role:
-          type: string
           enum:
             - MEMBER
             - OWNER
             - ADMIN
+          type: string
         disableImpersonation:
           type: boolean
     UpdateOrgMembership:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/OrganizationMembershipOutput'
       required:
@@ -117,11 +117,11 @@ components:
         accepted:
           type: boolean
         role:
-          type: string
           enum:
             - MEMBER
             - OWNER
             - ADMIN
+          type: string
         disableImpersonation:
           type: boolean
         user:
@@ -131,9 +131,13 @@ components:
           items:
             oneOf:
               - $ref: '#/components/schemas/TextAttribute'
+                title: Text
               - $ref: '#/components/schemas/NumberAttribute'
+                title: Number
               - $ref: '#/components/schemas/SingleSelectAttribute'
+                title: Single Select
               - $ref: '#/components/schemas/MultiSelectAttribute'
+                title: Multi-Select
       required:
         - id
         - userId

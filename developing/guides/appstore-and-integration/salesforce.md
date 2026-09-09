@@ -371,9 +371,13 @@ To configure tiebreaker rules, navigate to the event type's **Apps** tab, expand
 
 #### Geo tiebreakers
 
+The geo-tiebreaker rules in the Salesforce CRM integration only apply when a booking comes through a routing form. Direct bookings skip them entirely.
 Geo tiebreakers route bookings to the Salesforce Account that is geographically closest to the person booking. Cal.com reads the booker's country and region from IP-based geo-location headers and compares them against the Account's `BillingCountry` and `BillingState` fields in Salesforce.
+You can configure them in the Salesforce section of your event type or routing form settings. When enabled, the tiebreaker waterfall checks geography before falling back to the standard relationship-based criteria (child accounts, opportunities, contacts, etc.).
 
-You can configure geo tiebreakers in the Salesforce section of your routing form settings. When enabled, the tiebreaker waterfall checks geography before falling back to the standard relationship-based criteria (child accounts, opportunities, contacts, etc.).
+##### Default geo context
+
+When no explicit geo tiebreaker configuration is set, Cal.com automatically extracts the booker's geographic location from IP-based request headers. The fallback is for country and state fields: when a routing form field for country/state is present but left blank, Cal.com falls back to the booker's IP geolocation header. However, this fallback still requires the booking to come through a routing form — it doesn't enable geo rules for direct bookings.
 
 ##### When to use geo tiebreakers
 
@@ -388,12 +392,12 @@ Geo tiebreakers are useful when:
 For more granular geographic routing, you can specify a custom Salesforce field for sub-region matching. This field is checked at P3 in the waterfall, after country and state matching. Use this when your Accounts are segmented by territories smaller than a state — for example, a custom `Sales_Territory__c` field.
 
 <Note>
-  Geo tiebreakers require the booker's IP geo-location data, which is derived from request headers set by your infrastructure (for example, Cloudflare or Vercel geo headers). If geo data is not available, these steps are skipped and the waterfall starts at P5.
+  Geo tiebreakers require the booker's IP geo-location data, which is derived from request headers set by your infrastructure (for example, Cloudflare or Vercel geo headers). If geo data is not available, the geo steps are skipped and the waterfall starts at P5.
 </Note>
 
 #### Host filtering
 
-For round-robin event types, candidates are filtered before the tiebreaker runs. Only Account owners who are hosts on the event type are eligible. If this filter removes all candidates, Cal.com falls back to standard round-robin assignment.
+For round-robin event types, candidates are filtered before the tiebreaker runs. Only Account owners who are hosts on the event type are eligible. Host filtering applies across all routing paths, including when Cal.com falls back from a GraphQL query to a SOQL-based lookup. If this filter removes all candidates, Cal.com falls back to standard round-robin assignment.
 
 ### Record type filtering
 

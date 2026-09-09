@@ -4,7 +4,7 @@
 
 # Get a specific organization role
 
-> Required membership role: `org admin`. PBAC permission: `role.read`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control
+> Required membership role: `org admin`. PBAC permission: `role.readOrgRoles`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control
 
 
 
@@ -27,8 +27,8 @@ paths:
         - Orgs / Roles
       summary: Get a specific organization role
       description: >-
-        Required membership role: `org admin`. PBAC permission: `role.read`.
-        Learn more about API access control at
+        Required membership role: `org admin`. PBAC permission:
+        `role.readOrgRoles`. Learn more about API access control at
         https://cal.com/docs/api-reference/v2/access-control
       operationId: OrganizationsRolesController_getRole
       parameters:
@@ -75,11 +75,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/OrgRoleOutput'
       required:
@@ -107,11 +107,11 @@ components:
           nullable: true
           description: Organization ID this role belongs to
         type:
-          type: string
-          description: Type of role
           enum:
             - SYSTEM
             - CUSTOM
+          type: string
+          description: Type of role
         permissions:
           type: array
           description: Permissions assigned to this role in 'resource.action' format.
@@ -124,14 +124,23 @@ components:
               - '*.*'
               - role.create
               - role.read
+              - role.readTeamRoles
+              - role.readOrgRoles
               - role.update
               - role.delete
               - eventType.create
               - eventType.read
+              - eventType.readTeamEventTypes
+              - eventType.readOrgEventTypes
               - eventType.update
               - eventType.delete
               - team.create
               - team.read
+              - team.readOrgTeams
+              - team.readTeamSettings
+              - team.readConferencing
+              - team.readVerifiedResources
+              - team.readMemberships
               - team.update
               - team.delete
               - team.invite
@@ -142,6 +151,9 @@ components:
               - team.impersonate
               - organization.create
               - organization.read
+              - organization.readMemberships
+              - organization.readManagedOrganizations
+              - organization.readDelegationCredentials
               - organization.listMembers
               - organization.listMembersPrivate
               - organization.invite
@@ -158,10 +170,12 @@ components:
               - booking.readRecordings
               - booking.update
               - booking.updateOrgBookings
+              - booking.reassignOrgPastBookings
               - booking.readOrgAuditLogs
               - insights.read
               - workflow.create
               - workflow.read
+              - workflow.readTeamWorkflows
               - workflow.update
               - workflow.delete
               - organization.attributes.read
@@ -173,14 +187,21 @@ components:
               - organization.attributes.readAuditLogs
               - routingForm.create
               - routingForm.read
+              - routingForm.readTeamRoutingForms
+              - routingForm.readOrgRoutingForms
               - routingForm.update
               - routingForm.delete
               - routingForm.readOrgAuditLogs
               - routingForm.readResponsePii
               - webhook.create
               - webhook.read
+              - webhook.readOrgWebhooks
               - webhook.update
               - webhook.delete
+              - availability.readTeamAvailability
+              - availability.readOrgAvailability
+              - availability.updateOrgAvailability
+              - ooo.readOrgOoo
               - watchlist.create
               - watchlist.read
               - watchlist.update
@@ -191,6 +212,9 @@ components:
               - organization.customDomain.read
               - organization.customDomain.update
               - organization.customDomain.delete
+              - tag.create
+              - tag.update
+              - tag.delete
         createdAt:
           type: string
           description: When the role was created

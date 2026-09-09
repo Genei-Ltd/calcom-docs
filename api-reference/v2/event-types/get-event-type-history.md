@@ -8,7 +8,7 @@
 
 If accessed using an OAuth access token, the `EVENT_TYPE_READ` scope is required.
 
-Access control: This endpoint returns audit history using the same owner/admin-style audit-history access policy as the app/tRPC history query. Having general event type read access does not by itself grant access to audit history.
+Only the event type owner and applicable administrators can view its history. General event type read access does not include access to its history.
 
 
 
@@ -40,21 +40,21 @@ paths:
         required.
 
 
-        Access control: This endpoint returns audit history using the same
-        owner/admin-style audit-history access policy as the app/tRPC history
-        query. Having general event type read access does not by itself grant
-        access to audit history.
-      operationId: EventTypesController_2024_06_14_getEventTypeHistory
+        Only the event type owner and applicable administrators can view its
+        history. General event type read access does not include access to its
+        history.
+      operationId: EventTypesController_2026_06_12_getEventTypeHistory
       parameters:
         - name: cal-api-version
           in: header
           description: >-
-            Must be set to 2024-06-14. If not set to this value, the endpoint
+            Must be set to 2026-06-12. If not set to this value, the endpoint
             will default to an older version.
           required: true
           schema:
             type: string
-            default: '2024-06-14'
+            example: '2026-06-12'
+            default: '2026-06-12'
         - name: eventTypeId
           required: true
           in: path
@@ -103,11 +103,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
           description: Indicates whether the request was successful.
         data:
           description: The event type history data including audit log entries.
@@ -165,11 +165,11 @@ components:
           example: 018f4c2e-3f1a-7abc-9def-0123456789ab
           description: Unique identifier of the audit log entry.
         action:
-          type: string
           enum:
             - EVENT_TYPE_MODIFIED
             - EVENT_TYPE_CREATED
             - EVENT_TYPE_DELETED
+          type: string
           example: EVENT_TYPE_MODIFIED
           description: The type of change that was made to the event type.
         type:
@@ -193,6 +193,7 @@ components:
           description: >-
             Present when the action was performed via user impersonation.
             Contains details of the impersonated user.
+          type: object
           allOf:
             - $ref: '#/components/schemas/EventTypeHistoryImpersonatedBy_2024_06_14'
         actionDisplayTitle:
@@ -206,6 +207,7 @@ components:
             $ref: '#/components/schemas/EventTypeHistoryDisplayField_2024_06_14'
         displayJson:
           type: object
+          additionalProperties: true
           nullable: true
           description: >-
             Raw JSON representation of the full change payload, or null if
@@ -228,13 +230,13 @@ components:
       type: object
       properties:
         type:
-          type: string
           enum:
             - USER
             - GUEST
             - ATTENDEE
             - SYSTEM
             - APP
+          type: string
           example: USER
           description: The type of actor who performed the action.
         displayName:
@@ -288,9 +290,13 @@ components:
         fieldValue:
           oneOf:
             - $ref: '#/components/schemas/RawValueFieldValue_2024_06_14'
+              title: Raw Value
             - $ref: '#/components/schemas/RawValuesFieldValue_2024_06_14'
+              title: Raw Values
             - $ref: '#/components/schemas/ValueChangeFieldValue_2024_06_14'
+              title: Value Change
             - $ref: '#/components/schemas/DiffFieldValue_2024_06_14'
+              title: Difference
           discriminator:
             propertyName: type
             mapping:

@@ -4,7 +4,7 @@
 
 # Get organization routing forms
 
-> Required membership role: `org admin`. PBAC permission: `routingForm.read`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `ORG_ROUTING_FORM_READ` scope is required.
+> Required membership role: `org admin`. PBAC permission: `routingForm.readOrgRoutingForms`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `ORG_ROUTING_FORM_READ` scope is required.
 
 
 
@@ -28,9 +28,10 @@ paths:
       summary: Get organization routing forms
       description: >-
         Required membership role: `org admin`. PBAC permission:
-        `routingForm.read`. Learn more about API access control at
-        https://cal.com/docs/api-reference/v2/access-control. If accessed using
-        an OAuth access token, the `ORG_ROUTING_FORM_READ` scope is required.
+        `routingForm.readOrgRoutingForms`. Learn more about API access control
+        at https://cal.com/docs/api-reference/v2/access-control. If accessed
+        using an OAuth access token, the `ORG_ROUTING_FORM_READ` scope is
+        required.
       operationId: OrganizationsRoutingFormsController_getOrganizationRoutingForms
       parameters:
         - name: Authorization
@@ -63,19 +64,19 @@ paths:
           in: query
           description: Sort by creation time
           schema:
+            type: string
             enum:
               - asc
               - desc
-            type: string
         - name: sortUpdatedAt
           required: false
           in: query
           description: Sort by update time
           schema:
+            type: string
             enum:
               - asc
               - desc
-            type: string
         - name: afterCreatedAt
           required: false
           in: query
@@ -115,6 +116,7 @@ paths:
           in: query
           description: Filter by teamIds. Team ids must be separated by a comma.
           schema:
+            minItems: 1
             example: '?teamIds=100,200'
             type: array
             items:
@@ -132,11 +134,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:
@@ -159,6 +161,7 @@ components:
           example: 0
         routes:
           type: object
+          additionalProperties: true
           nullable: true
           description: Routing form routes configuration
         createdAt:
@@ -171,6 +174,7 @@ components:
           format: date-time
         fields:
           type: object
+          additionalProperties: true
           nullable: true
           description: Routing form fields configuration
         userId:
@@ -185,6 +189,7 @@ components:
           example: false
         settings:
           type: object
+          additionalProperties: true
           nullable: true
           description: Routing form settings
         id:

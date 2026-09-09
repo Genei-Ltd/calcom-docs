@@ -4,7 +4,7 @@
 
 # List permissions for an organization role
 
-> Required membership role: `org admin`. PBAC permission: `role.read`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control
+> Required membership role: `org admin`. PBAC permission: `role.readOrgRoles`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control
 
 
 
@@ -27,8 +27,8 @@ paths:
         - Orgs / Roles / Permissions
       summary: List permissions for an organization role
       description: >-
-        Required membership role: `org admin`. PBAC permission: `role.read`.
-        Learn more about API access control at
+        Required membership role: `org admin`. PBAC permission:
+        `role.readOrgRoles`. Learn more about API access control at
         https://cal.com/docs/api-reference/v2/access-control
       operationId: OrganizationsRolesPermissionsController_listPermissions
       parameters:

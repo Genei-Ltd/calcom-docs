@@ -6,7 +6,7 @@
 
 > <Note>Please make sure to pass in the cal-api-version header value as mentioned in the Headers section. Not passing the correct value will default to an older version of this endpoint.</Note>
 
-Returns CRM sync errors scoped to the requested event type and CRM app. By default this endpoint returns only active errors. Pass `includeDismissed=true` to include dismissed historical errors.
+By default, only active CRM sync errors are returned; pass `includeDismissed=true` to include dismissed errors.
 
 If accessed using an OAuth access token, the `EVENT_TYPE_READ` scope is required.
 
@@ -36,24 +36,24 @@ paths:
         default to an older version of this endpoint.</Note>
 
 
-        Returns CRM sync errors scoped to the requested event type and CRM app.
-        By default this endpoint returns only active errors. Pass
-        `includeDismissed=true` to include dismissed historical errors.
+        By default, only active CRM sync errors are returned; pass
+        `includeDismissed=true` to include dismissed errors.
 
 
         If accessed using an OAuth access token, the `EVENT_TYPE_READ` scope is
         required.
-      operationId: EventTypesController_2024_06_14_getCrmSyncErrors
+      operationId: EventTypesController_2026_06_12_getCrmSyncErrors
       parameters:
         - name: cal-api-version
           in: header
           description: >-
-            Must be set to 2024-06-14. If not set to this value, the endpoint
+            Must be set to 2026-06-12. If not set to this value, the endpoint
             will default to an older version.
           required: true
           schema:
             type: string
-            default: '2024-06-14'
+            example: '2026-06-12'
+            default: '2026-06-12'
         - name: eventTypeId
           required: true
           in: path
@@ -117,11 +117,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           description: >-
             CRM sync errors scoped to the requested event type and connected CRM

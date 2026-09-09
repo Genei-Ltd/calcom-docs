@@ -76,11 +76,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/GetOrgUsersWithProfileOutput'
       required:
@@ -192,6 +192,7 @@ components:
           example: 1
         metadata:
           type: object
+          additionalProperties: true
           example:
             key: value
         profile:

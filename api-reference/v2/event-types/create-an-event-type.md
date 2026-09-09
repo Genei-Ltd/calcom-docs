@@ -4,9 +4,9 @@
 
 # Create an event type
 
-> <Note>Please make sure to pass in the cal-api-version header value as mentioned in the Headers section. Not passing the correct value will default to an older version of this endpoint.</Note>
+> <Note>Please make sure to pass in the cal-api-version header value as mentioned in the Headers section.</Note>
 
-If accessed using an OAuth access token, the `EVENT_TYPE_WRITE` scope is required.
+If `bookingFields` is omitted, the event type is created with its default booking fields. At least one contact field—`email` or `attendeePhoneNumber`—must remain visible and required. Other default fields, such as additional notes, can be hidden. Provide `bookingFields` to customize the default fields or add custom booking fields. If accessed using an OAuth access token, the `EVENT_TYPE_WRITE` scope is required.
 
 
 
@@ -30,23 +30,28 @@ paths:
       summary: Create an event type
       description: >-
         <Note>Please make sure to pass in the cal-api-version header value as
-        mentioned in the Headers section. Not passing the correct value will
-        default to an older version of this endpoint.</Note>
+        mentioned in the Headers section.</Note>
 
 
-        If accessed using an OAuth access token, the `EVENT_TYPE_WRITE` scope is
+        If `bookingFields` is omitted, the event type is created with its
+        default booking fields. At least one contact field—`email` or
+        `attendeePhoneNumber`—must remain visible and required. Other default
+        fields, such as additional notes, can be hidden. Provide `bookingFields`
+        to customize the default fields or add custom booking fields. If
+        accessed using an OAuth access token, the `EVENT_TYPE_WRITE` scope is
         required.
-      operationId: EventTypesController_2024_06_14_createEventType
+      operationId: EventTypesController_2026_06_12_createEventType
       parameters:
         - name: cal-api-version
           in: header
           description: >-
-            Must be set to 2024-06-14. If not set to this value, the endpoint
+            Must be set to 2026-06-12. If not set to this value, the endpoint
             will default to an older version.
           required: true
           schema:
             type: string
-            default: '2024-06-14'
+            example: '2026-06-12'
+            default: '2026-06-12'
         - name: Authorization
           in: header
           description: >-
@@ -60,17 +65,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateEventTypeInput_2024_06_14'
+              $ref: '#/components/schemas/CreateEventTypeInput_2026_06_12'
       responses:
         '201':
           description: ''
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateEventTypeOutput_2024_06_14'
+                $ref: '#/components/schemas/CreateEventTypeOutput_2026_06_12'
 components:
   schemas:
-    CreateEventTypeInput_2024_06_14:
+    CreateEventTypeInput_2026_06_12:
       type: object
       properties:
         lengthInMinutes:
@@ -78,6 +83,8 @@ components:
           minimum: 1
           example: 60
         lengthInMinutesOptions:
+          minItems: 1
+          uniqueItems: true
           example:
             - 15
             - 30
@@ -101,40 +108,6 @@ components:
           example: >-
             Discover the culinary wonders of the Argentina by making the best
             flan ever!
-        bookingFields:
-          type: array
-          description: >-
-            Custom fields that can be added to the booking form when the event
-            is booked by someone. By default booking form has name and email
-            field.
-          items:
-            oneOf:
-              - $ref: '#/components/schemas/NameDefaultFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/SplitNameDefaultFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/EmailDefaultFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/TitleDefaultFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/LocationDefaultFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/NotesDefaultFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/GuestsDefaultFieldInput_2024_06_14'
-              - $ref: >-
-                  #/components/schemas/RescheduleReasonDefaultFieldInput_2024_06_14
-              - $ref: '#/components/schemas/PhoneFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/AddressFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/TextFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/NumberFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/TextAreaFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/SelectFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/MultiSelectFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/MultiEmailFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/CheckboxGroupFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/RadioGroupFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/BooleanFieldInput_2024_06_14'
-              - $ref: '#/components/schemas/UrlFieldInput_2024_06_14'
-        disableGuests:
-          type: boolean
-          description: >-
-            If true, person booking this event can't add guests via their
-            emails.
         slotInterval:
           type: number
           description: >-
@@ -169,14 +142,18 @@ components:
           description: Limit how many times this event can be booked
           oneOf:
             - $ref: '#/components/schemas/BaseBookingLimitsCount_2024_06_14'
+              title: Booking Count Limit
             - $ref: '#/components/schemas/Disabled_2024_06_14'
+              title: Disabled
         bookerActiveBookingsLimit:
           description: >-
             Limit the number of active bookings a booker can make for this event
             type.
           oneOf:
             - $ref: '#/components/schemas/BookerActiveBookingsLimit_2024_06_14'
+              title: Active Booking Limit
             - $ref: '#/components/schemas/Disabled_2024_06_14'
+              title: Disabled
         onlyShowFirstAvailableSlot:
           type: boolean
           description: >-
@@ -186,14 +163,20 @@ components:
           description: Limit total amount of time that this event can be booked
           oneOf:
             - $ref: '#/components/schemas/BaseBookingLimitsDuration_2024_06_14'
+              title: Booking Duration Limit
             - $ref: '#/components/schemas/Disabled_2024_06_14'
+              title: Disabled
         bookingWindow:
           description: Limit how far in the future this event can be booked
           oneOf:
             - $ref: '#/components/schemas/BusinessDaysWindow_2024_06_14'
+              title: Business Days
             - $ref: '#/components/schemas/CalendarDaysWindow_2024_06_14'
+              title: Calendar Days
             - $ref: '#/components/schemas/RangeWindow_2024_06_14'
+              title: Date Range
             - $ref: '#/components/schemas/Disabled_2024_06_14'
+              title: Disabled
         offsetStart:
           type: number
           minimum: 0
@@ -210,14 +193,32 @@ components:
             pushed to the integrations and a confirmation mail is sent.
           oneOf:
             - $ref: '#/components/schemas/BaseConfirmationPolicy_2024_06_14'
+              title: Confirmation Required
             - $ref: '#/components/schemas/Disabled_2024_06_14'
+              title: Disabled
         recurrence:
           description: Create a recurring event type.
           oneOf:
             - $ref: '#/components/schemas/Recurrence_2024_06_14'
+              title: Recurring Event
             - $ref: '#/components/schemas/Disabled_2024_06_14'
+              title: Disabled
         requiresBookerEmailVerification:
           type: boolean
+        skipAttendeeEmailDeliverabilityCheck:
+          type: boolean
+          description: >-
+            When true, skips the MX deliverability check for attendee emails on
+            booking. Format validation and watchlist still apply. Requires the
+            editor to belong to an organization (including platform orgs).
+        emailSettings:
+          description: >-
+            Email settings for this event type. Personal event types require an
+            accepted organization membership; team event types require an
+            organization team. This does not include emails sent by custom email
+            workflows.
+          allOf:
+            - $ref: '#/components/schemas/EmailSettings_2024_06_14'
         hideCalendarNotes:
           type: boolean
         lockTimeZoneToggleOnBookingPage:
@@ -228,15 +229,17 @@ components:
           description: Create an event type with multiple seats.
           oneOf:
             - $ref: '#/components/schemas/Seats_2024_06_14'
+              title: Seated Event
             - $ref: '#/components/schemas/Disabled_2024_06_14'
+              title: Disabled
         customName:
           type: string
           description: |-
             Customizable event name with valid variables:
-                  {Event type title}, {Organiser}, {Scheduler}, {Location}, {Organiser first name},
+                  {Link title}, {Event type title} (legacy), {Organiser}, {Scheduler}, {Location}, {Organiser first name},
                   {Scheduler first name}, {Scheduler last name}, {Event duration}, {LOCATION},
                   {HOST/ATTENDEE}, {HOST}, {ATTENDEE}, {USER}
-          example: '{Event type title} between {Organiser} and {Scheduler}'
+          example: '{Link title} between {Organiser} and {Scheduler}'
         destinationCalendar:
           $ref: '#/components/schemas/DestinationCalendar_2024_06_14'
         useDestinationCalendarEmail:
@@ -245,6 +248,7 @@ components:
           type: boolean
         successRedirectUrl:
           type: string
+          format: uri
           description: >-
             A valid URL where the booker will redirect to, once the booking is
             completed successfully
@@ -352,18 +356,20 @@ components:
             to the host.
           default: false
         privateNoteMode:
-          type: string
           description: >-
-            The mode for private notes. Currently only 'duplicate_event' is
-            supported.
+            How private notes are delivered: as an additional host event or by
+            sending separate host and guest invites.
           example: duplicate_event
+          allOf:
+            - $ref: '#/components/schemas/PrivateNoteMode'
         privateNoteTemplate:
           type: string
           description: >-
             Template for the private note content. Supports variables like
-            {Attendee name}, {Event type title}, {Location}, {Host name}, {Event
-            duration}, and custom booking field names.
-          example: Meeting with {Attendee name} for {Event type title}
+            {Attendee name}, {Link title}, {Event type title} (legacy),
+            {Location}, {Host name}, {Event duration}, and custom booking field
+            names.
+          example: Meeting with {Attendee name} for {Link title}
         locations:
           type: array
           description: >-
@@ -379,806 +385,99 @@ components:
           items:
             oneOf:
               - $ref: '#/components/schemas/InputAddressLocation_2024_06_14'
+                title: Address
               - $ref: '#/components/schemas/InputLinkLocation_2024_06_14'
+                title: Link
               - $ref: '#/components/schemas/InputIntegrationLocation_2024_06_14'
+                title: Integration
               - $ref: '#/components/schemas/InputPhoneLocation_2024_06_14'
+                title: Phone
               - $ref: '#/components/schemas/InputAttendeeAddressLocation_2024_06_14'
+                title: Attendee Address
               - $ref: '#/components/schemas/InputAttendeePhoneLocation_2024_06_14'
+                title: Attendee Phone
               - $ref: '#/components/schemas/InputAttendeeDefinedLocation_2024_06_14'
+                title: Attendee Defined
+        bookingFields:
+          type: array
+          description: >-
+            Booking fields for the event type. Omit this property to use the
+            default fields. Provide an array to customize default fields or add
+            custom booking fields. At least one of `email` or
+            `attendeePhoneNumber` must be visible and required. The array cannot
+            be empty, contain duplicate default fields or custom slugs, or use a
+            default field's slug for a custom field. Omitted default fields are
+            added with their default settings. Workflow-added fields are
+            read-only and ignored.
+          items:
+            oneOf:
+              - $ref: '#/components/schemas/SystemFullNameFieldInput_2026_06_12'
+                title: Default Full Name
+              - $ref: '#/components/schemas/SystemSplitNameFieldInput_2026_06_12'
+                title: Default Split Name
+              - $ref: '#/components/schemas/SystemEmailFieldInput_2026_06_12'
+                title: Default Email
+              - $ref: '#/components/schemas/SystemLocationFieldInput_2026_06_12'
+                title: Default Location
+              - $ref: '#/components/schemas/SystemTitleFieldInput_2026_06_12'
+                title: Default Title
+              - $ref: '#/components/schemas/SystemNotesFieldInput_2026_06_12'
+                title: Default Notes
+              - $ref: '#/components/schemas/SystemGuestsFieldInput_2026_06_12'
+                title: Default Guests
+              - $ref: >-
+                  #/components/schemas/SystemRescheduleReasonFieldInput_2026_06_12
+                title: Default Reschedule Reason
+              - $ref: '#/components/schemas/SystemAttendeePhoneFieldInput_2026_06_12'
+                title: Default Attendee Phone
+              - $ref: '#/components/schemas/SystemSmsReminderFieldInput_2026_06_12'
+                title: Workflow-added SMS Reminder
+              - $ref: '#/components/schemas/SystemAiAgentPhoneFieldInput_2026_06_12'
+                title: Workflow-added AI Agent Phone
+              - $ref: '#/components/schemas/CustomEmailFieldInput_2026_06_12'
+                title: Custom Email
+              - $ref: '#/components/schemas/CustomPhoneFieldInput_2026_06_12'
+                title: Custom Phone
+              - $ref: '#/components/schemas/CustomAddressFieldInput_2026_06_12'
+                title: Custom Address
+              - $ref: '#/components/schemas/CustomShortTextFieldInput_2026_06_12'
+                title: Custom Short Text
+              - $ref: '#/components/schemas/CustomNumberFieldInput_2026_06_12'
+                title: Custom Number
+              - $ref: '#/components/schemas/CustomLongTextFieldInput_2026_06_12'
+                title: Custom Long Text
+              - $ref: '#/components/schemas/CustomSelectFieldInput_2026_06_12'
+                title: Custom Select
+              - $ref: '#/components/schemas/CustomMultiSelectFieldInput_2026_06_12'
+                title: Custom Multi-Select
+              - $ref: '#/components/schemas/CustomMultiEmailFieldInput_2026_06_12'
+                title: Custom Multiple Emails
+              - $ref: '#/components/schemas/CustomCheckboxGroupFieldInput_2026_06_12'
+                title: Custom Checkbox Group
+              - $ref: '#/components/schemas/CustomCheckboxFieldInput_2026_06_12'
+                title: Custom Checkbox
+              - $ref: '#/components/schemas/CustomRadioGroupFieldInput_2026_06_12'
+                title: Custom Radio Group
+              - $ref: '#/components/schemas/CustomUrlFieldInput_2026_06_12'
+                title: Custom URL
       required:
         - lengthInMinutes
         - title
         - slug
-    CreateEventTypeOutput_2024_06_14:
+    CreateEventTypeOutput_2026_06_12:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
-          $ref: '#/components/schemas/EventTypeOutput_2024_06_14'
+          $ref: '#/components/schemas/EventTypeOutput_2026_06_12'
       required:
         - status
         - data
-    NameDefaultFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: name
-          description: >-
-            only allowed value for type is `name`. Used for having 1 booking
-            field for both first name and last name.
-        label:
-          type: string
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if URL contains query parameter `&name=bob`,      the
-            name field will be prefilled with this value and disabled. In case
-            of Booker atom need to pass 'name' to defaultFormValues prop with
-            the desired value e.g. `defaultFormValues={{name: 'bob'}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-      required:
-        - type
-    SplitNameDefaultFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: splitName
-          description: >-
-            only allowed value for type is `splitName`. Used to have 2 booking
-            fields - 1 for first name and 1 for last name.
-        firstNameLabel:
-          type: string
-        firstNamePlaceholder:
-          type: string
-        lastNameLabel:
-          type: string
-        lastNamePlaceholder:
-          type: string
-        lastNameRequired:
-          type: boolean
-          description: First name field is required but last name field is not by default.
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if URL contains query parameter
-            `&firstName=bob&lastName=jones`,      the first name and last name
-            fields will be prefilled with this value and disabled. In case of
-            Booker atom need to pass 'firstName' and 'lastName' to
-            defaultFormValues prop e.g. `defaultFormValues={{firstName: 'bob',
-            lastName: 'doe'}}` or pass 'name' prop but as a string containing
-            name and surname e.g. `defaultFormValues={{name: 'bob doe'}}`.  See
-            guide https://cal.com/docs/platform/guides/booking-fields
-      required:
-        - type
-    EmailDefaultFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: email
-          description: only allowed value for type is `email`
-        label:
-          type: string
-        required:
-          type: boolean
-          default: true
-          description: >-
-            Pass booking field {type: "phone", slug: "attendeePhoneNumber",
-            required: true, hidden: false, label: "whatever label"} of booking
-            field type PhoneFieldInput_2024_06_14 - this is done
-                  to enable phone only bookings where during the booking attendee can provide only their phone number and not provide email, so you must pass to the email booking field {hidden: true, required: false}.
-                  If true show under event type settings but don't show this booking field in the Booker. If false show in both.
-        hidden:
-          type: boolean
-          description: >-
-            Pass booking field {type: "phone", slug: "attendeePhoneNumber",
-            required: true, hidden: false, label: "whatever label"} of booking
-            field type PhoneFieldInput_2024_06_14 - this is done
-                  to enable phone only bookings where during the booking attendee can provide only their phone number and not provide email, so you must pass to the email booking field {hidden: true, required: false}.
-                  If true show under event type settings but don't show this booking field in the Booker. If false show in both.
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if URL contains query parameter
-            `&email=bob@gmail.com`,      the email field will be prefilled with
-            this value and disabled. In case of Booker atom need to pass 'email'
-            to defaultFormValues prop with the desired value e.g.
-            `defaultFormValues={{email: 'bob@gmail.com'}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-      required:
-        - type
-    TitleDefaultFieldInput_2024_06_14:
-      type: object
-      properties:
-        slug:
-          type: string
-          example: title
-          description: only allowed value for type is `title`
-        required:
-          type: boolean
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        label:
-          type: string
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if URL contains query parameter `&title=journey`,     
-            the title field will be prefilled with this value and disabled. In
-            case of Booker atom need to pass 'title' to defaultFormValues prop
-            with the desired value e.g. `defaultFormValues={{title: 'very
-            important meeting'}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-      required:
-        - slug
-    LocationDefaultFieldInput_2024_06_14:
-      type: object
-      properties:
-        slug:
-          type: string
-          example: location
-          description: >-
-            only allowed value for type is `location`. This booking field is
-            displayed only when event type has 2 or more locations in order to
-            allow person doing the booking pick the location.
-        label:
-          type: string
-      required:
-        - slug
-    NotesDefaultFieldInput_2024_06_14:
-      type: object
-      properties:
-        slug:
-          type: string
-          example: notes
-          description: only allowed value for type is `notes`
-        required:
-          type: boolean
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        label:
-          type: string
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if URL contains query parameter `&notes=journey`,     
-            the notes field will be prefilled with this value and disabled. In
-            case of Booker atom need to pass 'notes' to defaultFormValues prop
-            with the desired value e.g. `defaultFormValues={{notes: 'bring
-            notebook and paper'}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-      required:
-        - slug
-    GuestsDefaultFieldInput_2024_06_14:
-      type: object
-      properties:
-        slug:
-          type: string
-          example: guests
-          description: only allowed value for type is `guests`
-        required:
-          type: boolean
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        label:
-          type: string
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if URL contains query parameter
-            `&guests=bob@cal.com`,      the guests field will be prefilled with
-            this value and disabled. In case of Booker atom need to pass
-            'guests' to defaultFormValues prop with the desired value e.g.
-            `defaultFormValues={{guests: ['bob@gmail.com',
-            'alice@gmail.com']}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-      required:
-        - slug
-    RescheduleReasonDefaultFieldInput_2024_06_14:
-      type: object
-      properties:
-        slug:
-          type: string
-          example: rescheduleReason
-          description: only allowed value for type is `rescheduleReason`
-        required:
-          type: boolean
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        label:
-          type: string
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if URL contains query parameter
-            `&rescheduleReason=travel`,      the rescheduleReason field will be
-            prefilled with this value and disabled. In case of Booker atom need
-            to pass 'rescheduleReason' to defaultFormValues prop with the
-            desired value e.g. `defaultFormValues={{rescheduleReason: 'bob'}}`.
-            See guide https://cal.com/docs/platform/guides/booking-fields
-      required:
-        - slug
-    PhoneFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: phone
-          description: only allowed value for type is `phone`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking. Special
-            slug is `attendeePhoneNumber` - if you create
-                  a phone input field with this slug for organization team event type you can create an organization team event type that can be booked using phone without requiring an email by setting {"type": "email", "required": false, "hidden": true} to the email booking field input in the request body.
-          example: some-slug
-        label:
-          type: string
-        required:
-          type: boolean
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `phone` and the URL contains query
-            parameter `&phone=1234567890`,      the phone field will be
-            prefilled with this value and disabled. In case of Booker atom need
-            to pass slug you used for this booking field to defaultFormValues
-            prop with the desired value e.g. `defaultFormValues={{phone:
-            '+37122222222'}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-      required:
-        - type
-        - slug
-        - label
-        - required
-    AddressFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: address
-          description: only allowed value for type is `address`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please enter your address
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: e.g., 1234 Main St
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `address` and the URL contains query
-            parameter `&address=1234 Main St, London`,      the address field
-            will be prefilled with this value and disabled.  In case of Booker
-            atom need to pass slug you used for this booking field to
-            defaultFormValues prop with the desired value e.g.
-            `defaultFormValues={{address: 'mainstreat 10, new york'}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-      required:
-        - type
-        - slug
-        - label
-        - required
-    TextFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: text
-          description: only allowed value for type is `text`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please enter your text
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: e.g., Enter text here
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `friend` and the URL contains query
-            parameter `&friend=bob`,      the text field will be prefilled with
-            this value and disabled.  In case of Booker atom need to pass slug
-            you used for this booking field to defaultFormValues prop with the
-            desired value e.g. `defaultFormValues={{friend: 'bob'}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-      required:
-        - type
-        - slug
-        - label
-        - required
-    NumberFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: number
-          description: only allowed value for type is `number`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please enter a number
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: e.g., 100
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `calories` and the URL contains query
-            parameter `&calories=3000`,      the number field will be prefilled
-            with this value and disabled. In case of Booker atom need to pass
-            slug you used for this booking field to defaultFormValues prop with
-            the desired value  e.g. `defaultFormValues={{calories: 3000}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-      required:
-        - type
-        - slug
-        - label
-        - required
-    TextAreaFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: textarea
-          description: only allowed value for type is `textarea`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please enter detailed information
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: e.g., Detailed description here...
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `reflection` and the URL contains query
-            parameter `&reflection=Today I shipped a feature`,      the text
-            area will be prefilled with this value and disabled. In case of
-            Booker atom need to pass slug you used for this booking field to
-            defaultFormValues prop with the desired value  e.g.
-            `defaultFormValues={{reflection: 'Today i shipped a feature'}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-      required:
-        - type
-        - slug
-        - label
-        - required
-    SelectFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: select
-          description: only allowed value for type is `select`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please select an option
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: Select...
-        options:
-          example:
-            - Option 1
-            - Option 2
-          type: array
-          items:
-            type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `language` and options of this select
-            field are ['english', 'italian'] and the URL contains query
-            parameter `&language=italian`,      the 'italian' will be selected
-            and the select field will be disabled. In case of Booker atom need
-            to pass slug you used for this booking field to defaultFormValues
-            prop with the desired value  e.g. `defaultFormValues={{language:
-            'italian'}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - options
-    MultiSelectFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: multiselect
-          description: only allowed value for type is `multiselect`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please select multiple options
-        required:
-          type: boolean
-        options:
-          example:
-            - Option 1
-            - Option 2
-          type: array
-          items:
-            type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `language` and the URL contains query
-            parameter `&language=en&language=it`,      the 'en' and 'it' will be
-            selected and the select field will be disabled. In case of Booker
-            atom need to pass slug you used for this booking field to
-            defaultFormValues prop with the desired value  e.g.
-            `defaultFormValues={{language: ['en', 'it']}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - options
-    MultiEmailFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: multiemail
-          description: only allowed value for type is `multiemail`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please enter multiple emails
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: e.g., example@example.com
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `consultants` and the URL contains query
-            parameter
-            `&consultants=alice@gmail.com&consultants=bob@gmail.com`,      the
-            these emails will be added and none more can be added. In case of
-            Booker atom need to pass slug you used for this booking field to
-            defaultFormValues prop with the desired value  e.g.
-            `defaultFormValues={{consultants: ['alice@gmail.com',
-            'bob@gmail.com']}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-      required:
-        - type
-        - slug
-        - label
-        - required
-    CheckboxGroupFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: checkbox
-          description: only allowed value for type is `checkbox`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Select all that apply
-        required:
-          type: boolean
-        options:
-          example:
-            - Checkbox 1
-            - Checkbox 2
-          type: array
-          items:
-            type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `notify` and the URL contains query
-            parameter `&notify=true`,      the checkbox will be selected and the
-            checkbox field will be disabled. In case of Booker atom need to pass
-            slug you used for this booking field to defaultFormValues prop with
-            the desired value  e.g. `defaultFormValues={{notify: true}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - options
-    RadioGroupFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: radio
-          description: only allowed value for type is `radio`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Select one option
-        required:
-          type: boolean
-        options:
-          example:
-            - Radio 1
-            - Radio 2
-          type: array
-          items:
-            type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `language` and options of this select
-            field are ['english', 'italian'] and the URL contains query
-            parameter `&language=italian`,      the 'italian' radio button will
-            be selected and the select field will be disabled. In case of Booker
-            atom need to pass slug you used for this booking field to
-            defaultFormValues prop with the desired value  e.g.
-            `defaultFormValues={{language: 'italian'}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - options
-    BooleanFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: boolean
-          description: only allowed value for type is `boolean`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Agree to terms?
-        required:
-          type: boolean
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `notify` and the URL contains query
-            parameter `&notify=true`,      the checkbox will be selected and the
-            checkbox field will be disabled. In case of Booker atom need to pass
-            slug you used for this booking field to defaultFormValues prop with
-            the desired value  e.g. `defaultFormValues={{notify: true}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-      required:
-        - type
-        - slug
-        - label
-        - required
-    UrlFieldInput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: url
-          description: only allowed value for type is `url`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please enter your text
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: e.g., Enter url here
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `videourl` and the URL contains query
-            parameter `&videourl=https://youtube.com/abc`the url field will be
-            prefilled with this value and disabled.       In case of Booker atom
-            need to pass slug you used for this booking field to
-            defaultFormValues prop with the desired value  e.g.
-            `defaultFormValues={{videourl: 'https://caltube.com/123'}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-      required:
-        - type
-        - slug
-        - label
-        - required
     BaseBookingLimitsCount_2024_06_14:
       type: object
       properties:
@@ -1345,6 +644,7 @@ components:
             Whether the window should be business days, calendar days or a range
             of dates
         value:
+          minItems: 1
           example:
             - '2030-09-05'
             - '2030-09-09'
@@ -1428,15 +728,32 @@ components:
         - interval
         - occurrences
         - frequency
+    EmailSettings_2024_06_14:
+      type: object
+      properties:
+        disableEmailsToAttendees:
+          type: boolean
+          description: >-
+            Disables all email communication to attendees for this event type,
+            including booking confirmations, reminders, and cancellations. This
+            DOES NOT include emails sent by custom email workflows.
+        disableEmailsToHosts:
+          type: boolean
+          description: >-
+            Disables all email communication to hosts for this event type,
+            including booking confirmations, reminders, and cancellations. This
+            DOES NOT include emails sent by custom email workflows.
     EventTypeColor_2024_06_14:
       type: object
       properties:
         lightThemeHex:
           type: string
+          pattern: ^#?([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$
           description: Color used for event types in light theme
           example: '#292929'
         darkThemeHex:
           type: string
+          pattern: ^#?([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$
           description: Color used for event types in dark theme
           example: '#fafafa'
       required:
@@ -1489,39 +806,65 @@ components:
         disableRecordingForOrganizer:
           type: boolean
           description: If true, the organizer will not be able to record the meeting
+          default: false
         disableRecordingForGuests:
           type: boolean
           description: If true, the guests will not be able to record the meeting
+          default: false
         redirectUrlOnExit:
           type: string
           nullable: true
+          format: uri
           description: URL to which participants are redirected when they exit the call
         enableAutomaticRecordingForOrganizer:
           type: boolean
           description: >-
             If true, enables the automatic recording for the event when
             organizer joins the call
+          default: false
         enableAutomaticTranscription:
           type: boolean
           description: >-
             If true, enables the automatic transcription for the event whenever
             someone joins the call
+          default: false
         disableTranscriptionForGuests:
           type: boolean
           description: >-
             If true, the guests will not be able to receive transcription of the
             meeting
+          default: false
         disableTranscriptionForOrganizer:
           type: boolean
           description: >-
             If true, the organizer will not be able to receive transcription of
             the meeting
+          default: false
+        hideTranscriptionForGuests:
+          type: boolean
+          description: >-
+            If true, guests will not see live transcription captions during the
+            meeting
+          default: false
+        hideTranscriptionForOrganizer:
+          type: boolean
+          description: >-
+            If true, organizers will not see live transcription captions during
+            the meeting
+          default: false
         sendTranscriptionEmails:
           type: boolean
           description: >-
             Send emails with the transcription of the Cal Video after the
             meeting ends.
           default: true
+        disableAttendeeRecordingDownloadEmail:
+          type: boolean
+          description: >-
+            If true, attendees will not receive the Cal Video recording download
+            email for this event type. Defaults to false. Organization guest
+            notifications can still prevent this email from sending.
+          default: false
         transcriptionLanguage:
           type: string
           nullable: true
@@ -1593,6 +936,14 @@ components:
             Disable rescheduling when less than the specified number of minutes
             before the meeting. If set, `disabled` should be false or undefined.
           example: 60
+    PrivateNoteMode:
+      type: string
+      enum:
+        - duplicate_event
+        - separate_events
+      description: >-
+        How private notes are delivered: as an additional host event or by
+        sending separate host and guest invites.
     InputAddressLocation_2024_06_14:
       type: object
       properties:
@@ -1619,6 +970,7 @@ components:
           description: only allowed value for type is `link`
         link:
           type: string
+          format: uri
           example: https://customvideo.com/join/123456
         public:
           type: boolean
@@ -1634,8 +986,6 @@ components:
           example: integration
           description: only allowed value for type is `integration`
         integration:
-          type: string
-          example: cal-video
           enum:
             - cal-video
             - google-meet
@@ -1666,6 +1016,8 @@ components:
             - discord-video
             - demodesk-video
             - campfire-video
+          type: string
+          example: cal-video
       required:
         - type
         - integration
@@ -1712,7 +1064,1021 @@ components:
           description: only allowed value for type is `attendeeDefined`
       required:
         - type
-    EventTypeOutput_2024_06_14:
+    SystemFullNameFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: name
+          description: Only allowed value is 'name'.
+        slug:
+          type: string
+          example: name
+          description: Only allowed value is 'name'.
+        variant:
+          type: string
+          example: fullName
+          description: >-
+            Only allowed value is 'fullName'. Used for having a single booking
+            field for the attendee's full name.
+        label:
+          type: string
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if URL contains query parameter `&name=bob`,    the name
+            field will be prefilled with this value and disabled.
+      required:
+        - field
+        - variant
+    SystemSplitNameFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: name
+          description: Only allowed value is 'name'.
+        slug:
+          type: string
+          example: name
+          description: Only allowed value is 'name'.
+        variant:
+          type: string
+          example: splitName
+          description: >-
+            Only allowed value is 'splitName'. Used to have 2 booking fields —
+            one for first name and one for last name.
+        firstNameLabel:
+          type: string
+        firstNamePlaceholder:
+          type: string
+        lastNameLabel:
+          type: string
+        lastNamePlaceholder:
+          type: string
+        lastNameRequired:
+          type: boolean
+          description: >-
+            Whether the last name sub-field is required. The first name
+            sub-field is always required and cannot be configured.
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if URL contains query parameter `?name=John%20Doe`,    the
+            first name and last name fields will be prefilled with these values
+            and disabled.    The value may also be a JSON object such as
+            `{"firstName":"John","lastName":"Doe"}`.
+      required:
+        - field
+        - variant
+    SystemEmailFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: email
+          description: Only allowed value is 'email'.
+        slug:
+          type: string
+          example: email
+          description: Only allowed value is 'email'.
+        label:
+          type: string
+        required:
+          type: boolean
+          description: >-
+            To enable phone-only bookings, set this to false and hidden to true,
+            then pass an attendeePhoneNumber default booking field with
+            required: true and hidden: false.
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if URL contains query parameter `&email=bob@gmail.com`,   
+            the email field will be prefilled with this value and disabled.
+        excludeEmails:
+          description: >-
+            Bookers whose email matches an entry cannot book. Entries may be a
+            bare domain (`example.com`), a domain with `@` (`@example.com`), or
+            an exact address (`person@example.com`). Matching is
+            case-insensitive.
+          type: array
+          items:
+            type: string
+        requireEmails:
+          description: >-
+            Only bookers whose email matches an entry can book. Entries may be a
+            bare domain (`example.com`), a domain with `@` (`@example.com`), or
+            an exact address (`person@example.com`). Matching is
+            case-insensitive.
+          type: array
+          items:
+            type: string
+      required:
+        - field
+    SystemLocationFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: location
+          description: >-
+            Only allowed value is 'location'. The Booker renders the location
+            picker only when the event type has at least 2 location options.
+        slug:
+          type: string
+          example: location
+          description: Only allowed value is 'location'.
+        label:
+          type: string
+      required:
+        - field
+    SystemTitleFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: title
+          description: Only allowed value is 'title'.
+        slug:
+          type: string
+          example: title
+          description: Only allowed value is 'title'.
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if URL contains query parameter `&title=journey`,    the
+            title field will be prefilled with this value and disabled.
+      required:
+        - field
+    SystemNotesFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: notes
+          description: Only allowed value is 'notes'.
+        slug:
+          type: string
+          example: notes
+          description: Only allowed value is 'notes'.
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if URL contains query parameter `&notes=bring notebook`,   
+            the notes field will be prefilled with this value and disabled.
+      required:
+        - field
+    SystemGuestsFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: guests
+          description: Only allowed value is 'guests'.
+        slug:
+          type: string
+          example: guests
+          description: Only allowed value is 'guests'.
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if URL contains query parameter `&guests=bob@cal.com`,   
+            the guests field will be prefilled with this value and disabled.
+      required:
+        - field
+    SystemRescheduleReasonFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: rescheduleReason
+          description: Only allowed value is 'rescheduleReason'.
+        slug:
+          type: string
+          example: rescheduleReason
+          description: Only allowed value is 'rescheduleReason'.
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if URL contains query parameter
+            `&rescheduleReason=travel`,    the rescheduleReason field will be
+            prefilled with this value and disabled.
+      required:
+        - field
+    SystemAttendeePhoneFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: attendeePhoneNumber
+          description: Only allowed value is 'attendeePhoneNumber'.
+        slug:
+          type: string
+          example: attendeePhoneNumber
+          description: Only allowed value is 'attendeePhoneNumber'.
+        required:
+          type: boolean
+          description: >-
+            To enable email-only bookings, set this to false and hidden to true,
+            then pass an email default booking field with required: true and
+            hidden: false.
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if URL contains query parameter
+            `&attendeePhoneNumber=+37122222222`,    the phone field will be
+            prefilled with this value and disabled.
+      required:
+        - field
+    SystemSmsReminderFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: smsReminderNumber
+          description: >-
+            Only allowed value is 'smsReminderNumber'. This field is added
+            automatically by an SMS workflow. It may be echoed from a GET
+            response in create, update, or replace bodies, but the API ignores
+            it; targeted PATCH and DELETE operations reject it.
+        slug:
+          type: string
+          example: smsReminderNumber
+          description: Only allowed value is 'smsReminderNumber'.
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.
+      required:
+        - field
+    SystemAiAgentPhoneFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: aiAgentCallPhoneNumber
+          description: >-
+            Only allowed value is 'aiAgentCallPhoneNumber'. This field is added
+            automatically by an AI-agent workflow. It may be echoed from a GET
+            response in create, update, or replace bodies, but the API ignores
+            it; targeted PATCH and DELETE operations reject it.
+        slug:
+          type: string
+          example: aiAgentCallPhoneNumber
+          description: Only allowed value is 'aiAgentCallPhoneNumber'.
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.
+      required:
+        - field
+    CustomEmailFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Must be 'custom' for all custom booking fields.
+        slug:
+          type: string
+          description: >-
+            Unique identifier for the field in format `some-slug`. Must start
+            with a lowercase letter and contain only lowercase letters, numbers,
+            and single hyphens.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: email
+          description: Only allowed value is 'email'.
+        excludeEmails:
+          description: >-
+            Bookers whose email matches an entry cannot book. Entries may be a
+            bare domain (`example.com`), a domain with `@` (`@example.com`), or
+            an exact address (`person@example.com`). Matching is
+            case-insensitive.
+          type: array
+          items:
+            type: string
+        requireEmails:
+          description: >-
+            Only bookers whose email matches an entry can book. Entries may be a
+            bare domain (`example.com`), a domain with `@` (`@example.com`), or
+            an exact address (`person@example.com`). Matching is
+            case-insensitive.
+          type: array
+          items:
+            type: string
+      required:
+        - field
+        - slug
+        - label
+        - type
+    CustomPhoneFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Must be 'custom' for all custom booking fields.
+        slug:
+          type: string
+          description: >-
+            Unique identifier for the field in format `some-slug`. Must start
+            with a lowercase letter and contain only lowercase letters, numbers,
+            and single hyphens.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: phone
+          description: Only allowed value is 'phone'.
+      required:
+        - field
+        - slug
+        - label
+        - type
+    CustomAddressFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Must be 'custom' for all custom booking fields.
+        slug:
+          type: string
+          description: >-
+            Unique identifier for the field in format `some-slug`. Must start
+            with a lowercase letter and contain only lowercase letters, numbers,
+            and single hyphens.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: address
+          description: Only allowed value is 'address'.
+      required:
+        - field
+        - slug
+        - label
+        - type
+    CustomShortTextFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Must be 'custom' for all custom booking fields.
+        slug:
+          type: string
+          description: >-
+            Unique identifier for the field in format `some-slug`. Must start
+            with a lowercase letter and contain only lowercase letters, numbers,
+            and single hyphens.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: shortText
+          description: Only allowed value is 'shortText'.
+      required:
+        - field
+        - slug
+        - label
+        - type
+    CustomNumberFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Must be 'custom' for all custom booking fields.
+        slug:
+          type: string
+          description: >-
+            Unique identifier for the field in format `some-slug`. Must start
+            with a lowercase letter and contain only lowercase letters, numbers,
+            and single hyphens.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: number
+          description: Only allowed value is 'number'.
+      required:
+        - field
+        - slug
+        - label
+        - type
+    CustomLongTextFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Must be 'custom' for all custom booking fields.
+        slug:
+          type: string
+          description: >-
+            Unique identifier for the field in format `some-slug`. Must start
+            with a lowercase letter and contain only lowercase letters, numbers,
+            and single hyphens.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: longText
+          description: Only allowed value is 'longText'.
+        minLength:
+          type: number
+          minimum: 0
+          maximum: 1000
+          description: >-
+            Minimum character length for the long text field. Defaults to 0 if
+            not provided.
+        maxLength:
+          type: number
+          minimum: 0
+          maximum: 1000
+          description: >-
+            Maximum character length for the long text field. Defaults to 1000
+            if not provided.
+      required:
+        - field
+        - slug
+        - label
+        - type
+    CustomSelectFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Must be 'custom' for all custom booking fields.
+        slug:
+          type: string
+          description: >-
+            Unique identifier for the field in format `some-slug`. Must start
+            with a lowercase letter and contain only lowercase letters, numbers,
+            and single hyphens.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        options:
+          example:
+            - Option 1
+            - Option 2
+          type: array
+          items:
+            type: string
+        type:
+          type: string
+          example: select
+          description: Only allowed value is 'select'.
+      required:
+        - field
+        - slug
+        - label
+        - options
+        - type
+    CustomMultiSelectFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Must be 'custom' for all custom booking fields.
+        slug:
+          type: string
+          description: >-
+            Unique identifier for the field in format `some-slug`. Must start
+            with a lowercase letter and contain only lowercase letters, numbers,
+            and single hyphens.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        options:
+          example:
+            - Option 1
+            - Option 2
+          type: array
+          items:
+            type: string
+        type:
+          type: string
+          example: multiSelect
+          description: Only allowed value is 'multiSelect'.
+      required:
+        - field
+        - slug
+        - label
+        - options
+        - type
+    CustomMultiEmailFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Must be 'custom' for all custom booking fields.
+        slug:
+          type: string
+          description: >-
+            Unique identifier for the field in format `some-slug`. Must start
+            with a lowercase letter and contain only lowercase letters, numbers,
+            and single hyphens.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: multiEmail
+          description: Only allowed value is 'multiEmail'.
+      required:
+        - field
+        - slug
+        - label
+        - type
+    CustomCheckboxGroupFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Must be 'custom' for all custom booking fields.
+        slug:
+          type: string
+          description: >-
+            Unique identifier for the field in format `some-slug`. Must start
+            with a lowercase letter and contain only lowercase letters, numbers,
+            and single hyphens.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        options:
+          example:
+            - Option 1
+            - Option 2
+          type: array
+          items:
+            type: string
+        type:
+          type: string
+          example: checkboxGroup
+          description: Only allowed value is 'checkboxGroup'.
+      required:
+        - field
+        - slug
+        - label
+        - options
+        - type
+    CustomCheckboxFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Must be 'custom' for all custom booking fields.
+        slug:
+          type: string
+          description: >-
+            Unique identifier for the field in format `some-slug`. Must start
+            with a lowercase letter and contain only lowercase letters, numbers,
+            and single hyphens.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: checkbox
+          description: Only allowed value is 'checkbox'.
+      required:
+        - field
+        - slug
+        - label
+        - type
+    CustomRadioGroupFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Must be 'custom' for all custom booking fields.
+        slug:
+          type: string
+          description: >-
+            Unique identifier for the field in format `some-slug`. Must start
+            with a lowercase letter and contain only lowercase letters, numbers,
+            and single hyphens.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        options:
+          example:
+            - Option 1
+            - Option 2
+          type: array
+          items:
+            type: string
+        type:
+          type: string
+          example: radioGroup
+          description: Only allowed value is 'radioGroup'.
+      required:
+        - field
+        - slug
+        - label
+        - options
+        - type
+    CustomUrlFieldInput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Must be 'custom' for all custom booking fields.
+        slug:
+          type: string
+          description: >-
+            Unique identifier for the field in format `some-slug`. Must start
+            with a lowercase letter and contain only lowercase letters, numbers,
+            and single hyphens.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: url
+          description: Only allowed value is 'url'.
+      required:
+        - field
+        - slug
+        - label
+        - type
+    EventTypeOutput_2026_06_12:
       type: object
       properties:
         id:
@@ -1749,36 +2115,18 @@ components:
           items:
             oneOf:
               - $ref: '#/components/schemas/OutputAddressLocation_2024_06_14'
+                title: Address
               - $ref: '#/components/schemas/OutputLinkLocation_2024_06_14'
+                title: Link
               - $ref: '#/components/schemas/OutputIntegrationLocation_2024_06_14'
+                title: Integration
               - $ref: '#/components/schemas/OutputPhoneLocation_2024_06_14'
+                title: Phone
               - $ref: >-
                   #/components/schemas/OutputOrganizersDefaultAppLocation_2024_06_14
+                title: Organizer Default App
               - $ref: '#/components/schemas/OutputUnknownLocation_2024_06_14'
-        bookingFields:
-          type: array
-          items:
-            oneOf:
-              - $ref: '#/components/schemas/NameDefaultFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/EmailDefaultFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/LocationDefaultFieldOutput_2024_06_14'
-              - $ref: >-
-                  #/components/schemas/RescheduleReasonDefaultFieldOutput_2024_06_14
-              - $ref: '#/components/schemas/TitleDefaultFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/NotesDefaultFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/GuestsDefaultFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/PhoneFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/AddressFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/TextFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/NumberFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/TextAreaFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/SelectFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/MultiSelectFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/MultiEmailFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/CheckboxGroupFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/RadioGroupFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/BooleanFieldOutput_2024_06_14'
-              - $ref: '#/components/schemas/UrlFieldOutput_2024_06_14'
+                title: Unknown
         disableGuests:
           type: boolean
         slotInterval:
@@ -1796,6 +2144,7 @@ components:
           example: 0
         recurrence:
           nullable: true
+          type: object
           allOf:
             - $ref: '#/components/schemas/Recurrence_2024_06_14'
         metadata:
@@ -1826,7 +2175,9 @@ components:
         bookingLimitsCount:
           oneOf:
             - $ref: '#/components/schemas/BaseBookingLimitsCount_2024_06_14'
+              title: Booking Count Limit
             - $ref: '#/components/schemas/Disabled_2024_06_14'
+              title: Disabled
         bookerActiveBookingsLimit:
           $ref: '#/components/schemas/BookerActiveBookingsLimitOutput_2024_06_14'
         onlyShowFirstAvailableSlot:
@@ -1834,23 +2185,50 @@ components:
         bookingLimitsDuration:
           oneOf:
             - $ref: '#/components/schemas/BaseBookingLimitsDuration_2024_06_14'
+              title: Booking Duration Limit
             - $ref: '#/components/schemas/Disabled_2024_06_14'
+              title: Disabled
         bookingWindow:
           type: array
           description: Limit how far in the future this event can be booked
           items:
             oneOf:
               - $ref: '#/components/schemas/BusinessDaysWindow_2024_06_14'
+                title: Business Days
               - $ref: '#/components/schemas/CalendarDaysWindow_2024_06_14'
+                title: Calendar Days
               - $ref: '#/components/schemas/RangeWindow_2024_06_14'
+                title: Date Range
         bookerLayouts:
           $ref: '#/components/schemas/BookerLayouts_2024_06_14'
         confirmationPolicy:
           oneOf:
             - $ref: '#/components/schemas/BaseConfirmationPolicy_2024_06_14'
+              title: Confirmation Required
             - $ref: '#/components/schemas/Disabled_2024_06_14'
+              title: Disabled
+        bookingProposalCount:
+          type: number
+          nullable: true
+          description: >-
+            Exact number of timeslots an attendee must propose for this event
+            type. Null uses the default single-slot booking flow.
         requiresBookerEmailVerification:
           type: boolean
+        skipAttendeeEmailDeliverabilityCheck:
+          type: boolean
+          description: >-
+            When true, the MX deliverability check for attendee emails is
+            skipped on booking. Format validation and watchlist still apply.
+            Org-only (including platform orgs).
+        emailSettings:
+          description: >-
+            Email settings for this event type. Personal event types require an
+            accepted organization membership; team event types require an
+            organization team. This does not include emails sent by custom email
+            workflows.
+          allOf:
+            - $ref: '#/components/schemas/EmailSettings_2024_06_14'
         hideCalendarNotes:
           type: boolean
         color:
@@ -1919,18 +2297,20 @@ components:
             booking with the resolved template as its description. Only visible
             to the host.
         privateNoteMode:
-          type: string
           nullable: true
           description: >-
-            The mode for private notes. Currently only 'duplicate_event' is
-            supported.
+            How private notes are delivered: as an additional host event or by
+            sending separate host and guest invites.
+          allOf:
+            - $ref: '#/components/schemas/PrivateNoteMode'
         privateNoteTemplate:
           type: string
           nullable: true
           description: >-
             Template for the private note content. Supports variables like
-            {Attendee name}, {Event type title}, {Location}, {Host name}, {Event
-            duration}, and custom booking field names.
+            {Attendee name}, {Link title}, {Event type title} (legacy),
+            {Location}, {Host name}, {Event duration}, and custom booking field
+            names.
         ownerId:
           type: number
           example: 10
@@ -1943,6 +2323,78 @@ components:
           description: Full URL to the booking page for this event type
           example: https://cal.com/john-doe/30min
           format: uri
+        bookingFields:
+          type: array
+          items:
+            discriminator:
+              propertyName: field
+            oneOf:
+              - title: Default Name
+                discriminator:
+                  propertyName: variant
+                oneOf:
+                  - $ref: '#/components/schemas/SystemFullNameFieldOutput_2026_06_12'
+                    title: Default Full Name
+                  - $ref: '#/components/schemas/SystemSplitNameFieldOutput_2026_06_12'
+                    title: Default Split Name
+              - $ref: '#/components/schemas/SystemEmailFieldOutput_2026_06_12'
+                title: Default Email
+              - $ref: '#/components/schemas/SystemLocationFieldOutput_2026_06_12'
+                title: Default Location
+              - $ref: '#/components/schemas/SystemTitleFieldOutput_2026_06_12'
+                title: Default Title
+              - $ref: '#/components/schemas/SystemNotesFieldOutput_2026_06_12'
+                title: Default Notes
+              - $ref: '#/components/schemas/SystemGuestsFieldOutput_2026_06_12'
+                title: Default Guests
+              - $ref: >-
+                  #/components/schemas/SystemRescheduleReasonFieldOutput_2026_06_12
+                title: Default Reschedule Reason
+              - $ref: '#/components/schemas/SystemAttendeePhoneFieldOutput_2026_06_12'
+                title: Default Attendee Phone
+              - $ref: '#/components/schemas/SystemSmsReminderFieldOutput_2026_06_12'
+                title: Workflow-added SMS Reminder
+              - $ref: '#/components/schemas/SystemAiAgentPhoneFieldOutput_2026_06_12'
+                title: Workflow-added AI Agent Phone
+              - title: Custom Booking Field
+                discriminator:
+                  propertyName: type
+                oneOf:
+                  - $ref: '#/components/schemas/CustomEmailFieldOutput_2026_06_12'
+                    title: Custom Email
+                  - $ref: '#/components/schemas/CustomPhoneFieldOutput_2026_06_12'
+                    title: Custom Phone
+                  - $ref: '#/components/schemas/CustomAddressFieldOutput_2026_06_12'
+                    title: Custom Address
+                  - $ref: '#/components/schemas/CustomShortTextFieldOutput_2026_06_12'
+                    title: Custom Short Text
+                  - $ref: '#/components/schemas/CustomNumberFieldOutput_2026_06_12'
+                    title: Custom Number
+                  - $ref: '#/components/schemas/CustomLongTextFieldOutput_2026_06_12'
+                    title: Custom Long Text
+                  - $ref: '#/components/schemas/CustomSelectFieldOutput_2026_06_12'
+                    title: Custom Select
+                  - $ref: >-
+                      #/components/schemas/CustomMultiSelectFieldOutput_2026_06_12
+                    title: Custom Multi-Select
+                  - $ref: >-
+                      #/components/schemas/CustomMultiEmailFieldOutput_2026_06_12
+                    title: Custom Multiple Emails
+                  - $ref: >-
+                      #/components/schemas/CustomCheckboxGroupFieldOutput_2026_06_12
+                    title: Custom Checkbox Group
+                  - $ref: >-
+                      #/components/schemas/CustomRadioGroupFieldOutput_2026_06_12
+                    title: Custom Radio Group
+                  - $ref: '#/components/schemas/CustomCheckboxFieldOutput_2026_06_12'
+                    title: Custom Checkbox
+                  - $ref: '#/components/schemas/CustomUrlFieldOutput_2026_06_12'
+                    title: Custom URL
+              - $ref: '#/components/schemas/UnknownBookingFieldOutput_2026_06_12'
+                title: Unknown Booking Field
+          description: >-
+            The event type's booking fields — the default ones, any custom ones,
+            and any added automatically by an attached workflow.
       required:
         - id
         - lengthInMinutes
@@ -1950,7 +2402,6 @@ components:
         - slug
         - description
         - locations
-        - bookingFields
         - disableGuests
         - recurrence
         - metadata
@@ -1966,6 +2417,7 @@ components:
         - ownerId
         - users
         - bookingUrl
+        - bookingFields
     NoticeThreshold_2024_06_14:
       type: object
       properties:
@@ -2009,6 +2461,7 @@ components:
           description: only allowed value for type is `link`
         link:
           type: string
+          format: uri
           example: https://customvideo.com/join/123456
         public:
           type: boolean
@@ -2024,8 +2477,6 @@ components:
           example: integration
           description: Only allowed value for type is `integration`
         integration:
-          type: string
-          example: cal-video
           enum:
             - cal-video
             - google-meet
@@ -2056,8 +2507,11 @@ components:
             - discord-video
             - demodesk-video
             - campfire-video
+          type: string
+          example: cal-video
         link:
           type: string
+          format: uri
           example: https://example.com
         credentialId:
           type: number
@@ -2102,923 +2556,6 @@ components:
       required:
         - type
         - location
-    NameDefaultFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: name
-          description: >-
-            only allowed value for type is `name`. Used for having 1 booking
-            field for both first name and last name.
-          default: name
-        label:
-          type: string
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if URL contains query parameter `&name=bob`,      the
-            name field will be prefilled with this value and disabled. In case
-            of Booker atom need to pass 'name' to defaultFormValues prop with
-            the desired value e.g. `defaultFormValues={{name: 'bob'}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-        isDefault:
-          type: boolean
-          default: true
-          description: This property is always true because it's a default field
-          example: true
-        slug:
-          type: string
-          default: name
-        required:
-          type: boolean
-      required:
-        - type
-        - isDefault
-        - slug
-        - required
-    EmailDefaultFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: email
-          description: only allowed value for type is `email`
-          default: email
-        label:
-          type: string
-        required:
-          type: boolean
-          default: true
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if URL contains query parameter
-            `&email=bob@gmail.com`,      the email field will be prefilled with
-            this value and disabled. In case of Booker atom need to pass 'email'
-            to defaultFormValues prop with the desired value e.g.
-            `defaultFormValues={{email: 'bob@gmail.com'}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-        isDefault:
-          type: boolean
-          default: true
-          description: This property is always true because it's a default field
-          example: true
-        slug:
-          type: string
-          default: email
-      required:
-        - type
-        - isDefault
-        - slug
-    LocationDefaultFieldOutput_2024_06_14:
-      type: object
-      properties:
-        isDefault:
-          type: boolean
-          default: true
-          description: This property is always true because it's a default field
-          example: true
-        slug:
-          type: string
-          default: location
-          description: >-
-            This booking field is returned only if the event type has more than
-            one location. The purpose of this field is to allow the user to
-            select the location where the event will take place.
-        type:
-          type: string
-          default: radioInput
-        required:
-          type: boolean
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        label:
-          type: string
-      required:
-        - isDefault
-        - slug
-        - type
-        - required
-        - hidden
-    RescheduleReasonDefaultFieldOutput_2024_06_14:
-      type: object
-      properties:
-        slug:
-          type: string
-          example: rescheduleReason
-          description: only allowed value for type is `rescheduleReason`
-          default: rescheduleReason
-        required:
-          type: boolean
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        label:
-          type: string
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if URL contains query parameter
-            `&rescheduleReason=busy`,      the reschedule reason field will be
-            prefilled with this value and disabled.
-        isDefault:
-          type: boolean
-          default: true
-          description: This property is always true because it's a default field
-          example: true
-        type:
-          type: string
-          default: textarea
-      required:
-        - slug
-        - isDefault
-        - type
-    TitleDefaultFieldOutput_2024_06_14:
-      type: object
-      properties:
-        slug:
-          type: string
-          example: title
-          description: only allowed value for type is `title`
-          default: title
-        required:
-          type: boolean
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        label:
-          type: string
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if URL contains query parameter
-            `&title=masterclass`,      the title field will be prefilled with
-            this value and disabled.
-        isDefault:
-          type: boolean
-          default: true
-          description: This property is always true because it's a default field
-          example: true
-        type:
-          type: string
-          default: text
-      required:
-        - slug
-        - isDefault
-        - type
-    NotesDefaultFieldOutput_2024_06_14:
-      type: object
-      properties:
-        slug:
-          type: string
-          example: notes
-          description: only allowed value for type is `notes`
-          default: notes
-        required:
-          type: boolean
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        label:
-          type: string
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if URL contains query parameter `&notes=hello`,     
-            the notes field will be prefilled with this value and disabled.
-        isDefault:
-          type: boolean
-          default: true
-          description: This property is always true because it's a default field
-          example: true
-        type:
-          type: string
-          default: textarea
-      required:
-        - slug
-        - isDefault
-        - type
-    GuestsDefaultFieldOutput_2024_06_14:
-      type: object
-      properties:
-        slug:
-          type: string
-          example: guests
-          description: only allowed value for type is `guests`
-          default: guests
-        required:
-          type: boolean
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        label:
-          type: string
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if URL contains query parameter
-            `&guests=lauris@cal.com`,      the guests field will be prefilled
-            with this value and disabled.
-        isDefault:
-          type: boolean
-          default: true
-          description: This property is always true because it's a default field
-          example: true
-        type:
-          type: string
-          default: multiemail
-      required:
-        - slug
-        - isDefault
-        - type
-    PhoneFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: phone
-          description: only allowed value for type is `phone`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking. Special
-            slug is `attendeePhoneNumber` - if you create
-                  a phone input field with this slug for organization team event type you can create an organization team event type that can be booked using phone without requiring an email by setting {"type": "email", "required": false, "hidden": true} to the email booking field input in the request body.
-          example: some-slug
-        label:
-          type: string
-        required:
-          type: boolean
-        placeholder:
-          type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `phone` and the URL contains query
-            parameter `&phone=1234567890`,      the phone field will be
-            prefilled with this value and disabled. In case of Booker atom need
-            to pass slug you used for this booking field to defaultFormValues
-            prop with the desired value e.g. `defaultFormValues={{phone:
-            '+37122222222'}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        isDefault:
-          type: boolean
-          default: false
-          description: >-
-            This property is always false because it's not default field but
-            custom field
-          example: false
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - hidden
-        - isDefault
-    AddressFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: address
-          description: only allowed value for type is `address`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please enter your address
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: e.g., 1234 Main St
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `address` and the URL contains query
-            parameter `&address=1234 Main St, London`,      the address field
-            will be prefilled with this value and disabled.  In case of Booker
-            atom need to pass slug you used for this booking field to
-            defaultFormValues prop with the desired value e.g.
-            `defaultFormValues={{address: 'mainstreat 10, new york'}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        isDefault:
-          type: boolean
-          default: false
-          description: >-
-            This property is always false because it's not default field but
-            custom field
-          example: false
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - hidden
-        - isDefault
-    TextFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: text
-          description: only allowed value for type is `text`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please enter your text
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: e.g., Enter text here
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `friend` and the URL contains query
-            parameter `&friend=bob`,      the text field will be prefilled with
-            this value and disabled.  In case of Booker atom need to pass slug
-            you used for this booking field to defaultFormValues prop with the
-            desired value e.g. `defaultFormValues={{friend: 'bob'}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        isDefault:
-          type: boolean
-          default: false
-          description: >-
-            This property is always false because it's not default field but
-            custom field
-          example: false
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - hidden
-        - isDefault
-    NumberFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: number
-          description: only allowed value for type is `number`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please enter a number
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: e.g., 100
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `calories` and the URL contains query
-            parameter `&calories=3000`,      the number field will be prefilled
-            with this value and disabled. In case of Booker atom need to pass
-            slug you used for this booking field to defaultFormValues prop with
-            the desired value  e.g. `defaultFormValues={{calories: 3000}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        isDefault:
-          type: boolean
-          default: false
-          description: >-
-            This property is always false because it's not default field but
-            custom field
-          example: false
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - hidden
-        - isDefault
-    TextAreaFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: textarea
-          description: only allowed value for type is `textarea`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please enter detailed information
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: e.g., Detailed description here...
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `reflection` and the URL contains query
-            parameter `&reflection=Today I shipped a feature`,      the text
-            area will be prefilled with this value and disabled. In case of
-            Booker atom need to pass slug you used for this booking field to
-            defaultFormValues prop with the desired value  e.g.
-            `defaultFormValues={{reflection: 'Today i shipped a feature'}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        isDefault:
-          type: boolean
-          default: false
-          description: >-
-            This property is always false because it's not default field but
-            custom field
-          example: false
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - hidden
-        - isDefault
-    SelectFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: select
-          description: only allowed value for type is `select`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please select an option
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: Select...
-        options:
-          example:
-            - Option 1
-            - Option 2
-          type: array
-          items:
-            type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `language` and options of this select
-            field are ['english', 'italian'] and the URL contains query
-            parameter `&language=italian`,      the 'italian' will be selected
-            and the select field will be disabled. In case of Booker atom need
-            to pass slug you used for this booking field to defaultFormValues
-            prop with the desired value  e.g. `defaultFormValues={{language:
-            'italian'}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        isDefault:
-          type: boolean
-          default: false
-          description: >-
-            This property is always false because it's not default field but
-            custom field
-          example: false
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - options
-        - hidden
-        - isDefault
-    MultiSelectFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: multiselect
-          description: only allowed value for type is `multiselect`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please select multiple options
-        required:
-          type: boolean
-        options:
-          example:
-            - Option 1
-            - Option 2
-          type: array
-          items:
-            type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `language` and the URL contains query
-            parameter `&language=en&language=it`,      the 'en' and 'it' will be
-            selected and the select field will be disabled. In case of Booker
-            atom need to pass slug you used for this booking field to
-            defaultFormValues prop with the desired value  e.g.
-            `defaultFormValues={{language: ['en', 'it']}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        isDefault:
-          type: boolean
-          default: false
-          description: >-
-            This property is always false because it's not default field but
-            custom field
-          example: false
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - options
-        - hidden
-        - isDefault
-    MultiEmailFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: multiemail
-          description: only allowed value for type is `multiemail`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please enter multiple emails
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: e.g., example@example.com
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `consultants` and the URL contains query
-            parameter
-            `&consultants=alice@gmail.com&consultants=bob@gmail.com`,      the
-            these emails will be added and none more can be added. In case of
-            Booker atom need to pass slug you used for this booking field to
-            defaultFormValues prop with the desired value  e.g.
-            `defaultFormValues={{consultants: ['alice@gmail.com',
-            'bob@gmail.com']}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        isDefault:
-          type: boolean
-          default: false
-          description: >-
-            This property is always false because it's not default field but
-            custom field
-          example: false
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - hidden
-        - isDefault
-    CheckboxGroupFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: checkbox
-          description: only allowed value for type is `checkbox`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Select all that apply
-        required:
-          type: boolean
-        options:
-          example:
-            - Checkbox 1
-            - Checkbox 2
-          type: array
-          items:
-            type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `notify` and the URL contains query
-            parameter `&notify=true`,      the checkbox will be selected and the
-            checkbox field will be disabled. In case of Booker atom need to pass
-            slug you used for this booking field to defaultFormValues prop with
-            the desired value  e.g. `defaultFormValues={{notify: true}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        isDefault:
-          type: boolean
-          default: false
-          description: >-
-            This property is always false because it's not default field but
-            custom field
-          example: false
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - options
-        - hidden
-        - isDefault
-    RadioGroupFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: radio
-          description: only allowed value for type is `radio`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Select one option
-        required:
-          type: boolean
-        options:
-          example:
-            - Radio 1
-            - Radio 2
-          type: array
-          items:
-            type: string
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `language` and options of this select
-            field are ['english', 'italian'] and the URL contains query
-            parameter `&language=italian`,      the 'italian' radio button will
-            be selected and the select field will be disabled. In case of Booker
-            atom need to pass slug you used for this booking field to
-            defaultFormValues prop with the desired value  e.g.
-            `defaultFormValues={{language: 'italian'}}`. See guide
-            https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        isDefault:
-          type: boolean
-          default: false
-          description: >-
-            This property is always false because it's not default field but
-            custom field
-          example: false
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - options
-        - hidden
-        - isDefault
-    BooleanFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: boolean
-          description: only allowed value for type is `boolean`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Agree to terms?
-        required:
-          type: boolean
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `notify` and the URL contains query
-            parameter `&notify=true`,      the checkbox will be selected and the
-            checkbox field will be disabled. In case of Booker atom need to pass
-            slug you used for this booking field to defaultFormValues prop with
-            the desired value  e.g. `defaultFormValues={{notify: true}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        isDefault:
-          type: boolean
-          default: false
-          description: >-
-            This property is always false because it's not default field but
-            custom field
-          example: false
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - hidden
-        - isDefault
-    UrlFieldOutput_2024_06_14:
-      type: object
-      properties:
-        type:
-          type: string
-          example: url
-          description: only allowed value for type is `url`
-        slug:
-          type: string
-          description: >-
-            Unique identifier for the field in format `some-slug`. It is used to
-            access response to this booking field during the booking
-          example: some-slug
-        label:
-          type: string
-          example: Please enter your text
-        required:
-          type: boolean
-        placeholder:
-          type: string
-          example: e.g., Enter url here
-        disableOnPrefill:
-          type: boolean
-          description: >-
-            Disable this booking field if the URL contains query parameter with
-            key equal to the slug and prefill it with the provided value.     
-            For example, if the slug is `videourl` and the URL contains query
-            parameter `&videourl=https://youtube.com/abc`the url field will be
-            prefilled with this value and disabled.       In case of Booker atom
-            need to pass slug you used for this booking field to
-            defaultFormValues prop with the desired value  e.g.
-            `defaultFormValues={{videourl: 'https://caltube.com/123'}}`. See
-            guide https://cal.com/docs/platform/guides/booking-fields
-        hidden:
-          type: boolean
-          description: >-
-            If true show under event type settings but don't show this booking
-            field in the Booker. If false show in both.
-        isDefault:
-          type: boolean
-          default: false
-          description: >-
-            This property is always false because it's not default field but
-            custom field
-          example: false
-      required:
-        - type
-        - slug
-        - label
-        - required
-        - hidden
-        - isDefault
     BookerActiveBookingsLimitOutput_2024_06_14:
       type: object
       properties:
@@ -3088,5 +2625,1109 @@ components:
         - brandColor
         - darkBrandColor
         - metadata
+    SystemFullNameFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: name
+          description: Identifies this as the name default booking field.
+        slug:
+          type: string
+          example: name
+          description: The default name field always uses `name` as its slug.
+        variant:
+          type: string
+          example: fullName
+          enum:
+            - fullName
+          description: Single full-name input variant.
+        label:
+          type: string
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+      required:
+        - field
+        - slug
+        - variant
+        - disableOnPrefill
+    SystemSplitNameFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: name
+          description: Identifies this as the name default booking field.
+        slug:
+          type: string
+          example: name
+          description: The default name field always uses `name` as its slug.
+        variant:
+          type: string
+          example: splitName
+          enum:
+            - splitName
+          description: >-
+            The booking page displays separate fields for the attendee's first
+            and last names.
+        firstNameLabel:
+          type: string
+        firstNamePlaceholder:
+          type: string
+        lastNameLabel:
+          type: string
+        lastNamePlaceholder:
+          type: string
+        lastNameRequired:
+          type: boolean
+          description: Whether the last name sub-field is required.
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+      required:
+        - field
+        - slug
+        - variant
+        - lastNameRequired
+        - disableOnPrefill
+    SystemEmailFieldOutput_2026_06_12:
+      type: object
+      properties:
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+          example: Your default field label
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        field:
+          type: string
+          example: email
+          description: Identifies this as the email default booking field.
+        slug:
+          type: string
+          example: email
+          description: The default email field always uses `email` as its slug.
+        excludeEmails:
+          description: >-
+            Bookers whose email matches an entry cannot book. Entries may be a
+            bare domain (`example.com`), a domain with `@` (`@example.com`), or
+            an exact address (`person@example.com`). Matching is
+            case-insensitive.
+          type: array
+          items:
+            type: string
+        requireEmails:
+          description: >-
+            Only bookers whose email matches an entry can book. Entries may be a
+            bare domain (`example.com`), a domain with `@` (`@example.com`), or
+            an exact address (`person@example.com`). Matching is
+            case-insensitive.
+          type: array
+          items:
+            type: string
+      required:
+        - required
+        - hidden
+        - disableOnPrefill
+        - field
+        - slug
+    SystemLocationFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: location
+          description: >-
+            Identifies this as the location default booking field. The Booker
+            renders the location picker only when the event type has at least 2
+            location options.
+        slug:
+          type: string
+          example: location
+          description: The default location field always uses `location` as its slug.
+        label:
+          type: string
+          example: Your location default field label
+      required:
+        - field
+        - slug
+    SystemTitleFieldOutput_2026_06_12:
+      type: object
+      properties:
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+          example: Your default field label
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        field:
+          type: string
+          example: title
+          description: Identifies this as the title default booking field.
+        slug:
+          type: string
+          example: title
+          description: The default booking title field always uses `title` as its slug.
+      required:
+        - required
+        - hidden
+        - disableOnPrefill
+        - field
+        - slug
+    SystemNotesFieldOutput_2026_06_12:
+      type: object
+      properties:
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+          example: Your default field label
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        field:
+          type: string
+          example: notes
+          description: Identifies this as the notes default booking field.
+        slug:
+          type: string
+          example: notes
+          description: The default additional-notes field always uses `notes` as its slug.
+      required:
+        - required
+        - hidden
+        - disableOnPrefill
+        - field
+        - slug
+    SystemGuestsFieldOutput_2026_06_12:
+      type: object
+      properties:
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+          example: Your default field label
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        field:
+          type: string
+          example: guests
+          description: Identifies this as the guests default booking field.
+        slug:
+          type: string
+          example: guests
+          description: >-
+            The default additional-guests field always uses `guests` as its
+            slug.
+      required:
+        - required
+        - hidden
+        - disableOnPrefill
+        - field
+        - slug
+    SystemRescheduleReasonFieldOutput_2026_06_12:
+      type: object
+      properties:
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+          example: Your default field label
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        field:
+          type: string
+          example: rescheduleReason
+          description: Identifies this as the reschedule reason default booking field.
+        slug:
+          type: string
+          example: rescheduleReason
+          description: >-
+            The default reschedule-reason field always uses `rescheduleReason`
+            as its slug.
+      required:
+        - required
+        - hidden
+        - disableOnPrefill
+        - field
+        - slug
+    SystemAttendeePhoneFieldOutput_2026_06_12:
+      type: object
+      properties:
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+          example: Your default field label
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        field:
+          type: string
+          example: attendeePhoneNumber
+          description: Identifies this as the attendee phone number default booking field.
+        slug:
+          type: string
+          example: attendeePhoneNumber
+          description: >-
+            The default attendee phone field always uses `attendeePhoneNumber`
+            as its slug.
+      required:
+        - required
+        - hidden
+        - disableOnPrefill
+        - field
+        - slug
+    SystemSmsReminderFieldOutput_2026_06_12:
+      type: object
+      properties:
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+          example: Your default field label
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        field:
+          type: string
+          example: smsReminderNumber
+          description: Phone-number field added automatically by an SMS workflow.
+        slug:
+          type: string
+          example: smsReminderNumber
+          description: >-
+            This workflow-added field always uses `smsReminderNumber` as its
+            slug.
+      required:
+        - required
+        - hidden
+        - disableOnPrefill
+        - field
+        - slug
+    SystemAiAgentPhoneFieldOutput_2026_06_12:
+      type: object
+      properties:
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        label:
+          type: string
+          example: Your default field label
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        field:
+          type: string
+          example: aiAgentCallPhoneNumber
+          description: Phone-number field added automatically by an AI-agent workflow.
+        slug:
+          type: string
+          example: aiAgentCallPhoneNumber
+          description: >-
+            This workflow-added field always uses `aiAgentCallPhoneNumber` as
+            its slug.
+      required:
+        - required
+        - hidden
+        - disableOnPrefill
+        - field
+        - slug
+    CustomEmailFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Identifies this as a custom booking field.
+        slug:
+          type: string
+          description: Unique slug identifier for this custom field.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: email
+          enum:
+            - email
+          description: An email input on the booking page.
+        excludeEmails:
+          description: >-
+            Bookers whose email matches an entry cannot book. Entries may be a
+            bare domain (`example.com`), a domain with `@` (`@example.com`), or
+            an exact address (`person@example.com`). Matching is
+            case-insensitive.
+          type: array
+          items:
+            type: string
+        requireEmails:
+          description: >-
+            Only bookers whose email matches an entry can book. Entries may be a
+            bare domain (`example.com`), a domain with `@` (`@example.com`), or
+            an exact address (`person@example.com`). Matching is
+            case-insensitive.
+          type: array
+          items:
+            type: string
+      required:
+        - field
+        - slug
+        - label
+        - required
+        - hidden
+        - disableOnPrefill
+        - type
+    CustomPhoneFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Identifies this as a custom booking field.
+        slug:
+          type: string
+          description: Unique slug identifier for this custom field.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: phone
+          enum:
+            - phone
+          description: A phone-number input on the booking page.
+      required:
+        - field
+        - slug
+        - label
+        - required
+        - hidden
+        - disableOnPrefill
+        - type
+    CustomAddressFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Identifies this as a custom booking field.
+        slug:
+          type: string
+          description: Unique slug identifier for this custom field.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: address
+          enum:
+            - address
+          description: An address input on the booking page.
+      required:
+        - field
+        - slug
+        - label
+        - required
+        - hidden
+        - disableOnPrefill
+        - type
+    CustomShortTextFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Identifies this as a custom booking field.
+        slug:
+          type: string
+          description: Unique slug identifier for this custom field.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: shortText
+          enum:
+            - shortText
+          description: A single-line text input on the booking page.
+      required:
+        - field
+        - slug
+        - label
+        - required
+        - hidden
+        - disableOnPrefill
+        - type
+    CustomNumberFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Identifies this as a custom booking field.
+        slug:
+          type: string
+          description: Unique slug identifier for this custom field.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: number
+          enum:
+            - number
+          description: A number input on the booking page.
+      required:
+        - field
+        - slug
+        - label
+        - required
+        - hidden
+        - disableOnPrefill
+        - type
+    CustomLongTextFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Identifies this as a custom booking field.
+        slug:
+          type: string
+          description: Unique slug identifier for this custom field.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: longText
+          enum:
+            - longText
+          description: A multi-line text input on the booking page.
+        minLength:
+          type: number
+          description: Minimum character length for the long text field.
+        maxLength:
+          type: number
+          description: Maximum character length for the long text field.
+      required:
+        - field
+        - slug
+        - label
+        - required
+        - hidden
+        - disableOnPrefill
+        - type
+    CustomSelectFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Identifies this as a custom booking field.
+        slug:
+          type: string
+          description: Unique slug identifier for this custom field.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        options:
+          example:
+            - Option 1
+            - Option 2
+          type: array
+          items:
+            type: string
+        type:
+          type: string
+          example: select
+          enum:
+            - select
+          description: A dropdown that allows one selection.
+      required:
+        - field
+        - slug
+        - label
+        - required
+        - hidden
+        - disableOnPrefill
+        - options
+        - type
+    CustomMultiSelectFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Identifies this as a custom booking field.
+        slug:
+          type: string
+          description: Unique slug identifier for this custom field.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        options:
+          example:
+            - Option 1
+            - Option 2
+          type: array
+          items:
+            type: string
+        type:
+          type: string
+          example: multiSelect
+          enum:
+            - multiSelect
+          description: A list that allows multiple selections.
+      required:
+        - field
+        - slug
+        - label
+        - required
+        - hidden
+        - disableOnPrefill
+        - options
+        - type
+    CustomMultiEmailFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Identifies this as a custom booking field.
+        slug:
+          type: string
+          description: Unique slug identifier for this custom field.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: multiEmail
+          enum:
+            - multiEmail
+          description: An input that accepts multiple email addresses.
+      required:
+        - field
+        - slug
+        - label
+        - required
+        - hidden
+        - disableOnPrefill
+        - type
+    CustomCheckboxGroupFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Identifies this as a custom booking field.
+        slug:
+          type: string
+          description: Unique slug identifier for this custom field.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        options:
+          example:
+            - Option 1
+            - Option 2
+          type: array
+          items:
+            type: string
+        type:
+          type: string
+          example: checkboxGroup
+          enum:
+            - checkboxGroup
+          description: A group of checkboxes that allows multiple selections.
+      required:
+        - field
+        - slug
+        - label
+        - required
+        - hidden
+        - disableOnPrefill
+        - options
+        - type
+    CustomRadioGroupFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Identifies this as a custom booking field.
+        slug:
+          type: string
+          description: Unique slug identifier for this custom field.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        options:
+          example:
+            - Option 1
+            - Option 2
+          type: array
+          items:
+            type: string
+        type:
+          type: string
+          example: radioGroup
+          enum:
+            - radioGroup
+          description: A group of radio buttons that allows one selection.
+      required:
+        - field
+        - slug
+        - label
+        - required
+        - hidden
+        - disableOnPrefill
+        - options
+        - type
+    CustomCheckboxFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Identifies this as a custom booking field.
+        slug:
+          type: string
+          description: Unique slug identifier for this custom field.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: checkbox
+          enum:
+            - checkbox
+          description: A single checkbox on the booking page.
+      required:
+        - field
+        - slug
+        - label
+        - required
+        - hidden
+        - disableOnPrefill
+        - type
+    CustomUrlFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: custom
+          description: Identifies this as a custom booking field.
+        slug:
+          type: string
+          description: Unique slug identifier for this custom field.
+          example: some-slug
+        label:
+          type: string
+          example: Your custom field label
+        required:
+          type: boolean
+        hidden:
+          type: boolean
+          description: >-
+            Hide this booking field from the booking page while keeping it in
+            the event type's settings. Hidden fields are only returned to
+            callers authorized on the event type.
+        placeholder:
+          type: string
+        disableOnPrefill:
+          type: boolean
+          description: >-
+            Disable this booking field if the URL contains query parameter with
+            key equal to the slug and prefill it with the provided value.    For
+            example, if the slug is `my-field` and the URL contains
+            `&my-field=value`,    the field will be prefilled with this value
+            and disabled.
+        type:
+          type: string
+          example: url
+          enum:
+            - url
+          description: A URL input on the booking page.
+      required:
+        - field
+        - slug
+        - label
+        - required
+        - hidden
+        - disableOnPrefill
+        - type
+    UnknownBookingFieldOutput_2026_06_12:
+      type: object
+      properties:
+        field:
+          type: string
+          example: unknown
+          enum:
+            - unknown
+        slug:
+          type: string
+          example: unknown
+          enum:
+            - unknown
+        bookingField:
+          type: string
+          description: Raw booking-field data that this API version does not recognize.
+      required:
+        - field
+        - slug
+        - bookingField
 
 ````

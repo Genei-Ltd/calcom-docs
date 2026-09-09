@@ -80,6 +80,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2024-08-13'
         - name: bookingUid
           required: true
           in: path
@@ -112,6 +113,7 @@ components:
       type: object
       properties:
         guests:
+          minItems: 1
           description: >-
             Array of guests to add to the booking. Maximum 100 guests per
             request.
@@ -130,21 +132,27 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           oneOf:
             - $ref: '#/components/schemas/BookingOutput_2024_08_13'
+              title: Booking
             - $ref: '#/components/schemas/RecurringBookingOutput_2024_08_13'
-            - type: array
+              title: Recurring Booking
+            - title: Recurring Bookings (array)
+              type: array
               items:
                 $ref: '#/components/schemas/RecurringBookingOutput_2024_08_13'
             - $ref: '#/components/schemas/GetSeatedBookingOutput_2024_08_13'
+              title: Seated Booking
             - $ref: '#/components/schemas/GetRecurringSeatedBookingOutput_2024_08_13'
-            - type: array
+              title: Recurring Seated Booking
+            - title: Recurring Seated Bookings (array)
+              type: array
               items:
                 $ref: >-
                   #/components/schemas/GetRecurringSeatedBookingOutput_2024_08_13
@@ -245,24 +253,26 @@ components:
           items:
             $ref: '#/components/schemas/BookingHost'
         status:
-          type: string
           enum:
             - cancelled
             - accepted
             - rejected
             - pending
+          type: string
           example: accepted
         cancellationReason:
           type: string
           example: User requested cancellation
         cancelledByEmail:
           type: string
+          format: email
           example: canceller@example.com
         reschedulingReason:
           type: string
           example: User rescheduled the event
         rescheduledByEmail:
           type: string
+          format: email
           example: rescheduler@example.com
         rescheduledFromUid:
           type: string
@@ -292,6 +302,7 @@ components:
           $ref: '#/components/schemas/EventType'
         meetingUrl:
           type: string
+          format: uri
           description: Deprecated - rely on 'location' field instead.
           example: https://example.com/recurring-meeting
           deprecated: true
@@ -312,6 +323,8 @@ components:
           format: date-time
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
         rating:
@@ -334,6 +347,7 @@ components:
             type: string
         bookingFieldsResponses:
           type: object
+          additionalProperties: true
           description: >-
             Booking field responses consisting of an object with booking field
             slug as keys and user response as values.
@@ -377,24 +391,26 @@ components:
           items:
             $ref: '#/components/schemas/BookingHost'
         status:
-          type: string
           enum:
             - cancelled
             - accepted
             - rejected
             - pending
+          type: string
           example: accepted
         cancellationReason:
           type: string
           example: User requested cancellation
         cancelledByEmail:
           type: string
+          format: email
           example: canceller@example.com
         reschedulingReason:
           type: string
           example: User rescheduled the event
         rescheduledByEmail:
           type: string
+          format: email
           example: rescheduler@example.com
         rescheduledFromUid:
           type: string
@@ -424,6 +440,7 @@ components:
           $ref: '#/components/schemas/EventType'
         meetingUrl:
           type: string
+          format: uri
           description: Deprecated - rely on 'location' field instead.
           example: https://example.com/recurring-meeting
           deprecated: true
@@ -444,6 +461,8 @@ components:
           format: date-time
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
         rating:
@@ -466,6 +485,7 @@ components:
             type: string
         bookingFieldsResponses:
           type: object
+          additionalProperties: true
           description: >-
             Booking field responses consisting of an object with booking field
             slug as keys and user response as values.
@@ -513,24 +533,26 @@ components:
           items:
             $ref: '#/components/schemas/BookingHost'
         status:
-          type: string
           enum:
             - cancelled
             - accepted
             - rejected
             - pending
+          type: string
           example: accepted
         cancellationReason:
           type: string
           example: User requested cancellation
         cancelledByEmail:
           type: string
+          format: email
           example: canceller@example.com
         reschedulingReason:
           type: string
           example: User rescheduled the event
         rescheduledByEmail:
           type: string
+          format: email
           example: rescheduler@example.com
         rescheduledFromUid:
           type: string
@@ -560,6 +582,7 @@ components:
           $ref: '#/components/schemas/EventType'
         meetingUrl:
           type: string
+          format: uri
           description: Deprecated - rely on 'location' field instead.
           example: https://example.com/recurring-meeting
           deprecated: true
@@ -580,6 +603,8 @@ components:
           format: date-time
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
         rating:
@@ -630,24 +655,26 @@ components:
           items:
             $ref: '#/components/schemas/BookingHost'
         status:
-          type: string
           enum:
             - cancelled
             - accepted
             - rejected
             - pending
+          type: string
           example: accepted
         cancellationReason:
           type: string
           example: User requested cancellation
         cancelledByEmail:
           type: string
+          format: email
           example: canceller@example.com
         reschedulingReason:
           type: string
           example: User rescheduled the event
         rescheduledByEmail:
           type: string
+          format: email
           example: rescheduler@example.com
         rescheduledFromUid:
           type: string
@@ -677,6 +704,7 @@ components:
           $ref: '#/components/schemas/EventType'
         meetingUrl:
           type: string
+          format: uri
           description: Deprecated - rely on 'location' field instead.
           example: https://example.com/recurring-meeting
           deprecated: true
@@ -697,6 +725,8 @@ components:
           format: date-time
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
         rating:
@@ -925,6 +955,7 @@ components:
           description: The date and time when the attendee joined the seated booking.
         bookingFieldsResponses:
           type: object
+          additionalProperties: true
           description: >-
             Booking field responses consisting of an object with booking field
             slug as keys and user response as values.
@@ -932,6 +963,8 @@ components:
             customField: customValue
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
       required:

@@ -51,17 +51,17 @@ paths:
           required: false
           schema:
             type: string
+        - name: orgId
+          required: true
+          in: path
+          schema:
+            type: number
         - name: userId
           required: true
           in: path
           schema:
             type: number
         - name: oooId
-          required: true
-          in: path
-          schema:
-            type: number
-        - name: orgId
           required: true
           in: path
           schema:
@@ -122,11 +122,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/UserOooOutputDto'
       required:

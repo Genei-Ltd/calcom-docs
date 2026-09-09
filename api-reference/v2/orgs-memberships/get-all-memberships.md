@@ -4,7 +4,7 @@
 
 # Get all memberships
 
-> Required membership role: `org admin`. PBAC permission: `organization.listMembers`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `ORG_MEMBERSHIP_READ` scope is required.
+> Required membership role: `org admin`. PBAC permission: `organization.readMemberships`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `ORG_MEMBERSHIP_READ` scope is required.
 
 
 
@@ -28,7 +28,7 @@ paths:
       summary: Get all memberships
       description: >-
         Required membership role: `org admin`. PBAC permission:
-        `organization.listMembers`. Learn more about API access control at
+        `organization.readMemberships`. Learn more about API access control at
         https://cal.com/docs/api-reference/v2/access-control. If accessed using
         an OAuth access token, the `ORG_MEMBERSHIP_READ` scope is required.
       operationId: OrganizationsMembershipsController_getAllMemberships
@@ -90,11 +90,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/OrganizationMembershipOutput'
       required:
@@ -112,11 +112,11 @@ components:
         accepted:
           type: boolean
         role:
-          type: string
           enum:
             - MEMBER
             - OWNER
             - ADMIN
+          type: string
         disableImpersonation:
           type: boolean
         user:
@@ -126,9 +126,13 @@ components:
           items:
             oneOf:
               - $ref: '#/components/schemas/TextAttribute'
+                title: Text
               - $ref: '#/components/schemas/NumberAttribute'
+                title: Number
               - $ref: '#/components/schemas/SingleSelectAttribute'
+                title: Single Select
               - $ref: '#/components/schemas/MultiSelectAttribute'
+                title: Multi-Select
       required:
         - id
         - userId

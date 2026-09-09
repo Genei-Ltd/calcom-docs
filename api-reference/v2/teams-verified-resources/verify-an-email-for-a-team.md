@@ -64,6 +64,7 @@ components:
       properties:
         email:
           type: string
+          format: email
           description: Email to verify.
           example: example@acme.com
         code:
@@ -77,11 +78,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/TeamVerifiedEmailOutputData'
       required:

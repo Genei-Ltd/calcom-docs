@@ -4,6 +4,8 @@
 
 # List permissions for an organization team role
 
+> Required membership role: `org admin`. PBAC permission: `role.readTeamRoles`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control
+
 
 
 ## OpenAPI
@@ -24,6 +26,10 @@ paths:
       tags:
         - Orgs / Teams / Roles / Permissions
       summary: List permissions for an organization team role
+      description: >-
+        Required membership role: `org admin`. PBAC permission:
+        `role.readTeamRoles`. Learn more about API access control at
+        https://cal.com/docs/api-reference/v2/access-control
       operationId: OrganizationsTeamsRolesPermissionsController_listPermissions
       parameters:
         - name: Authorization

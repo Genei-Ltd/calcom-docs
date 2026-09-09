@@ -1,0 +1,2149 @@
+{
+  "source": "https://cal.com/docs/",
+  "synced_at": "2026-09-09T10:11:53.418375+00:00",
+  "source_commit": null,
+  "markdown_files": 380,
+  "sitemap_pages": 377,
+  "indexes": [
+    "https://cal.com/docs/_llms/api-v2-reference.md",
+    "https://cal.com/docs/_llms/api-v2-reference/organizations.md",
+    "https://cal.com/docs/llms.txt"
+  ],
+  "files": {
+    "INDEX.md": {
+      "url": null,
+      "bytes": 52825,
+      "sha256": "eda08d16ebd1f5dcbe33f4e8666fd45f4516cd536739e6dc8f6dba8872d6d104"
+    },
+    "_llms/api-v2-reference.md": {
+      "url": "https://cal.com/docs/_llms/api-v2-reference.md",
+      "bytes": 53878,
+      "sha256": "ce737ffc293893af104b193faef96f278f6ece3c43dc5a78625902b4b132bed8"
+    },
+    "_llms/api-v2-reference/organizations.md": {
+      "url": "https://cal.com/docs/_llms/api-v2-reference/organizations.md",
+      "bytes": 50618,
+      "sha256": "314b513d98fa00d80789ac90d91ddb8db429ae303037476065d0e3917e2a497a"
+    },
+    "agents.md": {
+      "url": "https://cal.com/docs/agents.md",
+      "bytes": 12062,
+      "sha256": "58d9ec5497faf653f20b09c0aa4e4a0e1e2a060fdc4d1ade4f93f8db36b2ee9e"
+    },
+    "api-reference/v2/access-control.md": {
+      "url": "https://cal.com/docs/api-reference/v2/access-control.md",
+      "bytes": 11323,
+      "sha256": "2ccb024cb086800efdda08150afe9d73b0216e16b515f34680c944365bd7a4db"
+    },
+    "api-reference/v2/allowlists/get-the-calcom-ip-allowlist-of-one-service.md": {
+      "url": "https://cal.com/docs/api-reference/v2/allowlists/get-the-calcom-ip-allowlist-of-one-service.md",
+      "bytes": 2503,
+      "sha256": "1f25f3eac1ceeb59139b59e8ffa6d08a6f9a32f43c6a55789dc3c77c38aab961"
+    },
+    "api-reference/v2/allowlists/get-the-calcom-ip-allowlists.md": {
+      "url": "https://cal.com/docs/api-reference/v2/allowlists/get-the-calcom-ip-allowlists.md",
+      "bytes": 2771,
+      "sha256": "a5495be376a5846621f849c85b78ef4c88864289e1e4a7dd6bf1b182c3a53318"
+    },
+    "api-reference/v2/api-keys/refresh-api-key.md": {
+      "url": "https://cal.com/docs/api-reference/v2/api-keys/refresh-api-key.md",
+      "bytes": 2457,
+      "sha256": "86138bb38d363bd23c092facc08851eccc2c70b9066ea801e0e9bb16983d5ede"
+    },
+    "api-reference/v2/bookings--email-verification/check-if-email-verification-is-required.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings--email-verification/check-if-email-verification-is-required.md",
+      "bytes": 1431,
+      "sha256": "da9e52bf42b51697ba3e2cbc7b83b4af9098a48cb651057db94422b6ed2e4c29"
+    },
+    "api-reference/v2/bookings--email-verification/send-email-verification-code.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings--email-verification/send-email-verification-code.md",
+      "bytes": 2140,
+      "sha256": "f2290fa12c392d12b636850352d183c5a4bc7cb27c1db644922c0e0cf5318719"
+    },
+    "api-reference/v2/bookings--email-verification/verify-email-with-code.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings--email-verification/verify-email-with-code.md",
+      "bytes": 2006,
+      "sha256": "78e40e09fd822db5aa7a280327ffd01674cababf205166d9523f2d737951f122"
+    },
+    "api-reference/v2/bookings-attendees/add-an-attendee-to-a-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings-attendees/add-an-attendee-to-a-booking.md",
+      "bytes": 7638,
+      "sha256": "89306b3a99f2e4c0eb4f761aa3de4bf9c0b8511d95a47bea1d0e2df83ecc5f47"
+    },
+    "api-reference/v2/bookings-attendees/get-a-specific-attendee-for-a-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings-attendees/get-a-specific-attendee-for-a-booking.md",
+      "bytes": 4377,
+      "sha256": "8cf0084c3ea92438d8b08729527418fae2ea6a3bc96ae32442b4c63de3a03283"
+    },
+    "api-reference/v2/bookings-attendees/get-all-attendees-for-a-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings-attendees/get-all-attendees-for-a-booking.md",
+      "bytes": 4205,
+      "sha256": "03e13cfa90d8ff78766c1601af36b0d15c6798b59c5afb1b1173573f0b4f43ae"
+    },
+    "api-reference/v2/bookings-guests/add-guests-to-an-existing-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings-guests/add-guests-to-an-existing-booking.md",
+      "bytes": 27245,
+      "sha256": "06dd055e26bf2c76c33f413106f5ec67672da53499058506156a483e8ca201e9"
+    },
+    "api-reference/v2/bookings-routing-trace/get-the-routing-trace-for-a-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings-routing-trace/get-the-routing-trace-for-a-booking.md",
+      "bytes": 5842,
+      "sha256": "ba860181cca71e99d56a5a2cbcddcba0f77d465e338fc03fc3b7107d7bf84b18"
+    },
+    "api-reference/v2/bookings/cancel-a-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/cancel-a-booking.md",
+      "bytes": 27972,
+      "sha256": "c3a9c81f83dd5ec397c95ecf307af2869af493d5c06f2456af18c64c47a2d787"
+    },
+    "api-reference/v2/bookings/confirm-a-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/confirm-a-booking.md",
+      "bytes": 22741,
+      "sha256": "e5cd1e7220676a51fa1cf05029e516ba0d04163e4ebf1d395e9cf09e117e329e"
+    },
+    "api-reference/v2/bookings/create-a-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/create-a-booking.md",
+      "bytes": 55660,
+      "sha256": "87c08fdd3615a7a26e6a7997c37c7c8fac9e09286095eb8f1e58170f71933ad9"
+    },
+    "api-reference/v2/bookings/decline-a-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/decline-a-booking.md",
+      "bytes": 23166,
+      "sha256": "908bc0fbcbd35f99c5b228ab2c720fcac27fcb61b0a962b4cdbe98d7646bbbba"
+    },
+    "api-reference/v2/bookings/get-a-booking-by-seat-uid.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/get-a-booking-by-seat-uid.md",
+      "bytes": 23801,
+      "sha256": "30125304e30be47a824201e527070157c5d81c83b552270ad3c7e793cc1d66c4"
+    },
+    "api-reference/v2/bookings/get-a-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/get-a-booking.md",
+      "bytes": 24021,
+      "sha256": "91e030de5b0152abc018944c4ac15c0b8b747ed5a99425a527531e32511fa0d7"
+    },
+    "api-reference/v2/bookings/get-add-to-calendar-links-for-a-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/get-add-to-calendar-links-for-a-booking.md",
+      "bytes": 3397,
+      "sha256": "6bd82abf156b865867390d41edfa765d37d58e56a602c4e79de370d103b071a3"
+    },
+    "api-reference/v2/bookings/get-all-bookings.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/get-all-bookings.md",
+      "bytes": 31130,
+      "sha256": "28d066d1d59998932b15ad3b213fc1c3314707bb16258cc0843c59180de6668f"
+    },
+    "api-reference/v2/bookings/get-all-the-recordings-for-the-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/get-all-the-recordings-for-the-booking.md",
+      "bytes": 4266,
+      "sha256": "06a02dabcdecc06deef0a84aeb4396acaea58ddeff698a3cc0211046c5ab5334"
+    },
+    "api-reference/v2/bookings/get-booking-references.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/get-booking-references.md",
+      "bytes": 3612,
+      "sha256": "c6c6d9b164717bcd1748e36cd60ff598535f13ff86ba7ddac23db1783d6f0ae2"
+    },
+    "api-reference/v2/bookings/get-cal-video-real-time-transcript-download-links-for-the-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/get-cal-video-real-time-transcript-download-links-for-the-booking.md",
+      "bytes": 3443,
+      "sha256": "c8a78c36a08f0e01b6c32389c56237c175220128df4a9848e1ee9b93f5478a9b"
+    },
+    "api-reference/v2/bookings/get-video-meeting-sessions-only-supported-for-cal-video.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/get-video-meeting-sessions-only-supported-for-cal-video.md",
+      "bytes": 5021,
+      "sha256": "f96ece1ba3cd969b4e64158c05d290a423e47ada5d64e99d86fde8b650226d84"
+    },
+    "api-reference/v2/bookings/mark-a-booking-absence.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/mark-a-booking-absence.md",
+      "bytes": 13761,
+      "sha256": "99d32dbc67459c14e4933d5c64c4b75efd10dcf417853f1fa88314ca538718d0"
+    },
+    "api-reference/v2/bookings/reassign-a-booking-to-a-specific-host.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/reassign-a-booking-to-a-specific-host.md",
+      "bytes": 3659,
+      "sha256": "d08593907133adadd79a2ffa09688c740f523f8367574b4f8bdf4b738672e7ae"
+    },
+    "api-reference/v2/bookings/reassign-a-booking-to-auto-selected-host.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/reassign-a-booking-to-auto-selected-host.md",
+      "bytes": 3119,
+      "sha256": "d3fb978a990202a7931e846ea72038f73be1fa0b137a47c10673abd988586c47"
+    },
+    "api-reference/v2/bookings/request-to-reschedule-a-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/request-to-reschedule-a-booking.md",
+      "bytes": 3125,
+      "sha256": "fa6393d7e52c5fdbd657ac78cc2664179f22555ae34a55af162be2a556b20ab6"
+    },
+    "api-reference/v2/bookings/reschedule-a-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/reschedule-a-booking.md",
+      "bytes": 30874,
+      "sha256": "da6e1bc50565f8b24bbedca0668b1d97cd3cf4db812d6ce63f03e5e7235eb844"
+    },
+    "api-reference/v2/bookings/update-booking-location-for-an-existing-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/bookings/update-booking-location-for-an-existing-booking.md",
+      "bytes": 28299,
+      "sha256": "49b782d5cab4886bf1e8355057762a6b61fa42b095c78d6f2840c5093835c875"
+    },
+    "api-reference/v2/cal-unified-calendars/get-meeting-details-from-calendar.md": {
+      "url": "https://cal.com/docs/api-reference/v2/cal-unified-calendars/get-meeting-details-from-calendar.md",
+      "bytes": 11332,
+      "sha256": "cef918bd92eda9dccc1314c795872e1a0c6624a07f339a72f62cee6e053126a3"
+    },
+    "api-reference/v2/cal-unified-calendars/update-meeting-details-in-calendar.md": {
+      "url": "https://cal.com/docs/api-reference/v2/cal-unified-calendars/update-meeting-details-in-calendar.md",
+      "bytes": 13788,
+      "sha256": "fdeb725ff94261352144f8e06d00b79bd6e9d4d0bbbddeee5ed43e513167ae5a"
+    },
+    "api-reference/v2/calendars/check-a-calendar-connection.md": {
+      "url": "https://cal.com/docs/api-reference/v2/calendars/check-a-calendar-connection.md",
+      "bytes": 1464,
+      "sha256": "974f091b978dc9dc729a4c1ecb04b280e8afad44ac78114295cf36c45df6d540"
+    },
+    "api-reference/v2/calendars/check-an-ics-feed.md": {
+      "url": "https://cal.com/docs/api-reference/v2/calendars/check-an-ics-feed.md",
+      "bytes": 1246,
+      "sha256": "954f99910568c9e44c2d7f42cf1671bfd0099eb08d5b3ac27675f08b058c51a0"
+    },
+    "api-reference/v2/calendars/disconnect-a-calendar.md": {
+      "url": "https://cal.com/docs/api-reference/v2/calendars/disconnect-a-calendar.md",
+      "bytes": 2939,
+      "sha256": "9e72d6475e9e24da256f7fbf67b8a49e829ff267e6836c50ead650f716cda739"
+    },
+    "api-reference/v2/calendars/get-all-calendars.md": {
+      "url": "https://cal.com/docs/api-reference/v2/calendars/get-all-calendars.md",
+      "bytes": 6407,
+      "sha256": "fd8bd442d983c778f23f8df656f83cf474beaa174f9a8423471cb142adbac231"
+    },
+    "api-reference/v2/calendars/get-busy-times.md": {
+      "url": "https://cal.com/docs/api-reference/v2/calendars/get-busy-times.md",
+      "bytes": 4279,
+      "sha256": "a621c3e3840bd2545363cef4b8a288f35ea805d1170bfac3f0856fc1209f44fe"
+    },
+    "api-reference/v2/calendars/get-oauth-connect-url.md": {
+      "url": "https://cal.com/docs/api-reference/v2/calendars/get-oauth-connect-url.md",
+      "bytes": 1741,
+      "sha256": "2b04ba5d99768c8bcd028f17e9bd8f197452d144c3e932e7dfa625b37da9f77a"
+    },
+    "api-reference/v2/calendars/save-an-ics-feed.md": {
+      "url": "https://cal.com/docs/api-reference/v2/calendars/save-an-ics-feed.md",
+      "bytes": 3380,
+      "sha256": "bbbecb025c5b41975dcd031046aa203da699a88dc54fa798545a80961f913fb2"
+    },
+    "api-reference/v2/calendars/save-apple-calendar-credentials.md": {
+      "url": "https://cal.com/docs/api-reference/v2/calendars/save-apple-calendar-credentials.md",
+      "bytes": 1808,
+      "sha256": "3188e2a22e3cf251c9951af9f57c788fe5332e5c650860aa888212cf5de89a77"
+    },
+    "api-reference/v2/calendars/save-google-or-outlook-calendar-credentials.md": {
+      "url": "https://cal.com/docs/api-reference/v2/calendars/save-google-or-outlook-calendar-credentials.md",
+      "bytes": 1101,
+      "sha256": "7fe753381b5c2efaab0f27b35854cd2ea644384b3c36ed2723ecd4b31cf31edc"
+    },
+    "api-reference/v2/conferencing-apps.md": {
+      "url": "https://cal.com/docs/api-reference/v2/conferencing-apps.md",
+      "bytes": 8236,
+      "sha256": "33fdcb401199cbcaebb1b96efabe093a151208d25dd2f818f4327752c70f2a23"
+    },
+    "api-reference/v2/conferencing/conferencing-app-oauth-callback.md": {
+      "url": "https://cal.com/docs/api-reference/v2/conferencing/conferencing-app-oauth-callback.md",
+      "bytes": 1143,
+      "sha256": "80b6afdf12a4c24782e192448d586fe55a92f67cf2474f71e98bffdfb38caf6d"
+    },
+    "api-reference/v2/conferencing/connect-your-conferencing-application.md": {
+      "url": "https://cal.com/docs/api-reference/v2/conferencing/connect-your-conferencing-application.md",
+      "bytes": 3135,
+      "sha256": "2ffb2603185c53ed688abc178ea5cf1c57fb96be21b1a051429c623e549e1ceb"
+    },
+    "api-reference/v2/conferencing/disconnect-your-conferencing-application.md": {
+      "url": "https://cal.com/docs/api-reference/v2/conferencing/disconnect-your-conferencing-application.md",
+      "bytes": 1908,
+      "sha256": "2e5ea4b549aaac8d038fe061aa839371cb1d588a87b86f9c109c13fb516a264b"
+    },
+    "api-reference/v2/conferencing/get-oauth-conferencing-app-auth-url.md": {
+      "url": "https://cal.com/docs/api-reference/v2/conferencing/get-oauth-conferencing-app-auth-url.md",
+      "bytes": 3222,
+      "sha256": "cf2e00aac814b8136089b0478f01c8054105cfa71f6cdc2e95726f95d6506a1b"
+    },
+    "api-reference/v2/conferencing/get-your-default-conferencing-application.md": {
+      "url": "https://cal.com/docs/api-reference/v2/conferencing/get-your-default-conferencing-application.md",
+      "bytes": 1874,
+      "sha256": "c81cec183c31d7774686b055e6cf6fbb355526e4aafadabd6fccabdc54ea0cae"
+    },
+    "api-reference/v2/conferencing/list-your-conferencing-applications.md": {
+      "url": "https://cal.com/docs/api-reference/v2/conferencing/list-your-conferencing-applications.md",
+      "bytes": 2308,
+      "sha256": "c2357e152a159385322212f41a75d74cf62a325ff3640612fbc89240f193cd60"
+    },
+    "api-reference/v2/conferencing/set-your-default-conferencing-application.md": {
+      "url": "https://cal.com/docs/api-reference/v2/conferencing/set-your-default-conferencing-application.md",
+      "bytes": 1925,
+      "sha256": "4f5ec104fd9bc0c12500da0e06b3613b53230ef2f32b6ce56b241e9391c6bfd0"
+    },
+    "api-reference/v2/credits/charge-credits.md": {
+      "url": "https://cal.com/docs/api-reference/v2/credits/charge-credits.md",
+      "bytes": 1928,
+      "sha256": "496cd28cf948fd8019bd933c87c66220f29eea63f06fa3bd006aca7dc3413d22"
+    },
+    "api-reference/v2/credits/check-available-credits.md": {
+      "url": "https://cal.com/docs/api-reference/v2/credits/check-available-credits.md",
+      "bytes": 1140,
+      "sha256": "4d9017aaabf1caebb1fc78eeee254532fbfa0217c5aa29e28490a9fef16f7829"
+    },
+    "api-reference/v2/deprecated:-platform-managed-users/create-a-managed-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/create-a-managed-user.md",
+      "bytes": 7451,
+      "sha256": "e77f386e98ad9e65b49cd467d802ac90cac7e119279837a6bf715a9cfa5ed753"
+    },
+    "api-reference/v2/deprecated:-platform-managed-users/delete-a-managed-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/delete-a-managed-user.md",
+      "bytes": 4110,
+      "sha256": "4f87917324d83e521e0c02ebdbfe56caf57b8c56ace2330516113f1aa681d9c7"
+    },
+    "api-reference/v2/deprecated:-platform-managed-users/force-refresh-tokens.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/force-refresh-tokens.md",
+      "bytes": 3550,
+      "sha256": "ddbd927f23815d48bb60dcfd21245f878e03e71d343497a555fd4c0175a8e798"
+    },
+    "api-reference/v2/deprecated:-platform-managed-users/get-a-managed-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/get-a-managed-user.md",
+      "bytes": 4099,
+      "sha256": "4d78d488646300820ea703c2065884636a26c8a0c9752acf13fedfb176cc13b4"
+    },
+    "api-reference/v2/deprecated:-platform-managed-users/get-all-managed-users.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/get-all-managed-users.md",
+      "bytes": 4895,
+      "sha256": "d5dbefbb27078fed72aefd803d0133cdf2e72ec11573300352d8865e8deb1ead"
+    },
+    "api-reference/v2/deprecated:-platform-managed-users/refresh-managed-user-tokens.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/refresh-managed-user-tokens.md",
+      "bytes": 3881,
+      "sha256": "68ed710a98e0f6bc3f77a5d5be82b4bf805e50cdbf13444e2f087bbd65cbb8d3"
+    },
+    "api-reference/v2/deprecated:-platform-managed-users/update-a-managed-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-managed-users/update-a-managed-user.md",
+      "bytes": 6357,
+      "sha256": "c9c98a3604ff22606400664ee88990ab2fd7ec23790ec00250d0b3cb2e4ca918"
+    },
+    "api-reference/v2/deprecated:-platform-oauth-clients/create-an-oauth-client.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-oauth-clients/create-an-oauth-client.md",
+      "bytes": 4193,
+      "sha256": "d130c5bb103c72799688562609edf8051faeaa2e2ab58829ce388640d3974279"
+    },
+    "api-reference/v2/deprecated:-platform-oauth-clients/delete-an-oauth-client.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-oauth-clients/delete-an-oauth-client.md",
+      "bytes": 4495,
+      "sha256": "a31c2ee5a58dd7bcf3d22be06f23f3cd3ebb9b8c954b71633e73305fcdba7e80"
+    },
+    "api-reference/v2/deprecated:-platform-oauth-clients/get-all-oauth-clients.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-oauth-clients/get-all-oauth-clients.md",
+      "bytes": 4394,
+      "sha256": "49608b97c4bca19e3e44bb54ee977c0a2ce95768f2f5b7c3ccb1690659e31eb3"
+    },
+    "api-reference/v2/deprecated:-platform-oauth-clients/get-an-oauth-client.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-oauth-clients/get-an-oauth-client.md",
+      "bytes": 4484,
+      "sha256": "20183b2b6ff8131925de3d9d40406331d912b6f29836320d1375838827700a33"
+    },
+    "api-reference/v2/deprecated:-platform-oauth-clients/update-an-oauth-client.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-oauth-clients/update-an-oauth-client.md",
+      "bytes": 5783,
+      "sha256": "2c32aef36c5f512fcbe6c4b314515c324f9bc4b6a40c52c641d688bb57ca1ccc"
+    },
+    "api-reference/v2/deprecated:-platform-webhooks/create-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-webhooks/create-a-webhook.md",
+      "bytes": 8016,
+      "sha256": "20290c5812269037d78cbc8a2c25e4cba70db74f96c46338512aeda015d8f9c4"
+    },
+    "api-reference/v2/deprecated:-platform-webhooks/delete-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-webhooks/delete-a-webhook.md",
+      "bytes": 4795,
+      "sha256": "75c92fd1172c2fccbfb2ded39038224f4ca733c7b99cd71cc4b50c799357d209"
+    },
+    "api-reference/v2/deprecated:-platform-webhooks/delete-all-webhooks.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-webhooks/delete-all-webhooks.md",
+      "bytes": 1689,
+      "sha256": "8d6bd7e7e704bf5da09418c207609c63a663aeb7745eb786ba0f39a1cc8f5853"
+    },
+    "api-reference/v2/deprecated:-platform-webhooks/get-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-webhooks/get-a-webhook.md",
+      "bytes": 4780,
+      "sha256": "571541b8ecff63c26d8a9dea47bae09f4200c05822f0ace04b6a7399fc0e32b1"
+    },
+    "api-reference/v2/deprecated:-platform-webhooks/get-all-webhooks.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-webhooks/get-all-webhooks.md",
+      "bytes": 5183,
+      "sha256": "547a95b01f6761368bed1c27224203d12a2f3bb1131fabb0b0b000f64cdab08d"
+    },
+    "api-reference/v2/deprecated:-platform-webhooks/update-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/deprecated:-platform-webhooks/update-a-webhook.md",
+      "bytes": 8079,
+      "sha256": "3e0322c058f6019edd10fdb0cd7546a0c35002efa52422a42ce89bff2d338de8"
+    },
+    "api-reference/v2/destination-calendars/update-destination-calendars.md": {
+      "url": "https://cal.com/docs/api-reference/v2/destination-calendars/update-destination-calendars.md",
+      "bytes": 3082,
+      "sha256": "54f505b980f741e0dfb26840dc47bd2cdea2d3f166759155e8b6d1f55ebd36a3"
+    },
+    "api-reference/v2/event-types-private-links/create-a-private-link-for-an-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types-private-links/create-a-private-link-for-an-event-type.md",
+      "bytes": 5360,
+      "sha256": "260ef2100e449fb5711fa5d9122658836ffd524896b03eed526c72e5489c2569"
+    },
+    "api-reference/v2/event-types-private-links/delete-a-private-link-for-an-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types-private-links/delete-a-private-link-for-an-event-type.md",
+      "bytes": 2537,
+      "sha256": "c9d4e137cfd689cce5eb37f1ead2e6c585ed8ae21176ea2f93c3566ba6d9b01b"
+    },
+    "api-reference/v2/event-types-private-links/get-all-private-links-for-an-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types-private-links/get-all-private-links-for-an-event-type.md",
+      "bytes": 4628,
+      "sha256": "a95cb5c421ce2677c2a0c256fe46982fbf922b4ff9492eaaac052282b79ba683"
+    },
+    "api-reference/v2/event-types-private-links/update-a-private-link-for-an-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types-private-links/update-a-private-link-for-an-event-type.md",
+      "bytes": 5298,
+      "sha256": "92de242e0817d4986ce2dca56ced735b91d9e2828f45f59b24dcba604d18225b"
+    },
+    "api-reference/v2/event-types-webhooks/create-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types-webhooks/create-a-webhook.md",
+      "bytes": 8117,
+      "sha256": "443967d7fff033300b34fe532b996a025bb2b7efb831b6c2434c3feb002ff899"
+    },
+    "api-reference/v2/event-types-webhooks/delete-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types-webhooks/delete-a-webhook.md",
+      "bytes": 4896,
+      "sha256": "1fd941ef5b32c90f8895538662704f4e9983231a6fad35f4b9dcbd0db4039b29"
+    },
+    "api-reference/v2/event-types-webhooks/delete-all-webhooks.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types-webhooks/delete-all-webhooks.md",
+      "bytes": 1802,
+      "sha256": "72c11cd0b3eb83bee4c4dfb206536035c352ca751e0fc02e9e6970ec298e4527"
+    },
+    "api-reference/v2/event-types-webhooks/get-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types-webhooks/get-a-webhook.md",
+      "bytes": 4879,
+      "sha256": "e30b2d9752dd22a788a543e3f6f74820d005244f8f99fbff48a60605dd10f165"
+    },
+    "api-reference/v2/event-types-webhooks/get-all-webhooks.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types-webhooks/get-all-webhooks.md",
+      "bytes": 5282,
+      "sha256": "1c96411350c7843ff68acb3e1d8a727405e717aa38d1b8694eb8c3910f131654"
+    },
+    "api-reference/v2/event-types-webhooks/update-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types-webhooks/update-a-webhook.md",
+      "bytes": 8180,
+      "sha256": "27d968ae9111bb8df531a0b56f34c11306c8f986df047283b65b1f2884833a64"
+    },
+    "api-reference/v2/event-types/add-custom-booking-fields.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types/add-custom-booking-fields.md",
+      "bytes": 82552,
+      "sha256": "98e11cbace1c4730a095ff3ccd28e2e65fde1a06a651f3a5ba658673377d87fe"
+    },
+    "api-reference/v2/event-types/create-an-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types/create-an-event-type.md",
+      "bytes": 129449,
+      "sha256": "3dafd53b6f94ae162d14b13da1c6f8e46cd05210eb7d55fde284908a24a7ab7a"
+    },
+    "api-reference/v2/event-types/delete-a-custom-booking-field.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types/delete-a-custom-booking-field.md",
+      "bytes": 43323,
+      "sha256": "a36f0238bb8019aad8f055368358fc203dcf56eff15d4efc5ab8909b54fbdd15"
+    },
+    "api-reference/v2/event-types/delete-an-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types/delete-an-event-type.md",
+      "bytes": 2954,
+      "sha256": "a37702ddb7e506f1d8410359d515af57eafdfc77e8767d656fe21144b365192e"
+    },
+    "api-reference/v2/event-types/get-an-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types/get-an-event-type.md",
+      "bytes": 88657,
+      "sha256": "f9567c9bdaf2215251a6a8d997bb72e9dfb69680d7c0e6f47edccf3c5e8849e2"
+    },
+    "api-reference/v2/event-types/get-booking-fields.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types/get-booking-fields.md",
+      "bytes": 43115,
+      "sha256": "fd0efb7eefeed00e076a53725ab409e4bcfae33db486dce6da46be3b4eaff8b6"
+    },
+    "api-reference/v2/event-types/get-event-type-history.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types/get-event-type-history.md",
+      "bytes": 12774,
+      "sha256": "d7877e0f9efd398b6f8dfe10a0e1b480e9b7396989605b269b1f862ea4d2cee2"
+    },
+    "api-reference/v2/event-types/get-scheduling-configuration.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types/get-scheduling-configuration.md",
+      "bytes": 7675,
+      "sha256": "011a834fdd38e1fd2e668673e1e61d37fee356546bbea2fb97b2fe8727cc26e0"
+    },
+    "api-reference/v2/event-types/list-crm-sync-errors-for-an-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types/list-crm-sync-errors-for-an-event-type.md",
+      "bytes": 7255,
+      "sha256": "3adff72838f3f71b677db2dd334c92090794e76845b7a6be2d0a5364c0f16cb0"
+    },
+    "api-reference/v2/event-types/list-event-types.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types/list-event-types.md",
+      "bytes": 74190,
+      "sha256": "17a28e2ac8d778c0fe2bf40d8bac07e8a4c5abace0565ce7ede98e1beaebe107"
+    },
+    "api-reference/v2/event-types/replace-booking-fields.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types/replace-booking-fields.md",
+      "bytes": 82799,
+      "sha256": "58ba01bd84c00ea36fd2beac2ad9502c9144630043366874a4347d9d5cf01230"
+    },
+    "api-reference/v2/event-types/update-an-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types/update-an-event-type.md",
+      "bytes": 129273,
+      "sha256": "2a0f42c1b1acdd8d839d5b328a95f308a4d2a063c106065ae9298d719163a3de"
+    },
+    "api-reference/v2/event-types/update-booking-fields.md": {
+      "url": "https://cal.com/docs/api-reference/v2/event-types/update-booking-fields.md",
+      "bytes": 76717,
+      "sha256": "b377856f969b4205f0ed06fb9907f6e16eb91ee28b2a391645697b3df853aa50"
+    },
+    "api-reference/v2/events/get-an-event.md": {
+      "url": "https://cal.com/docs/api-reference/v2/events/get-an-event.md",
+      "bytes": 6459,
+      "sha256": "a0d9bd6e3b413332bd928a75d48776985e52905d1357cc14c2f53910018d8eed"
+    },
+    "api-reference/v2/events/list-events.md": {
+      "url": "https://cal.com/docs/api-reference/v2/events/list-events.md",
+      "bytes": 6746,
+      "sha256": "387e32cfcd8d7afb843404014a8034999eff37f2b5a88ea29472c57f3c00d90a"
+    },
+    "api-reference/v2/insights/get-average-booking-duration.md": {
+      "url": "https://cal.com/docs/api-reference/v2/insights/get-average-booking-duration.md",
+      "bytes": 3980,
+      "sha256": "f7600fad8be5b7a5e5dbda037462fe6fffcf8b53ccac28e11572c1beb92e9205"
+    },
+    "api-reference/v2/insights/get-booking-event-trends.md": {
+      "url": "https://cal.com/docs/api-reference/v2/insights/get-booking-event-trends.md",
+      "bytes": 4683,
+      "sha256": "c700f97324db8105b30215097b649341ff13bc4699c0fe0b2fe8667f93be7917"
+    },
+    "api-reference/v2/insights/get-booking-kpi-stats.md": {
+      "url": "https://cal.com/docs/api-reference/v2/insights/get-booking-kpi-stats.md",
+      "bytes": 6105,
+      "sha256": "a6171e708ff68486502f8e9b27c40057d7a212112082a33f7f04f5c3fd8f5aa8"
+    },
+    "api-reference/v2/insights/get-booking-member-stats.md": {
+      "url": "https://cal.com/docs/api-reference/v2/insights/get-booking-member-stats.md",
+      "bytes": 6519,
+      "sha256": "24e2bc548a7d22ca63ceb1f7f0a658b40c5d2ff54f0734b881ac02f635ee8c6e"
+    },
+    "api-reference/v2/insights/get-failed-bookings-by-routing-field.md": {
+      "url": "https://cal.com/docs/api-reference/v2/insights/get-failed-bookings-by-routing-field.md",
+      "bytes": 3420,
+      "sha256": "2b22e478ce098540dd5ee812c09a134c8bc9514858809d7714e71d95c0e3ff9c"
+    },
+    "api-reference/v2/insights/get-routed-to-users-per-period.md": {
+      "url": "https://cal.com/docs/api-reference/v2/insights/get-routed-to-users-per-period.md",
+      "bytes": 5481,
+      "sha256": "cc7d31ac72f5005a5c5c5023e76438d968d72166e0b58de2a57b0d947f738166"
+    },
+    "api-reference/v2/insights/get-routing-form-field-options.md": {
+      "url": "https://cal.com/docs/api-reference/v2/insights/get-routing-form-field-options.md",
+      "bytes": 2875,
+      "sha256": "148790c32dea451a755159c9547b62c32e45da084d68f728b510624d458ca846"
+    },
+    "api-reference/v2/insights/get-routing-form-response-headers.md": {
+      "url": "https://cal.com/docs/api-reference/v2/insights/get-routing-form-response-headers.md",
+      "bytes": 2868,
+      "sha256": "8bae084044393fc19d3a77ec307700c7b107c3fef4fd1bd92cd218ede52330e9"
+    },
+    "api-reference/v2/insights/get-routing-form-responses.md": {
+      "url": "https://cal.com/docs/api-reference/v2/insights/get-routing-form-responses.md",
+      "bytes": 8686,
+      "sha256": "639f14fa19013092be371639b929d5792120083a21673a6d2e224fc197a98192"
+    },
+    "api-reference/v2/insights/get-routing-forms-by-status.md": {
+      "url": "https://cal.com/docs/api-reference/v2/insights/get-routing-forms-by-status.md",
+      "bytes": 3658,
+      "sha256": "6028bef70358c85680656c49757f597bc997f2d0420508475e07a4c434aff7fd"
+    },
+    "api-reference/v2/introduction.md": {
+      "url": "https://cal.com/docs/api-reference/v2/introduction.md",
+      "bytes": 6089,
+      "sha256": "23985aa9426b3843d03d1b949d598fe41d5bc19f113917026ff849442db39240"
+    },
+    "api-reference/v2/managed-orgs/create-an-organization-within-an-organization.md": {
+      "url": "https://cal.com/docs/api-reference/v2/managed-orgs/create-an-organization-within-an-organization.md",
+      "bytes": 4210,
+      "sha256": "823e28f1bb37490edb9f7ea7ade4fff893e61ad93a6ed88f37abf056b876f6f1"
+    },
+    "api-reference/v2/managed-orgs/delete-an-organization-within-an-organization.md": {
+      "url": "https://cal.com/docs/api-reference/v2/managed-orgs/delete-an-organization-within-an-organization.md",
+      "bytes": 2831,
+      "sha256": "52d444da2811795a4ccff8b1a0af3146666d72197e1fc9db7681b259f79c57cc"
+    },
+    "api-reference/v2/managed-orgs/get-all-organizations-within-an-organization.md": {
+      "url": "https://cal.com/docs/api-reference/v2/managed-orgs/get-all-organizations-within-an-organization.md",
+      "bytes": 5950,
+      "sha256": "12c3c155a148c14a6e3c463b71b26923d73ec09560ac7feb53d7b7c5e99b8e40"
+    },
+    "api-reference/v2/managed-orgs/get-an-organization-within-an-organization.md": {
+      "url": "https://cal.com/docs/api-reference/v2/managed-orgs/get-an-organization-within-an-organization.md",
+      "bytes": 2852,
+      "sha256": "54a6dd20e99b25732370b755349e3e9ca03c56fd1d76d43c28bc256c2dfb44c6"
+    },
+    "api-reference/v2/managed-orgs/update-an-organization-within-an-organization.md": {
+      "url": "https://cal.com/docs/api-reference/v2/managed-orgs/update-an-organization-within-an-organization.md",
+      "bytes": 3676,
+      "sha256": "1556dcca8538f345cc344cc68617889c95ea4b279d897737fc1ee88da17ed29e"
+    },
+    "api-reference/v2/me/clear-my-booking-limit-for-one-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/me/clear-my-booking-limit-for-one-team.md",
+      "bytes": 1557,
+      "sha256": "1b3d08af13b4f9bb0dbaad9bb650d2fdd474f5229e26c815e07fd616e8133f83"
+    },
+    "api-reference/v2/me/clear-my-booking-limits.md": {
+      "url": "https://cal.com/docs/api-reference/v2/me/clear-my-booking-limits.md",
+      "bytes": 1444,
+      "sha256": "97e8e763cde4afde20988a63e381d67447519118b0e9df74f3cda1871388baac"
+    },
+    "api-reference/v2/me/get-my-booking-limits.md": {
+      "url": "https://cal.com/docs/api-reference/v2/me/get-my-booking-limits.md",
+      "bytes": 2456,
+      "sha256": "f4c238bc93a0dc705b49e333f39c5dcb0d17a2817c37d1994b0e5494af49ce5d"
+    },
+    "api-reference/v2/me/get-my-profile.md": {
+      "url": "https://cal.com/docs/api-reference/v2/me/get-my-profile.md",
+      "bytes": 2806,
+      "sha256": "1e5d62aa259bf824a5eeb9b28e98453a7aa6ae4c20755703154296937253aeea"
+    },
+    "api-reference/v2/me/get-my-team-booking-limits.md": {
+      "url": "https://cal.com/docs/api-reference/v2/me/get-my-team-booking-limits.md",
+      "bytes": 4510,
+      "sha256": "cbd994bf10dd7d0af56f51727c56f92730c83fe1541af45b12a3b74113712aeb"
+    },
+    "api-reference/v2/me/set-my-booking-limit-for-one-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/me/set-my-booking-limit-for-one-team.md",
+      "bytes": 5702,
+      "sha256": "e507cef90b22c94f0cd8dc8bf0902d570562de87fd59624158189aacd9dbcd3e"
+    },
+    "api-reference/v2/me/update-my-booking-limits.md": {
+      "url": "https://cal.com/docs/api-reference/v2/me/update-my-booking-limits.md",
+      "bytes": 3762,
+      "sha256": "eafb040b3107857e96e4a3493dc9664e2ef026f2ed92834f1355c5385edf31ca"
+    },
+    "api-reference/v2/me/update-my-profile.md": {
+      "url": "https://cal.com/docs/api-reference/v2/me/update-my-profile.md",
+      "bytes": 5574,
+      "sha256": "68f87022762c275f0f0720d2783aff6d25650d8c2370d49173a86d4b38a8f650"
+    },
+    "api-reference/v2/notifications/create-a-slack-push-linking-intent.md": {
+      "url": "https://cal.com/docs/api-reference/v2/notifications/create-a-slack-push-linking-intent.md",
+      "bytes": 1835,
+      "sha256": "8b48224eeb9c9ca0d84b515514d0567aa68c4fbd85cac744a999d4cf3ebb06ef"
+    },
+    "api-reference/v2/notifications/create-a-telegram-push-linking-intent.md": {
+      "url": "https://cal.com/docs/api-reference/v2/notifications/create-a-telegram-push-linking-intent.md",
+      "bytes": 1850,
+      "sha256": "7d4a7636a95863a9d90a79238f0e8eea80caec102f2326382da9e01632828215"
+    },
+    "api-reference/v2/notifications/register-an-app-push-subscription.md": {
+      "url": "https://cal.com/docs/api-reference/v2/notifications/register-an-app-push-subscription.md",
+      "bytes": 2856,
+      "sha256": "dee0354017244f2af776657e933ce837c9900992a1b8c4fdb04471dc4c485238"
+    },
+    "api-reference/v2/notifications/remove-a-slack-push-subscription.md": {
+      "url": "https://cal.com/docs/api-reference/v2/notifications/remove-a-slack-push-subscription.md",
+      "bytes": 2040,
+      "sha256": "a367f1409d90c71c37a843b279311df74aa35f7dcf3732aa66c3355e9eaf45e2"
+    },
+    "api-reference/v2/notifications/remove-a-telegram-push-subscription.md": {
+      "url": "https://cal.com/docs/api-reference/v2/notifications/remove-a-telegram-push-subscription.md",
+      "bytes": 1947,
+      "sha256": "eca6d09e4801f550a2b0f5111d8c9eb7ed0bbc9f1cbb1172366c004a095f94a2"
+    },
+    "api-reference/v2/notifications/remove-an-app-push-subscription.md": {
+      "url": "https://cal.com/docs/api-reference/v2/notifications/remove-an-app-push-subscription.md",
+      "bytes": 1942,
+      "sha256": "65e3cf7a9713d898034a83168ee61670f4330f7d10dd815110aea931b57870ff"
+    },
+    "api-reference/v2/oauth.md": {
+      "url": "https://cal.com/docs/api-reference/v2/oauth.md",
+      "bytes": 135665,
+      "sha256": "0b9e2295f1d2ea112d4c7ad7cb4369c91ff22aab40efaa074d30635fef1d3ec0"
+    },
+    "api-reference/v2/oauth2/exchange-authorization-code-or-refresh-token-for-tokens.md": {
+      "url": "https://cal.com/docs/api-reference/v2/oauth2/exchange-authorization-code-or-refresh-token-for-tokens.md",
+      "bytes": 6783,
+      "sha256": "23e13b51787e1d33b8b5aaee295a3c8c168af5d918d67da56dce1d7088e2fc6c"
+    },
+    "api-reference/v2/oauth2/get-oauth2-client.md": {
+      "url": "https://cal.com/docs/api-reference/v2/oauth2/get-oauth2-client.md",
+      "bytes": 2472,
+      "sha256": "d5dc4ea87f6890e3b886565fc10228d25a072bce7a958bbea7c78418a6fb180f"
+    },
+    "api-reference/v2/openapi.json": {
+      "url": "https://cal.com/docs/api-reference/v2/openapi.json",
+      "bytes": 1684104,
+      "sha256": "1b49aa8a7f3dfc2d603c4428ca1bf9f66d950657451fb38c5177eea64b207a8f"
+    },
+    "api-reference/v2/organization-event-types/add-custom-organization-team-booking-fields.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-event-types/add-custom-organization-team-booking-fields.md",
+      "bytes": 83662,
+      "sha256": "8496bc1b0f37118fb6610d63f263dbe7f86dbade3ecb35207e70f1e616f953de"
+    },
+    "api-reference/v2/organization-event-types/create-a-phone-call-for-an-organization-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-event-types/create-a-phone-call-for-an-organization-team-event-type.md",
+      "bytes": 5308,
+      "sha256": "8b5c1d88209843b0d53cbe3bf1a5ffacc61b6b5a204df0ee493706223d74c9ec"
+    },
+    "api-reference/v2/organization-event-types/create-an-organization-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-event-types/create-an-organization-team-event-type.md",
+      "bytes": 136431,
+      "sha256": "9d570a5b320d353458124739931bce3b8c76b9fb09bf6762c882288ad1cab72b"
+    },
+    "api-reference/v2/organization-event-types/delete-a-custom-organization-team-booking-field.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-event-types/delete-a-custom-organization-team-booking-field.md",
+      "bytes": 44433,
+      "sha256": "050a1492fe29d1cae2a95c3e6e58ae6e79026f17f19e8dbf624be85f879512ad"
+    },
+    "api-reference/v2/organization-event-types/delete-an-organization-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-event-types/delete-an-organization-team-event-type.md",
+      "bytes": 3883,
+      "sha256": "82f15e0ad28f6e16099fe5d3ebc4b2828791a6ded33410c0fd5c5ead53194e44"
+    },
+    "api-reference/v2/organization-event-types/get-all-team-event-types.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-event-types/get-all-team-event-types.md",
+      "bytes": 76310,
+      "sha256": "e78741486f4580f9ef850351fc7309c3218a8cac6c6697bb34ce0d1ca3acd05b"
+    },
+    "api-reference/v2/organization-event-types/get-an-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-event-types/get-an-event-type.md",
+      "bytes": 75461,
+      "sha256": "26f0d38185c0f2fffd0cfe766f9ff7d62239f7b3655fa810a49cb29f2c7fa098"
+    },
+    "api-reference/v2/organization-event-types/get-organization-team-booking-fields.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-event-types/get-organization-team-booking-fields.md",
+      "bytes": 44249,
+      "sha256": "942a5db43e10b3ff7fa811c084e47b2607cc07e0bc17c50d8531796008ebdbbd"
+    },
+    "api-reference/v2/organization-event-types/list-organization-team-event-types.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-event-types/list-organization-team-event-types.md",
+      "bytes": 75994,
+      "sha256": "a9430ffb252f841ad88d318e2a3d1ad954ddfe8d7242d0bd58c9da2b0ba7d95d"
+    },
+    "api-reference/v2/organization-event-types/replace-organization-team-booking-fields.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-event-types/replace-organization-team-booking-fields.md",
+      "bytes": 83901,
+      "sha256": "719d4f30e8efec513ae777124c994094df99da3c25b080ffd26a81e892133bbc"
+    },
+    "api-reference/v2/organization-event-types/update-an-organization-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-event-types/update-an-organization-team-event-type.md",
+      "bytes": 136652,
+      "sha256": "68ad01cb024b6e481f6035ddbfeb3736ea142c9350311a074d2f83ac91e96643"
+    },
+    "api-reference/v2/organization-event-types/update-organization-team-booking-fields.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-event-types/update-organization-team-booking-fields.md",
+      "bytes": 77827,
+      "sha256": "0ba7221719e0b1d7a29995103fd367d8d766eb33ff0851ddfe03e323379c2e9c"
+    },
+    "api-reference/v2/organization-team-verified-resources/get-list-of-verified-emails-of-an-org-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-team-verified-resources/get-list-of-verified-emails-of-an-org-team.md",
+      "bytes": 3669,
+      "sha256": "c08f7a61ee87fd3e07d90bdfeca61b8217166a3392a039a8175e6764adec9a7f"
+    },
+    "api-reference/v2/organization-team-verified-resources/get-list-of-verified-phone-numbers-of-an-org-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-team-verified-resources/get-list-of-verified-phone-numbers-of-an-org-team.md",
+      "bytes": 3698,
+      "sha256": "fdf94e4f5c70d923296c9f18e33b0de299b83e7048e63e8a265c3efb9a58a41e"
+    },
+    "api-reference/v2/organization-team-verified-resources/get-verified-email-of-an-org-team-by-id.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-team-verified-resources/get-verified-email-of-an-org-team-by-id.md",
+      "bytes": 3249,
+      "sha256": "f4400e858a96ce047dfe1fc3ff0e3433fc65109f7d22967454d1105878339142"
+    },
+    "api-reference/v2/organization-team-verified-resources/get-verified-phone-number-of-an-org-team-by-id.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-team-verified-resources/get-verified-phone-number-of-an-org-team-by-id.md",
+      "bytes": 3272,
+      "sha256": "0381f1041a782f794ef20f2f5b23c2aca8548cffb9a05ab3cfea5db933973fdf"
+    },
+    "api-reference/v2/organization-team-verified-resources/request-email-verification-code.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-team-verified-resources/request-email-verification-code.md",
+      "bytes": 2878,
+      "sha256": "8fffaa706bf0eb63ee8c7f218221d4874970f0de4bdb53a78d15955ab802d2fc"
+    },
+    "api-reference/v2/organization-team-verified-resources/request-phone-number-verification-code.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-team-verified-resources/request-phone-number-verification-code.md",
+      "bytes": 2887,
+      "sha256": "5af2d978e7891b080c942ba1dc4c05b971f470e79ae170abf207b594faabd2ab"
+    },
+    "api-reference/v2/organization-team-verified-resources/verify-a-phone-number-for-an-org-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-team-verified-resources/verify-a-phone-number-for-an-org-team.md",
+      "bytes": 3760,
+      "sha256": "7c9ce4675f6c5966f1db9a582a35428056d4a10a628b65e26becf753e7576873"
+    },
+    "api-reference/v2/organization-team-verified-resources/verify-an-email-for-an-org-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/organization-team-verified-resources/verify-an-email-for-an-org-team.md",
+      "bytes": 3733,
+      "sha256": "8c08b8ca07365b746a3e07184c043fac7302c79d48da9cf7e65d6044f41eedf2"
+    },
+    "api-reference/v2/orgs-attributes-options/assign-an-attribute-to-a-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes-options/assign-an-attribute-to-a-user.md",
+      "bytes": 3346,
+      "sha256": "b741d995c06139f9c1bdf4963748ffae3360b68c6a8678f584eb48f25e729015"
+    },
+    "api-reference/v2/orgs-attributes-options/create-an-attribute-option.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes-options/create-an-attribute-option.md",
+      "bytes": 3157,
+      "sha256": "8f4a87e0d9a2346e2462af9b34ed2bc24ce95d451fa9e485f807932f55dcddee"
+    },
+    "api-reference/v2/orgs-attributes-options/delete-an-attribute-option.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes-options/delete-an-attribute-option.md",
+      "bytes": 2903,
+      "sha256": "93a3bf0b3f787b94350ee45039497339388625b9b32585bda7fa00dd99a42411"
+    },
+    "api-reference/v2/orgs-attributes-options/get-all-assigned-attribute-options-by-attribute-id.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes-options/get-all-assigned-attribute-options-by-attribute-id.md",
+      "bytes": 4219,
+      "sha256": "3e4daa8690730ad70957568acc5215d6de881b24f454aec03222b74f42ba4ff9"
+    },
+    "api-reference/v2/orgs-attributes-options/get-all-assigned-attribute-options-by-attribute-slug.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes-options/get-all-assigned-attribute-options-by-attribute-slug.md",
+      "bytes": 4247,
+      "sha256": "260e239089de6c4d6825887db40c222fba36e85e3b7c7c108cdfc2d559b9d9c6"
+    },
+    "api-reference/v2/orgs-attributes-options/get-all-attribute-options-for-a-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes-options/get-all-attribute-options-for-a-user.md",
+      "bytes": 2715,
+      "sha256": "d5a59cff419bff749df208787f57d53f85eb53d2fa80aea93238edf4458ea685"
+    },
+    "api-reference/v2/orgs-attributes-options/get-all-attribute-options.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes-options/get-all-attribute-options.md",
+      "bytes": 2787,
+      "sha256": "bb515753eb1300c6e89f3e623034ffdf8ec07b158c94a9fbb9c4fdca5cee9c06"
+    },
+    "api-reference/v2/orgs-attributes-options/get-attribute-assignment-history-for-a-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes-options/get-attribute-assignment-history-for-a-user.md",
+      "bytes": 9121,
+      "sha256": "0ea7fe5c80d9d53112b69c9c1a53da8a7513480930bd297832d49472c60c8ab3"
+    },
+    "api-reference/v2/orgs-attributes-options/unassign-an-attribute-from-a-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes-options/unassign-an-attribute-from-a-user.md",
+      "bytes": 2933,
+      "sha256": "313f1a38b2999a3741bf518951f861cfcd4372a90a6979d7ef38a34f92e7f593"
+    },
+    "api-reference/v2/orgs-attributes-options/update-an-attribute-assignment-for-a-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes-options/update-an-attribute-assignment-for-a-user.md",
+      "bytes": 3343,
+      "sha256": "fc2e816b2bae2625a78b8fc2ffb685aaca9f6b6528e9f5412676f624aee6fe32"
+    },
+    "api-reference/v2/orgs-attributes-options/update-an-attribute-option.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes-options/update-an-attribute-option.md",
+      "bytes": 3246,
+      "sha256": "6c79975d9ffe216b0099d0d1085736e2a8a843ac7ea5e8020bee7e75e75477a1"
+    },
+    "api-reference/v2/orgs-attributes-sync-history/get-attribute-sync-history.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes-sync-history/get-attribute-sync-history.md",
+      "bytes": 9259,
+      "sha256": "5f1475d02805e702a0a98ec3bc26e1507f13df4f73242784df977e251c22c27e"
+    },
+    "api-reference/v2/orgs-attributes-sync-history/get-sync-history-for-a-specific-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes-sync-history/get-sync-history-for-a-specific-user.md",
+      "bytes": 9460,
+      "sha256": "367a765b5a126fb553815bc83847f254c0bdb98e64062e847e5d46a23593b949"
+    },
+    "api-reference/v2/orgs-attributes/create-an-attribute.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes/create-an-attribute.md",
+      "bytes": 4095,
+      "sha256": "d4bbeccc46e9516515ffe344b1322a591b1c3378e0dfde108a391994c10fe8bb"
+    },
+    "api-reference/v2/orgs-attributes/delete-an-attribute.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes/delete-an-attribute.md",
+      "bytes": 3271,
+      "sha256": "830e61397f94373aae9191106a41cf0f0c1a84ad3da8ae3c7e665825f35235ac"
+    },
+    "api-reference/v2/orgs-attributes/get-all-attributes.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes/get-all-attributes.md",
+      "bytes": 3641,
+      "sha256": "e6ac2b583b7bdd20efc34c90c00f80b9934279f5fa2ee944a20594937f22c183"
+    },
+    "api-reference/v2/orgs-attributes/get-an-attribute.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes/get-an-attribute.md",
+      "bytes": 3303,
+      "sha256": "d100400c42c9df15f69b38c1e408834c8a1dcf269296be5439f57e28e14d50c3"
+    },
+    "api-reference/v2/orgs-attributes/update-an-attribute.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-attributes/update-an-attribute.md",
+      "bytes": 3822,
+      "sha256": "190dc928c11bfab841fd9cf7126e9e9661a8cb6713865c4f3529043ef351689b"
+    },
+    "api-reference/v2/orgs-bookings/block-an-organization-booking-attendee.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-bookings/block-an-organization-booking-attendee.md",
+      "bytes": 4193,
+      "sha256": "be69f6c9fe77b46da768e52feaf4f1af1f5ca29e8a73e6c3bc4be22fc21340f0"
+    },
+    "api-reference/v2/orgs-bookings/get-organization-bookings-cursor-pagination.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-bookings/get-organization-bookings-cursor-pagination.md",
+      "bytes": 30783,
+      "sha256": "a2a6747bb34b29a8c2bec2d5a0f615247035c530706bdc7090538f307f3efb38"
+    },
+    "api-reference/v2/orgs-bookings/report-an-organization-booking.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-bookings/report-an-organization-booking.md",
+      "bytes": 4496,
+      "sha256": "64cc00766131b6a9d40a7c577d1125b4e1ece3fb1eb3e5e94a172cb0b6724d48"
+    },
+    "api-reference/v2/orgs-delegation-credentials/delete-delegation-credentials-of-your-organization.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-delegation-credentials/delete-delegation-credentials-of-your-organization.md",
+      "bytes": 9060,
+      "sha256": "df4d6b2e1f9e5e134f8784869ec5de8c490743d5b2a746815c1ee655e4c00378"
+    },
+    "api-reference/v2/orgs-delegation-credentials/get-a-delegation-credential-of-your-organization.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-delegation-credentials/get-a-delegation-credential-of-your-organization.md",
+      "bytes": 14873,
+      "sha256": "5661cc61242ab2f8668ed4f1672369b4be1f9a311c7dd869d23a431322f0849e"
+    },
+    "api-reference/v2/orgs-delegation-credentials/get-all-delegation-credentials-of-your-organization.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-delegation-credentials/get-all-delegation-credentials-of-your-organization.md",
+      "bytes": 14599,
+      "sha256": "78e89e7d302398fcccc1f46c0c040f01a4800a454b43b5f296bfe60cf2c43d4a"
+    },
+    "api-reference/v2/orgs-delegation-credentials/reset-a-blocked-delegation-credentials-secret-rotation-state.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-delegation-credentials/reset-a-blocked-delegation-credentials-secret-rotation-state.md",
+      "bytes": 12261,
+      "sha256": "802189c12688c7eab4c6cc7d5abc98817d21ef79a769ecee2ea987893a78b6dc"
+    },
+    "api-reference/v2/orgs-delegation-credentials/save-delegation-credentials-for-your-organization.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-delegation-credentials/save-delegation-credentials-for-your-organization.md",
+      "bytes": 10917,
+      "sha256": "d511acb7e2c5ea305b6e78ef099fa613c007768d8e00c5dc6dd8414303bffd79"
+    },
+    "api-reference/v2/orgs-delegation-credentials/update-delegation-credentials-of-your-organization.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-delegation-credentials/update-delegation-credentials-of-your-organization.md",
+      "bytes": 10745,
+      "sha256": "3d4ff8358780c18033fa52379636b2349f457e6a29ec4339897a320db9307b32"
+    },
+    "api-reference/v2/orgs-memberships/create-a-membership.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-memberships/create-a-membership.md",
+      "bytes": 10263,
+      "sha256": "b8cb2a20dae64bf27a386993763e5c1adfc961c8f0d141fe490e6e477081fddf"
+    },
+    "api-reference/v2/orgs-memberships/delete-a-membership.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-memberships/delete-a-membership.md",
+      "bytes": 5720,
+      "sha256": "2c1ede5c6402e44c9033c8c947a62b423431bfa7c71acc98a3a3c3d1bda8d2fa"
+    },
+    "api-reference/v2/orgs-memberships/get-a-membership.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-memberships/get-a-membership.md",
+      "bytes": 5718,
+      "sha256": "77703f8584e637d2cb9a9dfb28d51bca5d531b390af394ecb6154cbafe5581c3"
+    },
+    "api-reference/v2/orgs-memberships/get-all-memberships.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-memberships/get-all-memberships.md",
+      "bytes": 6077,
+      "sha256": "3cf9ef2048eb62765d802863efe40e8118e8ce07753a9f0a03d25ac3f2e147b5"
+    },
+    "api-reference/v2/orgs-memberships/update-a-membership.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-memberships/update-a-membership.md",
+      "bytes": 6186,
+      "sha256": "17b2afdb318d5fe472ce6b09a605f4ec39c392bdc92ca0381f4bfffd63455f30"
+    },
+    "api-reference/v2/orgs-roles-permissions/add-permissions-to-an-organization-role-single-or-batch.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-roles-permissions/add-permissions-to-an-organization-role-single-or-batch.md",
+      "bytes": 6628,
+      "sha256": "0eec2978ac4059148b9c4d162a423f6cc86584a81c75cfd82c9d0a779dfe72a5"
+    },
+    "api-reference/v2/orgs-roles-permissions/list-permissions-for-an-organization-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-roles-permissions/list-permissions-for-an-organization-role.md",
+      "bytes": 2523,
+      "sha256": "41e8b70b81a9e3beac5ea541b328408d470d271e3659b0a75fdcecb0be15e55c"
+    },
+    "api-reference/v2/orgs-roles-permissions/remove-a-permission-from-an-organization-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-roles-permissions/remove-a-permission-from-an-organization-role.md",
+      "bytes": 2199,
+      "sha256": "3883d3cec0460785afbbd89550b2d4d1476d3d0d69be5147dbbb973a94abfa11"
+    },
+    "api-reference/v2/orgs-roles-permissions/remove-multiple-permissions-from-an-organization-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-roles-permissions/remove-multiple-permissions-from-an-organization-role.md",
+      "bytes": 6221,
+      "sha256": "a2eddf39e84a253f6debae624d280b70556ebf13049c758bcdad78eb818064fd"
+    },
+    "api-reference/v2/orgs-roles-permissions/replace-all-permissions-for-an-organization-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-roles-permissions/replace-all-permissions-for-an-organization-role.md",
+      "bytes": 6608,
+      "sha256": "3aae1e967689d618be09aace91c1a109c011513b9812d6be7a36ae2def20d92c"
+    },
+    "api-reference/v2/orgs-roles/create-a-new-organization-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-roles/create-a-new-organization-role.md",
+      "bytes": 11696,
+      "sha256": "b34b3ef6fa77faee9b9f3fb2c8d7c8563d2da5b244f96d59b8fc09957c1782ed"
+    },
+    "api-reference/v2/orgs-roles/delete-an-organization-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-roles/delete-an-organization-role.md",
+      "bytes": 7265,
+      "sha256": "798aa23e427b7434b6b763f70dabf5e7b654323b24f38d7ae1fb569c2f990912"
+    },
+    "api-reference/v2/orgs-roles/get-a-specific-organization-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-roles/get-a-specific-organization-role.md",
+      "bytes": 7272,
+      "sha256": "29ecb3eabc5e5be40b9442248ae11d6e79ab78914e19f57ee4c6c518fc47b8be"
+    },
+    "api-reference/v2/orgs-roles/get-all-organization-roles.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-roles/get-all-organization-roles.md",
+      "bytes": 7675,
+      "sha256": "8c84941fbf4b22b9726cf2dd54373644084b09a4ba047b0cb1c0e15303563162"
+    },
+    "api-reference/v2/orgs-roles/update-an-organization-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-roles/update-an-organization-role.md",
+      "bytes": 11789,
+      "sha256": "9a284e34ec863ebe4d3fc593ed744757c51b60e4934dca31108ebc2d4f64cb06"
+    },
+    "api-reference/v2/orgs-routing-forms/create-routing-form-response-and-get-available-slots.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-routing-forms/create-routing-form-response-and-get-available-slots.md",
+      "bytes": 9257,
+      "sha256": "e302a01449a6734bb93f0b4221909a845cf90c0397f447c32877969102c68ac6"
+    },
+    "api-reference/v2/orgs-routing-forms/get-organization-routing-forms.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-routing-forms/get-organization-routing-forms.md",
+      "bytes": 5786,
+      "sha256": "fca430b0dccfe022d5d3783bbafe41fa3fb308b79c26ed056913a8c62ba559b5"
+    },
+    "api-reference/v2/orgs-routing-forms/get-routing-form-responses.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-routing-forms/get-routing-form-responses.md",
+      "bytes": 4880,
+      "sha256": "78dbd909d16bab4850c9192d7591b98e51ae138d642224d56c4606dc188a13d5"
+    },
+    "api-reference/v2/orgs-routing-forms/update-routing-form-response.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-routing-forms/update-routing-form-response.md",
+      "bytes": 3524,
+      "sha256": "aa1fce3f23b9d6cc62cda7011715761493f93d256a0f7988bdd7150c981ff152"
+    },
+    "api-reference/v2/orgs-schedules/get-all-schedules.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-schedules/get-all-schedules.md",
+      "bytes": 5652,
+      "sha256": "a190f40802f672509104546c8ad3fc51b4f391ffb443588e1c1d0904e16e3070"
+    },
+    "api-reference/v2/orgs-teams-bookings/get-booking-references.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-bookings/get-booking-references.md",
+      "bytes": 4020,
+      "sha256": "1eab4685d950a0b9186a0cdcf74f99c8e957ee3542c14c7342b7ecee19bc44cf"
+    },
+    "api-reference/v2/orgs-teams-bookings/get-organization-team-bookings.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-bookings/get-organization-team-bookings.md",
+      "bytes": 29574,
+      "sha256": "54fb03dba8fe8a6acf8470b51466dd612aa3746259117314b6953880fc749bd7"
+    },
+    "api-reference/v2/orgs-teams-conferencing/connect-your-conferencing-application-to-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/connect-your-conferencing-application-to-a-team.md",
+      "bytes": 3635,
+      "sha256": "d5aee6623f5d39e686e64e85607ef66c71872174cd410d3e341f2e699aeae6bb"
+    },
+    "api-reference/v2/orgs-teams-conferencing/disconnect-team-conferencing-application.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/disconnect-team-conferencing-application.md",
+      "bytes": 2296,
+      "sha256": "ae3b1a86920617a120ba95d753c517339d676f36fb83a95b35b763ed757c35d3"
+    },
+    "api-reference/v2/orgs-teams-conferencing/get-oauth-conferencing-apps-auth-url-for-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/get-oauth-conferencing-apps-auth-url-for-a-team.md",
+      "bytes": 3797,
+      "sha256": "4e8f0a5172377faea15509eefa91c64057a1fb664c59212abb37225b2b1437f6"
+    },
+    "api-reference/v2/orgs-teams-conferencing/get-team-default-conferencing-application.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/get-team-default-conferencing-application.md",
+      "bytes": 2282,
+      "sha256": "47a02652f83a42f6fdf1f4da96f1e21f856d03fc72912213905201da2004209c"
+    },
+    "api-reference/v2/orgs-teams-conferencing/list-team-conferencing-applications.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/list-team-conferencing-applications.md",
+      "bytes": 2704,
+      "sha256": "fe0a6424ece303880ded272e3a9b35106685413a06cf068ddc4bcd2e2ae8fe05"
+    },
+    "api-reference/v2/orgs-teams-conferencing/save-conferencing-app-oauth-credentials.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/save-conferencing-app-oauth-credentials.md",
+      "bytes": 1935,
+      "sha256": "74d1dae736a522d39691e5495521a3d1ee3c5f909570bc4eb27e33b18ebb584a"
+    },
+    "api-reference/v2/orgs-teams-conferencing/set-team-default-conferencing-application.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-conferencing/set-team-default-conferencing-application.md",
+      "bytes": 2316,
+      "sha256": "d25bc49e16034269c2cf5f6159acde66e31bb035af1ddd2092690810841f8d8a"
+    },
+    "api-reference/v2/orgs-teams-event-types-private-links/create-a-private-link-for-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-event-types-private-links/create-a-private-link-for-a-team-event-type.md",
+      "bytes": 6073,
+      "sha256": "83f364281f095153d6afe66d6e802f4994ba5abe89dab6d29e7461a2f190dea4"
+    },
+    "api-reference/v2/orgs-teams-event-types-private-links/delete-a-private-link-for-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-event-types-private-links/delete-a-private-link-for-a-team-event-type.md",
+      "bytes": 3250,
+      "sha256": "2226c82ce860df1b0995379426e850b5e9a6236c593984d2300de3fe0d803679"
+    },
+    "api-reference/v2/orgs-teams-event-types-private-links/get-all-private-links-for-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-event-types-private-links/get-all-private-links-for-a-team-event-type.md",
+      "bytes": 5330,
+      "sha256": "3b6bffa398be19ba18265056fdf7771e5aff12b0e4cd4ccfd76ecaf07699eeed"
+    },
+    "api-reference/v2/orgs-teams-event-types-private-links/update-a-private-link-for-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-event-types-private-links/update-a-private-link-for-a-team-event-type.md",
+      "bytes": 5388,
+      "sha256": "1f5d61d0ce87e38e5228b6f0b2b4a46ccb85b7e4e74ca0ecfdcdc70f4c290b2d"
+    },
+    "api-reference/v2/orgs-teams-invite/create-team-invite-link.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-invite/create-team-invite-link.md",
+      "bytes": 3464,
+      "sha256": "dc6249c303700366cddd2304d150a09f4fb52cf0c6429f2fa000012bda0b9549"
+    },
+    "api-reference/v2/orgs-teams-memberships/create-a-membership.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-memberships/create-a-membership.md",
+      "bytes": 4264,
+      "sha256": "5245ce0c84bc61e6077fb3e95051104c0d366a5ae8f728bc0d14f8dab7e8064b"
+    },
+    "api-reference/v2/orgs-teams-memberships/delete-a-membership.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-memberships/delete-a-membership.md",
+      "bytes": 3795,
+      "sha256": "083e38d6d422ac7a72c02fd4ecf44d81eab11180eb088864e56ae16f9c08c04f"
+    },
+    "api-reference/v2/orgs-teams-memberships/get-a-membership.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-memberships/get-a-membership.md",
+      "bytes": 3796,
+      "sha256": "35c4dc3782499eb835cb777bd25bd8b22bf2b7efbd74bd5f95c086578c40a30e"
+    },
+    "api-reference/v2/orgs-teams-memberships/get-all-memberships.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-memberships/get-all-memberships.md",
+      "bytes": 4193,
+      "sha256": "04ed64403f45d010409ea59c0b8f932a4b0c30475c98c4f0ce6e52e47224ed93"
+    },
+    "api-reference/v2/orgs-teams-memberships/update-a-membership.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-memberships/update-a-membership.md",
+      "bytes": 4269,
+      "sha256": "f70139bb3d486f55d9dab7730fe81f1e77c2b2b0ba4742d4f1354ed0dca7e244"
+    },
+    "api-reference/v2/orgs-teams-roles-permissions/add-permissions-to-an-organization-team-role-single-or-batch.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-roles-permissions/add-permissions-to-an-organization-team-role-single-or-batch.md",
+      "bytes": 4705,
+      "sha256": "dcd924556a88f1f5d69e78dcc27d896744542a4865e7be5139cc641c9716a8d5"
+    },
+    "api-reference/v2/orgs-teams-roles-permissions/list-permissions-for-an-organization-team-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-roles-permissions/list-permissions-for-an-organization-team-role.md",
+      "bytes": 2690,
+      "sha256": "6a97ebebc02a602a0a1ad63b016f5dd56170407a1a736625d3d75225879620e0"
+    },
+    "api-reference/v2/orgs-teams-roles-permissions/remove-a-permission-from-an-organization-team-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-roles-permissions/remove-a-permission-from-an-organization-team-role.md",
+      "bytes": 1987,
+      "sha256": "b233b88e30c45b1f5069f9b6f9369ea662cc8912b4c9fa55549c4cbe94d33c50"
+    },
+    "api-reference/v2/orgs-teams-roles-permissions/remove-multiple-permissions-from-an-organization-team-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-roles-permissions/remove-multiple-permissions-from-an-organization-team-role.md",
+      "bytes": 4212,
+      "sha256": "b684ebb7032c3b1fd4118f1f15d6f95e784e7cfc9bbf2ecf915abfe760691aa8"
+    },
+    "api-reference/v2/orgs-teams-roles-permissions/replace-all-permissions-for-an-organization-team-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-roles-permissions/replace-all-permissions-for-an-organization-team-role.md",
+      "bytes": 4685,
+      "sha256": "1e2c085ce61a31423412c63751979e32a36aa2e378c2dfe400e2cfbf097b63c6"
+    },
+    "api-reference/v2/orgs-teams-roles/create-a-new-organization-team-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-roles/create-a-new-organization-team-role.md",
+      "bytes": 8044,
+      "sha256": "a0c96676b6f6484a40f13de237deefc0d5691d7a419eb3c665cc044290ddaa54"
+    },
+    "api-reference/v2/orgs-teams-roles/delete-an-organization-team-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-roles/delete-an-organization-team-role.md",
+      "bytes": 5326,
+      "sha256": "4f8d1e923f741306eb920da6864e324e78495f1c6c29927653c62c8f96607d45"
+    },
+    "api-reference/v2/orgs-teams-roles/get-a-specific-organization-team-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-roles/get-a-specific-organization-team-role.md",
+      "bytes": 5710,
+      "sha256": "8cb70febd3ccd4ecd38d61a4d5b56468b0febec63de698953201da000d61334e"
+    },
+    "api-reference/v2/orgs-teams-roles/get-all-organization-team-roles.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-roles/get-all-organization-team-roles.md",
+      "bytes": 6113,
+      "sha256": "303cf2b93c065a00db61277a8ed0f51c1974c8e2265d22ced0cedbe5b59e1d01"
+    },
+    "api-reference/v2/orgs-teams-roles/update-an-organization-team-role.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-roles/update-an-organization-team-role.md",
+      "bytes": 8137,
+      "sha256": "14c8f8333beb0ecb2c4acdf91675e47ccff1b814418e8851442f5b0421219815"
+    },
+    "api-reference/v2/orgs-teams-routing-forms-responses/create-routing-form-response-and-get-available-slots.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-routing-forms-responses/create-routing-form-response-and-get-available-slots.md",
+      "bytes": 9439,
+      "sha256": "4d5cc08a45baa8882aaadbe89a7e2bb575c6c1cedfd159f3fe1351dc73eb45ce"
+    },
+    "api-reference/v2/orgs-teams-routing-forms-responses/get-organization-team-routing-form-responses.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-routing-forms-responses/get-organization-team-routing-form-responses.md",
+      "bytes": 5096,
+      "sha256": "263e3e73aa685a76b8bee80314d3f6b5113e855d82502e36d90fb155e42fbe47"
+    },
+    "api-reference/v2/orgs-teams-routing-forms-responses/update-routing-form-response.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-routing-forms-responses/update-routing-form-response.md",
+      "bytes": 3704,
+      "sha256": "ce1dcd27b870244e83dfb8f3dc22051c339123e5f1a7c974b6b1aa623db13290"
+    },
+    "api-reference/v2/orgs-teams-routing-forms/get-team-routing-forms.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-routing-forms/get-team-routing-forms.md",
+      "bytes": 5618,
+      "sha256": "34cab320c3f3e44a0487738f9a2c22094150bce78df5d03e10a062fdd4e99f3b"
+    },
+    "api-reference/v2/orgs-teams-schedules/get-all-team-member-schedules.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-schedules/get-all-team-member-schedules.md",
+      "bytes": 6024,
+      "sha256": "738780a694b2694208e52e2dfbbc10049ede401d1d802e9d02188681248a37ed"
+    },
+    "api-reference/v2/orgs-teams-stripe/check-team-stripe-connection.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-stripe/check-team-stripe-connection.md",
+      "bytes": 1806,
+      "sha256": "bc0e3f7c0860b47fe4cd76377a2a7faa210bc7287fdcfe13387b21ed202ba159"
+    },
+    "api-reference/v2/orgs-teams-stripe/get-stripe-connect-url-for-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-stripe/get-stripe-connect-url-for-a-team.md",
+      "bytes": 2380,
+      "sha256": "fbb39265c1cd84b4fbb552467ce687945712bbf2b0bd3eba2b835a86f676267c"
+    },
+    "api-reference/v2/orgs-teams-stripe/save-stripe-credentials.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-stripe/save-stripe-credentials.md",
+      "bytes": 1899,
+      "sha256": "b40410d1a945bd7147e0afb46f26d809984c3912534b779bc4c23eca74b7d881"
+    },
+    "api-reference/v2/orgs-teams-users-schedules/get-schedules-of-a-team-member.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-users-schedules/get-schedules-of-a-team-member.md",
+      "bytes": 5684,
+      "sha256": "49b937660eee1bfd5ac1b26db557445d2b812117d920324eeb2577213e7f09bb"
+    },
+    "api-reference/v2/orgs-teams-workflows/create-organization-team-workflow-for-event-types.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-workflows/create-organization-team-workflow-for-event-types.md",
+      "bytes": 46481,
+      "sha256": "11c933ea23571f59e5a37d5071cb7a7a385d02e18f8fdf9db7573db4b554d0d8"
+    },
+    "api-reference/v2/orgs-teams-workflows/create-organization-team-workflow-for-routing-forms.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-workflows/create-organization-team-workflow-for-routing-forms.md",
+      "bytes": 31044,
+      "sha256": "087665d3f0f6bf2bbcadbfa02fe36f87443ce2f69169ede2ffd856f9ca2375c3"
+    },
+    "api-reference/v2/orgs-teams-workflows/delete-organization-team-routing-form-workflow.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-workflows/delete-organization-team-routing-form-workflow.md",
+      "bytes": 2418,
+      "sha256": "0c695d6631a0b13f8914a6578f7ac82d390af2b240ce8e02f2e7a5ff578b0a0f"
+    },
+    "api-reference/v2/orgs-teams-workflows/delete-organization-team-workflow.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-workflows/delete-organization-team-workflow.md",
+      "bytes": 2355,
+      "sha256": "3d1f3dea8e6fb45a4561e9535938a8a2b29e5a7398e70b5d17505afeca7d4607"
+    },
+    "api-reference/v2/orgs-teams-workflows/get-organization-team-routing-form-workflow.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-workflows/get-organization-team-routing-form-workflow.md",
+      "bytes": 12716,
+      "sha256": "aadb3d2daefd3061780b023c68dc86e6b2240923c45df57178de49e719b88985"
+    },
+    "api-reference/v2/orgs-teams-workflows/get-organization-team-routing-form-workflows.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-workflows/get-organization-team-routing-form-workflows.md",
+      "bytes": 13076,
+      "sha256": "f665c4525516a81a653eb8662035019f8b48f58f2f9adf4456d3950c0944f78e"
+    },
+    "api-reference/v2/orgs-teams-workflows/get-organization-team-workflow.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-workflows/get-organization-team-workflow.md",
+      "bytes": 12987,
+      "sha256": "8efa26dd4e5c6dc9c6fb7eb85f584a0af60bcfefa1191b9d795690fcccb404a0"
+    },
+    "api-reference/v2/orgs-teams-workflows/get-organization-team-workflows.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-workflows/get-organization-team-workflows.md",
+      "bytes": 13347,
+      "sha256": "3db29aff05a62126c7181432a9b7ed540e2454159abe3475ff53a1b3110126ac"
+    },
+    "api-reference/v2/orgs-teams-workflows/update-organization-routing-form-team-workflow.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-workflows/update-organization-routing-form-team-workflow.md",
+      "bytes": 33196,
+      "sha256": "d49fa0cc11bde729ba90cb14c207cea982ba4c40ddf9953910a902167cf2071e"
+    },
+    "api-reference/v2/orgs-teams-workflows/update-organization-team-workflow.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams-workflows/update-organization-team-workflow.md",
+      "bytes": 49316,
+      "sha256": "4293d555a17a43e14208c1e9f2619ec6290c737e22835d543abb42a62c9b204b"
+    },
+    "api-reference/v2/orgs-teams/create-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams/create-a-team.md",
+      "bytes": 7094,
+      "sha256": "b075a49801c5d0c522e24c4e247f1621b2d4825ddddafc6aff05f4d907a00ff1"
+    },
+    "api-reference/v2/orgs-teams/delete-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams/delete-a-team.md",
+      "bytes": 3897,
+      "sha256": "26cacbeeb9d7267df0e492b6f28be1aa3e7541bedc4d0e3982134f943ecede49"
+    },
+    "api-reference/v2/orgs-teams/get-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams/get-a-team.md",
+      "bytes": 3904,
+      "sha256": "efb53210e4fb8212e6369163bf741f212a695ef90850bc6dd75e5070d23c219a"
+    },
+    "api-reference/v2/orgs-teams/get-all-teams.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams/get-all-teams.md",
+      "bytes": 4307,
+      "sha256": "d7fc5f01df162b87c2b8d4c665ce64615c3bb055c68a080e0c220e38851e9395"
+    },
+    "api-reference/v2/orgs-teams/get-teams-membership-for-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams/get-teams-membership-for-user.md",
+      "bytes": 4342,
+      "sha256": "d205456383c541938f30e4f29618a92de3e7fbb9aebc2d8dd4b4c751b951bbf3"
+    },
+    "api-reference/v2/orgs-teams/update-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-teams/update-a-team.md",
+      "bytes": 6167,
+      "sha256": "9cd0471ce86a963bee49bf100fe47ae0d0a09655a9f542745977b08907bc1015"
+    },
+    "api-reference/v2/orgs-users-bookings/get-all-bookings-for-an-organization-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users-bookings/get-all-bookings-for-an-organization-user.md",
+      "bytes": 7644,
+      "sha256": "a63e6a4e1077b5247c3c2fff5a6e47b4e6759f4e17dc705210f0150d4f954ab9"
+    },
+    "api-reference/v2/orgs-users-conferencing/list-conferencing-apps-of-an-organization-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users-conferencing/list-conferencing-apps-of-an-organization-user.md",
+      "bytes": 3631,
+      "sha256": "fc00bb06c77485509974977834bde35b245b8ebff7452fffe0e69add5219eee4"
+    },
+    "api-reference/v2/orgs-users-conferencing/set-the-default-conferencing-app-for-an-organization-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users-conferencing/set-the-default-conferencing-app-for-an-organization-user.md",
+      "bytes": 3079,
+      "sha256": "912f713052eff411c1ede85e5a3df2000a6f20681ee4c556287c9a613cd2417b"
+    },
+    "api-reference/v2/orgs-users-ooo/create-an-out-of-office-entry-for-a-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users-ooo/create-an-out-of-office-entry-for-a-user.md",
+      "bytes": 5325,
+      "sha256": "534ce167298bfcabedce0eb802a91584472025d431cde2039fa44b7e224b79f2"
+    },
+    "api-reference/v2/orgs-users-ooo/delete-an-out-of-office-entry-for-a-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users-ooo/delete-an-out-of-office-entry-for-a-user.md",
+      "bytes": 4062,
+      "sha256": "2a4926b64060e6e8e7e1c16f6abddf24b5b3c25104714d82130b2ec1529c70f1"
+    },
+    "api-reference/v2/orgs-users-ooo/get-all-out-of-office-entries-for-a-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users-ooo/get-all-out-of-office-entries-for-a-user.md",
+      "bytes": 5443,
+      "sha256": "8d12a8300755cefbcefbfc7744724a7aa9c4ffef73a7020d413d59cca8d06fa1"
+    },
+    "api-reference/v2/orgs-users-ooo/get-all-out-of-office-entries-for-organization-users.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users-ooo/get-all-out-of-office-entries-for-organization-users.md",
+      "bytes": 5614,
+      "sha256": "1586bdd5b5df32e0d1ec4f3ca5231b016800d6a907e0d615cb96f58e86649a85"
+    },
+    "api-reference/v2/orgs-users-ooo/update-an-out-of-office-entry-for-a-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users-ooo/update-an-out-of-office-entry-for-a-user.md",
+      "bytes": 5406,
+      "sha256": "82716924fad03d45739dc6c1d48dcfab1f11cf0e9fdfd4fabdf5bd23ea9129b2"
+    },
+    "api-reference/v2/orgs-users-schedules/create-a-schedule.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users-schedules/create-a-schedule.md",
+      "bytes": 7248,
+      "sha256": "816933b535892840b59874966ad5ddd34db6dec410d98a77bc8ad578646813e4"
+    },
+    "api-reference/v2/orgs-users-schedules/delete-a-schedule.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users-schedules/delete-a-schedule.md",
+      "bytes": 2730,
+      "sha256": "2209102823db3fa355fa755cf11ce92628741bb05e3cd9f2d3eead96cd2fcb29"
+    },
+    "api-reference/v2/orgs-users-schedules/get-a-schedule.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users-schedules/get-a-schedule.md",
+      "bytes": 5461,
+      "sha256": "1424477cfe33e2391d797ac8f9a2fa6b79b1e8f57227db7076e15a4f35119f4f"
+    },
+    "api-reference/v2/orgs-users-schedules/get-all-schedules.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users-schedules/get-all-schedules.md",
+      "bytes": 5302,
+      "sha256": "53e8a527d6d0e6325ebcc03800c168cb993fe1110bd9cf331074484cc21f43f3"
+    },
+    "api-reference/v2/orgs-users-schedules/update-a-schedule.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users-schedules/update-a-schedule.md",
+      "bytes": 6435,
+      "sha256": "bd88948b5c6fd959114899a2cb46d5e1d5acb31521c897d741de524d5d1e147e"
+    },
+    "api-reference/v2/orgs-users/create-a-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users/create-a-user.md",
+      "bytes": 11788,
+      "sha256": "eef212d0fdb88eed8230b77f2ee0f5c9383c25770beeec0e3698faf693938d59"
+    },
+    "api-reference/v2/orgs-users/delete-a-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users/delete-a-user.md",
+      "bytes": 6883,
+      "sha256": "9b35071ec85c4e2b470b760989ab10d085dbbc9564d1f3c71cf970a58fc9a537"
+    },
+    "api-reference/v2/orgs-users/get-all-users.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users/get-all-users.md",
+      "bytes": 8682,
+      "sha256": "13e8d927be42178fdb57a6d7a7e8f0394c33db1ea6b2b34f802ccc87a598bf20"
+    },
+    "api-reference/v2/orgs-users/update-a-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-users/update-a-user.md",
+      "bytes": 9427,
+      "sha256": "0edcfc16e75637ad31d5d2d8418aee81ad7d7f4240f8e5e506de7aa750c88c04"
+    },
+    "api-reference/v2/orgs-webhooks/create-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-webhooks/create-a-webhook.md",
+      "bytes": 8786,
+      "sha256": "52a443d474e240f4509c1d8752b8aa6e24e5d784036e7cbc938bc6268cc4c1bb"
+    },
+    "api-reference/v2/orgs-webhooks/delete-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-webhooks/delete-a-webhook.md",
+      "bytes": 5553,
+      "sha256": "9c65eb718a0281e866b656b9cea94e4c9b9722b5a8e6548795d25b5c753f25be"
+    },
+    "api-reference/v2/orgs-webhooks/get-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-webhooks/get-a-webhook.md",
+      "bytes": 5566,
+      "sha256": "b1c2452d8efcb9cff69cf72272305f8ae24d0f794cbd2be370a55ce2661ae348"
+    },
+    "api-reference/v2/orgs-webhooks/get-all-webhooks.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-webhooks/get-all-webhooks.md",
+      "bytes": 5972,
+      "sha256": "1e2d41d6a3f369823ae4a74ec712fd3dff64410575dabd7127302d1a18efac0b"
+    },
+    "api-reference/v2/orgs-webhooks/update-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/orgs-webhooks/update-a-webhook.md",
+      "bytes": 8840,
+      "sha256": "77b6cd377279a8bc614d2375903d133297679500fd5ff27a354684ccdcdb039d"
+    },
+    "api-reference/v2/out-of-office/create-an-out-of-office-entry-for-the-authenticated-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/out-of-office/create-an-out-of-office-entry-for-the-authenticated-user.md",
+      "bytes": 4668,
+      "sha256": "8e08ab1ec7c9665319bcaeabb8ea6ca8a7f6c6377e407e0e74609df04b50ba22"
+    },
+    "api-reference/v2/out-of-office/delete-an-out-of-office-entry-for-the-authenticated-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/out-of-office/delete-an-out-of-office-entry-for-the-authenticated-user.md",
+      "bytes": 3405,
+      "sha256": "79c29b63e90e78de48107d2201f4b77a0f86d15133cc5feb2351479922514acf"
+    },
+    "api-reference/v2/out-of-office/get-all-out-of-office-entries-for-the-authenticated-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/out-of-office/get-all-out-of-office-entries-for-the-authenticated-user.md",
+      "bytes": 4436,
+      "sha256": "f9e6bb2536f84403f677a70b56f7525338356cc27efb7459af7479b161b70e30"
+    },
+    "api-reference/v2/out-of-office/update-an-out-of-office-entry-for-the-authenticated-user.md": {
+      "url": "https://cal.com/docs/api-reference/v2/out-of-office/update-an-out-of-office-entry-for-the-authenticated-user.md",
+      "bytes": 4749,
+      "sha256": "55dda19008f368e71aedebeebd1ed8df0f27d6c85a0a4566f2017361d78557a4"
+    },
+    "api-reference/v2/routing-forms/calculate-slots-based-on-routing-form-response.md": {
+      "url": "https://cal.com/docs/api-reference/v2/routing-forms/calculate-slots-based-on-routing-form-response.md",
+      "bytes": 6132,
+      "sha256": "f48627c881b38581b82a6d9541c83aea2c50e3e22fe9bb6d5a83d2a35f1f61b9"
+    },
+    "api-reference/v2/schedules/create-a-schedule.md": {
+      "url": "https://cal.com/docs/api-reference/v2/schedules/create-a-schedule.md",
+      "bytes": 9917,
+      "sha256": "57834e2730d4198864d9e934660cfb1c4e899c19ef6baec35cf5564379b405c0"
+    },
+    "api-reference/v2/schedules/delete-a-schedule.md": {
+      "url": "https://cal.com/docs/api-reference/v2/schedules/delete-a-schedule.md",
+      "bytes": 2437,
+      "sha256": "401500b45582c7b96e265a16acd2e336a86386ebe6c92b99d47016b3dbeb78e4"
+    },
+    "api-reference/v2/schedules/get-a-schedule.md": {
+      "url": "https://cal.com/docs/api-reference/v2/schedules/get-a-schedule.md",
+      "bytes": 5142,
+      "sha256": "4c0137694450def4890f077de4a9c265d057d188cffb592f6918b2bc237dbc30"
+    },
+    "api-reference/v2/schedules/get-all-schedules.md": {
+      "url": "https://cal.com/docs/api-reference/v2/schedules/get-all-schedules.md",
+      "bytes": 5110,
+      "sha256": "fa8120def54b1a4896b43ed732441960674fe846ffb729151733dcee8a552bd2"
+    },
+    "api-reference/v2/schedules/get-default-schedule.md": {
+      "url": "https://cal.com/docs/api-reference/v2/schedules/get-default-schedule.md",
+      "bytes": 5190,
+      "sha256": "eded82e441ec54e59cf3d924d9c55f643119dfd5279ead243ec09b907ba81f47"
+    },
+    "api-reference/v2/schedules/update-a-schedule.md": {
+      "url": "https://cal.com/docs/api-reference/v2/schedules/update-a-schedule.md",
+      "bytes": 6104,
+      "sha256": "9279e5eafceac81101f7d84cd9f81e4e8ca356219e2f6c48a7ed031b081bac7c"
+    },
+    "api-reference/v2/selected-calendars/add-a-selected-calendar.md": {
+      "url": "https://cal.com/docs/api-reference/v2/selected-calendars/add-a-selected-calendar.md",
+      "bytes": 2550,
+      "sha256": "e4ff27650cef1c29ebdbd81b185e4353be0b7e34a1f27bf10a950421d04f4e8a"
+    },
+    "api-reference/v2/selected-calendars/delete-a-selected-calendar.md": {
+      "url": "https://cal.com/docs/api-reference/v2/selected-calendars/delete-a-selected-calendar.md",
+      "bytes": 2526,
+      "sha256": "3cfa45e0fd6ef18826f7d47029971e1f7298cbc35e51a8dfdad5cec4ee735b60"
+    },
+    "api-reference/v2/slots/delete-a-reserved-slot.md": {
+      "url": "https://cal.com/docs/api-reference/v2/slots/delete-a-reserved-slot.md",
+      "bytes": 1720,
+      "sha256": "5092ebb6205f2fb857d4bfa6992dd2f0c2e6dea6e4725e25858badde9fa15a23"
+    },
+    "api-reference/v2/slots/get-available-time-slots-for-an-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/slots/get-available-time-slots-for-an-event-type.md",
+      "bytes": 14526,
+      "sha256": "22eabec9321938a2c94bfb034666a8fe17d05f652f42bbe3e44cf94eb6116daa"
+    },
+    "api-reference/v2/slots/get-reserved-slot.md": {
+      "url": "https://cal.com/docs/api-reference/v2/slots/get-reserved-slot.md",
+      "bytes": 2116,
+      "sha256": "66b2a2bce977557698a86e01ef00e5682725506bacff9dab16ee93274e59f870"
+    },
+    "api-reference/v2/slots/reserve-a-slot.md": {
+      "url": "https://cal.com/docs/api-reference/v2/slots/reserve-a-slot.md",
+      "bytes": 6434,
+      "sha256": "ff9e81127c1dd4488d70a34b194b800b290c5d46cd6e115e9e41d0ad9e872346"
+    },
+    "api-reference/v2/slots/update-a-reserved-slot.md": {
+      "url": "https://cal.com/docs/api-reference/v2/slots/update-a-reserved-slot.md",
+      "bytes": 6236,
+      "sha256": "ac9b2fe3b332fcdd9319731fa986ef479a60f70c1208d5fd613ed83b62a6dcd5"
+    },
+    "api-reference/v2/stripe/check-stripe-connection.md": {
+      "url": "https://cal.com/docs/api-reference/v2/stripe/check-stripe-connection.md",
+      "bytes": 1323,
+      "sha256": "36542213e58d9fcf6d15203048763ebde7002fd55ba35574cba8021fb700947f"
+    },
+    "api-reference/v2/stripe/get-stripe-connect-url.md": {
+      "url": "https://cal.com/docs/api-reference/v2/stripe/get-stripe-connect-url.md",
+      "bytes": 1538,
+      "sha256": "18f82d78f254f57d6451356ea132afa432a07e784df872c0f5a772ce3ffc1df6"
+    },
+    "api-reference/v2/stripe/save-stripe-credentials.md": {
+      "url": "https://cal.com/docs/api-reference/v2/stripe/save-stripe-credentials.md",
+      "bytes": 1171,
+      "sha256": "9870bea1e7da5e4a21afafb934ebedbd81ef2dee17771cee73ccf3c54269707a"
+    },
+    "api-reference/v2/team-event-types/add-custom-team-booking-fields.md": {
+      "url": "https://cal.com/docs/api-reference/v2/team-event-types/add-custom-team-booking-fields.md",
+      "bytes": 83086,
+      "sha256": "2765442894126536d5aed8c286c7b46aa3335f284cfa0e0736576cbc4d1d34ba"
+    },
+    "api-reference/v2/team-event-types/create-a-phone-call-for-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/team-event-types/create-a-phone-call-for-a-team-event-type.md",
+      "bytes": 4730,
+      "sha256": "fbaa7aba0c8cb98e11a15a30a0f66798c31ac6e707e4f251a40cd5ebb7824380"
+    },
+    "api-reference/v2/team-event-types/create-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/team-event-types/create-a-team-event-type.md",
+      "bytes": 135853,
+      "sha256": "481d2c9bfd2a0b19fcca7e4bbf354107c5783be9cfbbc38b7f89392ee373c886"
+    },
+    "api-reference/v2/team-event-types/delete-a-custom-team-booking-field.md": {
+      "url": "https://cal.com/docs/api-reference/v2/team-event-types/delete-a-custom-team-booking-field.md",
+      "bytes": 43857,
+      "sha256": "fa8db15ce3227f8b0f7de5d686de6ba8443d5b72e331c8edfc9675eb32fb7726"
+    },
+    "api-reference/v2/team-event-types/delete-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/team-event-types/delete-a-team-event-type.md",
+      "bytes": 3305,
+      "sha256": "609c735c92872610d196a956b6ed8562b40546b61cb3267fc30a0574a7ed8d57"
+    },
+    "api-reference/v2/team-event-types/get-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/team-event-types/get-a-team-event-type.md",
+      "bytes": 74919,
+      "sha256": "413da5e6262a42728648fdce9670f16b188b3d2b21122743a8d0ef657cf0e628"
+    },
+    "api-reference/v2/team-event-types/get-team-booking-fields.md": {
+      "url": "https://cal.com/docs/api-reference/v2/team-event-types/get-team-booking-fields.md",
+      "bytes": 43673,
+      "sha256": "704fbc19d688ccdd90da8e7f44038b4eb49ff76ffdb2c4dcb0020edf08b67096"
+    },
+    "api-reference/v2/team-event-types/list-team-event-types.md": {
+      "url": "https://cal.com/docs/api-reference/v2/team-event-types/list-team-event-types.md",
+      "bytes": 75418,
+      "sha256": "6f168b7d65f5cb7c23f17466ffe60a4d62f0f16ebf84047d93135e8d7c3d26e0"
+    },
+    "api-reference/v2/team-event-types/replace-team-booking-fields.md": {
+      "url": "https://cal.com/docs/api-reference/v2/team-event-types/replace-team-booking-fields.md",
+      "bytes": 83325,
+      "sha256": "1ab1833b2165b7d5e52607f7e8d84a3bc1d5aaf9b646f362d6f78f62f90b6518"
+    },
+    "api-reference/v2/team-event-types/update-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/team-event-types/update-a-team-event-type.md",
+      "bytes": 136074,
+      "sha256": "07cac0f254615e324742149a2ebf0d418bfe341f9c3793b46998223fd7503f83"
+    },
+    "api-reference/v2/team-event-types/update-team-booking-fields.md": {
+      "url": "https://cal.com/docs/api-reference/v2/team-event-types/update-team-booking-fields.md",
+      "bytes": 77251,
+      "sha256": "84c7a0969723b8d47a49e16f71303a3d5c45d7cf594a0589ace81009ddccdc35"
+    },
+    "api-reference/v2/teams-bookings/get-team-bookings.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-bookings/get-team-bookings.md",
+      "bytes": 28589,
+      "sha256": "2a200f299f1195e460fde657f48ccdc508abf56671cfb2b28ecdaa33f6603ff6"
+    },
+    "api-reference/v2/teams-event-types-webhooks/create-a-webhook-for-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-event-types-webhooks/create-a-webhook-for-a-team-event-type.md",
+      "bytes": 8279,
+      "sha256": "78c3479003fb5a44cd93fed61bf42a5467a951719ac48285073e1f7f1669eac7"
+    },
+    "api-reference/v2/teams-event-types-webhooks/delete-a-webhook-for-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-event-types-webhooks/delete-a-webhook-for-a-team-event-type.md",
+      "bytes": 5058,
+      "sha256": "99a15db45795baf0d3803ab0aea3f9587e1f9e67504a048ba15c15794b74bf51"
+    },
+    "api-reference/v2/teams-event-types-webhooks/delete-all-webhooks-for-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-event-types-webhooks/delete-all-webhooks-for-a-team-event-type.md",
+      "bytes": 1964,
+      "sha256": "00a50e75960d1ab368f79fda4a56dac42af65309c4ebeebd221cbf255a88871e"
+    },
+    "api-reference/v2/teams-event-types-webhooks/get-a-webhook-for-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-event-types-webhooks/get-a-webhook-for-a-team-event-type.md",
+      "bytes": 5041,
+      "sha256": "bd16717f43e618f8dc9e37b049932344429df7c238493337fbc63b6fff6ee24d"
+    },
+    "api-reference/v2/teams-event-types-webhooks/get-all-webhooks-for-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-event-types-webhooks/get-all-webhooks-for-a-team-event-type.md",
+      "bytes": 5444,
+      "sha256": "08c5f55a6f49893589656f8151a33d5a7643c14fc699479659bfde6cdcb36c88"
+    },
+    "api-reference/v2/teams-event-types-webhooks/update-a-webhook-for-a-team-event-type.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-event-types-webhooks/update-a-webhook-for-a-team-event-type.md",
+      "bytes": 8342,
+      "sha256": "6eb24dc244c39b059cbd52813c76164cf049f76b9a1b624eb311a5ac67b3ff0f"
+    },
+    "api-reference/v2/teams-invite/create-team-invite-link.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-invite/create-team-invite-link.md",
+      "bytes": 2534,
+      "sha256": "3f0c2aea9b3153851afe1563ff2d18350b5d8a1d00e0d611f25d088704354a9c"
+    },
+    "api-reference/v2/teams-memberships/create-a-membership.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-memberships/create-a-membership.md",
+      "bytes": 3298,
+      "sha256": "bbb7f2a7685a96dd10dd85e73c48116a4640eedd52c2b53489383ce945377c0e"
+    },
+    "api-reference/v2/teams-memberships/delete-a-membership.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-memberships/delete-a-membership.md",
+      "bytes": 3192,
+      "sha256": "164fde0a8eb3467389b8d5b365079037d3c474f24dd135b07ea0fc8a6789be7b"
+    },
+    "api-reference/v2/teams-memberships/get-a-membership.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-memberships/get-a-membership.md",
+      "bytes": 2823,
+      "sha256": "917c95d0b5d4f3a582d9c1bd68571d8bab7d2b22b7ebe5e7f280ca9065e0a172"
+    },
+    "api-reference/v2/teams-memberships/get-all-memberships.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-memberships/get-all-memberships.md",
+      "bytes": 3875,
+      "sha256": "9acc185c59566ba56871bc92701d963ae3d53cc0693098cb0dba416f04b8d02a"
+    },
+    "api-reference/v2/teams-memberships/update-membership.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-memberships/update-membership.md",
+      "bytes": 3294,
+      "sha256": "7e3756c77e9b2120930d1afdae160e27124aef66cdfa01f228551bae9df68bbe"
+    },
+    "api-reference/v2/teams-routing-forms-responses/create-routing-form-response-and-get-available-slots.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-routing-forms-responses/create-routing-form-response-and-get-available-slots.md",
+      "bytes": 9555,
+      "sha256": "3a5d5c0ad5f9dcc3c48076ced51bfec94d9cd17da5e6d34cb11cd14a82dff96b"
+    },
+    "api-reference/v2/teams-schedules/get-all-team-member-schedules.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-schedules/get-all-team-member-schedules.md",
+      "bytes": 4903,
+      "sha256": "cacc2f85464a8faaf71a881d3c66610b9a041aecb681953da493400778e47242"
+    },
+    "api-reference/v2/teams-users-ooo/create-an-out-of-office-entry-for-a-team-member.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-users-ooo/create-an-out-of-office-entry-for-a-team-member.md",
+      "bytes": 4949,
+      "sha256": "cb46015e1bfba149a98b89c4456a6fa437a3d2f37474335863d9fb471a6dc61c"
+    },
+    "api-reference/v2/teams-users-ooo/delete-an-out-of-office-entry-for-a-team-member.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-users-ooo/delete-an-out-of-office-entry-for-a-team-member.md",
+      "bytes": 3576,
+      "sha256": "a92eaef8d27a4a410c12cd6d4c59498d3515f01e06bed8aed13366f9151ed0e4"
+    },
+    "api-reference/v2/teams-users-ooo/get-all-out-of-office-entries-for-a-team-member.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-users-ooo/get-all-out-of-office-entries-for-a-team-member.md",
+      "bytes": 4717,
+      "sha256": "0d30a288147f0008768ebc3b8e07ca889985add0c53395373ee2a8da1fc648dc"
+    },
+    "api-reference/v2/teams-users-ooo/update-an-out-of-office-entry-for-a-team-member.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-users-ooo/update-an-out-of-office-entry-for-a-team-member.md",
+      "bytes": 5030,
+      "sha256": "8a4ab4c960b9e9c42dbad6458df722d91d1c5bb465e442631f3f3c522cdbf4a9"
+    },
+    "api-reference/v2/teams-verified-resources/get-list-of-verified-emails-of-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-verified-resources/get-list-of-verified-emails-of-a-team.md",
+      "bytes": 3107,
+      "sha256": "a0e64f7f5b9b15ce2f884d3f8be6d7442a4d18a788c3bc94427845c47a8636bb"
+    },
+    "api-reference/v2/teams-verified-resources/get-list-of-verified-phone-numbers-of-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-verified-resources/get-list-of-verified-phone-numbers-of-a-team.md",
+      "bytes": 3136,
+      "sha256": "c3408d2537acf4aedc6b34be2a646a5bcb7004219b33eac8b1718443cd410799"
+    },
+    "api-reference/v2/teams-verified-resources/get-verified-email-of-a-team-by-id.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-verified-resources/get-verified-email-of-a-team-by-id.md",
+      "bytes": 2687,
+      "sha256": "3879ffe3d68ac42a3e5b4c053f0c26ca85bdb75f7c1ea289b7933af77d533ea0"
+    },
+    "api-reference/v2/teams-verified-resources/get-verified-phone-number-of-a-team-by-id.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-verified-resources/get-verified-phone-number-of-a-team-by-id.md",
+      "bytes": 2710,
+      "sha256": "5fb79a09395a7be0ff0d75c07edbe47a31f55d21a62b90818bfe6f02e255188e"
+    },
+    "api-reference/v2/teams-verified-resources/request-email-verification-code.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-verified-resources/request-email-verification-code.md",
+      "bytes": 2356,
+      "sha256": "1fa03dfa61f6a652ffe2d057050df3372b88c3c03851818c06062dad16adf2e3"
+    },
+    "api-reference/v2/teams-verified-resources/request-phone-number-verification-code.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-verified-resources/request-phone-number-verification-code.md",
+      "bytes": 2373,
+      "sha256": "00d7da762854518081f7ad79c9f2d8918fa2cbb2697e5c98299c0be14a1ea68b"
+    },
+    "api-reference/v2/teams-verified-resources/verify-a-phone-number-for-an-org-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-verified-resources/verify-a-phone-number-for-an-org-team.md",
+      "bytes": 3238,
+      "sha256": "84a2c18351d14a563c0272ec80f6f9e29ba8d3575191b96b5ade6ef2f0862fe8"
+    },
+    "api-reference/v2/teams-verified-resources/verify-an-email-for-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams-verified-resources/verify-an-email-for-a-team.md",
+      "bytes": 3201,
+      "sha256": "559ca1686e1065e5506be4e74d562d5f8357b6410bf1784cc6e21c194eb3d535"
+    },
+    "api-reference/v2/teams/create-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams/create-a-team.md",
+      "bytes": 5978,
+      "sha256": "b6e63724d6dd3aa0794ea6117f8550767218a8795dedd1a345de355fca5e32fc"
+    },
+    "api-reference/v2/teams/delete-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams/delete-a-team.md",
+      "bytes": 2971,
+      "sha256": "bdafb06289896ac9bd7f69bbe2b833bd5411bde403fcb353f1e134ded80e5df4"
+    },
+    "api-reference/v2/teams/get-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams/get-a-team.md",
+      "bytes": 2926,
+      "sha256": "226240c6b13b488b579ecd511c67a6ca2e9cb9085314320f2059a688194df536"
+    },
+    "api-reference/v2/teams/get-teams.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams/get-teams.md",
+      "bytes": 2840,
+      "sha256": "3300068ac7fb66bda31d9b4835211d1adaaadd182feba1668d9da2d638e1378a"
+    },
+    "api-reference/v2/teams/update-a-team.md": {
+      "url": "https://cal.com/docs/api-reference/v2/teams/update-a-team.md",
+      "bytes": 5219,
+      "sha256": "c1badb1634cf43e9e4199ce88970d44b73bb965a4b4d9c4869660aafcf72984b"
+    },
+    "api-reference/v2/user-booking-limits.md": {
+      "url": "https://cal.com/docs/api-reference/v2/user-booking-limits.md",
+      "bytes": 5316,
+      "sha256": "d88dd40fc0d97d31e2dcd5077bd208fd49bf5420e25c1935872d379a9ca6d031"
+    },
+    "api-reference/v2/v1-v2-differences.md": {
+      "url": "https://cal.com/docs/api-reference/v2/v1-v2-differences.md",
+      "bytes": 10446,
+      "sha256": "23e286d86fc4cdc7d8e0908a1c4650cc69626b0119ddb22906d9c90e1083da22"
+    },
+    "api-reference/v2/verified-resources/get-list-of-verified-emails.md": {
+      "url": "https://cal.com/docs/api-reference/v2/verified-resources/get-list-of-verified-emails.md",
+      "bytes": 2775,
+      "sha256": "b1adc375b88eb2a8a1420cdc2665e11977c10f2a3cb4530f1f2db03274a449db"
+    },
+    "api-reference/v2/verified-resources/get-list-of-verified-phone-numbers.md": {
+      "url": "https://cal.com/docs/api-reference/v2/verified-resources/get-list-of-verified-phone-numbers.md",
+      "bytes": 2804,
+      "sha256": "456054db9365be4d5776943e0381c5e78008cafefbe86a855bd94a586013bfd7"
+    },
+    "api-reference/v2/verified-resources/get-verified-email-by-id.md": {
+      "url": "https://cal.com/docs/api-reference/v2/verified-resources/get-verified-email-by-id.md",
+      "bytes": 2355,
+      "sha256": "82e89c9335f3850ec8917968d6d37e7d953eb7c9b3e1f5d824dd912de7df8a65"
+    },
+    "api-reference/v2/verified-resources/get-verified-phone-number-by-id.md": {
+      "url": "https://cal.com/docs/api-reference/v2/verified-resources/get-verified-phone-number-by-id.md",
+      "bytes": 2378,
+      "sha256": "1e77fa14204b6191f009db19bb691b7e67b99c60505e0d770f23f5c23b8f9d9d"
+    },
+    "api-reference/v2/verified-resources/request-email-verification-code.md": {
+      "url": "https://cal.com/docs/api-reference/v2/verified-resources/request-email-verification-code.md",
+      "bytes": 2199,
+      "sha256": "ad62a6b938a07dbb48879a47f91f1abce71503f705a28549b236a0bb50ab8638"
+    },
+    "api-reference/v2/verified-resources/request-phone-number-verification-code.md": {
+      "url": "https://cal.com/docs/api-reference/v2/verified-resources/request-phone-number-verification-code.md",
+      "bytes": 2208,
+      "sha256": "5294dc43bbb772a2b8001b5c7d534a13d0a3e5f42b571b45b752ed71819eab32"
+    },
+    "api-reference/v2/verified-resources/verify-a-phone-number.md": {
+      "url": "https://cal.com/docs/api-reference/v2/verified-resources/verify-a-phone-number.md",
+      "bytes": 2894,
+      "sha256": "725d44648a724a3f805feec6e3bdea95aad7b3e114ea02f9d7b120ffacaea026"
+    },
+    "api-reference/v2/verified-resources/verify-an-email.md": {
+      "url": "https://cal.com/docs/api-reference/v2/verified-resources/verify-an-email.md",
+      "bytes": 2867,
+      "sha256": "cb2f2c88f393f37b54ac2af34557c09b35ffefdade75cf23b2d7bf64dee9ec8c"
+    },
+    "api-reference/v2/webhooks/create-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/webhooks/create-a-webhook.md",
+      "bytes": 7832,
+      "sha256": "e80d0b35be1c13bf11e0634ada0b8096bd79261c2241427f4c660e743406deb2"
+    },
+    "api-reference/v2/webhooks/delete-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/webhooks/delete-a-webhook.md",
+      "bytes": 4611,
+      "sha256": "2678d164999a6741736eeddc0881605d0289e8a88a474c40259e9baf4c6b5f80"
+    },
+    "api-reference/v2/webhooks/get-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/webhooks/get-a-webhook.md",
+      "bytes": 4594,
+      "sha256": "0d2dcd197bf05597792f70eb65ea23bd85fe1b02d0a688d48a8d15d8c407966b"
+    },
+    "api-reference/v2/webhooks/get-all-webhooks.md": {
+      "url": "https://cal.com/docs/api-reference/v2/webhooks/get-all-webhooks.md",
+      "bytes": 5129,
+      "sha256": "b2730d1a0c8fdd38e5e02f19be8dae0ddf0ad53559dc84787ed1f3defe974a94"
+    },
+    "api-reference/v2/webhooks/update-a-webhook.md": {
+      "url": "https://cal.com/docs/api-reference/v2/webhooks/update-a-webhook.md",
+      "bytes": 7895,
+      "sha256": "2e088c4406243517beb145c49ff2205f34c8144a7db6fd3611842b32d1767513"
+    },
+    "api-reference/v2/workflows/create-a-workflow.md": {
+      "url": "https://cal.com/docs/api-reference/v2/workflows/create-a-workflow.md",
+      "bytes": 45427,
+      "sha256": "20b78755bf2a1b086cca5827a90739dc879de6802d0a0077f832df45efd7cd49"
+    },
+    "api-reference/v2/workflows/delete-your-workflow.md": {
+      "url": "https://cal.com/docs/api-reference/v2/workflows/delete-your-workflow.md",
+      "bytes": 1348,
+      "sha256": "67e92be43ffde7e89d392b8db060f8c6f0d8360c203e1c185e18e939260f5fef"
+    },
+    "api-reference/v2/workflows/get-your-workflow.md": {
+      "url": "https://cal.com/docs/api-reference/v2/workflows/get-your-workflow.md",
+      "bytes": 12094,
+      "sha256": "8c11084ee9f3ea89735481b376bacfa608b9b21f663498a99ecdfe99ed5757db"
+    },
+    "api-reference/v2/workflows/get-your-workflows.md": {
+      "url": "https://cal.com/docs/api-reference/v2/workflows/get-your-workflows.md",
+      "bytes": 12408,
+      "sha256": "4644648ef9e1aa36e850e0a5f65f36b0d6bcb3191484128e42f562dadb407ef2"
+    },
+    "api-reference/v2/workflows/update-your-workflow.md": {
+      "url": "https://cal.com/docs/api-reference/v2/workflows/update-your-workflow.md",
+      "bytes": 48309,
+      "sha256": "5ef4e7969dda1124f0d2b63a17a7b7838fd2642b31b53ec0879b496776d9ade6"
+    },
+    "assets/app.cal.com/continue-with-calcom-coss-ui.svg": {
+      "url": "https://app.cal.com/continue-with-calcom-coss-ui.svg",
+      "bytes": 16415,
+      "sha256": "d3664a373f8850bd480f157896112c6d06e2fa815e6a0327fd0668889b411f7a"
+    },
+    "assets/app.cal.com/continue-with-calcom-dark-rounded.svg": {
+      "url": "https://app.cal.com/continue-with-calcom-dark-rounded.svg",
+      "bytes": 14079,
+      "sha256": "0353278e9a8e52a1c5dccded03012c4f68d6be6b38b1a3d973ff8fe2e4d70277"
+    },
+    "assets/app.cal.com/continue-with-calcom-dark-squared.svg": {
+      "url": "https://app.cal.com/continue-with-calcom-dark-squared.svg",
+      "bytes": 14202,
+      "sha256": "1c8cb46e139287f39f7819e334dc093ff971029efec566868d8729cc4afb02cf"
+    },
+    "assets/app.cal.com/continue-with-calcom-light-rounded.svg": {
+      "url": "https://app.cal.com/continue-with-calcom-light-rounded.svg",
+      "bytes": 14077,
+      "sha256": "3a23b1a304d28fb205977a37ea1aa086e98fb2b69b47d6b9f35bc359e06b90b6"
+    },
+    "assets/app.cal.com/continue-with-calcom-light-squared.svg": {
+      "url": "https://app.cal.com/continue-with-calcom-light-squared.svg",
+      "bytes": 14065,
+      "sha256": "5837d90a0583a41a265b54ce393afe5e9420433cf1c4584b5afe3c32f5a5e23a"
+    },
+    "assets/app.cal.com/continue-with-calcom-neutral-rounded.svg": {
+      "url": "https://app.cal.com/continue-with-calcom-neutral-rounded.svg",
+      "bytes": 13942,
+      "sha256": "972af022f9cb1a2a457a6776ee52fa25821d41df101b9398273f9d77ea0c2eac"
+    },
+    "assets/cal.com/api/avatar/2b735186-b01b-46d3-87da-019b8f61776b.png": {
+      "url": "https://cal.com/api/avatar/2b735186-b01b-46d3-87da-019b8f61776b.png",
+      "bytes": 635,
+      "sha256": "5d45b9db5fbe97e280c7df6eadc484a2a999181e207907a1e6268c7960b731a8"
+    },
+    "assets/cal.com/api/avatar/d95949bc-ccb1-400f-acf6-045c51a16856.png": {
+      "url": "https://cal.com/api/avatar/d95949bc-ccb1-400f-acf6-045c51a16856.png",
+      "bytes": 635,
+      "sha256": "5d45b9db5fbe97e280c7df6eadc484a2a999181e207907a1e6268c7960b731a8"
+    },
+    "assets/i.cal.com/api/avatar/949be534-7a88-4185-967c-c020b0c0bef3.png": {
+      "url": "https://i.cal.com/api/avatar/949be534-7a88-4185-967c-c020b0c0bef3.png",
+      "bytes": 635,
+      "sha256": "5d45b9db5fbe97e280c7df6eadc484a2a999181e207907a1e6268c7960b731a8"
+    },
+    "assets/i.cal.com/api/avatar/b0b58752-68ad-4c0d-8024-4fa382a77752.png": {
+      "url": "https://i.cal.com/api/avatar/b0b58752-68ad-4c0d-8024-4fa382a77752.png",
+      "bytes": 46917,
+      "sha256": "1c43dc3ede9f9089db50200b83040b0792e638a6974dc0faa0f9cdd7aa65793f"
+    },
+    "assets/mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/app-settings-enable-scim.webp": {
+      "url": "https://mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/app-settings-enable-scim.webp",
+      "bytes": 45714,
+      "sha256": "50b7a233aa27c76747dd1d85971f963b788d6caad096cd7f2a1546debad3bd8d"
+    },
+    "assets/mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/dsync-configure-info.webp": {
+      "url": "https://mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/dsync-configure-info.webp",
+      "bytes": 47452,
+      "sha256": "28a7360b6a3cc006bc82b702159b52801dad55ad133e3fa7feee76d3ee8d6345"
+    },
+    "assets/mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/dsync-configure-provider.webp": {
+      "url": "https://mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/dsync-configure-provider.webp",
+      "bytes": 33722,
+      "sha256": "fc8b3b90f9a0b5a117e1e06ee5788b4076ecf4195178ae0d463383d4de5ac86f"
+    },
+    "assets/mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/dsync-configure.webp": {
+      "url": "https://mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/dsync-configure.webp",
+      "bytes": 29012,
+      "sha256": "5c4db12769b3f96d672019a92fe49e1deabf96fd315795387401c9ef22b623e8"
+    },
+    "assets/mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/group-team-mapping.webp": {
+      "url": "https://mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/group-team-mapping.webp",
+      "bytes": 27906,
+      "sha256": "21e6e68914cdafe5d5b5828022af5e410a91d309ac937016c28e6ffde8ca71b8"
+    },
+    "assets/mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/okta-dsync-options.webp": {
+      "url": "https://mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/okta-dsync-options.webp",
+      "bytes": 42808,
+      "sha256": "97003fb38a9812301416df2e6baa20f917258f3f25ad7123e1a873144e6b0831"
+    },
+    "assets/mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/okta-property-settings.webp": {
+      "url": "https://mintcdn.com/calcom/5iwI3KYRn4f5i5y6/images/scim/okta-property-settings.webp",
+      "bytes": 33242,
+      "sha256": "3e82666a04c5cec925e78059c8550c348a23bbbc039e9823bcaebfb0e2aa9c21"
+    },
+    "assets/mintcdn.com/calcom/8GfNX30pjjoUcF3B/images/high-priority.svg": {
+      "url": "https://mintcdn.com/calcom/8GfNX30pjjoUcF3B/images/high-priority.svg",
+      "bytes": 928,
+      "sha256": "c98c962ffdc995ee3385f23b4b3eb0603938399efb47b7690a308ec5aa6f9398"
+    },
+    "assets/mintcdn.com/calcom/8wf65ytGuHueTTf9/images/onboarding-step-authorize.png": {
+      "url": "https://mintcdn.com/calcom/8wf65ytGuHueTTf9/images/onboarding-step-authorize.png",
+      "bytes": 264277,
+      "sha256": "bb57df29cc30b449146a2a93b73a301641a4b141c41a91375e3041c76f2c3e94"
+    },
+    "assets/mintcdn.com/calcom/8wf65ytGuHueTTf9/images/onboarding-step-calendar.png": {
+      "url": "https://mintcdn.com/calcom/8wf65ytGuHueTTf9/images/onboarding-step-calendar.png",
+      "bytes": 274152,
+      "sha256": "9a6889185b442993363d28251e5a3809d6b2f2d043d7d617ecbb7af9e56855cf"
+    },
+    "assets/mintcdn.com/calcom/8wf65ytGuHueTTf9/images/onboarding-step-login.png": {
+      "url": "https://mintcdn.com/calcom/8wf65ytGuHueTTf9/images/onboarding-step-login.png",
+      "bytes": 266282,
+      "sha256": "355ca20ce7cf4f09dfca887771a2e2a6366db9b1a91995ffa1e89655aac51d13"
+    },
+    "assets/mintcdn.com/calcom/I5tVBJL5l-pcIYMU/images/i1600x900-oVjaQ0tU3AnO_wrzp85.png": {
+      "url": "https://mintcdn.com/calcom/I5tVBJL5l-pcIYMU/images/i1600x900-oVjaQ0tU3AnO_wrzp85.png",
+      "bytes": 330872,
+      "sha256": "dc67b124964c1b2f7980d5cbc8904b3cec7f5d02500729367e72ab4f4010f1db"
+    },
+    "assets/mintcdn.com/calcom/I5tVBJL5l-pcIYMU/images/i1600x900-wrIlZkLdZ6kL_wf7mxn.png": {
+      "url": "https://mintcdn.com/calcom/I5tVBJL5l-pcIYMU/images/i1600x900-wrIlZkLdZ6kL_wf7mxn.png",
+      "bytes": 338341,
+      "sha256": "a2c5a1a43a6b1ea9f9a7684306a77d69cc814f8cbe4919d1f94be21afe915a32"
+    },
+    "assets/mintcdn.com/calcom/IJXPlLmO0GaIo5cX/images/low-priority.svg": {
+      "url": "https://mintcdn.com/calcom/IJXPlLmO0GaIo5cX/images/low-priority.svg",
+      "bytes": 924,
+      "sha256": "ad5daee1b9e0d72c4d781ae11db46fe0dcb09a0ca2256b86863d09c61d71a574"
+    },
+    "assets/mintcdn.com/calcom/IJXPlLmO0GaIo5cX/images/medium-priority.svg": {
+      "url": "https://mintcdn.com/calcom/IJXPlLmO0GaIo5cX/images/medium-priority.svg",
+      "bytes": 936,
+      "sha256": "098c960398c5dda4608862b08a8ebbd2b0108bb563580975750950e593465eb8"
+    },
+    "assets/mintcdn.com/calcom/IkOoHLoQaXp2NlhX/images/i1280x250-dXnl-QuzSMbl_xydd9y.png": {
+      "url": "https://mintcdn.com/calcom/IkOoHLoQaXp2NlhX/images/i1280x250-dXnl-QuzSMbl_xydd9y.png",
+      "bytes": 214441,
+      "sha256": "5a3a8009efb7fbcc72f3eaa230de03a044648fb6f0a42a910dc48eac6c9d7a1f"
+    },
+    "assets/mintcdn.com/calcom/IkOoHLoQaXp2NlhX/images/i1600x120-WfEdMhsOOLSg_sitk6a.png": {
+      "url": "https://mintcdn.com/calcom/IkOoHLoQaXp2NlhX/images/i1600x120-WfEdMhsOOLSg_sitk6a.png",
+      "bytes": 59405,
+      "sha256": "d1f96fc4c4ea511c79b35cbca6bf48df6f1147815c7bbfafa045b058c1849fbf"
+    },
+    "assets/mintcdn.com/calcom/IkOoHLoQaXp2NlhX/images/i1600x899-DllqhV6w_3Vj_oxtjov.png": {
+      "url": "https://mintcdn.com/calcom/IkOoHLoQaXp2NlhX/images/i1600x899-DllqhV6w_3Vj_oxtjov.png",
+      "bytes": 326683,
+      "sha256": "af7124f8f1016475a67a82da73b0b75fe893c90d8231706dd78274a73d2739cd"
+    },
+    "assets/mintcdn.com/calcom/KyzqDyvkDTIa4GMP/images/urgent-priority.svg": {
+      "url": "https://mintcdn.com/calcom/KyzqDyvkDTIa4GMP/images/urgent-priority.svg",
+      "bytes": 900,
+      "sha256": "e5823d1e851c0f54cfca5e3511a6447549a10ae412d71c20636cc82dfe072d04"
+    },
+    "assets/mintcdn.com/calcom/a6KkjhrH4XhVuWk6/images/i1600x900-8ufcUyCOVwV6_hdudno.png": {
+      "url": "https://mintcdn.com/calcom/a6KkjhrH4XhVuWk6/images/i1600x900-8ufcUyCOVwV6_hdudno.png",
+      "bytes": 273730,
+      "sha256": "64f78c13a8968bf2b5fa93f64f14fa2822a659a391c7922dd95542be135dc425"
+    },
+    "assets/mintcdn.com/calcom/a6KkjhrH4XhVuWk6/images/i1600x900-E4RcIPb1_bYp_hcpsya.png": {
+      "url": "https://mintcdn.com/calcom/a6KkjhrH4XhVuWk6/images/i1600x900-E4RcIPb1_bYp_hcpsya.png",
+      "bytes": 954990,
+      "sha256": "c353590a1668443ab4b9ea641cb4d461ef4e0f75cd84ce65cdcfb6a1aece8ee5"
+    },
+    "assets/mintcdn.com/calcom/a6KkjhrH4XhVuWk6/images/i1600x900-GN1NLgrcf5r4_tmhni3.png": {
+      "url": "https://mintcdn.com/calcom/a6KkjhrH4XhVuWk6/images/i1600x900-GN1NLgrcf5r4_tmhni3.png",
+      "bytes": 261444,
+      "sha256": "93ba5839dfd99dd7a8fcd24396030ca7f5ec048a5e2ddb3e60c80ab623c2a2fa"
+    },
+    "assets/mintcdn.com/calcom/a6KkjhrH4XhVuWk6/images/i1600x900-IfRWYg8XuCMI_tkwyft.png": {
+      "url": "https://mintcdn.com/calcom/a6KkjhrH4XhVuWk6/images/i1600x900-IfRWYg8XuCMI_tkwyft.png",
+      "bytes": 452109,
+      "sha256": "9fa87a184b8ed6ca2188aec806be9b85eced6171e08cd3ab5bf0706a8701c6eb"
+    },
+    "assets/mintcdn.com/calcom/a6KkjhrH4XhVuWk6/images/i1600x900-TqgDJpBoiR-C_onrwit.png": {
+      "url": "https://mintcdn.com/calcom/a6KkjhrH4XhVuWk6/images/i1600x900-TqgDJpBoiR-C_onrwit.png",
+      "bytes": 312769,
+      "sha256": "1b3585cb886bdd750c7a28749a9d9c2ef34fa869b61b5474ca162aa46bc924a9"
+    },
+    "assets/mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-step-profile.png": {
+      "url": "https://mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-step-profile.png",
+      "bytes": 230304,
+      "sha256": "b99652cf1b2d512aaf0e967adfe1fd6b42d6787390cbe0bc93bce8e808326cfb"
+    },
+    "assets/mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-step-signup-form.png": {
+      "url": "https://mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-step-signup-form.png",
+      "bytes": 272657,
+      "sha256": "b16c9b8e1bbc0c402227877bc547891a26dce6e121b60e5964542b18e33e2ee9"
+    },
+    "assets/mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-step-signup.png": {
+      "url": "https://mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-step-signup.png",
+      "bytes": 199574,
+      "sha256": "cc9542b714dabc3453e27216f564644b551d2cbabf1f73a88d7798d11cbb2451"
+    },
+    "assets/mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-step-success.png": {
+      "url": "https://mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-step-success.png",
+      "bytes": 282036,
+      "sha256": "61a8e863a2ab75d242bbfa728f3999d0c6d19df6775d560ae9e66536fd3d12fa"
+    },
+    "assets/mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-trigger-custom.png": {
+      "url": "https://mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-trigger-custom.png",
+      "bytes": 13008,
+      "sha256": "7b215786b04e633a5231fff97ecc96741f5fc4cfe4820dff16e7b1edcc86945e"
+    },
+    "assets/mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-trigger-dark.png": {
+      "url": "https://mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-trigger-dark.png",
+      "bytes": 14359,
+      "sha256": "19179d2884470521e870239612aa903fa3a74acb42ce2f060534fb8b8eff0c86"
+    },
+    "assets/mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-trigger-light.png": {
+      "url": "https://mintcdn.com/calcom/pgprLwpE-vKhyBQS/images/onboarding-trigger-light.png",
+      "bytes": 11665,
+      "sha256": "bff745ca45426ede4b876eb45dee6bb3574c95d022e5fcd565fbfc412d8ad140"
+    },
+    "developing/guides/api/how-to-setup-api-in-a-local-instance.md": {
+      "url": "https://cal.com/docs/developing/guides/api/how-to-setup-api-in-a-local-instance.md",
+      "bytes": 1430,
+      "sha256": "449512db40637f317ad3f8aa4fd4c262a9e8ed0fdf1a7ee5bf91031c9dfefaa6"
+    },
+    "developing/guides/appstore-and-integration/build-a-greeter-app.md": {
+      "url": "https://cal.com/docs/developing/guides/appstore-and-integration/build-a-greeter-app.md",
+      "bytes": 3125,
+      "sha256": "ce985849f34f193e3666ccbde3ab37dfa01874e4f4da60329356705070601073"
+    },
+    "developing/guides/appstore-and-integration/build-an-app.md": {
+      "url": "https://cal.com/docs/developing/guides/appstore-and-integration/build-an-app.md",
+      "bytes": 4067,
+      "sha256": "8c2f6570e128bc08ba1d393ca55347c12cc6b767884f8c553b814de306bc9ae1"
+    },
+    "developing/guides/appstore-and-integration/how-to-show-assigned-people-from-a-crm.md": {
+      "url": "https://cal.com/docs/developing/guides/appstore-and-integration/how-to-show-assigned-people-from-a-crm.md",
+      "bytes": 1848,
+      "sha256": "be20f45c573fc47b7f1ce0f6075bc8bb1f51979380fde8efcf1d258174e40912"
+    },
+    "developing/guides/appstore-and-integration/salesforce.md": {
+      "url": "https://cal.com/docs/developing/guides/appstore-and-integration/salesforce.md",
+      "bytes": 29396,
+      "sha256": "7c696cb53db915ca33b015d92b2990509c81743a5e55474be18c0dde8f217f34"
+    },
+    "developing/guides/atoms/add-changesets.md": {
+      "url": "https://cal.com/docs/developing/guides/atoms/add-changesets.md",
+      "bytes": 767,
+      "sha256": "02ba7744a53d80e42a579f45784bf6beba6f95f161784a1934891fb0db1d857e"
+    },
+    "developing/guides/audit-logs.md": {
+      "url": "https://cal.com/docs/developing/guides/audit-logs.md",
+      "bytes": 7619,
+      "sha256": "3684482cbac4cc49a47c8dd81c290a0500f34b0dd0da9254b1d4c41a3e5162ad"
+    },
+    "developing/guides/auth-and-provision/how-to-setup-oidc-with-okta.md": {
+      "url": "https://cal.com/docs/developing/guides/auth-and-provision/how-to-setup-oidc-with-okta.md",
+      "bytes": 3388,
+      "sha256": "ee4db4154f705ccedb968d253656a6040d95ba5804619138823b26c0b453d48d"
+    },
+    "developing/guides/auth-and-provision/how-to-setup-scim-with-okta.md": {
+      "url": "https://cal.com/docs/developing/guides/auth-and-provision/how-to-setup-scim-with-okta.md",
+      "bytes": 7227,
+      "sha256": "0db042c8cfaebc1f3874c42eaa0b88fe233e77deaeb9336bb5f4edf0359a645c"
+    },
+    "developing/guides/auth-and-provision/sso-setup.md": {
+      "url": "https://cal.com/docs/developing/guides/auth-and-provision/sso-setup.md",
+      "bytes": 3977,
+      "sha256": "2af069cd651401325b3a584aa3267cf892f95018167c37e13f001e2b750617ba"
+    },
+    "developing/guides/automation/webhooks.md": {
+      "url": "https://cal.com/docs/developing/guides/automation/webhooks.md",
+      "bytes": 96091,
+      "sha256": "daa37ce8d90534da2eb3c73a23d784e7fc0c5cc92beef810590082c434c82dea"
+    },
+    "developing/guides/email/setup-mailtrap-for-email-testing.md": {
+      "url": "https://cal.com/docs/developing/guides/email/setup-mailtrap-for-email-testing.md",
+      "bytes": 2080,
+      "sha256": "fc5669e68a190ba4b50e9cb0f9d042b9dfab998b54cfc4bf1ce07e4343596d93"
+    },
+    "developing/guides/embeds/customize-embed-css-variables.md": {
+      "url": "https://cal.com/docs/developing/guides/embeds/customize-embed-css-variables.md",
+      "bytes": 12594,
+      "sha256": "e49df7a313a3c471ac014891aed7c38b4d170303ae1bf7691ae682ffc2231e19"
+    },
+    "developing/guides/embeds/embed-events.md": {
+      "url": "https://cal.com/docs/developing/guides/embeds/embed-events.md",
+      "bytes": 3262,
+      "sha256": "59a5bb7952cf007f06bb20f87c6f5d2ec792448a6e2f5be16622cbf5692d4a95"
+    },
+    "developing/guides/insights/add-new-booking-charts.md": {
+      "url": "https://cal.com/docs/developing/guides/insights/add-new-booking-charts.md",
+      "bytes": 6777,
+      "sha256": "763e288d4cd8c2eae99493a0a20c132523f5a8b98aeb61340fb61518d978609b"
+    },
+    "developing/local-development.md": {
+      "url": "https://cal.com/docs/developing/local-development.md",
+      "bytes": 6694,
+      "sha256": "5a5341a398783c431257b7b809e6ee0d1e12a46d39510934783686653a1c5bdc"
+    },
+    "developing/open-source-contribution/code-styling.md": {
+      "url": "https://cal.com/docs/developing/open-source-contribution/code-styling.md",
+      "bytes": 1217,
+      "sha256": "f811caa646b12015d7737c3570ae057c822f27e3456e115536ba5469f7c78278"
+    },
+    "developing/open-source-contribution/contributors-guide.md": {
+      "url": "https://cal.com/docs/developing/open-source-contribution/contributors-guide.md",
+      "bytes": 9801,
+      "sha256": "5e6a30407b5287413d5ef6ff2562f45d74f18c2643e93a56cec9f9629c4e7f32"
+    },
+    "developing/open-source-contribution/introduction.md": {
+      "url": "https://cal.com/docs/developing/open-source-contribution/introduction.md",
+      "bytes": 8369,
+      "sha256": "d312d1c4a2eab6f44a4f5ac702285a526ce4eaccd33b0a79689ea0d07b895be7"
+    },
+    "developing/open-source-contribution/pull-requests.md": {
+      "url": "https://cal.com/docs/developing/open-source-contribution/pull-requests.md",
+      "bytes": 2167,
+      "sha256": "47651a1d0d48289cca1aab97674e5cb18e59142c2a6ee7a0d7a4a945f286ab40"
+    },
+    "llms-full.txt": {
+      "url": "https://cal.com/docs/llms-full.txt",
+      "bytes": 553912,
+      "sha256": "c43a573a91597c325897afc948d3dbbb01401deb9dcc5f80ee2fa46405bdfee0"
+    },
+    "llms.txt": {
+      "url": "https://cal.com/docs/llms.txt",
+      "bytes": 3115,
+      "sha256": "f75228c34bec07c4ecc6d970c903f8db5318c3239dfae0bb5b09a4f8af46cd18"
+    },
+    "mcp-server.md": {
+      "url": "https://cal.com/docs/mcp-server.md",
+      "bytes": 7400,
+      "sha256": "20fe73644e774f099c1a51d7f6f1d34e39caa140cd18cf9663e9d1387a01a07f"
+    },
+    "robots.txt": {
+      "url": "https://cal.com/robots.txt",
+      "bytes": 609,
+      "sha256": "395c97e09e1b5f4f6e85bccc00ee960623282367681598a244d242f0a7154fc9"
+    },
+    "sitemap.xml": {
+      "url": "https://cal.com/docs/sitemap.xml",
+      "bytes": 63039,
+      "sha256": "fdd077c127e107c554ad13fedc678a94fb2fa97a952f16ac20dcd3c328a6936f"
+    },
+    "skill.md": {
+      "url": "https://cal.com/docs/skill.md",
+      "bytes": 10106,
+      "sha256": "7dd7e29f361ac3b99449b86fd28ad759a93501b972c2f1ec70d5a5784452ad18"
+    }
+  }
+}

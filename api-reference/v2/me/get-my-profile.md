@@ -52,11 +52,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/MeOutput'
       required:
@@ -71,6 +71,7 @@ components:
           type: string
         email:
           type: string
+          format: email
         name:
           type: string
           nullable: true

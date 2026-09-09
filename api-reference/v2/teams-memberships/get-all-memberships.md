@@ -72,10 +72,13 @@ paths:
             multiple emails, separate them with a comma (max 20 emails for
             performance).
           schema:
+            minItems: 1
+            maxItems: 20
             example: '?emails=user1@example.com,user2@example.com'
             type: array
             items:
               type: string
+              format: email
       responses:
         '200':
           description: ''
@@ -89,11 +92,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/TeamMembershipOutput'
       required:
@@ -111,11 +114,11 @@ components:
         accepted:
           type: boolean
         role:
-          type: string
           enum:
             - MEMBER
             - OWNER
             - ADMIN
+          type: string
         disableImpersonation:
           type: boolean
         user:

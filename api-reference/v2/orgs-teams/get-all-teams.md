@@ -4,7 +4,7 @@
 
 # Get all teams
 
-> Required membership role: `org admin`. PBAC permission: `team.read`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `ORG_PROFILE_READ` scope is required.
+> Required membership role: `org admin`. PBAC permission: `team.readOrgTeams`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `ORG_PROFILE_READ` scope is required.
 
 
 
@@ -27,8 +27,8 @@ paths:
         - Orgs / Teams
       summary: Get all teams
       description: >-
-        Required membership role: `org admin`. PBAC permission: `team.read`.
-        Learn more about API access control at
+        Required membership role: `org admin`. PBAC permission:
+        `team.readOrgTeams`. Learn more about API access control at
         https://cal.com/docs/api-reference/v2/access-control. If accessed using
         an OAuth access token, the `ORG_PROFILE_READ` scope is required.
       operationId: OrganizationsTeamsController_getAllTeams
@@ -90,11 +90,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:
@@ -116,12 +116,16 @@ components:
           type: string
         logoUrl:
           type: string
+          format: uri
         calVideoLogo:
           type: string
+          format: uri
         appLogo:
           type: string
+          format: uri
         appIconLogo:
           type: string
+          format: uri
         bio:
           type: string
         hideBranding:
@@ -135,6 +139,7 @@ components:
           default: false
         metadata:
           type: object
+          additionalProperties: true
           example:
             key: value
         theme:
@@ -145,6 +150,7 @@ components:
           type: string
         bannerUrl:
           type: string
+          format: uri
         timeFormat:
           type: number
         timeZone:

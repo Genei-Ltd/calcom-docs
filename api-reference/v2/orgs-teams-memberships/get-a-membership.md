@@ -4,7 +4,7 @@
 
 # Get a membership
 
-> Required membership role: `team admin`. PBAC permission: `team.listMembers`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_MEMBERSHIP_READ` scope is required.
+> Required membership role: `team admin`. PBAC permission: `team.readMemberships`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_MEMBERSHIP_READ` scope is required.
 
 
 
@@ -28,7 +28,7 @@ paths:
       summary: Get a membership
       description: >-
         Required membership role: `team admin`. PBAC permission:
-        `team.listMembers`. Learn more about API access control at
+        `team.readMemberships`. Learn more about API access control at
         https://cal.com/docs/api-reference/v2/access-control. If accessed using
         an OAuth access token, the `TEAM_MEMBERSHIP_READ` scope is required.
       operationId: OrganizationsTeamsMembershipsController_getOrgTeamMembership
@@ -81,11 +81,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/TeamMembershipOutput'
       required:
@@ -103,11 +103,11 @@ components:
         accepted:
           type: boolean
         role:
-          type: string
           enum:
             - MEMBER
             - OWNER
             - ADMIN
+          type: string
         disableImpersonation:
           type: boolean
         user:

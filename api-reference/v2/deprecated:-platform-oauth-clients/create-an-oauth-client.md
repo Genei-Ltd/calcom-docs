@@ -67,9 +67,6 @@ components:
             type: string
         permissions:
           type: array
-          description: >-
-            Array of permission keys like ["BOOKING_READ", "BOOKING_WRITE"]. Use
-            ["*"] to grant all permissions.
           items:
             type: string
             enum:
@@ -84,6 +81,9 @@ components:
               - PROFILE_READ
               - PROFILE_WRITE
               - '*'
+          description: >-
+            Array of permission keys like ["BOOKING_READ", "BOOKING_WRITE"]. Use
+            ["*"] to grant all permissions.
         bookingRedirectUri:
           type: string
         bookingCancelRedirectUri:
@@ -115,11 +115,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           example:
             clientId: clsx38nbl0001vkhlwin9fmt0

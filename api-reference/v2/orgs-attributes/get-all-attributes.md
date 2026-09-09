@@ -77,11 +77,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:
@@ -101,14 +101,14 @@ components:
           description: The team ID associated with the attribute
           example: 1
         type:
-          type: string
-          description: The type of the attribute
           enum:
             - TEXT
             - NUMBER
             - SINGLE_SELECT
             - MULTI_SELECT
             - USER_RELATIONSHIP
+          type: string
+          description: The type of the attribute
         name:
           type: string
           description: The name of the attribute

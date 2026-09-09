@@ -98,6 +98,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2024-09-04'
             default: '2024-09-04'
         - name: bookingUidToReschedule
           required: false

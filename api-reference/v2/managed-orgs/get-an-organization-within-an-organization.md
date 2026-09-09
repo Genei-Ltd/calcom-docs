@@ -4,7 +4,7 @@
 
 # Get an organization within an organization
 
-> For platform, the plan must be 'SCALE' or higher to access this endpoint. Required membership role: `org admin`. PBAC permission: `organization.read`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control
+> For platform, the plan must be 'SCALE' or higher to access this endpoint. Required membership role: `org admin`. PBAC permission: `organization.readManagedOrganizations`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control
 
 
 
@@ -29,8 +29,8 @@ paths:
       description: >-
         For platform, the plan must be 'SCALE' or higher to access this
         endpoint. Required membership role: `org admin`. PBAC permission:
-        `organization.read`. Learn more about API access control at
-        https://cal.com/docs/api-reference/v2/access-control
+        `organization.readManagedOrganizations`. Learn more about API access
+        control at https://cal.com/docs/api-reference/v2/access-control
       operationId: OrganizationsOrganizationsController_getOrganization
       parameters:
         - name: x-cal-secret-key
@@ -68,11 +68,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/ManagedOrganizationOutput'
       required:
@@ -90,6 +90,7 @@ components:
           type: string
         metadata:
           type: object
+          additionalProperties: true
           example:
             key: value
       required:

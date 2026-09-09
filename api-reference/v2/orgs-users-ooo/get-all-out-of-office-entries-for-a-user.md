@@ -4,7 +4,7 @@
 
 # Get all out-of-office entries for a user
 
-> If accessed using an OAuth access token, the `ORG_SCHEDULE_READ` scope is required.
+> Required membership role: `org admin`. PBAC permission: `ooo.readOrgOoo`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `ORG_SCHEDULE_READ` scope is required.
 
 
 
@@ -27,8 +27,10 @@ paths:
         - Orgs / Users / OOO
       summary: Get all out-of-office entries for a user
       description: >-
-        If accessed using an OAuth access token, the `ORG_SCHEDULE_READ` scope
-        is required.
+        Required membership role: `org admin`. PBAC permission:
+        `ooo.readOrgOoo`. Learn more about API access control at
+        https://cal.com/docs/api-reference/v2/access-control. If accessed using
+        an OAuth access token, the `ORG_SCHEDULE_READ` scope is required.
       operationId: OrganizationsUsersOOOController_getOrganizationUserOOO
       parameters:
         - name: Authorization
@@ -81,20 +83,20 @@ paths:
           description: Sort results by their start time in ascending or descending order.
           schema:
             example: '?sortStart=asc OR ?sortStart=desc'
+            type: string
             enum:
               - asc
               - desc
-            type: string
         - name: sortEnd
           required: false
           in: query
           description: Sort results by their end time in ascending or descending order.
           schema:
             example: '?sortEnd=asc OR ?sortEnd=desc'
+            type: string
             enum:
               - asc
               - desc
-            type: string
         - name: orgId
           required: true
           in: path
@@ -113,11 +115,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:

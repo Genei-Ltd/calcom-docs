@@ -68,6 +68,7 @@ paths:
             Filter bookings by status. If you want to filter by multiple
             statuses, separate them with a comma.
           schema:
+            minItems: 1
             example: '?status=upcoming,past'
             type: array
             items:
@@ -106,6 +107,7 @@ paths:
             Filter bookings by event type ids. Event type ids must be separated
             by a comma.
           schema:
+            minItems: 1
             example: '?eventTypeIds=100,200'
             type: string
         - name: eventTypeId
@@ -122,6 +124,7 @@ paths:
             Filter bookings by team ids that user is part of. Team ids must be
             separated by a comma.
           schema:
+            minItems: 1
             example: '?teamIds=50,60'
             type: string
         - name: teamId
@@ -179,20 +182,20 @@ paths:
           description: Sort results by their start time in ascending or descending order.
           schema:
             example: '?sortStart=asc OR ?sortStart=desc'
+            type: string
             enum:
               - asc
               - desc
-            type: string
         - name: sortEnd
           required: false
           in: query
           description: Sort results by their end time in ascending or descending order.
           schema:
             example: '?sortEnd=asc OR ?sortEnd=desc'
+            type: string
             enum:
               - asc
               - desc
-            type: string
         - name: sortCreated
           required: false
           in: query
@@ -201,10 +204,10 @@ paths:
             ascending or descending order.
           schema:
             example: '?sortCreated=asc OR ?sortCreated=desc'
+            type: string
             enum:
               - asc
               - desc
-            type: string
         - name: sortUpdatedAt
           required: false
           in: query
@@ -213,10 +216,10 @@ paths:
             changes) in ascending or descending order.
           schema:
             example: '?sortUpdatedAt=asc OR ?sortUpdatedAt=desc'
+            type: string
             enum:
               - asc
               - desc
-            type: string
         - name: take
           required: false
           in: query

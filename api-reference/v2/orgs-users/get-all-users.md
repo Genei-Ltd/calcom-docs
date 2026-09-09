@@ -4,7 +4,7 @@
 
 # Get all users
 
-> Required membership role: `org admin`. PBAC permission: `organization.listMembers`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `ORG_MEMBERSHIP_READ` scope is required.
+> Required membership role: `org admin`. PBAC permission: `organization.readMemberships`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `ORG_MEMBERSHIP_READ` scope is required.
 
 
 
@@ -28,7 +28,7 @@ paths:
       summary: Get all users
       description: >-
         Required membership role: `org admin`. PBAC permission:
-        `organization.listMembers`. Learn more about API access control at
+        `organization.readMemberships`. Learn more about API access control at
         https://cal.com/docs/api-reference/v2/access-control. If accessed using
         an OAuth access token, the `ORG_MEMBERSHIP_READ` scope is required.
       operationId: OrganizationsUsersController_getOrganizationsUsers
@@ -93,6 +93,7 @@ paths:
             Filter by assigned attribute option ids. ids must be separated by a
             comma.
           schema:
+            minItems: 1
             example: >-
               ?assignedOptionIds=aaaaaaaa-bbbb-cccc-dddd-eeeeee1eee,aaaaaaaa-bbbb-cccc-dddd-eeeeee2eee
             type: array
@@ -105,16 +106,17 @@ paths:
           schema:
             default: AND
             example: NONE
+            type: string
             enum:
               - OR
               - AND
               - NONE
-            type: string
         - name: teamIds
           required: false
           in: query
           description: Filter by teamIds. Team ids must be separated by a comma.
           schema:
+            minItems: 1
             example: '?teamIds=100,200'
             type: array
             items:
@@ -132,11 +134,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:
@@ -250,6 +252,7 @@ components:
           example: 1
         metadata:
           type: object
+          additionalProperties: true
           example:
             key: value
         profile:

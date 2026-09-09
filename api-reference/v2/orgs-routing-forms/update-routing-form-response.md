@@ -76,16 +76,17 @@ components:
       properties:
         response:
           type: object
+          additionalProperties: true
           description: The updated response data
     UpdateRoutingFormResponseOutput:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/RoutingFormResponseOutput'
       required:
@@ -104,6 +105,7 @@ components:
           type: string
         response:
           type: object
+          additionalProperties: true
           example:
             f00b26df-f54b-4985-8d98-17c5482c6a24:
               label: participant

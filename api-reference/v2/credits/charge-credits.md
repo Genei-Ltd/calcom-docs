@@ -56,12 +56,12 @@ components:
           description: Number of credits to charge
           example: 5
         creditFor:
-          type: string
-          description: What the credits are being charged for
           enum:
             - SMS
             - CAL_AI_PHONE_CALL
             - AI_AGENT
+          type: string
+          description: What the credits are being charged for
           example: AI_AGENT
         externalRef:
           type: string

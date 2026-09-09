@@ -76,11 +76,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/UnifiedCalendarEventOutput'
       required:
@@ -122,9 +122,13 @@ components:
           items:
             oneOf:
               - $ref: '#/components/schemas/CalendarEventVideoLocation'
+                title: Video
               - $ref: '#/components/schemas/CalendarEventPhoneLocation'
+                title: Phone
               - $ref: '#/components/schemas/CalendarEventSipLocation'
+                title: SIP
               - $ref: '#/components/schemas/CalendarEventMoreLocation'
+                title: More
             discriminator:
               propertyName: type
           nullable: true
@@ -136,9 +140,11 @@ components:
           items:
             $ref: '#/components/schemas/CalendarEventAttendee'
         status:
-          $ref: '#/components/schemas/CalendarEventStatus'
           nullable: true
+          description: Status of the event (accepted, pending, declined, cancelled)
           example: accepted
+          allOf:
+            - $ref: '#/components/schemas/CalendarEventStatus'
         hosts:
           nullable: true
           description: Information about the event hosts (organizers)
@@ -152,11 +158,16 @@ components:
             calendar where the event is stored and cannot be modified without
             appropriate permissions. Changing this would require moving the
             event to a different calendar
+          type: object
           allOf:
             - $ref: '#/components/schemas/calendarEventOwner'
         source:
-          $ref: '#/components/schemas/CalendarSource'
+          description: >-
+            Calendar integration source (e.g., Google Calendar, Office 365,
+            Apple Calendar). Currently only Google Calendar is supported.
           example: google
+          allOf:
+            - $ref: '#/components/schemas/CalendarSource'
       required:
         - start
         - end
@@ -287,9 +298,11 @@ components:
           type: string
           description: Display name of the attendee
         responseStatus:
-          $ref: '#/components/schemas/CalendarEventResponseStatus'
           nullable: true
+          description: Attendee's response to the invitation
           example: accepted
+          allOf:
+            - $ref: '#/components/schemas/CalendarEventResponseStatus'
         self:
           type: boolean
           nullable: true
@@ -306,12 +319,12 @@ components:
         - email
     CalendarEventStatus:
       type: string
-      description: Status of the event (accepted, pending, declined, cancelled)
       enum:
         - accepted
         - pending
         - declined
         - cancelled
+      description: Status of the event (accepted, pending, declined, cancelled)
     CalendarEventHost:
       type: object
       properties:
@@ -323,9 +336,11 @@ components:
           nullable: true
           description: Display name of the event host
         responseStatus:
-          $ref: '#/components/schemas/CalendarEventResponseStatus'
           nullable: true
+          description: Host's response to the invitation
           example: accepted
+          allOf:
+            - $ref: '#/components/schemas/CalendarEventResponseStatus'
       required:
         - email
     calendarEventOwner:
@@ -342,20 +357,20 @@ components:
         - email
     CalendarSource:
       type: string
-      description: >-
-        Calendar integration source (e.g., Google Calendar, Office 365, Apple
-        Calendar). Currently only Google Calendar is supported.
       enum:
         - google
         - office365
         - apple
+      description: >-
+        Calendar integration source (e.g., Google Calendar, Office 365, Apple
+        Calendar). Currently only Google Calendar is supported.
     CalendarEventResponseStatus:
       type: string
-      description: Response status of the attendee
       enum:
         - accepted
         - pending
         - declined
         - needsAction
+      description: Attendee's response to the invitation
 
 ````

@@ -81,11 +81,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           description: The attribute assignment history response payload.
           allOf:
@@ -149,6 +149,7 @@ components:
             - $ref: '#/components/schemas/AttributeAssignmentHistoryActorOutput'
         sourceContext:
           type: object
+          additionalProperties: true
           description: >-
             Source-specific context for the audit event, for example API v2, web
             app, DSync, or integration sync metadata.
@@ -212,6 +213,7 @@ components:
           description: >-
             The previous assignment value before the change, or null when the
             value was newly assigned.
+          type: object
           allOf:
             - $ref: '#/components/schemas/AttributeAssignmentHistoryValueOutput'
         current:
@@ -219,6 +221,7 @@ components:
           description: >-
             The current assignment value after the change, or null when the
             value was unassigned.
+          type: object
           allOf:
             - $ref: '#/components/schemas/AttributeAssignmentHistoryValueOutput'
       required:

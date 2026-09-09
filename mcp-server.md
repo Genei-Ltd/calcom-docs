@@ -67,6 +67,25 @@ When you first connect, your client walks you through an OAuth authorization flo
     }
     ```
   </Tab>
+
+  <Tab title="fx">
+    Add the following to your `~/.fx/mcp.json`:
+
+    ```json theme={null}
+    {
+      "mcp": {
+        "calcom": {
+          "type": "http",
+          "url": "https://mcp.cal.com/mcp"
+        }
+      }
+    }
+    ```
+
+    Then run `/mcp auth calcom --open` in fx to authorize. See the
+    [fx MCP docs](https://fx.sh/docs/capabilities/mcp) for transports,
+    authentication options, and tool discovery.
+  </Tab>
 </Tabs>
 
 ## Self-hosted server (stdio)

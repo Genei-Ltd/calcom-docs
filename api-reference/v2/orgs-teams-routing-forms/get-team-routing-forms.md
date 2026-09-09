@@ -4,7 +4,7 @@
 
 # Get team routing forms
 
-> Required membership role: `team admin`. PBAC permission: `routingForm.read`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_ROUTING_FORM_READ` scope is required.
+> Required membership role: `team admin`. PBAC permission: `routingForm.readTeamRoutingForms`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_ROUTING_FORM_READ` scope is required.
 
 
 
@@ -28,9 +28,10 @@ paths:
       summary: Get team routing forms
       description: >-
         Required membership role: `team admin`. PBAC permission:
-        `routingForm.read`. Learn more about API access control at
-        https://cal.com/docs/api-reference/v2/access-control. If accessed using
-        an OAuth access token, the `TEAM_ROUTING_FORM_READ` scope is required.
+        `routingForm.readTeamRoutingForms`. Learn more about API access control
+        at https://cal.com/docs/api-reference/v2/access-control. If accessed
+        using an OAuth access token, the `TEAM_ROUTING_FORM_READ` scope is
+        required.
       operationId: OrganizationsTeamsRoutingFormsController_getTeamRoutingForms
       parameters:
         - name: Authorization
@@ -68,19 +69,19 @@ paths:
           in: query
           description: Sort by creation time
           schema:
+            type: string
             enum:
               - asc
               - desc
-            type: string
         - name: sortUpdatedAt
           required: false
           in: query
           description: Sort by update time
           schema:
+            type: string
             enum:
               - asc
               - desc
-            type: string
         - name: afterCreatedAt
           required: false
           in: query
@@ -128,11 +129,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:
@@ -155,6 +156,7 @@ components:
           example: 0
         routes:
           type: object
+          additionalProperties: true
           nullable: true
           description: Routing form routes configuration
         createdAt:
@@ -167,6 +169,7 @@ components:
           format: date-time
         fields:
           type: object
+          additionalProperties: true
           nullable: true
           description: Routing form fields configuration
         userId:
@@ -181,6 +184,7 @@ components:
           example: false
         settings:
           type: object
+          additionalProperties: true
           nullable: true
           description: Routing form settings
         id:

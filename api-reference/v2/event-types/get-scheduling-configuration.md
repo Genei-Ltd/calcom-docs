@@ -4,15 +4,11 @@
 
 # Get scheduling configuration
 
-> Returns the scheduling configuration for a team event type. The response shape varies by scheduling type:
+> <Note>Please make sure to pass in the cal-api-version header value as mentioned in the Headers section. Not passing the correct value will default to an older version of this endpoint.</Note>
 
-    - **roundRobin**: Full configuration including hosts with priority, weight, and group assignment, host groups, and advanced settings (weights toggle, lead threshold, no-show calculations, CRM fallback).
-    - **collective**: Hosts with basic info and assignAllTeamMembers. Round-robin-specific fields are omitted.
-    - **managed**: Hosts with basic info and assignAllTeamMembers. Round-robin-specific fields are omitted.
+The response varies by the event type's scheduling type, and non-team event types are rejected.
 
-    Validates that the event type is a team event type. Returns 422 if the event type is not a team event type.
-
-    If accessed using an OAuth access token, the `EVENT_TYPE_READ` scope is required.
+If accessed using an OAuth access token, the `EVENT_TYPE_READ` scope is required.
 
 
 
@@ -35,27 +31,29 @@ paths:
         - Event Types
       summary: Get scheduling configuration
       description: >-
-        Returns the scheduling configuration for a team event type. The response
-        shape varies by scheduling type:
+        <Note>Please make sure to pass in the cal-api-version header value as
+        mentioned in the Headers section. Not passing the correct value will
+        default to an older version of this endpoint.</Note>
 
-            - **roundRobin**: Full configuration including hosts with priority, weight, and group assignment, host groups, and advanced settings (weights toggle, lead threshold, no-show calculations, CRM fallback).
-            - **collective**: Hosts with basic info and assignAllTeamMembers. Round-robin-specific fields are omitted.
-            - **managed**: Hosts with basic info and assignAllTeamMembers. Round-robin-specific fields are omitted.
 
-            Validates that the event type is a team event type. Returns 422 if the event type is not a team event type.
+        The response varies by the event type's scheduling type, and non-team
+        event types are rejected.
 
-            If accessed using an OAuth access token, the `EVENT_TYPE_READ` scope is required.
-      operationId: EventTypesController_2024_06_14_getSchedulingConfig
+
+        If accessed using an OAuth access token, the `EVENT_TYPE_READ` scope is
+        required.
+      operationId: EventTypesController_2026_06_12_getSchedulingConfig
       parameters:
         - name: cal-api-version
           in: header
           description: >-
-            Must be set to 2024-06-14. If not set to this value, the endpoint
+            Must be set to 2026-06-12. If not set to this value, the endpoint
             will default to an older version.
           required: true
           schema:
             type: string
-            default: '2024-06-14'
+            example: '2026-06-12'
+            default: '2026-06-12'
         - name: eventTypeId
           required: true
           in: path
@@ -82,11 +80,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/SchedulingConfigData'
       required:
@@ -100,11 +98,11 @@ components:
           example: 1
           description: Event type ID
         schedulingType:
-          type: string
           enum:
             - roundRobin
             - collective
             - managed
+          type: string
           example: roundRobin
           description: >-
             The scheduling type of this event type. Determines which fields are
@@ -131,6 +129,12 @@ components:
           description: >-
             Whether rescheduled events keep the same round-robin host. Only
             present for roundRobin scheduling type.
+        allowRRHostChoiceOnReschedule:
+          type: boolean
+          example: false
+          description: >-
+            Whether the person rescheduling may choose between the original host
+            and the whole team. Only present for roundRobin scheduling type.
         isRRWeightsEnabled:
           type: boolean
           example: false
@@ -191,7 +195,6 @@ components:
             If true, this host is a fixed host who always attends (not in the
             round-robin rotation pool)
         priority:
-          type: string
           nullable: true
           enum:
             - lowest
@@ -199,6 +202,7 @@ components:
             - medium
             - high
             - highest
+          type: string
           example: medium
           description: >-
             Priority level for round-robin distribution. Only present for

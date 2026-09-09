@@ -76,11 +76,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:
@@ -142,10 +142,6 @@ components:
       properties:
         days:
           type: array
-          example:
-            - Monday
-            - Tuesday
-          description: Array of days when schedule is active.
           items:
             type: string
             enum:
@@ -156,14 +152,16 @@ components:
               - Friday
               - Saturday
               - Sunday
+          example:
+            - Monday
+            - Tuesday
+          description: Array of days when schedule is active.
         startTime:
           type: string
-          pattern: TIME_FORMAT_HH_MM
           example: '08:00'
           description: startTime must be a valid time in format HH:MM e.g. 08:00
         endTime:
           type: string
-          pattern: TIME_FORMAT_HH_MM
           example: '15:00'
           description: endTime must be a valid time in format HH:MM e.g. 15:00
       required:
@@ -178,12 +176,10 @@ components:
           example: '2024-05-20'
         startTime:
           type: string
-          pattern: TIME_FORMAT_HH_MM
           example: '12:00'
           description: startTime must be a valid time in format HH:MM e.g. 12:00
         endTime:
           type: string
-          pattern: TIME_FORMAT_HH_MM
           example: '13:00'
           description: endTime must be a valid time in format HH:MM e.g. 13:00
       required:

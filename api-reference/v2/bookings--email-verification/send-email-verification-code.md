@@ -49,6 +49,7 @@ components:
       properties:
         email:
           type: string
+          format: email
           example: user@example.com
         username:
           type: string
@@ -65,11 +66,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/SendVerificationEmailData'
       required:

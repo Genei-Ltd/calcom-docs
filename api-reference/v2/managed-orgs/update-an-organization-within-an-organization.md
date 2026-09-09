@@ -83,6 +83,7 @@ components:
           maxLength: 155
         metadata:
           type: object
+          additionalProperties: true
           description: |-
             You can store any additional data you want here.
             Metadata must have at most 50 keys, each key up to 40 characters.
@@ -93,11 +94,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/ManagedOrganizationOutput'
       required:
@@ -115,6 +116,7 @@ components:
           type: string
         metadata:
           type: object
+          additionalProperties: true
           example:
             key: value
       required:

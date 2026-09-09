@@ -83,6 +83,7 @@ components:
       properties:
         email:
           type: string
+          format: email
           description: User email address
           example: user@example.com
         username:
@@ -101,6 +102,7 @@ components:
           example: Monday
         brandColor:
           type: string
+          pattern: ^#?([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$
           description: Brand color in HEX format
           example: '#FFFFFF'
         bio:
@@ -109,6 +111,7 @@ components:
           example: I am a bio
         metadata:
           type: object
+          additionalProperties: true
           description: >-
             You can store any additional data you want here. Metadata must have
             at most 50 keys, each key up to 40 characters, and values up to 500
@@ -117,6 +120,7 @@ components:
             key: value
         darkBrandColor:
           type: string
+          pattern: ^#?([0-9A-F]{3}|[0-9A-F]{4}|[0-9A-F]{6}|[0-9A-F]{8})$
           description: Dark brand color in HEX format
           example: '#000000'
         hideBranding:
@@ -160,11 +164,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/GetOrgUsersWithProfileOutput'
       required:
@@ -276,6 +280,7 @@ components:
           example: 1
         metadata:
           type: object
+          additionalProperties: true
           example:
             key: value
         profile:

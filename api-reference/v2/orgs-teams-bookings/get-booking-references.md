@@ -64,6 +64,7 @@ paths:
           description: Filter booking references by type
           schema:
             example: google_calendar
+            type: string
             enum:
               - google_calendar
               - office365_calendar
@@ -71,7 +72,6 @@ paths:
               - google_video
               - office365_video
               - zoom_video
-            type: string
         - name: teamId
           required: true
           in: path
@@ -95,12 +95,12 @@ components:
       type: object
       properties:
         status:
-          type: string
-          description: The status of the request, always 'success' for successful responses
-          example: success
           enum:
             - success
             - error
+          type: string
+          description: The status of the request, always 'success' for successful responses
+          example: success
         data:
           description: Booking References
           type: array

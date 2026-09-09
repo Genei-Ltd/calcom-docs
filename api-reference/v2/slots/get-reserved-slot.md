@@ -40,6 +40,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2024-09-04'
             default: '2024-09-04'
         - name: uid
           required: true
@@ -59,13 +60,14 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           nullable: true
+          type: object
           allOf:
             - $ref: '#/components/schemas/GetReservedSlotOutput_2024_09_04'
       required:

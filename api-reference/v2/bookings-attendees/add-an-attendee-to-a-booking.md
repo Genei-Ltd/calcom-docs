@@ -71,6 +71,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2024-08-13'
         - name: bookingUid
           required: true
           in: path
@@ -115,7 +116,6 @@ components:
           description: The phone number of the attendee in international format.
           example: '+919876543210'
         language:
-          type: string
           enum:
             - ar
             - ca
@@ -160,6 +160,7 @@ components:
             - uk
             - zh-TW
             - bn
+          type: string
           description: >-
             The preferred language of the attendee. Used for booking
             confirmation.
@@ -167,6 +168,7 @@ components:
           default: en
         email:
           type: string
+          format: email
           description: The email of the attendee.
           example: john.doe@example.com
       required:
@@ -177,11 +179,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/BookingAttendeeOutput_2024_08_13'
       required:

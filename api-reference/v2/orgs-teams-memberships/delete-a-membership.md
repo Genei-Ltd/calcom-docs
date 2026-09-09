@@ -81,11 +81,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/TeamMembershipOutput'
       required:
@@ -103,11 +103,11 @@ components:
         accepted:
           type: boolean
         role:
-          type: string
           enum:
             - MEMBER
             - OWNER
             - ADMIN
+          type: string
         disableImpersonation:
           type: boolean
         user:

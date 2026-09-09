@@ -88,6 +88,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2026-02-25'
             default: '2026-02-25'
         - name: Authorization
           in: header
@@ -112,16 +113,18 @@ paths:
       requestBody:
         required: true
         description: >-
-          Accepts different types of booking input: Create Booking (Option 1),
-          Create Instant Booking (Option 2), or Create Recurring Booking (Option
-          3)
+          Accepts different types of booking input: Standard Booking, Instant
+          Booking, or Recurring Booking.
         content:
           application/json:
             schema:
               oneOf:
                 - $ref: '#/components/schemas/CreateBookingInput_2024_08_13'
+                  title: Standard Booking
                 - $ref: '#/components/schemas/CreateInstantBookingInput_2024_08_13'
+                  title: Instant Booking
                 - $ref: '#/components/schemas/CreateRecurringBookingInput_2024_08_13'
+                  title: Recurring Booking
       responses:
         '201':
           description: ''
@@ -145,6 +148,7 @@ components:
             - $ref: '#/components/schemas/CreateBookingAttendee'
         bookingFieldsResponses:
           type: object
+          additionalProperties: true
           description: >-
             Booking field responses consisting of an object with booking field
             slug as keys and user response as values for custom booking fields
@@ -193,6 +197,7 @@ components:
             type: string
         meetingUrl:
           type: string
+          format: uri
           description: >-
             Deprecated - use 'location' instead. Meeting URL just for this
             booking. Displayed in email and calendar event. If not provided then
@@ -206,19 +211,29 @@ components:
             string please use an object.
           oneOf:
             - $ref: '#/components/schemas/BookingInputAddressLocation_2024_08_13'
+              title: Address
             - $ref: >-
                 #/components/schemas/BookingInputAttendeeAddressLocation_2024_08_13
+              title: Attendee Address
             - $ref: >-
                 #/components/schemas/BookingInputAttendeeDefinedLocation_2024_08_13
+              title: Attendee Defined
             - $ref: >-
                 #/components/schemas/BookingInputAttendeePhoneLocation_2024_08_13
+              title: Attendee Phone
             - $ref: '#/components/schemas/BookingInputIntegrationLocation_2024_08_13'
+              title: Integration
             - $ref: '#/components/schemas/BookingInputLinkLocation_2024_08_13'
+              title: Link
             - $ref: '#/components/schemas/BookingInputPhoneLocation_2024_08_13'
+              title: Phone
             - $ref: >-
                 #/components/schemas/BookingInputOrganizersDefaultAppLocation_2024_08_13
+              title: Organizer Default App
         metadata:
           type: object
+          additionalProperties:
+            type: string
           description: >-
             You can store any additional data you want here. Metadata must have
             at most 50 keys, each key up to 40 characters, and string values up
@@ -296,6 +311,7 @@ components:
             - $ref: '#/components/schemas/CreateBookingAttendee'
         bookingFieldsResponses:
           type: object
+          additionalProperties: true
           description: >-
             Booking field responses consisting of an object with booking field
             slug as keys and user response as values for custom booking fields
@@ -344,6 +360,7 @@ components:
             type: string
         meetingUrl:
           type: string
+          format: uri
           description: >-
             Deprecated - use 'location' instead. Meeting URL just for this
             booking. Displayed in email and calendar event. If not provided then
@@ -357,19 +374,29 @@ components:
             string please use an object.
           oneOf:
             - $ref: '#/components/schemas/BookingInputAddressLocation_2024_08_13'
+              title: Address
             - $ref: >-
                 #/components/schemas/BookingInputAttendeeAddressLocation_2024_08_13
+              title: Attendee Address
             - $ref: >-
                 #/components/schemas/BookingInputAttendeeDefinedLocation_2024_08_13
+              title: Attendee Defined
             - $ref: >-
                 #/components/schemas/BookingInputAttendeePhoneLocation_2024_08_13
+              title: Attendee Phone
             - $ref: '#/components/schemas/BookingInputIntegrationLocation_2024_08_13'
+              title: Integration
             - $ref: '#/components/schemas/BookingInputLinkLocation_2024_08_13'
+              title: Link
             - $ref: '#/components/schemas/BookingInputPhoneLocation_2024_08_13'
+              title: Phone
             - $ref: >-
                 #/components/schemas/BookingInputOrganizersDefaultAppLocation_2024_08_13
+              title: Organizer Default App
         metadata:
           type: object
+          additionalProperties:
+            type: string
           description: >-
             You can store any additional data you want here. Metadata must have
             at most 50 keys, each key up to 40 characters, and string values up
@@ -454,6 +481,7 @@ components:
             - $ref: '#/components/schemas/CreateBookingAttendee'
         bookingFieldsResponses:
           type: object
+          additionalProperties: true
           description: >-
             Booking field responses consisting of an object with booking field
             slug as keys and user response as values for custom booking fields
@@ -502,6 +530,7 @@ components:
             type: string
         meetingUrl:
           type: string
+          format: uri
           description: >-
             Deprecated - use 'location' instead. Meeting URL just for this
             booking. Displayed in email and calendar event. If not provided then
@@ -515,19 +544,29 @@ components:
             string please use an object.
           oneOf:
             - $ref: '#/components/schemas/BookingInputAddressLocation_2024_08_13'
+              title: Address
             - $ref: >-
                 #/components/schemas/BookingInputAttendeeAddressLocation_2024_08_13
+              title: Attendee Address
             - $ref: >-
                 #/components/schemas/BookingInputAttendeeDefinedLocation_2024_08_13
+              title: Attendee Defined
             - $ref: >-
                 #/components/schemas/BookingInputAttendeePhoneLocation_2024_08_13
+              title: Attendee Phone
             - $ref: '#/components/schemas/BookingInputIntegrationLocation_2024_08_13'
+              title: Integration
             - $ref: '#/components/schemas/BookingInputLinkLocation_2024_08_13'
+              title: Link
             - $ref: '#/components/schemas/BookingInputPhoneLocation_2024_08_13'
+              title: Phone
             - $ref: >-
                 #/components/schemas/BookingInputOrganizersDefaultAppLocation_2024_08_13
+              title: Organizer Default App
         metadata:
           type: object
+          additionalProperties:
+            type: string
           description: >-
             You can store any additional data you want here. Metadata must have
             at most 50 keys, each key up to 40 characters, and string values up
@@ -603,19 +642,23 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           oneOf:
             - $ref: '#/components/schemas/BookingOutput_2024_08_13'
-            - type: array
+              title: Booking
+            - title: Recurring Bookings (array)
+              type: array
               items:
                 $ref: '#/components/schemas/RecurringBookingOutput_2024_08_13'
             - $ref: '#/components/schemas/CreateSeatedBookingOutput_2024_08_13'
-            - type: array
+              title: Seated Booking
+            - title: Recurring Seated Bookings (array)
+              type: array
               items:
                 $ref: >-
                   #/components/schemas/CreateRecurringSeatedBookingOutput_2024_08_13
@@ -641,7 +684,6 @@ components:
           description: The phone number of the attendee in international format.
           example: '+919876543210'
         language:
-          type: string
           enum:
             - ar
             - ca
@@ -686,6 +728,7 @@ components:
             - uk
             - zh-TW
             - bn
+          type: string
           description: >-
             The preferred language of the attendee. Used for booking
             confirmation.
@@ -758,8 +801,6 @@ components:
           example: integration
           description: only allowed value for type is `integration`
         integration:
-          type: string
-          example: cal-video
           enum:
             - cal-video
             - google-meet
@@ -790,6 +831,8 @@ components:
             - discord-video
             - demodesk-video
             - campfire-video
+          type: string
+          example: cal-video
       required:
         - type
         - integration
@@ -866,6 +909,23 @@ components:
           type: string
           description: The CRM owner record type for contact assignment.
           example: Account
+        crmRecordOwnerFallbackTeamMemberIds:
+          description: >-
+            Eligible CRM owner fallback team member IDs to pass to the booking
+            API.
+          example:
+            - 103
+            - 104
+          type: array
+          items:
+            type: number
+        crmRecordOwnerFallbackMode:
+          enum:
+            - relationship
+            - attributeRules
+          type: string
+          description: The CRM owner fallback strategy used for this routing result.
+          example: relationship
       required:
         - teamMemberIds
     BookingOutput_2024_08_13:
@@ -888,24 +948,26 @@ components:
           items:
             $ref: '#/components/schemas/BookingHost'
         status:
-          type: string
           enum:
             - cancelled
             - accepted
             - rejected
             - pending
+          type: string
           example: accepted
         cancellationReason:
           type: string
           example: User requested cancellation
         cancelledByEmail:
           type: string
+          format: email
           example: canceller@example.com
         reschedulingReason:
           type: string
           example: User rescheduled the event
         rescheduledByEmail:
           type: string
+          format: email
           example: rescheduler@example.com
         rescheduledFromUid:
           type: string
@@ -935,6 +997,7 @@ components:
           $ref: '#/components/schemas/EventType'
         meetingUrl:
           type: string
+          format: uri
           description: Deprecated - rely on 'location' field instead.
           example: https://example.com/recurring-meeting
           deprecated: true
@@ -955,6 +1018,8 @@ components:
           format: date-time
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
         rating:
@@ -977,6 +1042,7 @@ components:
             type: string
         bookingFieldsResponses:
           type: object
+          additionalProperties: true
           description: >-
             Booking field responses consisting of an object with booking field
             slug as keys and user response as values.
@@ -1020,24 +1086,26 @@ components:
           items:
             $ref: '#/components/schemas/BookingHost'
         status:
-          type: string
           enum:
             - cancelled
             - accepted
             - rejected
             - pending
+          type: string
           example: accepted
         cancellationReason:
           type: string
           example: User requested cancellation
         cancelledByEmail:
           type: string
+          format: email
           example: canceller@example.com
         reschedulingReason:
           type: string
           example: User rescheduled the event
         rescheduledByEmail:
           type: string
+          format: email
           example: rescheduler@example.com
         rescheduledFromUid:
           type: string
@@ -1067,6 +1135,7 @@ components:
           $ref: '#/components/schemas/EventType'
         meetingUrl:
           type: string
+          format: uri
           description: Deprecated - rely on 'location' field instead.
           example: https://example.com/recurring-meeting
           deprecated: true
@@ -1087,6 +1156,8 @@ components:
           format: date-time
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
         rating:
@@ -1109,6 +1180,7 @@ components:
             type: string
         bookingFieldsResponses:
           type: object
+          additionalProperties: true
           description: >-
             Booking field responses consisting of an object with booking field
             slug as keys and user response as values.
@@ -1156,24 +1228,26 @@ components:
           items:
             $ref: '#/components/schemas/BookingHost'
         status:
-          type: string
           enum:
             - cancelled
             - accepted
             - rejected
             - pending
+          type: string
           example: accepted
         cancellationReason:
           type: string
           example: User requested cancellation
         cancelledByEmail:
           type: string
+          format: email
           example: canceller@example.com
         reschedulingReason:
           type: string
           example: User rescheduled the event
         rescheduledByEmail:
           type: string
+          format: email
           example: rescheduler@example.com
         rescheduledFromUid:
           type: string
@@ -1203,6 +1277,7 @@ components:
           $ref: '#/components/schemas/EventType'
         meetingUrl:
           type: string
+          format: uri
           description: Deprecated - rely on 'location' field instead.
           example: https://example.com/recurring-meeting
           deprecated: true
@@ -1223,6 +1298,8 @@ components:
           format: date-time
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
         rating:
@@ -1277,24 +1354,26 @@ components:
           items:
             $ref: '#/components/schemas/BookingHost'
         status:
-          type: string
           enum:
             - cancelled
             - accepted
             - rejected
             - pending
+          type: string
           example: accepted
         cancellationReason:
           type: string
           example: User requested cancellation
         cancelledByEmail:
           type: string
+          format: email
           example: canceller@example.com
         reschedulingReason:
           type: string
           example: User rescheduled the event
         rescheduledByEmail:
           type: string
+          format: email
           example: rescheduler@example.com
         rescheduledFromUid:
           type: string
@@ -1324,6 +1403,7 @@ components:
           $ref: '#/components/schemas/EventType'
         meetingUrl:
           type: string
+          format: uri
           description: Deprecated - rely on 'location' field instead.
           example: https://example.com/recurring-meeting
           deprecated: true
@@ -1344,6 +1424,8 @@ components:
           format: date-time
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
         rating:
@@ -1576,6 +1658,7 @@ components:
           description: The date and time when the attendee joined the seated booking.
         bookingFieldsResponses:
           type: object
+          additionalProperties: true
           description: >-
             Booking field responses consisting of an object with booking field
             slug as keys and user response as values.
@@ -1583,6 +1666,8 @@ components:
             customField: customValue
         metadata:
           type: object
+          additionalProperties:
+            type: string
           example:
             key: value
       required:

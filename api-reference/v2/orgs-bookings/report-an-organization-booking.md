@@ -83,6 +83,7 @@ components:
         reason:
           enum:
             - SPAM
+            - UNWANTED
             - DONT_KNOW_PERSON
             - OTHER
           type: string
@@ -108,11 +109,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/ReportOrgBookingData'
       required:

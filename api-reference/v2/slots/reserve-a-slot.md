@@ -48,6 +48,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2024-09-04'
             default: '2024-09-04'
         - name: Authorization
           in: header
@@ -114,11 +115,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/ReserveSlotOutput_2024_09_04'
       required:

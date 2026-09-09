@@ -35,14 +35,14 @@ paths:
           required: true
           in: query
           schema:
-            type: string
             example: user@example.com
+            type: string
         - name: userSessionEmail
           required: false
           in: query
           schema:
-            type: string
             example: user@example.com
+            type: string
       responses:
         '200':
           description: ''

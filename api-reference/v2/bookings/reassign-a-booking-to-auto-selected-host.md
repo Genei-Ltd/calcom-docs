@@ -48,6 +48,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2026-02-25'
             default: '2026-02-25'
         - name: bookingUid
           required: true
@@ -75,14 +76,15 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           oneOf:
             - $ref: '#/components/schemas/ReassignBookingOutput_2024_08_13'
+              title: Reassigned Booking
           description: >-
             Booking data, which can be either a ReassignAutoBookingOutput object
             or a ReassignManualBookingOutput object

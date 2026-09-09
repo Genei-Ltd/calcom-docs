@@ -101,7 +101,9 @@ paths:
             schema:
               oneOf:
                 - $ref: '#/components/schemas/CreateOrgMembershipDto'
+                  title: Member by User ID
                 - $ref: '#/components/schemas/CreateOrgMembershipByEmailDto'
+                  title: Member by Email
       responses:
         '201':
           description: ''
@@ -120,12 +122,12 @@ components:
           type: boolean
           default: false
         role:
-          type: string
           default: MEMBER
           enum:
             - MEMBER
             - OWNER
             - ADMIN
+          type: string
           description: >-
             If you are platform customer then managed users should only have
             MEMBER role.
@@ -140,14 +142,15 @@ components:
       properties:
         email:
           type: string
+          format: email
           description: Email of an existing Cal.com user to invite to the organization.
         role:
-          type: string
           default: MEMBER
           enum:
             - MEMBER
             - OWNER
             - ADMIN
+          type: string
           description: >-
             Role to assign to the invited user. If you are platform customer
             then managed users should only have MEMBER role.
@@ -158,11 +161,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/OrganizationMembershipOutput'
       required:
@@ -180,11 +183,11 @@ components:
         accepted:
           type: boolean
         role:
-          type: string
           enum:
             - MEMBER
             - OWNER
             - ADMIN
+          type: string
         disableImpersonation:
           type: boolean
         user:
@@ -194,9 +197,13 @@ components:
           items:
             oneOf:
               - $ref: '#/components/schemas/TextAttribute'
+                title: Text
               - $ref: '#/components/schemas/NumberAttribute'
+                title: Number
               - $ref: '#/components/schemas/SingleSelectAttribute'
+                title: Single Select
               - $ref: '#/components/schemas/MultiSelectAttribute'
+                title: Multi-Select
       required:
         - id
         - userId

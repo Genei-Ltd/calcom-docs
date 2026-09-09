@@ -123,11 +123,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/InsightsRoutingRoutedToPerPeriodDataOutput'
       required:

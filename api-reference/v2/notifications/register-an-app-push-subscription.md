@@ -54,14 +54,13 @@ components:
       properties:
         token:
           type: string
-          pattern: EXPO_PUSH_TOKEN_REGEX
           description: Expo Push Token
           example: ExponentPushToken[xxxxxxxxxxxxxxxxxxxxxx]
         platform:
-          type: string
           enum:
             - IOS
             - ANDROID
+          type: string
           description: Mobile platform
           example: IOS
         deviceId:
@@ -76,11 +75,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/AppPushSubscriptionOutputDto'
       required:

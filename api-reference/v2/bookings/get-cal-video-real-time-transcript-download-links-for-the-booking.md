@@ -55,6 +55,7 @@ paths:
           required: true
           schema:
             type: string
+            example: '2026-02-25'
             default: '2026-02-25'
         - name: bookingUid
           required: true
@@ -76,17 +77,22 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GetBookingTranscriptsOutput'
+        '429':
+          description: >-
+            Conferencing provider rate limit exceeded. Try again later. The
+            `Retry-After` response header carries the number of seconds to wait
+            before retrying.
 components:
   schemas:
     GetBookingTranscriptsOutput:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           example:
             - https://transcript1.com

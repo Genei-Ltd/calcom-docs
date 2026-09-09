@@ -67,6 +67,7 @@ paths:
             Filter managed users by email. If you want to filter by multiple
             emails, separate them with a comma.
           schema:
+            minItems: 1
             example: '?emails=email1@example.com,email2@example.com'
             type: array
             items:
@@ -84,11 +85,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:
@@ -185,10 +186,12 @@ components:
         avatarUrl:
           type: string
           nullable: true
+          format: uri
           example: https://cal.com/api/avatar/2b735186-b01b-46d3-87da-019b8f61776b.png
           description: URL of the user's avatar image
         metadata:
           type: object
+          additionalProperties: true
           example:
             key: value
       required:

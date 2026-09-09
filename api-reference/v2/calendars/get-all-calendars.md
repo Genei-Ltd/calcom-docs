@@ -52,11 +52,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/ConnectedCalendarsData'
       required:
@@ -177,6 +177,7 @@ components:
         locationOption:
           nullable: true
           description: Location option for this integration
+          type: object
           allOf:
             - $ref: '#/components/schemas/LocationOption'
       required:
@@ -225,10 +226,12 @@ components:
       properties:
         externalId:
           type: string
+          format: email
         integration:
           type: string
         name:
           type: string
+          format: email
         primary:
           type: boolean
           nullable: true
@@ -236,6 +239,7 @@ components:
           type: boolean
         email:
           type: string
+          format: email
         isSelected:
           type: boolean
         credentialId:

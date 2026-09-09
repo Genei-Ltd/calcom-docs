@@ -4,7 +4,7 @@
 
 # Get team default conferencing application
 
-> Required membership role: `team admin`. PBAC permission: `team.read`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_APPS_READ` scope is required.
+> Required membership role: `team admin`. PBAC permission: `team.readConferencing`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control. If accessed using an OAuth access token, the `TEAM_APPS_READ` scope is required.
 
 
 
@@ -27,8 +27,8 @@ paths:
         - Orgs / Teams / Conferencing
       summary: Get team default conferencing application
       description: >-
-        Required membership role: `team admin`. PBAC permission: `team.read`.
-        Learn more about API access control at
+        Required membership role: `team admin`. PBAC permission:
+        `team.readConferencing`. Learn more about API access control at
         https://cal.com/docs/api-reference/v2/access-control. If accessed using
         an OAuth access token, the `TEAM_APPS_READ` scope is required.
       operationId: OrganizationsConferencingController_getTeamDefaultApp
@@ -57,11 +57,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/DefaultConferencingAppsOutputDto'
       required:

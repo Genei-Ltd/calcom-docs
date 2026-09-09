@@ -35,7 +35,7 @@ paths:
           in: header
           description: >-
             value must be `Bearer <token>` where `<token>` is api key prefixed
-            with cal_
+            with cal_, managed user access token, or OAuth access token
           required: true
           schema:
             type: string
@@ -96,10 +96,10 @@ paths:
             times.
           schema:
             example: range
+            type: string
             enum:
               - range
               - time
-            type: string
         - name: bookingUidToReschedule
           required: false
           in: query
@@ -110,11 +110,36 @@ paths:
           schema:
             type: string
             example: abc123def456
+        - name: rescheduleWithSameHost
+          required: false
+          in: query
+          description: >-
+            Only for round robin event types that allow the person rescheduling
+            to choose the host. True returns slots of the original host, false
+            returns slots of any available host. Ignored for other event types.
+          schema:
+            type: boolean
+            example: true
         - name: routingFormId
           required: true
           in: path
           schema:
             type: string
+      requestBody:
+        required: true
+        description: >-
+          The routing form response, as a map of field identifier to answer.
+          Answers use the option label, not the option id. Must not be empty -
+          without answers no route can match.
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                type: string
+              example:
+                email: jane@example.com
+                department: sales
       responses:
         '200':
           description: ''
@@ -128,11 +153,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/ResponseSlotsOutputData'
       required:
@@ -144,9 +169,12 @@ components:
         eventTypeId:
           type: number
         slots:
+          additionalProperties: true
           oneOf:
             - $ref: '#/components/schemas/SlotsOutput_2024_09_04'
+              title: Time Slots
             - $ref: '#/components/schemas/RangeSlotsOutput_2024_09_04'
+              title: Slot Ranges
       required:
         - eventTypeId
         - slots

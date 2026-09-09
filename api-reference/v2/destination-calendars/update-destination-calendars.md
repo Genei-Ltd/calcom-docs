@@ -58,15 +58,15 @@ components:
       type: object
       properties:
         integration:
+          enum:
+            - apple_calendar
+            - google_calendar
+            - office365_calendar
           type: string
           example: apple_calendar
           description: >-
             The calendar service you want to integrate, as returned by the
             /calendars endpoint
-          enum:
-            - apple_calendar
-            - google_calendar
-            - office365_calendar
         externalId:
           type: string
           example: >-
@@ -83,11 +83,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/DestinationCalendarsOutputDto'
       required:

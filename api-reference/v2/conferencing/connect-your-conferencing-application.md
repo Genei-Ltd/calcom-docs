@@ -4,7 +4,7 @@
 
 # Connect your conferencing application
 
-> If accessed using an OAuth access token, the `APPS_WRITE` scope is required.
+> Only `google-meet` can be connected this way, and only for a user who already has a valid Google Calendar connection. Zoom and Microsoft Teams require an OAuth handshake - start it with `GET /v2/conferencing/{app}/oauth/auth-url` instead. Walkthrough: https://cal.com/docs/api-reference/v2/conferencing-apps. If accessed using an OAuth access token, the `APPS_WRITE` scope is required.
 
 
 
@@ -27,8 +27,12 @@ paths:
         - Conferencing
       summary: Connect your conferencing application
       description: >-
-        If accessed using an OAuth access token, the `APPS_WRITE` scope is
-        required.
+        Only `google-meet` can be connected this way, and only for a user who
+        already has a valid Google Calendar connection. Zoom and Microsoft Teams
+        require an OAuth handshake - start it with `GET
+        /v2/conferencing/{app}/oauth/auth-url` instead. Walkthrough:
+        https://cal.com/docs/api-reference/v2/conferencing-apps. If accessed
+        using an OAuth access token, the `APPS_WRITE` scope is required.
       operationId: ConferencingController_connect
       parameters:
         - name: app
@@ -60,10 +64,10 @@ components:
       type: object
       properties:
         status:
-          type: string
           enum:
             - success
             - error
+          type: string
         data:
           $ref: '#/components/schemas/ConferencingAppsOutputDto'
       required:

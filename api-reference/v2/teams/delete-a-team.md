@@ -57,11 +57,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           $ref: '#/components/schemas/OrgTeamOutputDto'
       required:
@@ -81,12 +81,16 @@ components:
           type: string
         logoUrl:
           type: string
+          format: uri
         calVideoLogo:
           type: string
+          format: uri
         appLogo:
           type: string
+          format: uri
         appIconLogo:
           type: string
+          format: uri
         bio:
           type: string
         hideBranding:
@@ -100,6 +104,7 @@ components:
           default: false
         metadata:
           type: object
+          additionalProperties: true
           example:
             key: value
         theme:
@@ -110,6 +115,7 @@ components:
           type: string
         bannerUrl:
           type: string
+          format: uri
         timeFormat:
           type: number
         timeZone:

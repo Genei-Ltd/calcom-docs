@@ -4,6 +4,8 @@
 
 # Get all organization team roles
 
+> Required membership role: `org admin`. PBAC permission: `role.readTeamRoles`. Learn more about API access control at https://cal.com/docs/api-reference/v2/access-control
+
 
 
 ## OpenAPI
@@ -24,6 +26,10 @@ paths:
       tags:
         - Orgs / Teams / Roles
       summary: Get all organization team roles
+      description: >-
+        Required membership role: `org admin`. PBAC permission:
+        `role.readTeamRoles`. Learn more about API access control at
+        https://cal.com/docs/api-reference/v2/access-control
       operationId: OrganizationsTeamsRolesController_getAllRoles
       parameters:
         - name: Authorization
@@ -88,11 +94,11 @@ components:
       type: object
       properties:
         status:
-          type: string
-          example: success
           enum:
             - success
             - error
+          type: string
+          example: success
         data:
           type: array
           items:
@@ -122,11 +128,11 @@ components:
           nullable: true
           description: Team ID this role belongs to
         type:
-          type: string
-          description: Type of role
           enum:
             - SYSTEM
             - CUSTOM
+          type: string
+          description: Type of role
         permissions:
           type: array
           description: Permissions assigned to this role in 'resource.action' format.
@@ -138,13 +144,19 @@ components:
             enum:
               - role.create
               - role.read
+              - role.readTeamRoles
               - role.update
               - role.delete
               - eventType.create
               - eventType.read
+              - eventType.readTeamEventTypes
               - eventType.update
               - eventType.delete
               - team.read
+              - team.readTeamSettings
+              - team.readConferencing
+              - team.readVerifiedResources
+              - team.readMemberships
               - team.update
               - team.delete
               - team.invite
@@ -158,14 +170,17 @@ components:
               - booking.readRecordings
               - booking.update
               - booking.updateTeamBookings
+              - booking.reassignTeamPastBookings
               - booking.readTeamAuditLogs
               - insights.read
               - workflow.create
               - workflow.read
+              - workflow.readTeamWorkflows
               - workflow.update
               - workflow.delete
               - routingForm.create
               - routingForm.read
+              - routingForm.readTeamRoutingForms
               - routingForm.update
               - routingForm.delete
               - routingForm.readTeamAuditLogs
@@ -174,8 +189,12 @@ components:
               - webhook.read
               - webhook.update
               - webhook.delete
+              - availability.readTeamAvailability
               - featureOptIn.read
               - featureOptIn.update
+              - tag.create
+              - tag.update
+              - tag.delete
         createdAt:
           type: string
           description: When the role was created
