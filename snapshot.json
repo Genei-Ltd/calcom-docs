@@ -1,8 +1,8 @@
 {
   "source": "https://cal.com/docs/",
-  "synced_at": "2026-09-09T10:11:53.418375+00:00",
+  "synced_at": "2026-09-09T10:30:27.901770+00:00",
   "source_commit": null,
-  "markdown_files": 380,
+  "markdown_files": 378,
   "sitemap_pages": 377,
   "indexes": [
     "https://cal.com/docs/_llms/api-v2-reference.md",
@@ -10,21 +10,6 @@
     "https://cal.com/docs/llms.txt"
   ],
   "files": {
-    "INDEX.md": {
-      "url": null,
-      "bytes": 52825,
-      "sha256": "eda08d16ebd1f5dcbe33f4e8666fd45f4516cd536739e6dc8f6dba8872d6d104"
-    },
-    "_llms/api-v2-reference.md": {
-      "url": "https://cal.com/docs/_llms/api-v2-reference.md",
-      "bytes": 53878,
-      "sha256": "ce737ffc293893af104b193faef96f278f6ece3c43dc5a78625902b4b132bed8"
-    },
-    "_llms/api-v2-reference/organizations.md": {
-      "url": "https://cal.com/docs/_llms/api-v2-reference/organizations.md",
-      "bytes": 50618,
-      "sha256": "314b513d98fa00d80789ac90d91ddb8db429ae303037476065d0e3917e2a497a"
-    },
     "agents.md": {
       "url": "https://cal.com/docs/agents.md",
       "bytes": 12062,
@@ -2121,9 +2106,9 @@
       "sha256": "c43a573a91597c325897afc948d3dbbb01401deb9dcc5f80ee2fa46405bdfee0"
     },
     "llms.txt": {
-      "url": "https://cal.com/docs/llms.txt",
-      "bytes": 3115,
-      "sha256": "f75228c34bec07c4ecc6d970c903f8db5318c3239dfae0bb5b09a4f8af46cd18"
+      "url": null,
+      "bytes": 52812,
+      "sha256": "7338df046625e8e43dbfe324c8b042798feeed13ee332b050e8e660cc616ca8e"
     },
     "mcp-server.md": {
       "url": "https://cal.com/docs/mcp-server.md",

@@ -2,9 +2,9 @@
 
 A documentation mirror of [Cal.com's official documentation](https://cal.com/docs/).
 
-Start with the [local documentation index](INDEX.md). The original [llms.txt](llms.txt), [combined export](llms-full.txt), and [sitemap](sitemap.xml) are also included.
+Start with [llms.txt](llms.txt), the canonical index. It links directly to local documentation pages and API specifications.
 
-Downloaded files retain their original paths and contents. Links and embedded components are preserved, so some references still require the upstream website or a compatible Markdown renderer. [snapshot.json](snapshot.json) records the latest sync time, source URLs, and file checksums.
+Documentation pages retain their original paths and contents. Links and embedded components are preserved, so some references still require the upstream website or a compatible Markdown renderer. [snapshot.json](snapshot.json) records the latest sync time, source URLs, and file checksums.
 
 Includes the API reference, developer guides, OpenAPI specification, standalone skill document, and referenced image assets.
 
@@ -29,6 +29,8 @@ python3 scripts/sync.py
 ```
 
 The script follows nested documentation indexes, combines them with the sitemap, and downloads the current Markdown, OpenAPI, and image assets. It validates all downloads before updating the snapshot and removes files that are no longer in the upstream inventory. It stops if managed files have local changes or a download fails. Unmanaged files are preserved.
+
+It generates `llms.txt` from the downloaded documentation. Original upstream indexes are kept under `.snapshot/upstream/`, outside Git.
 
 The script updates this checkout without committing or pushing. Maintainers can review the diff, commit, and push the refreshed snapshot. Existing skill caches can receive published updates with `git pull --ff-only` from a clean checkout, or run the sync script to fetch directly from Cal.com.
 

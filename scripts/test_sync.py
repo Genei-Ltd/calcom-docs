@@ -6,6 +6,7 @@ from pathlib import Path
 from tempfile import TemporaryDirectory
 from threading import Thread
 import json
+import re
 import unittest
 
 from sync import synchronize
@@ -41,7 +42,8 @@ class SyncTests(unittest.TestCase):
         self.config = {"base_url": self.base}
         self.responses.update({
             "/docs/llms.txt": "[Group](_llms/group.md)\n",
-            "/docs/_llms/group.md": "[Page](../page.md)\n[Group](group.md)\n",
+            "/docs/_llms/group.md": "[Page](../page.md)\n[API](../openapi.json)\n[Group](group.md)\n[External](https://example.invalid/missing.md)\n",
+            "/docs/openapi.json": '{"openapi": "3.0.0", "paths": {}}',
             "/docs/page.md": "# Updated page\n",
             "/docs/sitemap-only.md": "# Page missing from the index\n",
             "/docs/llms-full.txt": "# Combined documentation\n",
@@ -66,6 +68,11 @@ class SyncTests(unittest.TestCase):
         self.assertFalse((self.root / "obsolete.md").exists())
         self.assertEqual((self.root / "README.md").read_text(), "Repository instructions\n")
         self.assertEqual((self.root / "personal-note.md").read_text(), "An unmanaged file\n")
+        local_links = re.findall(r"\]\(([^)]+)\)", (self.root / "llms.txt").read_text())
+        self.assertEqual(set(local_links), {"page.md", "sitemap-only.md", "openapi.json"})
+        self.assertTrue(all((self.root / relative).is_file() for relative in local_links))
+        self.assertFalse((self.root / "INDEX.md").exists())
+        self.assertFalse((self.root / "_llms").exists())
         second = self.refresh()
         self.assertEqual(first["files"], second["files"])
 

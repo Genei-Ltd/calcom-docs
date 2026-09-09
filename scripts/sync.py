@@ -101,7 +101,7 @@ def refresh(root, config, metadata):
             raise ValueError(f"Local changes in {relative}; preserve or revert them before syncing")
 
     base = config["base_url"].rstrip("/") + "/"
-    records, pages, indexes, sitemap_pages = {}, {}, set(), set()
+    records, pages, indexes, sitemap_pages = {}, {}, {}, set()
     source_commit = None
     with TemporaryDirectory(prefix="sync-", dir=metadata) as directory:
         staging = Path(directory)
@@ -119,12 +119,11 @@ def refresh(root, config, metadata):
             url = pending.pop()
             if url in indexes:
                 continue
-            indexes.add(url)
             relative = relative_url(url, base)
             if relative is None:
                 raise ValueError(f"Index outside the documentation site: {url}")
             data, content_type = fetch(url)
-            save(relative, url, data, content_type)
+            indexes[url] = data
             for linked in links(data.decode("utf-8"), url):
                 path = relative_url(linked, base)
                 if path is None:
@@ -227,14 +226,17 @@ def refresh(root, config, metadata):
         if assets:
             download_batch(assets)
 
-        for url in indexes | seen_maps:
+        for url in indexes.keys() | seen_maps:
             latest, _ = fetch(url)
-            if latest != (staging / relative_url(url, base)).read_bytes():
+            original = indexes[url] if url in indexes else (staging / relative_url(url, base)).read_bytes()
+            if latest != original:
                 raise ValueError("The documentation inventory changed during sync; run the script again")
 
         markdown = sorted(relative for relative in records if relative.endswith(".md"))
-        index = "# Documentation index\n\n" + "\n".join(f"- [{relative}]({relative})" for relative in markdown) + "\n"
-        save("INDEX.md", None, index.encode(), "text/markdown")
+        documents = sorted(relative for relative in records if relative.endswith((".md", ".json")))
+        index = "# Documentation index\n\nAll links point to local documentation, relative to this file.\n\n"
+        index += "\n".join(f"- [{relative}]({relative})" for relative in documents) + "\n"
+        save("llms.txt", None, index.encode(), "text/plain")
         for relative in records:
             if relative not in previous and safe_path(root, relative).exists():
                 raise ValueError(f"Unmanaged file would be overwritten: {relative}")
@@ -252,6 +254,10 @@ def refresh(root, config, metadata):
             "indexes": sorted(indexes),
             "files": dict(sorted(records.items())),
         }
+        for url, data in indexes.items():
+            original = safe_path(metadata / "upstream", relative_url(url, base))
+            original.parent.mkdir(parents=True, exist_ok=True)
+            original.write_bytes(data)
         for relative in records:
             destination = safe_path(root, relative)
             destination.parent.mkdir(parents=True, exist_ok=True)
